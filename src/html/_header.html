@@ -5,40 +5,23 @@
 		<nav class="header__nav" aria-label="Основная навигация">
 			<ul class="header__menu">
 				<li>
-					<a
-						class="header__link@@if(typeof activePage === 'undefined' || activePage === 'home'){ is-active}"
-						href="index.html"
-						@@if(typeof activePage === 'undefined' || activePage === 'home'){aria-current="page"}>Главная</a>
+					<a class="header__link@@if(typeof activePage === 'undefined' || activePage === 'home'){ is-active}" href="index.html" @@if(typeof activePage==='undefined' || activePage==='home' ){aria-current="page" }>Главная</a>
 				</li>
 				<li>
-					<a
-						class="header__link@@if(typeof activePage !== 'undefined' && activePage === 'about'){ is-active}"
-						href="about.html"
-						@@if(typeof activePage !== 'undefined' && activePage === 'about'){aria-current="page"}>О себе</a>
+					<a class="header__link@@if(typeof activePage !== 'undefined' && activePage === 'about'){ is-active}" href="about.html" @@if(typeof activePage !=='undefined' && activePage==='about' ){aria-current="page" }>О себе</a>
 				</li>
 				<li>
-					<a
-						class="header__link@@if(typeof activePage !== 'undefined' && activePage === 'gallery'){ is-active}"
-						href="gallery.html"
-						@@if(typeof activePage !== 'undefined' && activePage === 'gallery'){aria-current="page"}>Галерея</a>
+					<a class="header__link@@if(typeof activePage !== 'undefined' && activePage === 'gallery'){ is-active}" href="gallery.html" @@if(typeof activePage !=='undefined' && activePage==='gallery' ){aria-current="page" }>Галерея</a>
 				</li>
 				<li>
-					<a
-						class="header__link@@if(typeof activePage !== 'undefined' && activePage === 'exhibitions'){ is-active}"
-						href="exhibitions.html"
-						@@if(typeof activePage !== 'undefined' && activePage === 'exhibitions'){aria-current="page"}>Выставки</a>
+					<a class="header__link@@if(typeof activePage !== 'undefined' && activePage === 'exhibitions'){ is-active}" href="exhibitions.html" @@if(typeof activePage !=='undefined' && activePage==='exhibitions' ){aria-current="page" }>Выставки</a>
 				</li>
 			</ul>
 		</nav>
 
 		<a class="header__phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
 
-		<button
-			class="header__burger"
-			type="button"
-			aria-label="Открыть меню"
-			aria-expanded="false"
-			aria-controls="header-menu">
+		<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-menu">
 			<span class="header__burger-line" aria-hidden="true"></span>
 		</button>
 	</div>
@@ -47,28 +30,16 @@
 		<nav class="header__mobile-nav" aria-label="Мобильная навигация">
 			<ul class="header__mobile-menu">
 				<li>
-					<a
-						class="header__mobile-link@@if(typeof activePage === 'undefined' || activePage === 'home'){ is-active}"
-						href="index.html"
-						@@if(typeof activePage === 'undefined' || activePage === 'home'){aria-current="page"}>Главная</a>
+					<a class="header__mobile-link@@if(typeof activePage === 'undefined' || activePage === 'home'){ is-active}" href="index.html" @@if(typeof activePage==='undefined' || activePage==='home' ){aria-current="page" }>Главная</a>
 				</li>
 				<li>
-					<a
-						class="header__mobile-link@@if(typeof activePage !== 'undefined' && activePage === 'about'){ is-active}"
-						href="about.html"
-						@@if(typeof activePage !== 'undefined' && activePage === 'about'){aria-current="page"}>О себе</a>
+					<a class="header__mobile-link@@if(typeof activePage !== 'undefined' && activePage === 'about'){ is-active}" href="about.html" @@if(typeof activePage !=='undefined' && activePage==='about' ){aria-current="page" }>О себе</a>
 				</li>
 				<li>
-					<a
-						class="header__mobile-link@@if(typeof activePage !== 'undefined' && activePage === 'gallery'){ is-active}"
-						href="gallery.html"
-						@@if(typeof activePage !== 'undefined' && activePage === 'gallery'){aria-current="page"}>Галерея</a>
+					<a class="header__mobile-link@@if(typeof activePage !== 'undefined' && activePage === 'gallery'){ is-active}" href="gallery.html" @@if(typeof activePage !=='undefined' && activePage==='gallery' ){aria-current="page" }>Галерея</a>
 				</li>
 				<li>
-					<a
-						class="header__mobile-link@@if(typeof activePage !== 'undefined' && activePage === 'exhibitions'){ is-active}"
-						href="exhibitions.html"
-						@@if(typeof activePage !== 'undefined' && activePage === 'exhibitions'){aria-current="page"}>Выставки</a>
+					<a class="header__mobile-link@@if(typeof activePage !== 'undefined' && activePage === 'exhibitions'){ is-active}" href="exhibitions.html" @@if(typeof activePage !=='undefined' && activePage==='exhibitions' ){aria-current="page" }>Выставки</a>
 				</li>
 			</ul>
 		</nav>

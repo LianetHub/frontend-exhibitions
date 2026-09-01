@@ -272,6 +272,14 @@
 		display: none !important;
 	}
 
+	// exhibitions-slide__figure
+	&__figure {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		height: 100%;
+	}
+
 	// exhibitions-slide__media
 	&__media {
 		display: block;

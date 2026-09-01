@@ -233,17 +233,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const genre = galleryGenre?.value || "";
         const technique = galleryTechnique?.value || "";
-        const items = galleryRoot.querySelectorAll(".gallery-item");
+        const cells = galleryRoot.querySelectorAll("[data-gallery-cell]");
 
-        items.forEach((item) => {
-            const matchGenre = !genre || item.getAttribute("data-genre") === genre;
-            const matchTechnique = !technique || item.getAttribute("data-technique") === technique;
-            item.classList.toggle("is-hidden", !(matchGenre && matchTechnique));
-        });
-
-        galleryRoot.querySelectorAll(".gallery__row").forEach((row) => {
-            const visible = row.querySelector(".gallery-item:not(.is-hidden)");
-            row.classList.toggle("is-empty", !visible);
+        cells.forEach((cell) => {
+            const matchGenre = !genre || cell.getAttribute("data-genre") === genre;
+            const matchTechnique = !technique || cell.getAttribute("data-technique") === technique;
+            cell.classList.toggle("is-hidden", !(matchGenre && matchTechnique));
         });
     }
 

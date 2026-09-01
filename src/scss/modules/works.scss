@@ -153,20 +153,22 @@
 	&__frame {
 		position: relative;
 		aspect-ratio: 557 / 388;
+		background-image: url("@img/home/frame.png");
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		background-position: center;
-	}
 
-	// gallery-card__matte
-	&__matte {
-		position: absolute;
-		inset: 8% 7%;
-		z-index: 0;
-		background-color: rgba(231, 223, 205, 0.84);
-		background-size: cover;
-		background-position: center;
-		pointer-events: none;
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 8% 7%;
+			z-index: 0;
+			background-color: rgba(231, 223, 205, 0.84);
+			background-image: url("@img/home/matte.jpg");
+			background-size: cover;
+			background-position: center;
+			pointer-events: none;
+		}
 	}
 
 	// gallery-card__img

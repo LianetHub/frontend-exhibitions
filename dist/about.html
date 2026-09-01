@@ -1,168 +1,195 @@
 <!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<title>О себе — Ярыгина А.А.</title>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-	<title>О себе — Ярыгина А.А.</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20260831203127">
-	<link rel="stylesheet" href="css/libs/fancybox.css?_v=20260831203127">
-	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20260831203127">
-	<link rel="stylesheet" href="css/style.min.css?_v=20260831203127">
-</head>
+		<!-- plugins -->
+		<link rel="stylesheet" href="css/libs/swiper-bundle.min.css">
+		<link rel="stylesheet" href="css/libs/fancybox.css">
+		<!-- plugins -->
 
-<body>
-	<div class="wrapper">
-		<header class="header">
-			<div class="header__inner container">
-				<a class="header__logo" href="index.html">Ярыгина А.А.</a>
-				<nav class="header__nav" aria-label="Основная навигация">
-					<ul class="header__menu">
-						<li>
-							<a class="header__link" href="index.html">Главная</a>
-						</li>
-						<li>
-							<a class="header__link is-active" href="about.html" aria-current="page">О себе</a>
-						</li>
-						<li>
-							<a class="header__link" href="gallery.html">Галерея</a>
-						</li>
-						<li>
-							<a class="header__link" href="exhibitions.html">Выставки</a>
-						</li>
-					</ul>
-				</nav>
-				<a class="header__phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
-				<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-menu">
-					<span class="header__burger-line" aria-hidden="true"></span>
-				</button>
-			</div>
-			<div class="header__mobile" id="header-menu" hidden>
-				<nav class="header__mobile-nav" aria-label="Мобильная навигация">
-					<ul class="header__mobile-menu">
-						<li>
-							<a class="header__mobile-link" href="index.html">Главная</a>
-						</li>
-						<li>
-							<a class="header__mobile-link is-active" href="about.html" aria-current="page">О себе</a>
-						</li>
-						<li>
-							<a class="header__mobile-link" href="gallery.html">Галерея</a>
-						</li>
-						<li>
-							<a class="header__mobile-link" href="exhibitions.html">Выставки</a>
-						</li>
-					</ul>
-				</nav>
-				<a class="header__mobile-phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
-			</div>
-		</header>
-		<main class="page">
-			<section class="about">
+		<link rel="stylesheet" href="css/reset.min.css">
+		<link rel="stylesheet" href="css/style.min.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__inner container">
+					<a class="header__logo" href="index.html">Ярыгина А.А.</a>
+
+					<nav class="header__nav" aria-label="Основная навигация">
+						<ul class="header__menu">
+							<li>
+								<a class="header__link" href="index.html" >Главная</a>
+							</li>
+							<li>
+								<a class="header__link is-active" href="about.html" aria-current="page" >О себе</a>
+							</li>
+							<li>
+								<a class="header__link" href="gallery.html" >Галерея</a>
+							</li>
+							<li>
+								<a class="header__link" href="exhibitions.html" >Выставки</a>
+							</li>
+						</ul>
+					</nav>
+
+					<a class="header__phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
+
+					<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-menu">
+						<span class="header__burger-line" aria-hidden="true"></span>
+					</button>
+				</div>
+
+				<div class="header__mobile" id="header-menu" hidden>
+					<nav class="header__mobile-nav" aria-label="Мобильная навигация">
+						<ul class="header__mobile-menu">
+							<li>
+								<a class="header__mobile-link" href="index.html" >Главная</a>
+							</li>
+							<li>
+								<a class="header__mobile-link is-active" href="about.html" aria-current="page" >О себе</a>
+							</li>
+							<li>
+								<a class="header__mobile-link" href="gallery.html" >Галерея</a>
+							</li>
+							<li>
+								<a class="header__mobile-link" href="exhibitions.html" >Выставки</a>
+							</li>
+						</ul>
+					</nav>
+					<a class="header__mobile-phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
+				</div>
+			</header>
+			<main class="page">
+				<section class="about">
+					<div class="band band--wood" aria-hidden="true"></div>
+					<div class="about__main" style="--about-image: url('img/about/photo-bg.jpg');">
+						<img class="about__photo" src="img/about/photo.png" alt="Художник Анастасия Ярыгина с дипломом" width="771" height="726" fetchpriority="high">
+						<div class="container about__container">
+							<h1 class="about__title">
+								<span class="visually-hidden">О себе</span>
+								<img class="about__title-img" src="img/about/title-about.svg" alt="О себе" width="340" height="158" fetchpriority="high" aria-hidden="true">
+							</h1>
+							<ul class="row about__list">
+								<li class="col-6 col-lg-12 about__item">
+									<span class="about__num">(01)</span>
+									<h2 class="about__heading">Краткая биография</h2>
+									<p class="text about__text">
+										Кандидат пед. наук, доцент кафедры дизайна костюма КубГУ, член Союза Дизайнеров России.
+										Я родилась и живу в городе Краснодаре. В 1990 году окончила художественно-графический
+										факультет Кубанского государственного университета.
+									</p>
+								</li>
+								<li class="col-6 col-lg-12 about__item">
+									<span class="about__num">(02)</span>
+									<h2 class="about__heading">Мои выставки</h2>
+									<p class="text about__text">
+										С 2001 года я участвую в городских, краевых, региональных и международных выставках: в
+										Краснодаре, Майкопе, Сочи, Кургане, на Кавказских Минеральных Водах, в Махачкале,
+										Татарстане. За моими плечами — более 40 выставок и конкурсов.
+									</p>
+								</li>
+								<li class="col-6 col-lg-12 about__item">
+									<span class="about__num">(03)</span>
+									<h2 class="about__heading">Нахождение работ</h2>
+									<p class="text about__text">
+										Многие мои работы находятся в фондах художественных музеев. В Сочи, Кургана, Елабуги,
+										Славянска-на-Кубани, а также в частных коллекциях в России и за рубежом.
+									</p>
+								</li>
+								<li class="col-6 col-lg-12 about__item">
+									<span class="about__num">(04)</span>
+									<h2 class="about__heading">Материалы и жанры</h2>
+									<p class="text about__text">
+										Чаще всего я работаю в жанрах натюрморта и пейзажа, но также имею опыт в написании
+										портретов. Из материалов использую акварель, темперу пастель и смешанную технику.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</main>
+			<footer class="footer">
 				<div class="band band--wood" aria-hidden="true"></div>
-				<div class="about__main" style="--about-image: url('img/about/photo-bg.jpg');">
-					<img class="about__photo" src="img/about/photo.png" alt="Художник Анастасия Ярыгина с дипломом" width="771" height="726" fetchpriority="high">
-					<div class="container about__container">
-						<h1 class="about__title">
-							<img class="about__title-img" src="img/about/title-about.svg" alt="О себе" width="340" height="158" fetchpriority="high">
-						</h1>
-						<div class="row about__list">
-							<article class="col-6 col-lg-12 about__item">
-								<span class="about__num">(01)</span>
-								<h2 class="about__heading">Краткая биография</h2>
-								<p class="text about__text"> Кандидат пед. наук, доцент кафедры дизайна костюма КубГУ, член Союза Дизайнеров России. Я родилась и живу в городе Краснодаре. В 1990 году окончила художественно-графический факультет Кубанского государственного университета. </p>
-							</article>
-							<article class="col-6 col-lg-12 about__item">
-								<span class="about__num">(02)</span>
-								<h2 class="about__heading">Мои выставки</h2>
-								<p class="text about__text"> С 2001 года я участвую в городских, краевых, региональных и международных выставках: в Краснодаре, Майкопе, Сочи, Кургане, на Кавказских Минеральных Водах, в Махачкале, Татарстане. За моими плечами — более 40 выставок и конкурсов. </p>
-							</article>
-							<article class="col-6 col-lg-12 about__item">
-								<span class="about__num">(03)</span>
-								<h2 class="about__heading">Нахождение работ</h2>
-								<p class="text about__text"> Многие мои работы находятся в фондах художественных музеев. В Сочи, Кургана, Елабуги, Славянска-на-Кубани, а также в частных коллекциях в России и за рубежом. </p>
-							</article>
-							<article class="col-6 col-lg-12 about__item">
-								<span class="about__num">(04)</span>
-								<h2 class="about__heading">Материалы и жанры</h2>
-								<p class="text about__text"> Чаще всего я работаю в жанрах натюрморта и пейзажа, но также имею опыт в написании портретов. Из материалов использую акварель, темперу пастель и смешанную технику. </p>
-							</article>
+				<div class="footer__inner container">
+					<div class="row gy-4">
+						<div class="col-12 col-md-4">
+							<div class="footer__col">
+								<p class="footer__title">Документы</p>
+								<ul class="footer__list">
+									<li>
+										<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
+									</li>
+									<li>
+										<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
+									</li>
+								</ul>
+								<p class="footer__copy">© 2026г. – Анастасия Ярыгина. Все права защищены</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="footer__col">
+								<p class="footer__title">Навигация по сайту</p>
+								<ul class="footer__list">
+									<li>
+										<a class="footer__link" href="index.html">Главная</a>
+									</li>
+									<li>
+										<a class="footer__link" href="about.html">О себе</a>
+									</li>
+									<li>
+										<a class="footer__link" href="gallery.html">Галерея</a>
+									</li>
+									<li>
+										<a class="footer__link" href="exhibitions.html">Выставки</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="footer__col">
+								<p class="footer__title">Контакты</p>
+								<ul class="footer__socials">
+									<li>
+										<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
+									</li>
+									<li>
+										<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
+									</li>
+									<li>
+										<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
+									</li>
+									<li>
+										<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
+									</li>
+									<li>
+										<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-		</main>
-		<footer class="footer">
-			<div class="band band--wood" aria-hidden="true"></div>
-			<div class="footer__inner container">
-				<div class="row gy-4">
-					<div class="col-12 col-md-4">
-						<div class="footer__col">
-							<p class="footer__title">Документы</p>
-							<ul class="footer__list">
-								<li>
-									<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
-								</li>
-								<li>
-									<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
-								</li>
-							</ul>
-							<p class="footer__copy">© 2026г. – Анастасия Ярыгина. Все права защищены</p>
-						</div>
-					</div>
-					<div class="col-12 col-md-4">
-						<div class="footer__col">
-							<p class="footer__title">Навигация по сайту</p>
-							<ul class="footer__list">
-								<li>
-									<a class="footer__link" href="index.html">Главная</a>
-								</li>
-								<li>
-									<a class="footer__link" href="about.html">О себе</a>
-								</li>
-								<li>
-									<a class="footer__link" href="gallery.html">Галерея</a>
-								</li>
-								<li>
-									<a class="footer__link" href="exhibitions.html">Выставки</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-12 col-md-4">
-						<div class="footer__col">
-							<p class="footer__title">Контакты</p>
-							<ul class="footer__socials">
-								<li>
-									<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
-								</li>
-								<li>
-									<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
-								</li>
-								<li>
-									<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
-								</li>
-								<li>
-									<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
-								</li>
-								<li>
-									<a class="footer__social icon-max" href="#contacts" aria-label="Max"></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+			</footer>
+		</div>
+		<div class="popups visually-hidden" aria-hidden="true">
+			<div id="modal-max-qr" class="popup popup--max-qr">
+				<img class="popup__qr" src="img/contacts/max-qr.png" alt="QR-код Max для связи" width="540" height="539" loading="lazy">
 			</div>
-		</footer>
-	</div> <!-- plugins -->
-	<script defer src="js/libs/swiper-bundle.min.js?_v=20260831203127"></script>
-	<script defer src="js/libs/fancybox.umd.js?_v=20260831203127"></script>
-	<!-- plugins -->
-	<script defer src="js/app.js?_v=20260831203127"></script>
-</body>
+		</div>
 
+		<!-- plugins -->
+		<script defer src="js/libs/swiper-bundle.min.js"></script>
+		<script defer src="js/libs/fancybox.umd.js"></script>
+		<!-- plugins -->
+
+		<script defer src="js/app.js"></script>
+	</body>
 </html>

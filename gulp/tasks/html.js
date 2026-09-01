@@ -1,8 +1,11 @@
 import fileinclude from "gulp-file-include";
 import versionNumber from "gulp-version-number";
 import htmlBeautify from "gulp-html-beautify";
+import { prepareGalleryPictures } from "../helpers/prepare-gallery-pictures.js";
 
 export const html = () => {
+	prepareGalleryPictures();
+
 	return app.gulp
 		.src(app.path.src.html)
 		.pipe(
