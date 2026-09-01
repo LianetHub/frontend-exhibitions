@@ -15,8 +15,8 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
@@ -29,8 +29,8 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 :root {
@@ -248,6 +248,24 @@
   background: var(--color-dark);
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555d54;
+  border-radius: 0.5rem;
+}
+@media (any-hover: hover) {
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3d423c;
+  }
+}
+
 .form-control,
 .form-select {
   width: 100%;
@@ -431,7 +449,7 @@ body {
   min-height: 100%;
   line-height: 1.3;
   font-weight: 400;
-  background: var(--color-bg);
+  background: var(--color-green);
   color: var(--color-text);
 }
 body.is-locked {
@@ -507,7 +525,7 @@ img {
 }
 @media (min-width: 1499.98px) {
   .container {
-    max-width: 90rem;
+    max-width: 113.75rem;
   }
 }
 
@@ -1866,7 +1884,7 @@ img {
   isolation: isolate;
   min-height: 45rem;
   overflow: hidden;
-  background: var(--color-dark);
+  background: url("../img/home/boiserie.jpg") 0 100%/auto 14.9375rem repeat-x, var(--color-dark);
   color: var(--color-white);
 }
 @media (min-width: 767.98px) {
@@ -1874,26 +1892,11 @@ img {
     min-height: 67.5rem;
   }
 }
-.hero::before {
-  content: "";
+.hero .band {
   position: absolute;
-  inset: 0 -1.25rem auto 0;
-  z-index: 0;
-  height: 100%;
-  background-image: var(--hero-image);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-  pointer-events: none;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0 -1.25rem auto 0;
-  z-index: 0;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(17, 27, 16, 0.55) 0%, rgba(17, 27, 16, 0.2) 45%, rgba(17, 27, 16, 0.35) 100%);
-  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
 }
 .hero__photo-wrap {
   position: absolute;
@@ -1948,53 +1951,6 @@ img {
   max-width: 27.125rem;
   color: var(--color-white);
 }
-.hero__boiserie {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  height: 10rem;
-  background-color: var(--color-brown);
-  background-image: url("../img/home/wood.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.hero__boiserie::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: #695645;
-  mix-blend-mode: overlay;
-  opacity: 0.85;
-  pointer-events: none;
-}
-.hero__boiserie::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  z-index: 1;
-  height: 5.625rem;
-  transform: translateY(-50%);
-  background-image: url("../img/home/boiserie.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  pointer-events: none;
-}
-@media (min-width: 767.98px) {
-  .hero__boiserie {
-    height: 14.9375rem;
-  }
-  .hero__boiserie::after {
-    height: 8.625rem;
-  }
-}
-
 .stats {
   background: var(--color-surface);
 }
@@ -2354,20 +2310,11 @@ img {
   width: 100%;
   height: 3.9375rem;
   background-color: var(--color-brown);
-  background-image: url("../img/home/wood.jpg");
+  background-image: url("../img/wood.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-}
-.band::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #695645;
-  mix-blend-mode: overlay;
-  opacity: 0.85;
-  pointer-events: none;
 }
 .band--wood {
   height: 3.9375rem;

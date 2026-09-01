@@ -3,40 +3,46 @@
 	isolation: isolate;
 	min-height: rem(720);
 	overflow: hidden;
-	background: $color-dark;
+	background: url("@img/home/boiserie.jpg") 0 100% / auto rem(239) repeat-x, $color-dark;
+
 	color: $color-white;
 
 	@media (min-width: $md4) {
 		min-height: rem(1080);
 	}
 
-	&::before {
-		content: "";
+	.band {
 		position: absolute;
-		inset: 0 rem(-20) auto 0;
-		z-index: 0;
-		height: 100%;
-		background-image: var(--hero-image);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center top;
-		pointer-events: none;
+		bottom: 0;
+		left: 0;
+		z-index: 4;
 	}
 
-	&::after {
-		content: "";
-		position: absolute;
-		inset: 0 rem(-20) auto 0;
-		z-index: 0;
-		height: 100%;
-		background: linear-gradient(
-			90deg,
-			rgba(17, 27, 16, 0.55) 0%,
-			rgba(17, 27, 16, 0.2) 45%,
-			rgba(17, 27, 16, 0.35) 100%
-		);
-		pointer-events: none;
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	inset: 0 rem(-20) auto 0;
+	// 	z-index: 0;
+	// 	height: 100%;
+	// 	background-image: var(--hero-image);
+	// 	background-repeat: no-repeat;
+	// 	background-size: cover;
+	// 	background-position: center top;
+	// 	pointer-events: none;
+	// }
+
+	// &::after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	inset: 0 rem(-20) auto 0;
+	// 	z-index: 0;
+	// 	height: 100%;
+	// 	background: linear-gradient(90deg,
+	// 			rgba(17, 27, 16, 0.55) 0%,
+	// 			rgba(17, 27, 16, 0.2) 45%,
+	// 			rgba(17, 27, 16, 0.35) 100%);
+	// 	pointer-events: none;
+	// }
 
 	// hero__photo-wrap
 	&__photo-wrap {
@@ -102,51 +108,19 @@
 
 	// hero__boiserie
 	&__boiserie {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 3;
-		height: rem(160);
-		background-color: $color-brown;
-		background-image: url("@img/home/wood.jpg");
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+		// position: absolute;
+		// left: 0;
+		// right: 0;
+		// bottom: 0;
+		// z-index: 3;
+		// height: rem(160);
+		// background-color: $color-brown;
+		// // background-image: url("@img/home/boiserie.jpg");
+		// background-size: auto 100%;
+		// background-repeat: repeat-x;
 
-		&::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			z-index: 0;
-			background: #695645;
-			mix-blend-mode: overlay;
-			opacity: 0.85;
-			pointer-events: none;
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 50%;
-			z-index: 1;
-			height: rem(90);
-			transform: translateY(-50%);
-			background-image: url("@img/home/boiserie.png");
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center;
-			pointer-events: none;
-		}
-
-		@media (min-width: $md4) {
-			height: rem(239);
-
-			&::after {
-				height: rem(138);
-			}
-		}
+		// @media (min-width: $md4) {
+		// 	height: rem(239);
+		// }
 	}
 }

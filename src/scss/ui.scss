@@ -122,3 +122,24 @@
 .swiper-pagination-bullet-active {
 	background: $color-dark;
 }
+
+$scrollbarColor: #555d54;
+
+::-webkit-scrollbar {
+	width: rem(8);
+}
+
+::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $scrollbarColor;
+	border-radius: rem(8);
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: darken($color: $scrollbarColor, $amount: 10);
+		}
+	}
+}

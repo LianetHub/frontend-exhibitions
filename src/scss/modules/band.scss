@@ -3,21 +3,12 @@
 	width: 100%;
 	height: rem(63);
 	background-color: $color-brown;
-	background-image: url("@img/home/wood.jpg");
+	background-image: url("@img/wood.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
 
-	&::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: #695645;
-		mix-blend-mode: overlay;
-		opacity: 0.85;
-		pointer-events: none;
-	}
 
 	// band--wood
 	&--wood {
