@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.html', {
+	"title": "Выставки — Ярыгина А.А."
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.html', {
+			"activePage": "exhibitions"
+			})
+			<main class="page">
+				@@include('html/sections/exhibitions-hero.html')
+				@@include('html/sections/exhibitions-slider.html')
+			</main>
+			@@include('html/_footer.html')
+		</div>
+		@@include('html/_js.html')
+	</body>
+</html>

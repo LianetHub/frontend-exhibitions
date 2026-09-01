@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.html', {
+	"title": "О себе — Ярыгина А.А."
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.html', {
+			"activePage": "about"
+			})
+			<main class="page">
+				@@include('html/sections/about.html')
+			</main>
+			@@include('html/_footer.html')
+		</div>
+		@@include('html/_js.html')
+	</body>
+</html>

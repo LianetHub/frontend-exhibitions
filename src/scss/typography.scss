@@ -1,0 +1,18 @@
+// Display titles in Figma are vector SVGs — no CSS size scale.
+// Style kit roles: subtitle 28 Medium / body 16 Regular.
+// Buttons (24 Light) — `.btn` in ui.scss.
+
+.text-subtitle {
+	font-weight: 500;
+	font-size: rem(28);
+	line-height: 1.3;
+	letter-spacing: -0.01em;
+	color: $color-text;
+}
+
+.text {
+	font-weight: 400;
+	font-size: rem(16);
+	line-height: 1.3;
+	color: $color-text;
+}

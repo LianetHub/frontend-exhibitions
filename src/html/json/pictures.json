@@ -1,0 +1,1924 @@
+{
+	"meta": {
+		"version": 1,
+		"generatedAt": "2026-08-31",
+		"artist": {
+			"fullName": "Ярыгина Анастасия Анатольевна",
+			"shortName": "Ярыгина А.А."
+		},
+		"stats": {
+			"picturesTotal": 82,
+			"picturesAvailable": 73,
+			"exhibitionsTotal": 6,
+			"exhibitionPhotosTotal": 21
+		}
+	},
+	"genres": [
+		{
+			"id": "landscape",
+			"title": "пейзаж"
+		},
+		{
+			"id": "still-life",
+			"title": "натюрморт"
+		},
+		{
+			"id": "portrait",
+			"title": "портрет"
+		}
+	],
+	"exhibitions": [
+		{
+			"id": "kurgan-2022",
+			"title": "Курганский областной художественный музей им. Г.А. Травникова",
+			"shortTitle": "Курган — выставка 2022",
+			"city": "Курган",
+			"region": "Курганская область",
+			"year": 2022,
+			"address": "ул. М. Горького, 129",
+			"website": "https://idemvmuzei.ru/catalog/museum/kurganskij-oblastnoj-hudozestvennyj-muzej-im-g-a-travnikova",
+			"exhibitionUrl": null,
+			"photoSource": "website",
+			"photos": [
+				{
+					"src": "img/exhibitions/kurgan-2022/01-kurgan-vystavka-2022.jpg",
+					"alt": "Выставка «Курган — выставка 2022», фото 1"
+				}
+			]
+		},
+		{
+			"id": "elabuga-2023",
+			"title": "Елабужский государственный музей-заповедник",
+			"shortTitle": "Елабуга — выставка 2023",
+			"city": "Елабуга",
+			"region": "Республика Татарстан",
+			"year": 2023,
+			"address": "ул. Гассара, 9",
+			"website": "https://elabuga.com/",
+			"exhibitionUrl": "https://elabuga.com/drawingBiennial/_exhibitionOfIVBiennale.html",
+			"photoSource": "website",
+			"photos": [
+				{
+					"src": "img/exhibitions/elabuga-2023/01-elabuzhskiy-muzey-2023.jpg",
+					"alt": "Выставка «Елабуга — выставка 2023», фото 1"
+				}
+			]
+		},
+		{
+			"id": "sochi-dendrarium-2022",
+			"title": "Национальный парк-дендрарий г. Сочи",
+			"shortTitle": "Сочи — выставка 2022",
+			"city": "Сочи",
+			"region": "Краснодарский край",
+			"year": 2022,
+			"address": "Курортный пр., 74",
+			"website": "https://npsochi.ru/",
+			"exhibitionUrl": null,
+			"photoSource": "website",
+			"photos": [
+				{
+					"src": "img/exhibitions/sochi-dendrarium-2022/01-18878014-e9c2-42d7-89fe-a69ae46eda2e.jpg",
+					"alt": "Выставка «Сочи — выставка 2022», фото 1"
+				},
+				{
+					"src": "img/exhibitions/sochi-dendrarium-2022/02-2a570c6f-cd08-4784-a4c6-ddeba2246fb1.jpg",
+					"alt": "Выставка «Сочи — выставка 2022», фото 2"
+				},
+				{
+					"src": "img/exhibitions/sochi-dendrarium-2022/03-5e92680b-eb24-4c1d-b25b-9507f096cd05.jpg",
+					"alt": "Выставка «Сочи — выставка 2022», фото 3"
+				},
+				{
+					"src": "img/exhibitions/sochi-dendrarium-2022/04-d3edf5b0-10ba-4655-9432-6fe50dfb0eef.jpg",
+					"alt": "Выставка «Сочи — выставка 2022», фото 4"
+				},
+				{
+					"src": "img/exhibitions/sochi-dendrarium-2022/05-df4925f2-ca3e-405d-a17e-d6a7e495fd75.jpg",
+					"alt": "Выставка «Сочи — выставка 2022», фото 5"
+				}
+			]
+		},
+		{
+			"id": "majkop-2025",
+			"title": "Картинная галерея Республики Адыгея",
+			"shortTitle": "Майкоп — выставка 2025",
+			"city": "Майкоп",
+			"region": "Республика Адыгея",
+			"year": 2025,
+			"address": "ул. Краснооктябрьская, 27",
+			"website": "https://galereya-ra.ru/",
+			"exhibitionUrl": null,
+			"photoSource": "website",
+			"photos": [
+				{
+					"src": "img/exhibitions/majkop-2025/01-5e28b1bc-c03b-425a-8a1f-a4fc1fcf60c9.jpg",
+					"alt": "Выставка «Майкоп — выставка 2025», фото 1"
+				},
+				{
+					"src": "img/exhibitions/majkop-2025/02-75d38909-00ff-4348-80c1-001941e1873a.jpg",
+					"alt": "Выставка «Майкоп — выставка 2025», фото 2"
+				},
+				{
+					"src": "img/exhibitions/majkop-2025/03-b5106395-39c5-4913-a42a-224a00b1cfb1.jpg",
+					"alt": "Выставка «Майкоп — выставка 2025», фото 3"
+				},
+				{
+					"src": "img/exhibitions/majkop-2025/04-bd25aa3a-bcea-4a8f-bf1d-972ce7adf4f2.jpg",
+					"alt": "Выставка «Майкоп — выставка 2025», фото 4"
+				},
+				{
+					"src": "img/exhibitions/majkop-2025/05-c61efe9d-1ddd-450f-b1bc-c944f0f5cb74.jpg",
+					"alt": "Выставка «Майкоп — выставка 2025», фото 5"
+				},
+				{
+					"src": "img/exhibitions/majkop-2025/06-f9f85f10-e2a4-4e31-8ce1-31416faf33ce.jpg",
+					"alt": "Выставка «Майкоп — выставка 2025», фото 6"
+				}
+			]
+		},
+		{
+			"id": "kovalenko-krasnodar-2026",
+			"title": "Краснодарский краевой художественный музей имени Ф.А. Коваленко",
+			"shortTitle": "Краснодар — музей им. Коваленко, 2026",
+			"city": "Краснодар",
+			"region": "Краснодарский край",
+			"year": 2026,
+			"address": "ул. Красная, 13",
+			"website": "https://kovalenkomuseum.ru/",
+			"exhibitionUrl": null,
+			"photoSource": "archive",
+			"photos": [
+				{
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/01-0c7eccca-f0d8-4122-8bbf-8cfd35372661.jpg",
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 1"
+				},
+				{
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/02-0d35635c-670c-473e-9606-0c31598ec713.jpg",
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 2"
+				},
+				{
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/03-190dbc4b-76c4-4598-9020-a1248623ead5.jpg",
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 3"
+				},
+				{
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/04-3484a1ab-85b4-4406-8779-6b51a58e86da.jpg",
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 4"
+				},
+				{
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/05-a0554838-029d-4527-bc8f-98a15b721d90.jpg",
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 5"
+				},
+				{
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/06-ae40b1a1-a3f6-40f9-8b62-4a5246507e27.jpg",
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 6"
+				}
+			]
+		},
+		{
+			"id": "art-veranda-krasnodar-2026",
+			"title": "Галерея-квартирник Арт-Веранда",
+			"shortTitle": "Краснодар — Арт-Веранда, 2026",
+			"city": "Краснодар",
+			"region": "Краснодарский край",
+			"year": 2026,
+			"address": "ул. Фрунзе, 104",
+			"website": "https://vk.com/public222128422",
+			"exhibitionUrl": null,
+			"photoSource": "archive",
+			"photos": [
+				{
+					"src": "img/exhibitions/art-veranda-krasnodar-2026/01-98257168-cab3-4b52-81a9-b20265c08eae.jpg",
+					"alt": "Выставка «Краснодар — Арт-Веранда, 2026», фото 1"
+				},
+				{
+					"src": "img/exhibitions/art-veranda-krasnodar-2026/02-e5fe5ac6-880a-417d-9cb3-c580a90003e5.jpg",
+					"alt": "Выставка «Краснодар — Арт-Веранда, 2026», фото 2"
+				}
+			]
+		}
+	],
+	"pictures": [
+		{
+			"id": "work-001",
+			"order": 1,
+			"slug": "vetrenyy-den-v-novorossiyske",
+			"title": "Ветреный день в Новороссийске",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "55×75",
+			"sizeRaw": "55x75",
+			"year": 2020,
+			"price": 12000,
+			"priceFormatted": "12 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/001-vetrenyy-den-v-novorossiyske.png",
+				"alt": "Картина «Ветреный день в Новороссийске», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-002",
+			"order": 2,
+			"slug": "zimniy-natyurmort",
+			"title": "Зимний натюрморт",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, гуашь, пастель",
+			"techniqueShort": "бум., гуашь, пастель",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2021,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/002-zimniy-natyurmort.png",
+				"alt": "Картина «Зимний натюрморт», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-003",
+			"order": 3,
+			"slug": "letniy-natyurmort",
+			"title": "Летний натюрморт",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "55×75",
+			"sizeRaw": "55x75",
+			"year": 2014,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/003-letniy-natyurmort.png",
+				"alt": "Картина «Летний натюрморт», бумага, 2014"
+			}
+		},
+		{
+			"id": "work-004",
+			"order": 4,
+			"slug": "inzhir-i-gladiolusy",
+			"title": "Инжир и гладиолусы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "85×55",
+			"sizeRaw": "85x55",
+			"year": 2019,
+			"price": 12000,
+			"priceFormatted": "12 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/004-inzhir-i-gladiolusy.png",
+				"alt": "Картина «Инжир и гладиолусы», бумага, 2019"
+			}
+		},
+		{
+			"id": "work-005",
+			"order": 5,
+			"slug": "na-kukhne-siren",
+			"title": "На кухне. Сирень.",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "85×55",
+			"sizeRaw": "85x55",
+			"year": 2022,
+			"price": 10000,
+			"priceFormatted": "10 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/005-na-kukhne-siren.jpg",
+				"alt": "Картина «На кухне. Сирень.», бумага, 2022"
+			}
+		},
+		{
+			"id": "work-006",
+			"order": 6,
+			"slug": "zima-ukhodit",
+			"title": "Зима уходит",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, темпера",
+			"techniqueShort": "картон, темпера",
+			"size": "70×90",
+			"sizeRaw": "70x90",
+			"year": 2022,
+			"price": 12000,
+			"priceFormatted": "12 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/006-zima-ukhodit.jpg",
+				"alt": "Картина «Зима уходит», картон, 2022"
+			}
+		},
+		{
+			"id": "work-007",
+			"order": 7,
+			"slug": "vesna-u-sinikh-dverey",
+			"title": "Весна у синих дверей",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, темпера",
+			"techniqueShort": "картон, темпера",
+			"size": "60×65",
+			"sizeRaw": "60x65",
+			"year": 2023,
+			"price": 10000,
+			"priceFormatted": "10 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/007-vesna-u-sinikh-dverey.jpg",
+				"alt": "Картина «Весна у синих дверей», картон, 2023"
+			}
+		},
+		{
+			"id": "work-008",
+			"order": 8,
+			"slug": "son-ryzhego-kota",
+			"title": "Сон рыжего кота",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×90",
+			"sizeRaw": "70x90",
+			"year": 2021,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/008-son-ryzhego-kota.png",
+				"alt": "Картина «Сон рыжего кота», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-009",
+			"order": 9,
+			"slug": "vechereet",
+			"title": "Вечереет",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, темпера",
+			"techniqueShort": "картон, темпера",
+			"size": "60×80",
+			"sizeRaw": "60x80",
+			"year": 2023,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/009-vechereet.jpg",
+				"alt": "Картина «Вечереет», картон, 2023"
+			}
+		},
+		{
+			"id": "work-010",
+			"order": 10,
+			"slug": "nemnogo-italii-v-kholodnoy-moskve",
+			"title": "Немного Италии в холодной Москве",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "65×55",
+			"sizeRaw": "65x55",
+			"year": 2020,
+			"price": 8000,
+			"priceFormatted": "8 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/010-nemnogo-italii-v-kholodnoy-moskve.png",
+				"alt": "Картина «Немного Италии в холодной Москве», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-011",
+			"order": 11,
+			"slug": "staryy-stul",
+			"title": "Старый стул",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2018,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/011-staryy-stul.jpg",
+				"alt": "Картина «Старый стул», бумага, 2018"
+			}
+		},
+		{
+			"id": "work-012",
+			"order": 12,
+			"slug": "sirenevyy-buket",
+			"title": "Сиреневый букет",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2020,
+			"price": 22000,
+			"priceFormatted": "22 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/012-sirenevyy-buket.png",
+				"alt": "Картина «Сиреневый букет», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-013",
+			"order": 13,
+			"slug": "vozvrashchenie-s-etyudov",
+			"title": "Возвращение с этюдов",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "90×60",
+			"sizeRaw": "90x60",
+			"year": 2020,
+			"price": 24000,
+			"priceFormatted": "24 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/013-vozvrashchenie-s-etyudov.png",
+				"alt": "Картина «Возвращение с этюдов», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-014",
+			"order": 14,
+			"slug": "zima-v-malenkom-pereulke",
+			"title": "Зима в маленьком переулке",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×90",
+			"sizeRaw": "70x90",
+			"year": 2021,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/014-zima-v-malenkom-pereulke.png",
+				"alt": "Картина «Зима в маленьком переулке», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-015",
+			"order": 15,
+			"slug": "yukka-krasnodarskaya",
+			"title": "Юкка краснодарская",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "холст, акрил",
+			"techniqueShort": "холст, акрил",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2023,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/015-yukka-krasnodarskaya.jpg",
+				"alt": "Картина «Юкка краснодарская», холст, 2023"
+			}
+		},
+		{
+			"id": "work-016",
+			"order": 16,
+			"slug": "orkhidei-na-zimney-verande",
+			"title": "Орхидеи на зимней веранде",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "90×60",
+			"sizeRaw": "90x60",
+			"year": 2020,
+			"price": 22000,
+			"priceFormatted": "22 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/016-orkhidei-na-zimney-verande.jpg",
+				"alt": "Картина «Орхидеи на зимней веранде», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-017",
+			"order": 17,
+			"slug": "v-ozhidanii-vesny",
+			"title": "В ожидании весны",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, темпера",
+			"techniqueShort": "картон, темпера",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2022,
+			"price": 22000,
+			"priceFormatted": "22 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/017-v-ozhidanii-vesny.jpg",
+				"alt": "Картина «В ожидании весны», картон, 2022"
+			}
+		},
+		{
+			"id": "work-018",
+			"order": 18,
+			"slug": "mimoza-i-limony",
+			"title": "Мимоза и лимоны",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×40",
+			"sizeRaw": "60x40",
+			"year": 2023,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/018-mimoza-i-limony.jpg",
+				"alt": "Картина «Мимоза и лимоны», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-019",
+			"order": 19,
+			"slug": "portret-asi",
+			"title": "Портрет Аси",
+			"genre": "портрет",
+			"genreId": "portrait",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2025,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": "Начальная цена для персонального портрета; конкретную работу приведён как пример",
+			"available": true,
+			"image": {
+				"src": "img/works/019-portret-asi.jpg",
+				"alt": "Картина «Портрет Аси», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-020",
+			"order": 20,
+			"slug": "zima-v-arkhangelskom",
+			"title": "Зима в Архангельском",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, монотипия",
+			"techniqueShort": "бумага, монотипия",
+			"size": "20×30",
+			"sizeRaw": "20x30",
+			"year": 2024,
+			"price": 8000,
+			"priceFormatted": "8 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/020-zima-v-arkhangelskom.jpg",
+				"alt": "Картина «Зима в Архангельском», бумага, 2024"
+			}
+		},
+		{
+			"id": "work-021",
+			"order": 21,
+			"slug": "sneg-na-kryshakh",
+			"title": "СНЕГ на крышах",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "холст, масло",
+			"techniqueShort": "холст, масло",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2015,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/021-sneg-na-kryshakh.jpg",
+				"alt": "Картина «СНЕГ на крышах», холст, 2015"
+			}
+		},
+		{
+			"id": "work-022",
+			"order": 22,
+			"slug": "osen-za-oknom",
+			"title": "Осень за окном",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, пастель",
+			"techniqueShort": "картон, пастель",
+			"size": "70×90",
+			"sizeRaw": "70x90",
+			"year": 2012,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/022-osen-za-oknom.jpg",
+				"alt": "Картина «Осень за окном», картон, 2012"
+			}
+		},
+		{
+			"id": "work-023",
+			"order": 23,
+			"slug": "zakat-nad-morem",
+			"title": "Закат над морем",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, пастель",
+			"techniqueShort": "картон, пастель",
+			"size": "20×30",
+			"sizeRaw": "20x30",
+			"year": 2002,
+			"price": 3000,
+			"priceFormatted": "3 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/023-zakat-nad-morem.jpg",
+				"alt": "Картина «Закат над морем», картон, 2002"
+			}
+		},
+		{
+			"id": "work-024",
+			"order": 24,
+			"slug": "suveniry-dalnikh-beregov",
+			"title": "Сувениры дальних берегов",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×50",
+			"sizeRaw": "70x50",
+			"year": 2025,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/024-suveniry-dalnikh-beregov.jpg",
+				"alt": "Картина «Сувениры дальних берегов», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-025",
+			"order": 25,
+			"slug": "korzina-sireni",
+			"title": "Корзина сирени",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×90",
+			"sizeRaw": "60x90",
+			"year": 2021,
+			"price": 30000,
+			"priceFormatted": "30 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/025-korzina-sireni.jpg",
+				"alt": "Картина «Корзина сирени», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-026",
+			"order": 26,
+			"slug": "rozhdestvenskaya-zvezda",
+			"title": "Рождественская звезда",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2023,
+			"price": 30000,
+			"priceFormatted": "30 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/026-rozhdestvenskaya-zvezda.jpg",
+				"alt": "Картина «Рождественская звезда», картон, 2023"
+			}
+		},
+		{
+			"id": "work-027",
+			"order": 27,
+			"slug": "utrennyaya-siren",
+			"title": "Утренняя сирень",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×65",
+			"sizeRaw": "80x65",
+			"year": 2023,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/027-utrennyaya-siren.jpg",
+				"alt": "Картина «Утренняя сирень», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-028",
+			"order": 28,
+			"slug": "chay-v-sadu",
+			"title": "Чай в саду",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2021,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/028-chay-v-sadu.jpg",
+				"alt": "Картина «Чай в саду», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-029",
+			"order": 29,
+			"slug": "vesna-prikhodit-v-gory",
+			"title": "Весна приходит в горы",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×60",
+			"sizeRaw": "40x60",
+			"year": 2025,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/029-vesna-prikhodit-v-gory.jpg",
+				"alt": "Картина «Весна приходит в горы», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-030",
+			"order": 30,
+			"slug": "na-starom-bufete",
+			"title": "На старом буфете",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "60×80",
+			"sizeRaw": "60x80",
+			"year": 2025,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/030-na-starom-bufete.jpg",
+				"alt": "Картина «На старом буфете», картон, 2025"
+			}
+		},
+		{
+			"id": "work-031",
+			"order": 31,
+			"slug": "torgovye-ryady",
+			"title": "Торговые ряды",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, монотипия",
+			"techniqueShort": "бумага, монотипия",
+			"size": "20×30",
+			"sizeRaw": "20x30",
+			"year": 2024,
+			"price": 5000,
+			"priceFormatted": "5 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/031-torgovye-ryady.jpg",
+				"alt": "Картина «Торговые ряды», бумага, 2024"
+			}
+		},
+		{
+			"id": "work-032",
+			"order": 32,
+			"slug": "dozhdlivyy-den-na-volge",
+			"title": "Дождливый день на Волге",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×60",
+			"sizeRaw": "40x60",
+			"year": 2025,
+			"price": 14000,
+			"priceFormatted": "14 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/032-dozhdlivyy-den-na-volge.jpg",
+				"alt": "Картина «Дождливый день на Волге», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-033",
+			"order": 33,
+			"slug": "zheltye-piony",
+			"title": "Желтые пионы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "50×60",
+			"sizeRaw": "50x60",
+			"year": 2024,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/033-zheltye-piony.jpg",
+				"alt": "Картина «Желтые пионы», картон, 2024"
+			}
+		},
+		{
+			"id": "work-034",
+			"order": 34,
+			"slug": "buket-iz-podsolnukhov",
+			"title": "Букет из подсолнухов",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×80",
+			"sizeRaw": "60x80",
+			"year": 2023,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/034-buket-iz-podsolnukhov.jpg",
+				"alt": "Картина «Букет из подсолнухов», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-035",
+			"order": 35,
+			"slug": "mokryy-sneg-v-krasnodare",
+			"title": "Мокрый снег в Краснодаре",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2023,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/035-mokryy-sneg-v-krasnodare.jpg",
+				"alt": "Картина «Мокрый снег в Краснодаре», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-036",
+			"order": 36,
+			"slug": "vecher-okraina",
+			"title": "Вечер. Окраина.",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, пастель",
+			"techniqueShort": "бумага, пастель",
+			"size": "40×50",
+			"sizeRaw": "40x50",
+			"year": 2019,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/036-vecher-okraina.jpg",
+				"alt": "Картина «Вечер. Окраина.», бумага, 2019"
+			}
+		},
+		{
+			"id": "work-037",
+			"order": 37,
+			"slug": "limony-na-siney-tarelke",
+			"title": "Лимоны на синей тарелке",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×35",
+			"sizeRaw": "70x35",
+			"year": 2022,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/037-limony-na-siney-tarelke.jpg",
+				"alt": "Картина «Лимоны на синей тарелке», бумага, 2022"
+			}
+		},
+		{
+			"id": "work-038",
+			"order": 38,
+			"slug": "zheltaya-vesna",
+			"title": "Желтая весна",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2022,
+			"price": 28000,
+			"priceFormatted": "28 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/038-zheltaya-vesna.jpg",
+				"alt": "Картина «Желтая весна», бумага, 2022"
+			}
+		},
+		{
+			"id": "work-039",
+			"order": 39,
+			"slug": "pro-vesnu-i-tramvaychik",
+			"title": "Про весну и трамвайчик",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "70×40",
+			"sizeRaw": "70x40",
+			"year": 2023,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/039-pro-vesnu-i-tramvaychik.jpg",
+				"alt": "Картина «Про весну и трамвайчик», картон, 2023"
+			}
+		},
+		{
+			"id": "work-040",
+			"order": 40,
+			"slug": "vaza-s-limonami",
+			"title": "Ваза с лимонами",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2023,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/040-vaza-s-limonami.jpg",
+				"alt": "Картина «Ваза с лимонами», картон, 2023"
+			}
+		},
+		{
+			"id": "work-041",
+			"order": 41,
+			"slug": "zimniy-den-v-pereulke",
+			"title": "Зимний день в переулке",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "70×45",
+			"sizeRaw": "70x45",
+			"year": 2023,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/041-zimniy-den-v-pereulke.jpg",
+				"alt": "Картина «Зимний день в переулке», картон, 2023"
+			}
+		},
+		{
+			"id": "work-042",
+			"order": 42,
+			"slug": "prazdnichnyy-natyurmort",
+			"title": "Праздничный натюрморт",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "70×55",
+			"sizeRaw": "70x55",
+			"year": 2023,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/042-prazdnichnyy-natyurmort.jpg",
+				"alt": "Картина «Праздничный натюрморт», картон, 2023"
+			}
+		},
+		{
+			"id": "work-043",
+			"order": 43,
+			"slug": "polevye-tsvety",
+			"title": "Полевые цветы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2023,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/043-polevye-tsvety.jpg",
+				"alt": "Картина «Полевые цветы», картон, 2023"
+			}
+		},
+		{
+			"id": "work-044",
+			"order": 44,
+			"slug": "v-otpusk",
+			"title": "В отпуск",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2024,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/044-v-otpusk.jpg",
+				"alt": "Картина «В отпуск», картон, 2024"
+			}
+		},
+		{
+			"id": "work-045",
+			"order": 45,
+			"slug": "tikhaya-zavod",
+			"title": "Тихая заводь",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×30",
+			"sizeRaw": "40x30",
+			"year": 2025,
+			"price": 12000,
+			"priceFormatted": "12 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/045-tikhaya-zavod.jpg",
+				"alt": "Картина «Тихая заводь», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-046",
+			"order": 46,
+			"slug": "krasnye-yaly-na-volge",
+			"title": "Красные ялы на Волге",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×60",
+			"sizeRaw": "60x60",
+			"year": 2025,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/046-krasnye-yaly-na-volge.jpg",
+				"alt": "Картина «Красные ялы на Волге», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-047",
+			"order": 47,
+			"slug": "chay-s-kalinoy",
+			"title": "Чай с калиной",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×90",
+			"sizeRaw": "70x90",
+			"year": 2020,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/047-chay-s-kalinoy.jpg",
+				"alt": "Картина «Чай с калиной», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-048",
+			"order": 48,
+			"slug": "vesna-u-danilovskogo-monastyrya",
+			"title": "Весна у Даниловского монастыря",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×40",
+			"sizeRaw": "60x40",
+			"year": 2021,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/048-vesna-u-danilovskogo-monastyrya.jpg",
+				"alt": "Картина «Весна у Даниловского монастыря», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-049",
+			"order": 49,
+			"slug": "bukhta-rybachya-kerch",
+			"title": "Бухта Рыбачья. Керчь.",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×60",
+			"sizeRaw": "40x60",
+			"year": 2020,
+			"price": 8000,
+			"priceFormatted": "8 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/049-bukhta-rybachya-kerch.jpg",
+				"alt": "Картина «Бухта Рыбачья. Керчь.», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-050",
+			"order": 50,
+			"slug": "krasnaya-vesna",
+			"title": "Красная весна",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "80×40",
+			"sizeRaw": "80x40",
+			"year": 2023,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/050-krasnaya-vesna.jpg",
+				"alt": "Картина «Красная весна», картон, 2023"
+			}
+		},
+		{
+			"id": "work-051",
+			"order": 51,
+			"slug": "poslednie-listya-pervyy-sneg",
+			"title": "Последние листья, первый снег",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "70×80",
+			"sizeRaw": "70x80",
+			"year": 2023,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/051-poslednie-listya-pervyy-sneg.jpg",
+				"alt": "Картина «Последние листья, первый снег», картон, 2023"
+			}
+		},
+		{
+			"id": "work-052",
+			"order": 52,
+			"slug": "roza-i-zerkalo",
+			"title": "Роза и зеркало",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2022,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/052-roza-i-zerkalo.jpg",
+				"alt": "Картина «Роза и зеркало», картон, 2022"
+			}
+		},
+		{
+			"id": "work-053",
+			"order": 53,
+			"slug": "gortenziya-tsvetet",
+			"title": "Гортензия цветет",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "50×60",
+			"sizeRaw": "50x60",
+			"year": 2023,
+			"price": 12000,
+			"priceFormatted": "12 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/053-gortenziya-tsvetet.png",
+				"alt": "Картина «Гортензия цветет», картон, 2023"
+			}
+		},
+		{
+			"id": "work-054",
+			"order": 54,
+			"slug": "redkiy-sneg-v-sochi",
+			"title": "Редкий снег в Сочи",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×40",
+			"sizeRaw": "60x40",
+			"year": 2022,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/054-redkiy-sneg-v-sochi.jpg",
+				"alt": "Картина «Редкий снег в Сочи», бумага, 2022"
+			}
+		},
+		{
+			"id": "work-055",
+			"order": 55,
+			"slug": "rybnyy-den",
+			"title": "Рыбный день",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×90",
+			"sizeRaw": "70x90",
+			"year": 2025,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/055-rybnyy-den.jpg",
+				"alt": "Картина «Рыбный день», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-056",
+			"order": 56,
+			"slug": "gde-to-v-tsentre-krasnodara",
+			"title": "Где-то в центре Краснодара",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×60",
+			"sizeRaw": "40x60",
+			"year": 2025,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/056-gde-to-v-tsentre-krasnodara.jpg",
+				"alt": "Картина «Где-то в центре Краснодара», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-057",
+			"order": 57,
+			"slug": "posledniy-luch-nad-morem",
+			"title": "Последний луч над морем",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2024,
+			"price": 8000,
+			"priceFormatted": "8 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/057-posledniy-luch-nad-morem.jpg",
+				"alt": "Картина «Последний луч над морем», картон, 2024"
+			}
+		},
+		{
+			"id": "work-058",
+			"order": 58,
+			"slug": "u-zerkala",
+			"title": "У зеркала",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2023,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/058-u-zerkala.jpg",
+				"alt": "Картина «У зеркала», картон, 2023"
+			}
+		},
+		{
+			"id": "work-059",
+			"order": 59,
+			"slug": "pered-dozhdem",
+			"title": "Перед дождем",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "80×50",
+			"sizeRaw": "80x50",
+			"year": 2024,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/059-pered-dozhdem.jpg",
+				"alt": "Картина «Перед дождем», картон, 2024"
+			}
+		},
+		{
+			"id": "work-060",
+			"order": 60,
+			"slug": "zheltye-khrizantemy",
+			"title": "Желтые хризантемы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×50",
+			"sizeRaw": "70x50",
+			"year": 2019,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/060-zheltye-khrizantemy.jpg",
+				"alt": "Картина «Желтые хризантемы», бумага, 2019"
+			}
+		},
+		{
+			"id": "work-061",
+			"order": 61,
+			"slug": "morskoy-briz",
+			"title": "Морской бриз",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, пастель",
+			"techniqueShort": "бумага, пастель",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2019,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/061-morskoy-briz.jpg",
+				"alt": "Картина «Морской бриз», бумага, 2019"
+			}
+		},
+		{
+			"id": "work-062",
+			"order": 62,
+			"slug": "starye-utyuzhki",
+			"title": "Старые утюжки",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "60×80",
+			"sizeRaw": "60x80",
+			"year": 2025,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/062-starye-utyuzhki.jpg",
+				"alt": "Картина «Старые утюжки», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-063",
+			"order": 63,
+			"slug": "pozdnie-tsvety",
+			"title": "Поздние цветы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×40",
+			"sizeRaw": "70x40",
+			"year": 2018,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/063-pozdnie-tsvety.jpg",
+				"alt": "Картина «Поздние цветы», бумага, 2018"
+			}
+		},
+		{
+			"id": "work-064",
+			"order": 64,
+			"slug": "buket-iz-kolokolchikov",
+			"title": "Букет из колокольчиков",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×40",
+			"sizeRaw": "70x40",
+			"year": 2019,
+			"price": 16000,
+			"priceFormatted": "16 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/064-buket-iz-kolokolchikov.jpg",
+				"alt": "Картина «Букет из колокольчиков», бумага, 2019"
+			}
+		},
+		{
+			"id": "work-065",
+			"order": 65,
+			"slug": "letniy-svet",
+			"title": "Летний свет",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2023,
+			"price": 21000,
+			"priceFormatted": "21 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/065-letniy-svet.jpg",
+				"alt": "Картина «Летний свет», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-066",
+			"order": 66,
+			"slug": "belyy-zontik",
+			"title": "Белый зонтик",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "40×35",
+			"sizeRaw": "40x35",
+			"year": 2020,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/066-belyy-zontik.jpg",
+				"alt": "Картина «Белый зонтик», картон, 2020"
+			}
+		},
+		{
+			"id": "work-067",
+			"order": 67,
+			"slug": "belye-oblaka-nad-moykoy",
+			"title": "Белые облака над Мойкой",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2023,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/067-belye-oblaka-nad-moykoy.jpg",
+				"alt": "Картина «Белые облака над Мойкой», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-068",
+			"order": 68,
+			"slug": "v-gelendzhikskoy-bukhte",
+			"title": "В Геленджикской бухте",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "картон, пастель",
+			"techniqueShort": "картон, пастель",
+			"size": "20×30",
+			"sizeRaw": "20x30",
+			"year": 2020,
+			"price": 5000,
+			"priceFormatted": "5 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/068-v-gelendzhikskoy-bukhte.jpg",
+				"alt": "Картина «В Геленджикской бухте», картон, 2020"
+			}
+		},
+		{
+			"id": "work-069",
+			"order": 69,
+			"slug": "krasnyy-mostik",
+			"title": "Красный мостик",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×40",
+			"sizeRaw": "40x40",
+			"year": 2022,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/069-krasnyy-mostik.jpg",
+				"alt": "Картина «Красный мостик», бумага, 2022"
+			}
+		},
+		{
+			"id": "work-070",
+			"order": 70,
+			"slug": "poselok-v-gorakh",
+			"title": "Поселок в горах",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "40×60",
+			"sizeRaw": "40x60",
+			"year": 2025,
+			"price": 15000,
+			"priceFormatted": "15 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/070-poselok-v-gorakh.jpg",
+				"alt": "Картина «Поселок в горах», бумага, 2025"
+			}
+		},
+		{
+			"id": "work-071",
+			"order": 71,
+			"slug": "irisy-v-mednom-kuvshine",
+			"title": "Ирисы в медном кувшине",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×50",
+			"sizeRaw": "70x50",
+			"year": 2020,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": false,
+			"image": {
+				"src": "img/works/071-irisy-v-mednom-kuvshine.jpg",
+				"alt": "Картина «Ирисы в медном кувшине», бумага, 2020"
+			}
+		},
+		{
+			"id": "work-072",
+			"order": 72,
+			"slug": "ayva",
+			"title": "Айва",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2019,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/072-ayva.jpg",
+				"alt": "Картина «Айва», бумага, 2019"
+			}
+		},
+		{
+			"id": "work-073",
+			"order": 73,
+			"slug": "vetka-ayvy",
+			"title": "Ветка айвы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2023,
+			"price": 30000,
+			"priceFormatted": "30 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/073-vetka-ayvy.jpg",
+				"alt": "Картина «Ветка айвы», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-074",
+			"order": 74,
+			"slug": "zimniy-buket",
+			"title": "Зимний букет",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "60×55",
+			"sizeRaw": "60x55",
+			"year": 2021,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/074-zimniy-buket.jpg",
+				"alt": "Картина «Зимний букет», картон, 2021"
+			}
+		},
+		{
+			"id": "work-075",
+			"order": 75,
+			"slug": "belye-slivy",
+			"title": "Белые сливы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2023,
+			"price": 30000,
+			"priceFormatted": "30 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/075-belye-slivy.jpg",
+				"alt": "Картина «Белые сливы», бумага, 2023"
+			}
+		},
+		{
+			"id": "work-076",
+			"order": 76,
+			"slug": "romashki",
+			"title": "Ромашки",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, акрил",
+			"techniqueShort": "картон, акрил",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2022,
+			"price": 30000,
+			"priceFormatted": "30 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/076-romashki.jpg",
+				"alt": "Картина «Ромашки», картон, 2022"
+			}
+		},
+		{
+			"id": "work-077",
+			"order": 77,
+			"slug": "yablochnyy-spas",
+			"title": "Яблочный Спас",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "90×70",
+			"sizeRaw": "90x70",
+			"year": 2023,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/077-yablochnyy-spas.jpg",
+				"alt": "Картина «Яблочный Спас», картон, 2023"
+			}
+		},
+		{
+			"id": "work-078",
+			"order": 78,
+			"slug": "oblaka-nad-otvodnym-kanalom",
+			"title": "Облака над Отводным каналом",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "холст, пастель",
+			"techniqueShort": "холст, пастель",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2022,
+			"price": 10000,
+			"priceFormatted": "10 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/078-oblaka-nad-otvodnym-kanalom.jpg",
+				"alt": "Картина «Облака над Отводным каналом», холст, 2022"
+			}
+		},
+		{
+			"id": "work-079",
+			"order": 79,
+			"slug": "v-karlovykh-varakh",
+			"title": "В Карловых Варах",
+			"genre": "пейзаж",
+			"genreId": "landscape",
+			"technique": "холст, масло",
+			"techniqueShort": "холст, масло",
+			"size": "30×40",
+			"sizeRaw": "30x40",
+			"year": 2005,
+			"price": 10000,
+			"priceFormatted": "10 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/079-v-karlovykh-varakh.jpg",
+				"alt": "Картина «В Карловых Варах», холст, 2005"
+			}
+		},
+		{
+			"id": "work-080",
+			"order": 80,
+			"slug": "letniy-zavtrak-c-rozami",
+			"title": "Летний завтрак c розами",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "картон, гуашь",
+			"techniqueShort": "картон, гуашь",
+			"size": "55×65",
+			"sizeRaw": "55x65",
+			"year": 2023,
+			"price": 18000,
+			"priceFormatted": "18 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/080-letniy-zavtrak-c-rozami.jpg",
+				"alt": "Картина «Летний завтрак c розами», картон, 2023"
+			}
+		},
+		{
+			"id": "work-081",
+			"order": 81,
+			"slug": "zheltaya-pizhma",
+			"title": "Желтая пижма",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "80×60",
+			"sizeRaw": "80x60",
+			"year": 2021,
+			"price": 25000,
+			"priceFormatted": "25 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/081-zheltaya-pizhma.jpg",
+				"alt": "Картина «Желтая пижма», бумага, 2021"
+			}
+		},
+		{
+			"id": "work-082",
+			"order": 82,
+			"slug": "natyurmort-s-fialkoy",
+			"title": "Натюрморт с фиалкой",
+			"genre": "натюрморт",
+			"genreId": "still-life",
+			"technique": "бумага, акварель",
+			"techniqueShort": "бум., акварель",
+			"size": "70×50",
+			"sizeRaw": "70x50",
+			"year": 2025,
+			"price": 20000,
+			"priceFormatted": "20 000 ₽",
+			"priceNote": null,
+			"available": true,
+			"image": {
+				"src": "img/works/082-natyurmort-s-fialkoy.jpg",
+				"alt": "Картина «Натюрморт с фиалкой», бумага, 2025"
+			}
+		}
+	]
+}

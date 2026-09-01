@@ -1,0 +1,389 @@
+.exhibitions-hero {
+	background-color: $color-green;
+	background-image: repeating-linear-gradient(
+		to right,
+		transparent 0,
+		transparent #{rem(51)},
+		#{$color-green-2} #{rem(51)},
+		#{$color-green-2} #{rem(154)},
+		transparent #{rem(154)},
+		transparent #{rem(221)}
+	);
+	color: $color-white;
+
+	// exhibitions-hero__inner
+	&__inner {
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+
+		@media (min-width: $md4) {
+			padding-top: rem(56);
+			padding-bottom: rem(48);
+		}
+	}
+
+	// exhibitions-hero__layout
+	&__layout {
+		display: flex;
+		flex-direction: column;
+		gap: rem(28);
+
+		@media (min-width: $md3) {
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: rem(40);
+		}
+	}
+
+	// exhibitions-hero__title
+	&__title {
+		margin: 0;
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	// exhibitions-hero__title-img
+	&__title-img {
+		display: block;
+		width: min(100%, rem(420));
+		height: auto;
+
+		@media (min-width: $md3) {
+			width: min(100%, rem(581));
+		}
+	}
+
+	// exhibitions-hero__aside
+	&__aside {
+		flex: 0 1 rem(1012);
+		max-width: rem(1012);
+		display: flex;
+		flex-direction: column;
+		gap: rem(10);
+	}
+
+	// exhibitions-hero__chips
+	&__chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(10) rem(15);
+	}
+
+	// exhibitions-hero__chip
+	&__chip {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: rem(49);
+		padding: rem(10) rem(20);
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		border-radius: 0;
+		background: $color-green-2;
+		color: $color-white;
+		font-weight: 300;
+		font-size: rem(20);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+		@media (min-width: $md4) {
+			font-size: rem(24);
+			padding: rem(10) rem(24);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $color-beige;
+				color: $color-beige;
+			}
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0 0 0 2px $color-green, 0 0 0 4px $color-white;
+		}
+
+		&.is-active {
+			border-color: $color-beige;
+			background: $color-beige;
+			color: $color-dark;
+		}
+	}
+
+	// exhibitions-hero__cta
+	&__cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		align-self: stretch;
+		min-height: rem(49);
+		padding: rem(10) rem(24);
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		background: $color-green-2;
+		color: $color-white;
+		font-weight: 300;
+		font-size: rem(20);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		text-align: center;
+		transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+		@media (min-width: $md4) {
+			font-size: rem(24);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $color-beige;
+				background: $color-beige;
+				color: $color-dark;
+			}
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0 0 0 2px $color-green, 0 0 0 4px $color-white;
+		}
+
+		&:active {
+			background: $color-brown;
+			border-color: $color-brown;
+			color: $color-dark;
+		}
+	}
+}
+
+.exhibitions-slider {
+	background-color: $color-beige-2;
+	color: $color-dark;
+
+	// exhibitions-slider__inner
+	&__inner {
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+
+		@media (min-width: $md4) {
+			padding-top: rem(64);
+			padding-bottom: rem(56);
+		}
+	}
+
+	// exhibitions-slider__wrap
+	&__wrap {
+		position: relative;
+		overflow: hidden;
+	}
+
+	// exhibitions-slider__swiper
+	&__swiper {
+		overflow: visible;
+		padding-bottom: rem(16);
+
+		@media (min-width: $md4) {
+			padding-bottom: rem(24);
+		}
+	}
+
+	// exhibitions-slider__nav
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(16);
+		margin-top: rem(12);
+
+		@media (min-width: $md4) {
+			margin-top: rem(20);
+		}
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		position: static;
+		margin: 0;
+		transform: none;
+		width: rem(36);
+		height: rem(36);
+		background: transparent;
+		color: $color-dark;
+		font-size: rem(14);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: transparent;
+				color: $color-green;
+			}
+		}
+
+		&:active {
+			background: transparent;
+			color: $color-brown;
+		}
+	}
+
+	.swiper-pagination {
+		position: static;
+		width: auto;
+		gap: rem(18);
+	}
+
+	.swiper-pagination-bullet {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(29);
+		height: rem(29);
+		margin: 0;
+		border-radius: 50%;
+		background: transparent;
+		color: $color-dark;
+		font-size: rem(16);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		opacity: 1;
+
+		&::before {
+			content: attr(data-index);
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		background: transparent;
+		box-shadow: inset 0 0 0 1px $color-dark;
+	}
+}
+
+.exhibitions-slide {
+	width: 100%;
+	max-width: rem(904);
+	height: auto;
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: $md4) {
+		width: rem(904);
+	}
+
+	&.is-hidden {
+		display: none !important;
+	}
+
+	// exhibitions-slide__media
+	&__media {
+		display: block;
+		width: 100%;
+		aspect-ratio: 904 / 678;
+		overflow: hidden;
+		background: $color-beige;
+	}
+
+	// exhibitions-slide__img
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// exhibitions-slide__caption
+	&__caption {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: rem(12) rem(24);
+		padding: rem(16) rem(20);
+		background: rgba(217, 202, 180, 0.92);
+		backdrop-filter: blur(4px);
+		min-height: rem(92);
+		box-sizing: border-box;
+
+		@media (min-width: $md4) {
+			padding: rem(18) rem(28);
+		}
+	}
+
+	// exhibitions-slide__main
+	&__main {
+		flex: 1 1 rem(240);
+		min-width: 0;
+	}
+
+	// exhibitions-slide__aside
+	&__aside {
+		flex: 0 1 auto;
+		text-align: right;
+	}
+
+	// exhibitions-slide__name
+	&__name {
+		margin: 0;
+		font-size: rem(18);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		color: $color-dark;
+
+		@media (min-width: $md4) {
+			font-size: rem(24);
+		}
+	}
+
+	// exhibitions-slide__place
+	&__place {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: rem(8);
+		margin: rem(6) 0 0;
+		font-size: rem(14);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		color: rgba(17, 27, 16, 0.8);
+
+		@media (min-width: $md4) {
+			font-size: rem(16);
+		}
+	}
+
+	// exhibitions-slide__sep
+	&__sep {
+		display: inline-block;
+		width: 1px;
+		height: rem(14);
+		background: rgba(17, 27, 16, 0.45);
+		flex-shrink: 0;
+	}
+
+	// exhibitions-slide__year
+	&__year {
+		margin: 0;
+		font-size: rem(18);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		color: $color-dark;
+
+		@media (min-width: $md4) {
+			font-size: rem(24);
+		}
+	}
+
+	// exhibitions-slide__address
+	&__address {
+		margin: rem(6) 0 0;
+		font-size: rem(14);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		color: rgba(17, 27, 16, 0.8);
+
+		@media (min-width: $md4) {
+			font-size: rem(16);
+		}
+	}
+}

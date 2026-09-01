@@ -1,0 +1,70 @@
+$fontfamily: "Heraclito", sans-serif;
+
+$md0: 1499.98px;
+$md1: 1439.98px;
+$md2: 1199.98px;
+$md3: 991.98px;
+$md4: 767.98px;
+$md5: 575.98px;
+
+$minWidth: 360;
+$maxWidth: 1920;
+$maxWidthContainer: rem(1440);
+$containerPadding: 24;
+
+:root {
+	// Palette — Figma Style kit
+	--color-dark: #111b10;
+	--color-green: #495148;
+	--color-green-2: #555d54;
+	--color-white: #ffffff;
+	--color-beige-2: #ecdfce;
+	--color-beige: #d9cab4;
+	--color-brown: #423529;
+
+	// Semantic
+	--color-primary: var(--color-dark);
+	--color-text: var(--color-dark);
+	--color-muted: var(--color-green-2);
+	--color-bg: var(--color-white);
+	--color-surface: var(--color-beige-2);
+	--color-border: var(--color-beige);
+
+	--header-height: #{rem(54)};
+	--focus-ring: 0 0 0 2px #fff,
+		0 0 0 4px var(--color-dark);
+	--duration-layout: 0.3s;
+	--ease-layout: ease;
+
+	@media (prefers-reduced-motion: reduce) {
+		--duration-layout: 0s;
+	}
+}
+
+$color-dark: var(--color-dark);
+$color-green: var(--color-green);
+$color-green-2: var(--color-green-2);
+$color-white: var(--color-white);
+$color-beige-2: var(--color-beige-2);
+$color-beige: var(--color-beige);
+$color-brown: var(--color-brown);
+
+$color-primary: var(--color-primary);
+$color-text: var(--color-text);
+$color-muted: var(--color-muted);
+$color-bg: var(--color-bg);
+$color-surface: var(--color-surface);
+$color-border: var(--color-border);
+
+$header: var(--header-height, #{rem(54)});
+$focus-ring: var(--focus-ring);
+$duration-layout: var(--duration-layout);
+$ease-layout: var(--ease-layout);
+
+$ui-index-1: 1;
+$ui-index-2: 2;
+$ui-index-3: 3;
+$ui-index-4: 4;
+$ui-index-5: 5;
+$ui-index-6: 6;
+$ui-index-7: 7;

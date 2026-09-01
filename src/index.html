@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.html', {
+	"title": "Ярыгина А.А. — художник"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.html', {
+			"activePage": "home"
+			})
+			<main class="page">
+				@@include('html/sections/hero.html')
+				@@include('html/sections/stats.html')
+				@@include('html/sections/works.html')
+				@@include('html/sections/contacts.html')
+			</main>
+			@@include('html/_footer.html')
+		</div>
+		@@include('html/_js.html')
+	</body>
+</html>

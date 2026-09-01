@@ -1,0 +1,247 @@
+.works {
+	position: relative;
+	padding-block: rem(48) rem(56);
+	background-color: $color-green;
+	background-image: repeating-linear-gradient(
+		to right,
+		transparent 0,
+		transparent #{rem(51)},
+		#{$color-green-2} #{rem(51)},
+		#{$color-green-2} #{rem(154)},
+		transparent #{rem(154)},
+		transparent #{rem(221)}
+	);
+	color: $color-white;
+
+	@media (min-width: $md4) {
+		padding-block: rem(80) rem(72);
+	}
+
+	// works__head
+	&__head {
+		--gutter-y: #{rem(24)};
+		margin-bottom: rem(32);
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(48);
+		}
+	}
+
+	// works__title
+	&__title {
+		margin: 0;
+	}
+
+	// works__title-img
+	&__title-img {
+		display: block;
+		width: 100%;
+		max-width: rem(759);
+		height: auto;
+	}
+
+	// works__text
+	&__text {
+		color: $color-white;
+
+		// works__text--aside
+		&--aside {
+			@media (min-width: $md3) {
+				max-width: rem(587);
+			}
+		}
+	}
+
+	// works__btn
+	&__btn {
+		margin-top: rem(20);
+		min-width: rem(280);
+
+		@media (min-width: $md4) {
+			min-width: rem(381);
+		}
+	}
+
+	// works__slider-wrap
+	&__slider-wrap {
+		position: relative;
+	}
+
+	// works__grid
+	&__grid {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(24)};
+	}
+
+	// works__nav
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(16);
+		margin-top: rem(28);
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		position: static;
+		margin: 0;
+		transform: none;
+		width: rem(36);
+		height: rem(36);
+		background: transparent;
+		color: $color-white;
+		font-size: rem(14);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: transparent;
+				color: $color-beige;
+			}
+		}
+
+		&:active {
+			background: transparent;
+			color: $color-beige-2;
+		}
+	}
+
+	.works__prev.icon-chevron-down::before {
+		transform: rotate(90deg);
+	}
+
+	.works__next.icon-chevron-down::before {
+		transform: rotate(-90deg);
+	}
+
+	.swiper-pagination {
+		position: static;
+		width: auto;
+		gap: rem(18);
+	}
+
+	.swiper-pagination-bullet {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(29);
+		height: rem(29);
+		margin: 0;
+		border-radius: 50%;
+		background: transparent;
+		color: $color-white;
+		font-size: rem(16);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		opacity: 1;
+
+		&::before {
+			content: attr(data-index);
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		background: transparent;
+		box-shadow: inset 0 0 0 1px $color-white;
+	}
+}
+
+.gallery-card {
+	position: relative;
+
+	// gallery-card__frame
+	&__frame {
+		position: relative;
+		aspect-ratio: 557 / 388;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position: center;
+	}
+
+	// gallery-card__matte
+	&__matte {
+		position: absolute;
+		inset: 8% 7%;
+		z-index: 0;
+		background-color: rgba(231, 223, 205, 0.84);
+		background-size: cover;
+		background-position: center;
+		pointer-events: none;
+	}
+
+	// gallery-card__img
+	&__img {
+		position: absolute;
+		z-index: 1;
+		top: 11.5%;
+		left: 9%;
+		width: 82%;
+		height: 77%;
+		max-width: none;
+		object-fit: cover;
+	}
+
+	&__frame::after {
+		content: "";
+		position: absolute;
+		z-index: 2;
+		top: 11.5%;
+		left: 9%;
+		width: 82%;
+		height: 77%;
+		pointer-events: none;
+		box-shadow:
+			inset 18px -24px 29px rgba(0, 0, 0, 0.47),
+			inset -25px 22px 29px rgba(0, 0, 0, 0.38);
+	}
+
+	// gallery-card__caption
+	&__caption {
+		position: absolute;
+		left: rem(-10);
+		right: rem(-10);
+		bottom: rem(20);
+		z-index: 2;
+		padding: rem(16) rem(30);
+		background: rgba(17, 27, 16, 0.92);
+		backdrop-filter: blur(4px);
+		color: $color-white;
+
+		@media (min-width: $md4) {
+			bottom: rem(40);
+		}
+	}
+
+	// gallery-card__name
+	&__name {
+		margin-bottom: rem(2);
+		font-size: rem(20);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+
+		@media (min-width: $md4) {
+			font-size: rem(24);
+		}
+	}
+
+	// gallery-card__meta
+	&__meta {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		font-size: rem(16);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	// gallery-card__sep
+	&__sep {
+		display: inline-block;
+		width: 1px;
+		height: rem(16);
+		background: rgba(255, 255, 255, 0.8);
+	}
+}
