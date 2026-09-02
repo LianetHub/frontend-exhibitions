@@ -165,7 +165,7 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   padding: 0.625rem 1.5rem;
 }
 @media (min-width: 767.98px) {
@@ -183,15 +183,28 @@
     color: var(--color-white);
   }
 }
+.btn.btn--light:active {
+  background: var(--color-dark);
+  color: var(--color-white);
+  box-shadow: none;
+}
 @media (any-hover: hover) {
   .btn:hover {
-    background: var(--color-beige);
+    background: var(--color-white);
     color: var(--color-dark);
   }
+}
+.btn:active {
+  background: color-mix(in srgb, var(--color-white) 60%, transparent);
+  color: var(--color-dark);
+  box-shadow: inset 0 0 0 0.09375rem var(--color-dark);
 }
 .btn:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
+}
+.btn:active:focus-visible {
+  box-shadow: inset 0 0 0 0.09375rem var(--color-dark), var(--focus-ring);
 }
 .btn:disabled, .btn.is-disabled {
   opacity: 0.55;
@@ -1086,7 +1099,7 @@ img {
 }
 @media (any-hover: hover) {
   .footer__social:hover {
-    background: var(--color-dark);
+    background: var(--color-brown);
     color: var(--color-white);
   }
 }

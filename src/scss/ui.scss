@@ -13,13 +13,14 @@
 	letter-spacing: -0.01em;
 	text-transform: uppercase;
 	cursor: pointer;
-	transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 	padding: rem(10) rem(24);
 
 	@media (min-width:$md4) {
 		padding: rem(10) rem(40);
 	}
 
+	// btn--light
 	&.btn--light {
 		background: $color-dark;
 		color: $color-white;
@@ -30,20 +31,36 @@
 				color: $color-white;
 			}
 		}
+
+		&:active {
+			background: $color-dark;
+			color: $color-white;
+			box-shadow: none;
+		}
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			background: $color-beige;
+			background: $color-white;
 			color: $color-dark;
 		}
 	}
 
-
+	&:active {
+		background: color-mix(in srgb, $color-white 60%, transparent);
+		color: $color-dark;
+		box-shadow: inset 0 0 0 rem(1.5) $color-dark;
+	}
 
 	&:focus-visible {
 		outline: none;
 		box-shadow: $focus-ring;
+	}
+
+	&:active:focus-visible {
+		box-shadow:
+			inset 0 0 0 rem(1.5) $color-dark,
+			$focus-ring;
 	}
 
 	&:disabled,
