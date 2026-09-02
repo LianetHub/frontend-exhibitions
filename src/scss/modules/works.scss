@@ -14,6 +14,10 @@
 	}
 
 	@media (min-width: $md4) {
+		padding: rem(100) 0 rem(72);
+	}
+
+	@media (min-width: $md1) {
 		padding: rem(200) 0 rem(72);
 	}
 
@@ -134,10 +138,15 @@
 		@media (min-width: $md4) {
 			order: 0;
 			width: auto;
-			margin-top: rem(20);
+			margin-top: rem(60);
 			min-width: rem(381);
 			min-height: rem(49);
 			align-self: flex-start;
+		}
+
+		@media (min-width:$md1) {
+			margin-top: rem(20);
+
 		}
 	}
 
@@ -296,8 +305,8 @@
 	// gallery-card__caption
 	&__caption {
 		position: absolute;
-		left: rem(-20);
-		right: rem(-20);
+		left: 0;
+		right: 0;
 		bottom: rem(0);
 		z-index: 3;
 		padding: rem(16) rem(30);
@@ -307,6 +316,11 @@
 		opacity: 1;
 		pointer-events: none;
 		transition: opacity 0.25s ease;
+
+		@media (min-width:$md1) {
+			left: rem(-20);
+			right: rem(-20);
+		}
 
 		@media (min-width: $md4) {
 			@media (any-hover: hover) {

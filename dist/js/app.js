@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const burger = header?.querySelector(".header__burger");
 	const mobileMenu = header?.querySelector(".header__mobile");
 	let scrollY = 0;
+	let onMenuTransitionEnd = null;
+	let menuHideTimer = 0;
 
 	function lockBody() {
 		scrollY = window.scrollY;
@@ -23,23 +25,55 @@ document.addEventListener("DOMContentLoaded", () => {
 		window.scrollTo(0, scrollY);
 	}
 
-	function closeMobileMenu() {
+	function detachMenuTransition() {
+		if (menuHideTimer) {
+			window.clearTimeout(menuHideTimer);
+			menuHideTimer = 0;
+		}
+
+		if (!mobileMenu || !onMenuTransitionEnd) return;
+		mobileMenu.removeEventListener("transitionend", onMenuTransitionEnd);
+		onMenuTransitionEnd = null;
+	}
+
+	function closeMobileMenu(immediate = false) {
 		if (!header || !burger || !mobileMenu) return;
+		if (!header.classList.contains("is-menu-open") && mobileMenu.hidden) return;
+
+		const wasOpen = header.classList.contains("is-menu-open");
 		header.classList.remove("is-menu-open");
 		burger.classList.remove("is-open");
 		burger.setAttribute("aria-expanded", "false");
 		burger.setAttribute("aria-label", "Открыть меню");
-		mobileMenu.hidden = true;
 		unlockBody();
+		detachMenuTransition();
+
+		if (!wasOpen || immediate) {
+			mobileMenu.hidden = true;
+			return;
+		}
+
+		onMenuTransitionEnd = (event) => {
+			if (event.target !== mobileMenu || event.propertyName !== "transform") return;
+			detachMenuTransition();
+			if (!header.classList.contains("is-menu-open")) mobileMenu.hidden = true;
+		};
+		mobileMenu.addEventListener("transitionend", onMenuTransitionEnd);
+		menuHideTimer = window.setTimeout(() => {
+			detachMenuTransition();
+			if (!header.classList.contains("is-menu-open")) mobileMenu.hidden = true;
+		}, 400);
 	}
 
 	function openMobileMenu() {
 		if (!header || !burger || !mobileMenu) return;
+		detachMenuTransition();
+		mobileMenu.hidden = false;
+		void mobileMenu.offsetWidth;
 		header.classList.add("is-menu-open");
 		burger.classList.add("is-open");
 		burger.setAttribute("aria-expanded", "true");
 		burger.setAttribute("aria-label", "Закрыть меню");
-		mobileMenu.hidden = false;
 		lockBody();
 	}
 
@@ -64,6 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			watchOverflow: true,
 			breakpoints: {
 				767.98: {
+					slidesPerView: 2,
+					slidesPerGroup: 2,
+					spaceBetween: 32,
+				},
+				1439.98: {
 					slidesPerView: 3,
 					slidesPerGroup: 3,
 					spaceBetween: 64,
@@ -652,7 +691,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.addEventListener("resize", () => {
 		const minWidth = header?.classList.contains("header--home") ? 767.98 : 991.98;
 		if (window.matchMedia(`(min-width: ${minWidth}px)`).matches) {
-			closeMobileMenu();
+			closeMobileMenu(true);
 		}
 	});
 });

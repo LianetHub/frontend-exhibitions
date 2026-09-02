@@ -233,10 +233,12 @@
 		height: 100%;
 		background: $color-dark;
 		color: $color-white;
-
-		&[hidden] {
-			display: none;
-		}
+		visibility: hidden;
+		pointer-events: none;
+		transform: translateX(-100%);
+		transition:
+			transform $duration-layout $ease-layout,
+			visibility 0s linear $duration-layout;
 
 		@media (min-width: $md3) {
 			display: none !important;
@@ -305,6 +307,15 @@
 		.header__burger {
 			order: -1;
 			color: $color-white;
+		}
+
+		.header__mobile {
+			visibility: visible;
+			pointer-events: auto;
+			transform: translateX(0);
+			transition:
+				transform $duration-layout $ease-layout,
+				visibility 0s;
 		}
 	}
 

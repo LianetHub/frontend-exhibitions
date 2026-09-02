@@ -862,9 +862,10 @@ img {
   height: 100%;
   background: var(--color-dark);
   color: var(--color-white);
-}
-.header__mobile[hidden] {
-  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: transform var(--duration-layout) var(--ease-layout), visibility 0s linear var(--duration-layout);
 }
 @media (min-width: 991.98px) {
   .header__mobile {
@@ -919,6 +920,12 @@ img {
 .header.is-menu-open .header__burger {
   order: -1;
   color: var(--color-white);
+}
+.header.is-menu-open .header__mobile {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  transition: transform var(--duration-layout) var(--ease-layout), visibility 0s;
 }
 .header--home .header__logo {
   display: none;
@@ -1249,7 +1256,12 @@ img {
   }
 }
 .hero__title {
-  max-width: 30rem;
+  max-width: 20rem;
+}
+@media (min-width: 575.98px) {
+  .hero__title {
+    max-width: 30rem;
+  }
 }
 @media (min-width: 991.98px) {
   .hero__title {
@@ -1408,6 +1420,11 @@ img {
 }
 @media (min-width: 767.98px) {
   .works {
+    padding: 6.25rem 0 4.5rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .works {
     padding: 12.5rem 0 4.5rem;
   }
 }
@@ -1518,10 +1535,15 @@ img {
   .works__btn {
     order: 0;
     width: auto;
-    margin-top: 1.25rem;
+    margin-top: 3.75rem;
     min-width: 23.8125rem;
     min-height: 3.0625rem;
     align-self: flex-start;
+  }
+}
+@media (min-width: 1439.98px) {
+  .works__btn {
+    margin-top: 1.25rem;
   }
 }
 .works__slider-wrap {
@@ -1659,8 +1681,8 @@ img {
 }
 .gallery-card__caption {
   position: absolute;
-  left: -1.25rem;
-  right: -1.25rem;
+  left: 0;
+  right: 0;
   bottom: 0rem;
   z-index: 3;
   padding: 1rem 1.875rem;
@@ -1670,6 +1692,12 @@ img {
   opacity: 1;
   pointer-events: none;
   transition: opacity 0.25s ease;
+}
+@media (min-width: 1439.98px) {
+  .gallery-card__caption {
+    left: -1.25rem;
+    right: -1.25rem;
+  }
 }
 @media (min-width: 767.98px) and (any-hover: hover) {
   .gallery-card__caption {
@@ -1760,7 +1788,6 @@ img {
 }
 @media (min-width: 767.98px) {
   .contacts__body {
-    grid-template-columns: 0.75fr 1fr;
     gap: 2.5rem;
   }
 }
@@ -1768,6 +1795,11 @@ img {
   .contacts__body {
     gap: 4.5rem;
     padding: 2.5rem 2.5rem 4.5rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .contacts__body {
+    grid-template-columns: 0.75fr 1fr;
   }
 }
 .contacts__text {
@@ -1788,7 +1820,7 @@ img {
   margin-top: auto;
   padding-top: 2.5rem;
 }
-@media (min-width: 767.98px) {
+@media (min-width: 1439.98px) {
   .contacts__farewell {
     padding-top: 7.5rem;
   }

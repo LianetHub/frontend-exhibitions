@@ -135,7 +135,12 @@
 
 	// hero__title
 	&__title {
-		max-width: rem(480);
+		max-width: rem(320);
+
+		@media (min-width:$md5) {
+			max-width: rem(480);
+
+		}
 
 		@media (min-width: $md3) {
 			max-width: rem(1810);
