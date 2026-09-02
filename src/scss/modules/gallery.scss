@@ -1,13 +1,5 @@
 .gallery-hero {
-	background-color: $color-green;
-	background-image: repeating-linear-gradient(to right,
-		transparent 0,
-		transparent #{rem(51)},
-		#{$color-green-2} #{rem(51)},
-		#{$color-green-2} #{rem(154)},
-		transparent #{rem(154)},
-		transparent #{rem(221)});
-	color: $color-white;
+
 	padding-top: rem(40);
 	padding-bottom: rem(40);
 	position: relative;

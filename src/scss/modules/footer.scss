@@ -18,17 +18,17 @@
 		row-gap: rem(24);
 
 		@media (min-width: $md4) {
+			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			column-gap: rem(24);
 			row-gap: 0;
 		}
 	}
 
-	// footer__col
-	&__col {
-		display: flex;
-		flex-direction: column;
-		gap: rem(15);
+	//.footer__menu
+	&__menu {
+		max-width: rem(220);
+		margin-inline: auto;
 	}
 
 	// footer__title
@@ -42,9 +42,10 @@
 
 	// footer__list
 	&__list {
+		margin-top: rem(10);
 		display: flex;
 		flex-direction: column;
-		gap: rem(10);
+		gap: rem(4);
 	}
 
 	// footer__link
@@ -73,6 +74,7 @@
 
 	// footer__socials
 	&__socials {
+		margin-top: rem(10);
 		display: flex;
 		flex-wrap: wrap;
 		gap: rem(13);
@@ -85,11 +87,25 @@
 		justify-content: center;
 		width: rem(59);
 		height: rem(59);
-		border: 1px solid $color-dark;
 		border-radius: 50%;
-		color: $color-dark;
+		background: $color-beige;
+		color: $color-brown;
 		font-size: rem(22);
 		transition: background-color 0.2s ease, color 0.2s ease;
+
+		&.icon-envelope {
+			&::before {
+				font-size: 1rem;
+
+			}
+		}
+
+		&.icon-max {
+			&::before {
+				font-size: 1.75rem;
+
+			}
+		}
 
 		&::before {
 			display: block;
@@ -99,6 +115,41 @@
 			&:hover {
 				background: $color-dark;
 				color: $color-white;
+			}
+		}
+	}
+
+	// footer--green
+	&.footer--green {
+		background: $color-green;
+		color: $color-white;
+
+		.footer__title {
+			color: $color-white;
+		}
+
+		.footer__link,
+		.footer__copy {
+			color: rgba(255, 255, 255, 0.7);
+		}
+
+		.footer__link {
+			@media (any-hover: hover) {
+				&:hover {
+					color: $color-white;
+				}
+			}
+		}
+
+		.footer__social {
+			background: $color-dark;
+			color: $color-white;
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: $color-beige;
+					color: $color-brown;
+				}
 			}
 		}
 	}

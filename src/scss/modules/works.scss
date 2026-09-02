@@ -2,6 +2,17 @@
 	position: relative;
 	padding: rem(48) 0 rem(56);
 
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 60%;
+		height: 32%;
+		background: $color-green;
+		z-index: -1;
+	}
+
 	@media (min-width: $md4) {
 		padding: rem(200) 0 rem(72);
 	}
@@ -153,6 +164,7 @@
 
 	// gallery-card__frame
 	&__frame {
+		display: block;
 		position: relative;
 		aspect-ratio: 557 / 388;
 		background: url("@img/home/frame.png") 0 0 / cover no-repeat, url("@img/home/matte.jpg") 0 0 / cover no-repeat;
@@ -196,14 +208,12 @@
 		backdrop-filter: blur(4px);
 		color: $color-white;
 		opacity: 1;
+		pointer-events: none;
 		transition: opacity 0.25s ease;
 
 		@media (min-width: $md4) {
-
-
 			@media (any-hover: hover) {
 				opacity: 0;
-				pointer-events: none;
 			}
 		}
 	}
@@ -211,14 +221,12 @@
 	@media (any-hover: hover) {
 		&:hover .gallery-card__caption {
 			opacity: 1;
-			pointer-events: auto;
 		}
 	}
 
 	&:focus-visible .gallery-card__caption,
 	&:focus-within .gallery-card__caption {
 		opacity: 1;
-		pointer-events: auto;
 	}
 
 	// gallery-card__name

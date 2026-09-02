@@ -1,5 +1,5 @@
-.fancybox__container:has(.popup) {
-	--fancybox-bg: rgba(0, 0, 0, 0.68);
+.fancybox__container {
+	--fancybox-backdrop-bg: rgba(0, 0, 0, 0.68);
 }
 
 .fancybox__container:has(.popup) .fancybox__content {
@@ -14,7 +14,7 @@
 	height: rem(40);
 	border: none;
 	background: transparent;
-	color: $color-white;
+	color: $color-green;
 	font-size: rem(27);
 	transition: opacity 0.2s ease;
 

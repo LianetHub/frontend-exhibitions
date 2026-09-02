@@ -110,12 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		exhibitionsSwiper = new Swiper(slider, {
 			slidesPerView: 1,
 			spaceBetween: 16,
+			speed: 800,
 			centeredSlides: true,
 			watchOverflow: true,
 			breakpoints: {
-				768: {
+				992: {
 					slidesPerView: "auto",
-					spaceBetween: 24,
+					spaceBetween: 46,
 					centeredSlides: true,
 				},
 			},
@@ -132,6 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
 						},
 					}
 				: undefined,
+			on: {
+				slideChangeTransitionStart() {
+					this.update();
+				},
+			},
 		});
 	}
 
@@ -570,10 +576,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			filters?.querySelectorAll(".exhibitions-hero__chip").forEach((chip) => {
 				chip.classList.remove("is-active");
+				chip.setAttribute("aria-pressed", "false");
 			});
 
 			if (!isActive && city) {
 				exhibitionsChip.classList.add("is-active");
+				exhibitionsChip.setAttribute("aria-pressed", "true");
 				applyExhibitionsCityFilter(city);
 			} else {
 				applyExhibitionsCityFilter("");
