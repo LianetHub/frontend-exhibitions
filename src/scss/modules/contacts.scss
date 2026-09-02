@@ -20,6 +20,11 @@
 			gap: rem(40);
 			align-items: stretch;
 		}
+
+		@media (min-width: $md2) {
+			container-type: inline-size;
+			container-name: contacts-row;
+		}
 	}
 
 	// contacts__title
@@ -41,6 +46,8 @@
 
 	// contacts__body
 	&__body {
+		position: relative;
+		z-index: 0;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: rem(32);
@@ -49,6 +56,7 @@
 		padding: rem(20) rem(0) rem(20);
 
 		@media (min-width: $md4) {
+			padding: rem(20);
 			gap: rem(40);
 		}
 
@@ -57,7 +65,31 @@
 			padding: rem(40) rem(40) rem(72);
 		}
 
-		@media (min-width:$md1) {
+		@media (min-width: $md2) {
+			background: transparent;
+
+			&::before {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				bottom: 0;
+				background: $color-green;
+				pointer-events: none;
+
+				--contacts-row-left: calc((100vw - 100cqw) / 2);
+				--contacts-row-right: calc((100vw + 100cqw) / 2);
+				--contacts-body-left: calc(var(--contacts-row-left) + (100cqw - #{rem(40)}) * 5 / 12 + #{rem(40)});
+				--contacts-body-right: var(--contacts-row-right);
+
+				@include page-stripe-snap-x($page-stripe-period,
+					$page-stripe-dark-end,
+					var(--contacts-body-left),
+					var(--contacts-body-right));
+			}
+		}
+
+		@media (min-width: $md1) {
 			grid-template-columns: 0.75fr 1fr;
 		}
 	}

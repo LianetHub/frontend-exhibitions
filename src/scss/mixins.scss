@@ -225,3 +225,14 @@ $dimensions: (
 		}
 	}
 }
+
+// Snap absolute left/right of a fill to page stripe dark-ends (see $page-stripe-*).
+// $body-left / $body-right — viewport X of the box being painted.
+@mixin page-stripe-snap-x($period, $dark-end, $body-left, $body-right) {
+	left: calc(
+		round(nearest, #{$body-left} - #{rem($dark-end)}, #{rem($period)}) + #{rem($dark-end)} - #{$body-left}
+	);
+	right: calc(
+		#{$body-right} - (round(nearest, #{$body-right} - #{rem($dark-end)}, #{rem($period)}) + #{rem($dark-end)})
+	);
+}

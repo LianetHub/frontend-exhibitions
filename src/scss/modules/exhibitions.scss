@@ -183,8 +183,24 @@
 	}
 
 	&.is-interior {
+		display: flex;
+		flex-direction: column;
 		padding-top: 0;
 		padding-bottom: 0;
+
+		.exhibitions-slider__panel.is-active {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 auto;
+			min-height: 100%;
+		}
+
+		.exhibitions-slider__inner {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 auto;
+			justify-content: center;
+		}
 
 		.exhibitions-slider__swiper {
 			padding-top: rem(40);
@@ -193,14 +209,6 @@
 			@media (min-width: $md3) {
 				padding-top: rem(80);
 				padding-bottom: rem(40);
-			}
-		}
-
-		.exhibitions-slider__nav {
-			margin-bottom: rem(40);
-
-			@media (min-width: $md3) {
-				margin-bottom: rem(80);
 			}
 		}
 	}
