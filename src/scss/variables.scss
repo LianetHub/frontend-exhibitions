@@ -31,11 +31,16 @@ $containerPadding: 24;
 	--color-surface: var(--color-beige-2);
 	--color-border: var(--color-beige);
 
-	--header-height: #{rem(54)};
 	--focus-ring: 0 0 0 2px #fff,
 		0 0 0 4px var(--color-dark);
 	--duration-layout: 0.3s;
 	--ease-layout: ease;
+	--header-height: #{rem(39)};
+
+	@media (min-width:$md4) {
+		--header-height: #{rem(54)};
+
+	}
 
 	@media (prefers-reduced-motion: reduce) {
 		--duration-layout: 0s;

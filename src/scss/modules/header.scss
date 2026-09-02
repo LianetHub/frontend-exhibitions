@@ -36,6 +36,7 @@
 
 	// header__logo
 	&__logo {
+		display: none;
 		flex-shrink: 0;
 		font-size: rem(16);
 		line-height: 1.3;
@@ -43,6 +44,10 @@
 		text-transform: uppercase;
 		color: $color-white;
 		transition: opacity 0.2s ease;
+
+		@media (min-width: $md4) {
+			display: inline-flex;
+		}
 
 		@media (any-hover: hover) {
 			&:hover {
@@ -55,7 +60,7 @@
 	&__nav {
 		display: none;
 
-		@media (min-width: $md3) {
+		@media (min-width: $md4) {
 			display: block;
 		}
 	}
@@ -116,16 +121,16 @@
 
 	// header__phone
 	&__phone {
-		display: none;
+		display: inline-flex;
 		flex-shrink: 0;
-		font-size: rem(16);
+		font-size: rem(12);
 		line-height: 1.3;
 		letter-spacing: -0.01em;
 		color: $color-white;
 		transition: opacity 0.2s ease;
 
-		@media (min-width: $md3) {
-			display: inline-flex;
+		@media (min-width: $md4) {
+			font-size: rem(16);
 		}
 
 		@media (any-hover: hover) {
@@ -145,6 +150,7 @@
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: center;
+		order: -1;
 		width: rem(24);
 		height: rem(16);
 		padding: 0;
@@ -154,7 +160,7 @@
 		cursor: pointer;
 		transition: 0.3s ease;
 
-		@media (min-width: $md3) {
+		@media (min-width: $md4) {
 			display: none;
 		}
 
@@ -240,7 +246,7 @@
 			transform $duration-layout $ease-layout,
 			visibility 0s linear $duration-layout;
 
-		@media (min-width: $md3) {
+		@media (min-width: $md4) {
 			display: none !important;
 		}
 	}
@@ -305,7 +311,6 @@
 		}
 
 		.header__burger {
-			order: -1;
 			color: $color-white;
 		}
 
@@ -316,50 +321,6 @@
 			transition:
 				transform $duration-layout $ease-layout,
 				visibility 0s;
-		}
-	}
-
-	// header--home
-	&--home {
-		.header__logo {
-			display: none;
-
-			@media (min-width: $md4) {
-				display: inline-flex;
-			}
-		}
-
-		.header__phone {
-			display: inline-flex;
-			font-size: rem(12);
-
-			@media (min-width: $md4) {
-				font-size: rem(16);
-			}
-
-			@media (min-width: $md3) {
-				display: inline-flex;
-			}
-		}
-
-		.header__burger {
-			order: -1;
-
-			@media (min-width: $md4) {
-				display: none;
-			}
-		}
-
-		.header__nav {
-			@media (min-width: $md4) {
-				display: block;
-			}
-		}
-
-		.header__mobile {
-			@media (min-width: $md4) {
-				display: none !important;
-			}
 		}
 	}
 }

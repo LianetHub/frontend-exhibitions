@@ -1,17 +1,24 @@
 <div class="gallery__cell" data-gallery-cell data-genre="@@genre" data-technique="@@technique" style="--gallery-col: @@col; --gallery-row: @@row">
-	<a class="gallery-item@@if(typeof ratio !== 'undefined' && ratio){ @@ratio}" href="@@src" data-fancybox="gallery" data-caption="@@caption">
-		<img class="gallery-item__img" src="@@src" alt="@@alt" width="875" height="585"@@if(typeof priority !== 'undefined' && priority){ fetchpriority="high"}@@if(typeof priority === 'undefined' || !priority){ loading="lazy"}>
-		<span class="gallery-item__caption">
-			<span class="gallery-item__top">
+	<figure class="gallery-item@@if(typeof ratio !== 'undefined' && ratio){ @@ratio}">
+		<a class="gallery-item__link" href="@@src" data-fancybox="gallery" data-caption="@@caption">
+			<img class="gallery-item__img" src="@@src" alt="@@alt" width="875" height="585"@@if(typeof priority !== 'undefined' && priority){ fetchpriority="high"}@@if(typeof priority === 'undefined' || !priority){ loading="lazy"}>
+		</a>
+		<button class="gallery-item__flag" type="button" aria-expanded="false" aria-label="Показать информацию о работе">
+			<img class="gallery-item__flag-img" src="@img/gallery/flag.svg" alt="Показать информацию" width="37" height="67">
+		</button>
+		<figcaption class="gallery-item__caption">
+			<span class="gallery-item__main">
 				<span class="gallery-item__name">@@name</span>
+				<span class="gallery-item__meta">
+					<span>@@genreLabel</span>
+					<span class="gallery-item__sep" aria-hidden="true"></span>
+					<span>@@techniqueLabel</span>
+				</span>
+			</span>
+			<span class="gallery-item__aside">
 				<span class="gallery-item__size">@@size</span>
+				<span class="gallery-item__avail@@if(typeof available !== 'undefined' && !available){ gallery-item__avail--sold}">@@if(typeof available === 'undefined' || available){В наличии}@@if(typeof available !== 'undefined' && !available){В коллекции}</span>
 			</span>
-			<span class="gallery-item__meta">
-				<span>@@genreLabel</span>
-				<span class="gallery-item__sep" aria-hidden="true"></span>
-				<span>@@techniqueLabel</span>
-				<span class="gallery-item__avail@@if(typeof available !== 'undefined' && !available){ gallery-item__avail--sold}">@@if(typeof available === 'undefined' || available){Можно приобрести}@@if(typeof available !== 'undefined' && !available){В коллекции}</span>
-			</span>
-		</span>
-	</a>
+		</figcaption>
+	</figure>
 </div>

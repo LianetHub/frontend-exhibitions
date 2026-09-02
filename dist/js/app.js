@@ -627,6 +627,25 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
+		const galleryFlag = target.closest(".gallery-item__flag");
+		if (galleryFlag) {
+			e.preventDefault();
+			const item = galleryFlag.closest(".gallery-item");
+			if (!item) return;
+
+			const isOpen = item.classList.contains("is-open");
+			document.querySelectorAll(".gallery-item.is-open").forEach((openItem) => {
+				openItem.classList.remove("is-open");
+				openItem.querySelector(".gallery-item__flag")?.setAttribute("aria-expanded", "false");
+			});
+
+			if (!isOpen) {
+				item.classList.add("is-open");
+				galleryFlag.setAttribute("aria-expanded", "true");
+			}
+			return;
+		}
+
 		const galleryFiltersClear = target.closest(".gallery-hero__filters-clear, .gallery__empty-reset");
 		if (galleryFiltersClear) {
 			resetGalleryFilters();
@@ -689,8 +708,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	window.addEventListener("resize", () => {
-		const minWidth = header?.classList.contains("header--home") ? 767.98 : 991.98;
-		if (window.matchMedia(`(min-width: ${minWidth}px)`).matches) {
+		if (window.matchMedia("(min-width: 767.98px)").matches) {
 			closeMobileMenu(true);
 		}
 	});

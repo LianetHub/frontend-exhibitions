@@ -6,7 +6,7 @@
 	min-height: rem(876);
 	overflow: hidden;
 	background: url("@img/home/boiserie.webp") 0 100% / auto #{rem(84)} repeat-x,
-	linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%),
+	url("@img/home/hero-overlay-mobile.svg") 0 0 / auto calc(100% - #{rem(84)}) no-repeat,
 	url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
 	$color-dark;
 	color: $color-white;
@@ -15,6 +15,14 @@
 
 	@media (min-width:$md5) {
 		min-height: rem(900);
+	}
+
+	@media (min-width:$md4) {
+		background: url("@img/home/boiserie.webp") 0 100% / auto #{rem(84)} repeat-x,
+		linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%),
+		url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
+		$color-dark;
+
 	}
 
 	@media (min-width: $md3) {
@@ -36,6 +44,23 @@
 		linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
 		url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
 		$color-dark;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: calc(100% - #{rem(84)});
+		aspect-ratio: 360 / 792;
+		box-sizing: content-box;
+		border-right: 100vw solid rgba(0, 0, 0, 0.61);
+		pointer-events: none;
+
+		@media (min-width: $md4) {
+			content: none;
+		}
 	}
 
 	.band {
