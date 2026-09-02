@@ -420,6 +420,11 @@
 			transform: none;
 			visibility: visible;
 		}
+
+		@media (min-width: $md1) {
+			left: rem(-20);
+			right: rem(-20);
+		}
 	}
 
 	// exhibitions-slide__main

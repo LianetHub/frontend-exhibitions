@@ -1125,8 +1125,8 @@ img {
 }
 @media (any-hover: hover) {
   .footer.footer--green .footer__social:hover {
-    background: var(--color-beige);
-    color: var(--color-brown);
+    background: var(--color-white);
+    color: var(--color-green);
   }
 }
 
@@ -1588,11 +1588,6 @@ img {
 }
 .works__slider {
   overflow: visible;
-}
-@media (min-width: 767.98px) {
-  .works__slider {
-    overflow: hidden;
-  }
 }
 .works__nav {
   display: none;
@@ -2225,9 +2220,6 @@ img {
   pointer-events: auto;
 }
 @media (min-width: 767.98px) {
-  .gallery-item {
-    overflow: hidden;
-  }
   .gallery-item.is-open .gallery-item__caption {
     opacity: 0;
     pointer-events: none;
@@ -2240,7 +2232,7 @@ img {
   }
 }
 @media (min-width: 767.98px) {
-  .gallery-item:focus-visible .gallery-item__caption, .gallery-item:focus-within .gallery-item__caption {
+  .gallery-item:has(:focus-visible) .gallery-item__caption {
     opacity: 1;
     pointer-events: auto;
   }
@@ -2344,10 +2336,16 @@ img {
     width: auto;
     min-height: auto;
     padding: 1rem 1.25rem;
-    background: rgba(217, 202, 180, 0.92);
+    background: #D9CAB4;
     backdrop-filter: blur(4px);
     transform: none;
     visibility: visible;
+  }
+}
+@media (min-width: 1439.98px) {
+  .gallery-item__caption {
+    left: -1.25rem;
+    right: -1.25rem;
   }
 }
 .gallery-item__main {
@@ -3049,6 +3047,12 @@ img {
     backdrop-filter: blur(4px);
     transform: none;
     visibility: visible;
+  }
+}
+@media (min-width: 1439.98px) {
+  .exhibitions-slide__caption {
+    left: -1.25rem;
+    right: -1.25rem;
   }
 }
 .exhibitions-slide__main {

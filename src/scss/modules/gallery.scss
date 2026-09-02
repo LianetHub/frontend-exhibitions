@@ -291,8 +291,6 @@
 	}
 
 	@media (min-width: $md4) {
-		overflow: hidden;
-
 		&.is-open {
 			.gallery-item__caption {
 				opacity: 0;
@@ -307,8 +305,7 @@
 			}
 		}
 
-		&:focus-visible .gallery-item__caption,
-		&:focus-within .gallery-item__caption {
+		&:has(:focus-visible) .gallery-item__caption {
 			opacity: 1;
 			pointer-events: auto;
 		}
@@ -445,10 +442,15 @@
 			width: auto;
 			min-height: auto;
 			padding: rem(16) rem(20);
-			background: rgba(217, 202, 180, 0.92);
+			background: #D9CAB4;
 			backdrop-filter: blur(4px);
 			transform: none;
 			visibility: visible;
+		}
+
+		@media (min-width: $md1) {
+			left: rem(-20);
+			right: rem(-20);
 		}
 	}
 

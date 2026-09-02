@@ -179,10 +179,6 @@
 
 	&__slider {
 		overflow: visible;
-
-		@media (min-width:$md4) {
-			overflow: hidden;
-		}
 	}
 
 	// works__nav
