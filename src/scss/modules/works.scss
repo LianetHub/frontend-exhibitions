@@ -7,10 +7,20 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 60%;
+
+		left: calc(round(nearest,
+				40% - #{rem($page-stripe-sm-dark-end)},
+				#{rem($page-stripe-sm-period)}) + #{rem($page-stripe-sm-dark-end)});
+		width: auto;
 		height: 32%;
 		background: $color-green;
 		z-index: -1;
+
+		@media (min-width: $md4) {
+			left: calc(round(nearest,
+					40% - #{rem($page-stripe-dark-end)},
+					#{rem($page-stripe-period)}) + #{rem($page-stripe-dark-end)});
+		}
 	}
 
 	@media (min-width: $md4) {

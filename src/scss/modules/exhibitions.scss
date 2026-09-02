@@ -135,6 +135,7 @@
 		letter-spacing: -0.01em;
 		text-transform: uppercase;
 		text-align: center;
+		cursor: pointer;
 		transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
 		@media (min-width: $md4) {
@@ -142,7 +143,7 @@
 		}
 
 		@media (any-hover: hover) {
-			&:hover {
+			&:hover:not(.is-active) {
 				border-color: $color-beige;
 				background: $color-beige;
 				color: $color-dark;
@@ -154,7 +155,13 @@
 			box-shadow: $focus-ring;
 		}
 
-		&:active {
+		&.is-active {
+			background: $color-dark;
+			border-color: $color-dark;
+			color: $color-white;
+		}
+
+		&:active:not(.is-active) {
 			background: $color-brown;
 			border-color: $color-brown;
 			color: $color-dark;
@@ -173,6 +180,36 @@
 	@media (min-width: $md3) {
 		padding-top: rem(160);
 		padding-bottom: rem(80);
+	}
+
+	&.is-interior {
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.exhibitions-slider__swiper {
+			padding-top: rem(40);
+			padding-bottom: rem(24);
+
+			@media (min-width: $md3) {
+				padding-top: rem(80);
+				padding-bottom: rem(40);
+			}
+		}
+
+		.exhibitions-slider__nav {
+			margin-bottom: rem(40);
+
+			@media (min-width: $md3) {
+				margin-bottom: rem(80);
+			}
+		}
+	}
+
+	// exhibitions-slider__panel
+	&__panel {
+		&:not(.is-active) {
+			display: none;
+		}
 	}
 
 	// exhibitions-slider__wrap
@@ -256,6 +293,51 @@
 	.swiper-pagination-bullet-active {
 		background: transparent;
 		box-shadow: inset 0 0 0 1px $color-dark;
+	}
+}
+
+.exhibitions-marquee {
+	overflow: hidden;
+	border-block: 1px solid $color-brown;
+	background: $color-beige;
+	color: $color-brown;
+
+	// exhibitions-marquee__track
+	&__track {
+		display: flex;
+		align-items: center;
+		gap: rem(117);
+		width: max-content;
+		padding-block: rem(10);
+		animation: exhibitions-marquee 40s linear infinite;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
+
+	// exhibitions-marquee__item
+	&__item {
+		flex-shrink: 0;
+		font-weight: 300;
+		font-size: rem(16);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		white-space: nowrap;
+
+		@media (min-width: $md4) {
+			font-size: rem(24);
+		}
+	}
+}
+
+@keyframes exhibitions-marquee {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
 	}
 }
 

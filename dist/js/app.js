@@ -125,17 +125,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	let exhibitionsSwiper = null;
+	let interiorSwiper = null;
+	const exhibitionsPanels = document.querySelector("[data-exhibitions-panels]");
+	const exhibitionsFilters = document.querySelector("[data-exhibitions-filters]");
+	const exhibitionsInteriorCta = exhibitionsFilters?.querySelector('[data-exhibitions-view="interior"]');
 	const exhibitionsSlider = document.querySelector("[data-exhibitions-slider]");
+	const interiorSlider = document.querySelector("[data-interior-slider]");
 	const exhibitionsSlides = exhibitionsSlider ? [...exhibitionsSlider.querySelectorAll(".exhibitions-slide")] : [];
 
-	if (exhibitionsSlider && typeof Swiper !== "undefined") {
-		const slider = exhibitionsSlider;
-		const wrap = slider.closest(".exhibitions-slider__wrap");
+	function getExhibitionsCoverflowOptions(wrap) {
 		const pagination = wrap?.querySelector(".exhibitions-slider__pagination");
 		const prevEl = wrap?.querySelector(".exhibitions-slider__prev");
 		const nextEl = wrap?.querySelector(".exhibitions-slider__next");
 
-		exhibitionsSwiper = new Swiper(slider, {
+		return {
 			effect: "coverflow",
 			grabCursor: true,
 			centeredSlides: true,
@@ -171,8 +174,18 @@ document.addEventListener("DOMContentLoaded", () => {
 						},
 					}
 				: undefined,
-		});
+		};
+	}
+
+	if (exhibitionsSlider && typeof Swiper !== "undefined") {
+		const wrap = exhibitionsSlider.closest(".exhibitions-slider__wrap");
+		exhibitionsSwiper = new Swiper(exhibitionsSlider, getExhibitionsCoverflowOptions(wrap));
 		exhibitionsSwiper.on("slideChange", closeExhibitionsSlideInfo);
+	}
+
+	if (interiorSlider && typeof Swiper !== "undefined") {
+		const wrap = interiorSlider.closest(".exhibitions-slider__wrap");
+		interiorSwiper = new Swiper(interiorSlider, getExhibitionsCoverflowOptions(wrap));
 	}
 
 	function closeExhibitionsSlideInfo() {
@@ -191,6 +204,48 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (nextSlides.length) exhibitionsSwiper.appendSlide(nextSlides);
 		exhibitionsSwiper.slideTo(0, 0);
 		closeExhibitionsSlideInfo();
+	}
+
+	function setExhibitionsView(view) {
+		if (!exhibitionsPanels) return;
+
+		const isInterior = view === "interior";
+		const exhibitionsPanel = exhibitionsPanels.querySelector('[data-panel="exhibitions"]');
+		const interiorPanel = exhibitionsPanels.querySelector('[data-panel="interior"]');
+
+		exhibitionsPanels.classList.toggle("is-interior", isInterior);
+
+		if (exhibitionsPanel) {
+			exhibitionsPanel.classList.toggle("is-active", !isInterior);
+			exhibitionsPanel.hidden = isInterior;
+		}
+
+		if (interiorPanel) {
+			interiorPanel.classList.toggle("is-active", isInterior);
+			interiorPanel.hidden = !isInterior;
+		}
+
+		if (exhibitionsInteriorCta) {
+			exhibitionsInteriorCta.classList.toggle("is-active", isInterior);
+			exhibitionsInteriorCta.setAttribute("aria-pressed", isInterior ? "true" : "false");
+		}
+
+		if (isInterior) {
+			exhibitionsFilters?.querySelectorAll(".exhibitions-hero__chip").forEach((chip) => {
+				chip.classList.remove("is-active");
+				chip.setAttribute("aria-pressed", "false");
+			});
+			applyExhibitionsCityFilter("");
+			requestAnimationFrame(() => {
+				interiorSwiper?.update();
+				interiorSwiper?.slideTo(0, 0);
+			});
+			return;
+		}
+
+		requestAnimationFrame(() => {
+			exhibitionsSwiper?.update();
+		});
 	}
 
 	// custom select
@@ -615,6 +670,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			const city = exhibitionsChip.getAttribute("data-city") || "";
 			const isActive = exhibitionsChip.classList.contains("is-active");
 
+			setExhibitionsView("exhibitions");
+
 			filters?.querySelectorAll(".exhibitions-hero__chip").forEach((chip) => {
 				chip.classList.remove("is-active");
 				chip.setAttribute("aria-pressed", "false");
@@ -627,6 +684,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			} else {
 				applyExhibitionsCityFilter("");
 			}
+		}
+
+		const exhibitionsViewCta = target.closest('[data-exhibitions-view="interior"]');
+		if (exhibitionsViewCta) {
+			const isActive = exhibitionsViewCta.classList.contains("is-active");
+			setExhibitionsView(isActive ? "exhibitions" : "interior");
 		}
 
 		const selectApply = target.closest(".custom-select__apply");

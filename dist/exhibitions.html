@@ -83,17 +83,18 @@
 									<button type="button" class="exhibitions-hero__chip" data-city="Курган" aria-pressed="false">Г. Курган</button>
 									<button type="button" class="exhibitions-hero__chip" data-city="Сочи" aria-pressed="false">Г. Сочи</button>
 								</div>
-								<a class="exhibitions-hero__cta" href="gallery.html">Посмотреть картины в интерьере</a>
+								<button type="button" class="exhibitions-hero__cta" data-exhibitions-view="interior" aria-pressed="false">Посмотреть картины в интерьере</button>
 							</div>
 						</div>
 					</div>
 					<div class="exhibitions-hero__band-bottom band band--wood" aria-hidden="true"></div>
 				</section>
 
-				<section class="exhibitions-slider">
-					<div class="exhibitions-slider__inner">
-						<div class="exhibitions-slider__wrap">
-							<div class="swiper exhibitions-slider__swiper" data-exhibitions-slider>
+				<section class="exhibitions-slider" data-exhibitions-panels>
+					<div class="exhibitions-slider__panel is-active" data-panel="exhibitions">
+						<div class="exhibitions-slider__inner">
+							<div class="exhibitions-slider__wrap">
+								<div class="swiper exhibitions-slider__swiper" data-exhibitions-slider>
 								<div class="swiper-wrapper">
 									<div class="swiper-slide exhibitions-slide" data-city="Курган">
 										<figure class="exhibitions-slide__figure">
@@ -601,10 +602,88 @@
 									</div>
 								</div>
 							</div>
-							<div class="exhibitions-slider__nav">
-								<button type="button" class="exhibitions-slider__prev swiper-button-prev icon-prev" aria-label="Назад"></button>
-								<div class="exhibitions-slider__pagination swiper-pagination"></div>
-								<button type="button" class="exhibitions-slider__next swiper-button-next icon-next" aria-label="Далее"></button>
+								<div class="exhibitions-slider__nav">
+									<button type="button" class="exhibitions-slider__prev swiper-button-prev icon-prev" aria-label="Назад"></button>
+									<div class="exhibitions-slider__pagination swiper-pagination"></div>
+									<button type="button" class="exhibitions-slider__next swiper-button-next icon-next" aria-label="Далее"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="exhibitions-slider__panel" data-panel="interior" hidden>
+						<div class="exhibitions-marquee" aria-hidden="true">
+							<div class="exhibitions-marquee__track">
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+							</div>
+						</div>
+						<div class="exhibitions-slider__inner">
+							<div class="exhibitions-slider__wrap">
+								<div class="swiper exhibitions-slider__swiper" data-interior-slider>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide exhibitions-slide">
+											<figure class="exhibitions-slide__figure">
+												<a class="exhibitions-slide__media" href="img/interior/01.webp" data-fancybox="interior" data-caption="Картина в интерьере, пример 1">
+													<img class="exhibitions-slide__img" src="img/interior/01.webp" alt="Картина в интерьере, пример 1" width="904" height="678" fetchpriority="high">
+												</a>
+											</figure>
+										</div>
+										<div class="swiper-slide exhibitions-slide">
+											<figure class="exhibitions-slide__figure">
+												<a class="exhibitions-slide__media" href="img/interior/02.webp" data-fancybox="interior" data-caption="Картина в интерьере, пример 2">
+													<img class="exhibitions-slide__img" src="img/interior/02.webp" alt="Картина в интерьере, пример 2" width="904" height="678" loading="lazy">
+												</a>
+											</figure>
+										</div>
+										<div class="swiper-slide exhibitions-slide">
+											<figure class="exhibitions-slide__figure">
+												<a class="exhibitions-slide__media" href="img/interior/03.webp" data-fancybox="interior" data-caption="Картина в интерьере, пример 3">
+													<img class="exhibitions-slide__img" src="img/interior/03.webp" alt="Картина в интерьере, пример 3" width="904" height="678" loading="lazy">
+												</a>
+											</figure>
+										</div>
+										<div class="swiper-slide exhibitions-slide">
+											<figure class="exhibitions-slide__figure">
+												<a class="exhibitions-slide__media" href="img/interior/04.webp" data-fancybox="interior" data-caption="Картина в интерьере, пример 4">
+													<img class="exhibitions-slide__img" src="img/interior/04.webp" alt="Картина в интерьере, пример 4" width="904" height="678" loading="lazy">
+												</a>
+											</figure>
+										</div>
+										<div class="swiper-slide exhibitions-slide">
+											<figure class="exhibitions-slide__figure">
+												<a class="exhibitions-slide__media" href="img/interior/05.webp" data-fancybox="interior" data-caption="Картина в интерьере, пример 5">
+													<img class="exhibitions-slide__img" src="img/interior/05.webp" alt="Картина в интерьере, пример 5" width="904" height="678" loading="lazy">
+												</a>
+											</figure>
+										</div>
+										<div class="swiper-slide exhibitions-slide">
+											<figure class="exhibitions-slide__figure">
+												<a class="exhibitions-slide__media" href="img/interior/06.webp" data-fancybox="interior" data-caption="Картина в интерьере, пример 6">
+													<img class="exhibitions-slide__img" src="img/interior/06.webp" alt="Картина в интерьере, пример 6" width="904" height="678" loading="lazy">
+												</a>
+											</figure>
+										</div>
+									</div>
+								</div>
+								<div class="exhibitions-slider__nav">
+									<button type="button" class="exhibitions-slider__prev swiper-button-prev icon-prev" aria-label="Назад"></button>
+									<div class="exhibitions-slider__pagination swiper-pagination"></div>
+									<button type="button" class="exhibitions-slider__next swiper-button-next icon-next" aria-label="Далее"></button>
+								</div>
+							</div>
+						</div>
+						<div class="exhibitions-marquee" aria-hidden="true">
+							<div class="exhibitions-marquee__track">
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
+								<span class="exhibitions-marquee__item">ВНИМАНИЕ! Размер на примерах отличается от реального</span>
 							</div>
 						</div>
 					</div>
