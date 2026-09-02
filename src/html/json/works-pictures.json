@@ -1,0 +1,576 @@
+[
+	{
+		"src": "@img/works/001-vetrenyy-den-v-novorossiyske.webp",
+		"alt": "Картина «Ветреный день в Новороссийске», бумага, 2020",
+		"name": "Ветреный день в Новороссийске",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/002-zimniy-natyurmort.webp",
+		"alt": "Картина «Зимний натюрморт», бумага, 2021",
+		"name": "Зимний натюрморт",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/003-letniy-natyurmort.webp",
+		"alt": "Картина «Летний натюрморт», бумага, 2014",
+		"name": "Летний натюрморт",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/004-inzhir-i-gladiolusy.webp",
+		"alt": "Картина «Инжир и гладиолусы», бумага, 2019",
+		"name": "Инжир и гладиолусы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/005-na-kukhne-siren.webp",
+		"alt": "Картина «На кухне. Сирень.», бумага, 2022",
+		"name": "На кухне. Сирень.",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/006-zima-ukhodit.webp",
+		"alt": "Картина «Зима уходит», картон, 2022",
+		"name": "Зима уходит",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Темпера"
+	},
+	{
+		"src": "@img/works/007-vesna-u-sinikh-dverey.webp",
+		"alt": "Картина «Весна у синих дверей», картон, 2023",
+		"name": "Весна у синих дверей",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Темпера"
+	},
+	{
+		"src": "@img/works/008-son-ryzhego-kota.webp",
+		"alt": "Картина «Сон рыжего кота», бумага, 2021",
+		"name": "Сон рыжего кота",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/009-vechereet.webp",
+		"alt": "Картина «Вечереет», картон, 2023",
+		"name": "Вечереет",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Темпера"
+	},
+	{
+		"src": "@img/works/010-nemnogo-italii-v-kholodnoy-moskve.webp",
+		"alt": "Картина «Немного Италии в холодной Москве», бумага, 2020",
+		"name": "Немного Италии в холодной Москве",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/011-staryy-stul.webp",
+		"alt": "Картина «Старый стул», бумага, 2018",
+		"name": "Старый стул",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/012-sirenevyy-buket.webp",
+		"alt": "Картина «Сиреневый букет», бумага, 2020",
+		"name": "Сиреневый букет",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/013-vozvrashchenie-s-etyudov.webp",
+		"alt": "Картина «Возвращение с этюдов», бумага, 2020",
+		"name": "Возвращение с этюдов",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/014-zima-v-malenkom-pereulke.webp",
+		"alt": "Картина «Зима в маленьком переулке», бумага, 2021",
+		"name": "Зима в маленьком переулке",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/015-yukka-krasnodarskaya.webp",
+		"alt": "Картина «Юкка краснодарская», холст, 2023",
+		"name": "Юкка краснодарская",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/016-orkhidei-na-zimney-verande.webp",
+		"alt": "Картина «Орхидеи на зимней веранде», бумага, 2020",
+		"name": "Орхидеи на зимней веранде",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/017-v-ozhidanii-vesny.webp",
+		"alt": "Картина «В ожидании весны», картон, 2022",
+		"name": "В ожидании весны",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Темпера"
+	},
+	{
+		"src": "@img/works/018-mimoza-i-limony.webp",
+		"alt": "Картина «Мимоза и лимоны», бумага, 2023",
+		"name": "Мимоза и лимоны",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/019-portret-asi.webp",
+		"alt": "Картина «Портрет Аси», бумага, 2025",
+		"name": "Портрет Аси",
+		"genreLabel": "Портрет",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/020-zima-v-arkhangelskom.webp",
+		"alt": "Картина «Зима в Архангельском», бумага, 2024",
+		"name": "Зима в Архангельском",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Монотипия"
+	},
+	{
+		"src": "@img/works/021-sneg-na-kryshakh.webp",
+		"alt": "Картина «СНЕГ на крышах», холст, 2015",
+		"name": "СНЕГ на крышах",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Масло"
+	},
+	{
+		"src": "@img/works/022-osen-za-oknom.webp",
+		"alt": "Картина «Осень за окном», картон, 2012",
+		"name": "Осень за окном",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/023-zakat-nad-morem.webp",
+		"alt": "Картина «Закат над морем», картон, 2002",
+		"name": "Закат над морем",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/024-suveniry-dalnikh-beregov.webp",
+		"alt": "Картина «Сувениры дальних берегов», бумага, 2025",
+		"name": "Сувениры дальних берегов",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/025-korzina-sireni.webp",
+		"alt": "Картина «Корзина сирени», бумага, 2021",
+		"name": "Корзина сирени",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/026-rozhdestvenskaya-zvezda.webp",
+		"alt": "Картина «Рождественская звезда», картон, 2023",
+		"name": "Рождественская звезда",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/027-utrennyaya-siren.webp",
+		"alt": "Картина «Утренняя сирень», бумага, 2023",
+		"name": "Утренняя сирень",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/028-chay-v-sadu.webp",
+		"alt": "Картина «Чай в саду», бумага, 2021",
+		"name": "Чай в саду",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/029-vesna-prikhodit-v-gory.webp",
+		"alt": "Картина «Весна приходит в горы», бумага, 2025",
+		"name": "Весна приходит в горы",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/030-na-starom-bufete.webp",
+		"alt": "Картина «На старом буфете», картон, 2025",
+		"name": "На старом буфете",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/031-torgovye-ryady.webp",
+		"alt": "Картина «Торговые ряды», бумага, 2024",
+		"name": "Торговые ряды",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Монотипия"
+	},
+	{
+		"src": "@img/works/032-dozhdlivyy-den-na-volge.webp",
+		"alt": "Картина «Дождливый день на Волге», бумага, 2025",
+		"name": "Дождливый день на Волге",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/033-zheltye-piony.webp",
+		"alt": "Картина «Желтые пионы», картон, 2024",
+		"name": "Желтые пионы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/034-buket-iz-podsolnukhov.webp",
+		"alt": "Картина «Букет из подсолнухов», бумага, 2023",
+		"name": "Букет из подсолнухов",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/035-mokryy-sneg-v-krasnodare.webp",
+		"alt": "Картина «Мокрый снег в Краснодаре», бумага, 2023",
+		"name": "Мокрый снег в Краснодаре",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/036-vecher-okraina.webp",
+		"alt": "Картина «Вечер. Окраина.», бумага, 2019",
+		"name": "Вечер. Окраина.",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/037-limony-na-siney-tarelke.webp",
+		"alt": "Картина «Лимоны на синей тарелке», бумага, 2022",
+		"name": "Лимоны на синей тарелке",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/038-zheltaya-vesna.webp",
+		"alt": "Картина «Желтая весна», бумага, 2022",
+		"name": "Желтая весна",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/039-pro-vesnu-i-tramvaychik.webp",
+		"alt": "Картина «Про весну и трамвайчик», картон, 2023",
+		"name": "Про весну и трамвайчик",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/040-vaza-s-limonami.webp",
+		"alt": "Картина «Ваза с лимонами», картон, 2023",
+		"name": "Ваза с лимонами",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/041-zimniy-den-v-pereulke.webp",
+		"alt": "Картина «Зимний день в переулке», картон, 2023",
+		"name": "Зимний день в переулке",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/042-prazdnichnyy-natyurmort.webp",
+		"alt": "Картина «Праздничный натюрморт», картон, 2023",
+		"name": "Праздничный натюрморт",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/043-polevye-tsvety.webp",
+		"alt": "Картина «Полевые цветы», картон, 2023",
+		"name": "Полевые цветы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/044-v-otpusk.webp",
+		"alt": "Картина «В отпуск», картон, 2024",
+		"name": "В отпуск",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/045-tikhaya-zavod.webp",
+		"alt": "Картина «Тихая заводь», бумага, 2025",
+		"name": "Тихая заводь",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/046-krasnye-yaly-na-volge.webp",
+		"alt": "Картина «Красные ялы на Волге», бумага, 2025",
+		"name": "Красные ялы на Волге",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/047-chay-s-kalinoy.webp",
+		"alt": "Картина «Чай с калиной», бумага, 2020",
+		"name": "Чай с калиной",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/048-vesna-u-danilovskogo-monastyrya.webp",
+		"alt": "Картина «Весна у Даниловского монастыря», бумага, 2021",
+		"name": "Весна у Даниловского монастыря",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/049-bukhta-rybachya-kerch.webp",
+		"alt": "Картина «Бухта Рыбачья. Керчь.», бумага, 2020",
+		"name": "Бухта Рыбачья. Керчь.",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/050-krasnaya-vesna.webp",
+		"alt": "Картина «Красная весна», картон, 2023",
+		"name": "Красная весна",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/051-poslednie-listya-pervyy-sneg.webp",
+		"alt": "Картина «Последние листья, первый снег», картон, 2023",
+		"name": "Последние листья, первый снег",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/052-roza-i-zerkalo.webp",
+		"alt": "Картина «Роза и зеркало», картон, 2022",
+		"name": "Роза и зеркало",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/053-gortenziya-tsvetet.webp",
+		"alt": "Картина «Гортензия цветет», картон, 2023",
+		"name": "Гортензия цветет",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/054-redkiy-sneg-v-sochi.webp",
+		"alt": "Картина «Редкий снег в Сочи», бумага, 2022",
+		"name": "Редкий снег в Сочи",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/055-rybnyy-den.webp",
+		"alt": "Картина «Рыбный день», бумага, 2025",
+		"name": "Рыбный день",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/056-gde-to-v-tsentre-krasnodara.webp",
+		"alt": "Картина «Где-то в центре Краснодара», бумага, 2025",
+		"name": "Где-то в центре Краснодара",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/057-posledniy-luch-nad-morem.webp",
+		"alt": "Картина «Последний луч над морем», картон, 2024",
+		"name": "Последний луч над морем",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/058-u-zerkala.webp",
+		"alt": "Картина «У зеркала», картон, 2023",
+		"name": "У зеркала",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/059-pered-dozhdem.webp",
+		"alt": "Картина «Перед дождем», картон, 2024",
+		"name": "Перед дождем",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/060-zheltye-khrizantemy.webp",
+		"alt": "Картина «Желтые хризантемы», бумага, 2019",
+		"name": "Желтые хризантемы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/061-morskoy-briz.webp",
+		"alt": "Картина «Морской бриз», бумага, 2019",
+		"name": "Морской бриз",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/062-starye-utyuzhki.webp",
+		"alt": "Картина «Старые утюжки», бумага, 2025",
+		"name": "Старые утюжки",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/063-pozdnie-tsvety.webp",
+		"alt": "Картина «Поздние цветы», бумага, 2018",
+		"name": "Поздние цветы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/064-buket-iz-kolokolchikov.webp",
+		"alt": "Картина «Букет из колокольчиков», бумага, 2019",
+		"name": "Букет из колокольчиков",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/065-letniy-svet.webp",
+		"alt": "Картина «Летний свет», бумага, 2023",
+		"name": "Летний свет",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/066-belyy-zontik.webp",
+		"alt": "Картина «Белый зонтик», картон, 2020",
+		"name": "Белый зонтик",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/067-belye-oblaka-nad-moykoy.webp",
+		"alt": "Картина «Белые облака над Мойкой», бумага, 2023",
+		"name": "Белые облака над Мойкой",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/068-v-gelendzhikskoy-bukhte.webp",
+		"alt": "Картина «В Геленджикской бухте», картон, 2020",
+		"name": "В Геленджикской бухте",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/069-krasnyy-mostik.webp",
+		"alt": "Картина «Красный мостик», бумага, 2022",
+		"name": "Красный мостик",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/070-poselok-v-gorakh.webp",
+		"alt": "Картина «Поселок в горах», бумага, 2025",
+		"name": "Поселок в горах",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/071-irisy-v-mednom-kuvshine.webp",
+		"alt": "Картина «Ирисы в медном кувшине», бумага, 2020",
+		"name": "Ирисы в медном кувшине",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/072-ayva.webp",
+		"alt": "Картина «Айва», бумага, 2019",
+		"name": "Айва",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/073-vetka-ayvy.webp",
+		"alt": "Картина «Ветка айвы», бумага, 2023",
+		"name": "Ветка айвы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/074-zimniy-buket.webp",
+		"alt": "Картина «Зимний букет», картон, 2021",
+		"name": "Зимний букет",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/075-belye-slivy.webp",
+		"alt": "Картина «Белые сливы», бумага, 2023",
+		"name": "Белые сливы",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/076-romashki.webp",
+		"alt": "Картина «Ромашки», картон, 2022",
+		"name": "Ромашки",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акрил"
+	},
+	{
+		"src": "@img/works/077-yablochnyy-spas.webp",
+		"alt": "Картина «Яблочный Спас», картон, 2023",
+		"name": "Яблочный Спас",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/078-oblaka-nad-otvodnym-kanalom.webp",
+		"alt": "Картина «Облака над Отводным каналом», холст, 2022",
+		"name": "Облака над Отводным каналом",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Пастель"
+	},
+	{
+		"src": "@img/works/079-v-karlovykh-varakh.webp",
+		"alt": "Картина «В Карловых Варах», холст, 2005",
+		"name": "В Карловых Варах",
+		"genreLabel": "Пейзаж",
+		"techniqueLabel": "Масло"
+	},
+	{
+		"src": "@img/works/080-letniy-zavtrak-c-rozami.webp",
+		"alt": "Картина «Летний завтрак c розами», картон, 2023",
+		"name": "Летний завтрак c розами",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Гуашь"
+	},
+	{
+		"src": "@img/works/081-zheltaya-pizhma.webp",
+		"alt": "Картина «Желтая пижма», бумага, 2021",
+		"name": "Желтая пижма",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	},
+	{
+		"src": "@img/works/082-natyurmort-s-fialkoy.webp",
+		"alt": "Картина «Натюрморт с фиалкой», бумага, 2025",
+		"name": "Натюрморт с фиалкой",
+		"genreLabel": "Натюрморт",
+		"techniqueLabel": "Акварель"
+	}
+]

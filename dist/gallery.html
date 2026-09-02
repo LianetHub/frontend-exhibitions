@@ -79,106 +79,109 @@
 									авторства.
 								</p>
 								<div class="gallery-hero__filters" data-gallery-filters>
-									<div class="custom-select gallery-hero__select custom-select--multiple" id="gallery-genre" data-name="genre">
-										<span class="visually-hidden" id="gallery-genre-label">Жанр</span>
-										<div class="custom-select__head">
-											<button
-												type="button"
-												class="custom-select__trigger"
-												aria-labelledby="gallery-genre-label"
-												aria-haspopup="listbox"
-												aria-expanded="false"
-												aria-controls="gallery-genre-list">
-												<span class="custom-select__value">Жанр</span>
-											</button>
+									<div class="gallery-hero__filters-row">
+										<div class="custom-select gallery-hero__select custom-select--multiple" id="gallery-genre" data-name="genre">
+											<span class="visually-hidden" id="gallery-genre-label">Жанр</span>
+											<div class="custom-select__head">
+												<button
+													type="button"
+													class="custom-select__trigger"
+													aria-labelledby="gallery-genre-label"
+													aria-haspopup="listbox"
+													aria-expanded="false"
+													aria-controls="gallery-genre-list">
+													<span class="custom-select__value">Жанр</span>
+												</button>
+												
+												<button type="button" class="custom-select__clear" aria-label="Очистить фильтр Жанр">Очистить</button>
+												
+											</div>
 											
-											<button type="button" class="custom-select__clear" aria-label="Очистить фильтр Жанр">Очистить</button>
-											
-										</div>
-										
-										<div class="custom-select__panel" hidden>
-											<ul class="custom-select__list" id="gallery-genre-list" role="listbox" aria-multiselectable="true" tabindex="-1">
-												<li class="custom-select__option" role="option" data-value="landscape" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Пейзаж</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+											<div class="custom-select__panel" hidden>
+												<ul class="custom-select__list" id="gallery-genre-list" role="listbox" aria-multiselectable="true" tabindex="-1">
+													<li class="custom-select__option" role="option" data-value="landscape" aria-selected="false" tabindex="-1">
+														<span class="custom-select__option-label">Пейзаж</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="still-life" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Натюрморт</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Натюрморт</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="portrait" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Портрет</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Портрет</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 
-											</ul>
-											<div class="custom-select__foot">
-												<button type="button" class="custom-select__apply btn">Применить</button>
+												</ul>
+												<div class="custom-select__foot">
+													<button type="button" class="custom-select__apply btn">Применить</button>
+												</div>
 											</div>
+											
+											
+											<input type="hidden" name="genre" value="">
 										</div>
-										
-										
-										<input type="hidden" name="genre" value="">
-									</div>
 
-									<div class="custom-select gallery-hero__select custom-select--multiple" id="gallery-technique" data-name="technique">
-										<span class="visually-hidden" id="gallery-technique-label">Материал</span>
-										<div class="custom-select__head">
-											<button
-												type="button"
-												class="custom-select__trigger"
-												aria-labelledby="gallery-technique-label"
-												aria-haspopup="listbox"
-												aria-expanded="false"
-												aria-controls="gallery-technique-list">
-												<span class="custom-select__value">Материал</span>
-											</button>
+										<div class="custom-select gallery-hero__select custom-select--multiple" id="gallery-technique" data-name="technique">
+											<span class="visually-hidden" id="gallery-technique-label">Материал</span>
+											<div class="custom-select__head">
+												<button
+													type="button"
+													class="custom-select__trigger"
+													aria-labelledby="gallery-technique-label"
+													aria-haspopup="listbox"
+													aria-expanded="false"
+													aria-controls="gallery-technique-list">
+													<span class="custom-select__value">Материал</span>
+												</button>
+												
+												<button type="button" class="custom-select__clear" aria-label="Очистить фильтр Материал">Очистить</button>
+												
+											</div>
 											
-											<button type="button" class="custom-select__clear" aria-label="Очистить фильтр Материал">Очистить</button>
-											
-										</div>
-										
-										<div class="custom-select__panel" hidden>
-											<ul class="custom-select__list" id="gallery-technique-list" role="listbox" aria-multiselectable="true" tabindex="-1">
-												<li class="custom-select__option" role="option" data-value="акварель" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Акварель</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+											<div class="custom-select__panel" hidden>
+												<ul class="custom-select__list" id="gallery-technique-list" role="listbox" aria-multiselectable="true" tabindex="-1">
+													<li class="custom-select__option" role="option" data-value="акварель" aria-selected="false" tabindex="-1">
+														<span class="custom-select__option-label">Акварель</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="гуашь" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Гуашь</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Гуашь</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="пастель" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Пастель</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Пастель</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="темпера" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Темпера</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Темпера</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="акрил" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Акрил</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Акрил</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="масло" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Масло</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Масло</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 <li class="custom-select__option" role="option" data-value="монотипия" aria-selected="false" tabindex="-1">
-													<span class="custom-select__option-label">Монотипия</span>
-													<span class="custom-select__option-check" aria-hidden="true"></span>
-												</li>
+														<span class="custom-select__option-label">Монотипия</span>
+														<span class="custom-select__option-check" aria-hidden="true"></span>
+													</li>
 
-											</ul>
-											<div class="custom-select__foot">
-												<button type="button" class="custom-select__apply btn">Применить</button>
+												</ul>
+												<div class="custom-select__foot">
+													<button type="button" class="custom-select__apply btn">Применить</button>
+												</div>
 											</div>
+											
+											
+											<input type="hidden" name="technique" value="">
 										</div>
-										
-										
-										<input type="hidden" name="technique" value="">
-									</div>
 
+									</div>
+									<button class="gallery-hero__filters-clear btn btn--light icon-cross">СБРОСИТЬ НАСТРОЙКИ</button>
 								</div>
 							</div>
 						</div>
@@ -207,6 +210,176 @@
 									</span>
 								</a>
 							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/008-son-ryzhego-kota.webp" data-fancybox="gallery" data-caption="Сон рыжего кота — натюрморт, бумага, акварель, 70×90">
+									<img class="gallery-item__img" src="img/works/008-son-ryzhego-kota.webp" alt="Картина «Сон рыжего кота», бумага, 2021" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Сон рыжего кота</span>
+											<span class="gallery-item__size">70×90</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/038-zheltaya-vesna.webp" data-fancybox="gallery" data-caption="Желтая весна — натюрморт, бумага, акварель, 80×60">
+									<img class="gallery-item__img" src="img/works/038-zheltaya-vesna.webp" alt="Картина «Желтая весна», бумага, 2022" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Желтая весна</span>
+											<span class="gallery-item__size">80×60</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/024-suveniry-dalnikh-beregov.webp" data-fancybox="gallery" data-caption="Сувениры дальних берегов — натюрморт, бумага, акварель, 70×50">
+									<img class="gallery-item__img" src="img/works/024-suveniry-dalnikh-beregov.webp" alt="Картина «Сувениры дальних берегов», бумага, 2025" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Сувениры дальних берегов</span>
+											<span class="gallery-item__size">70×50</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/081-zheltaya-pizhma.webp" data-fancybox="gallery" data-caption="Желтая пижма — натюрморт, бумага, акварель, 80×60">
+									<img class="gallery-item__img" src="img/works/081-zheltaya-pizhma.webp" alt="Картина «Желтая пижма», бумага, 2021" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Желтая пижма</span>
+											<span class="gallery-item__size">80×60</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+								<a class="gallery-item" href="img/works/030-na-starom-bufete.webp" data-fancybox="gallery" data-caption="На старом буфете — натюрморт, картон, гуашь, 60×80">
+									<img class="gallery-item__img" src="img/works/030-na-starom-bufete.webp" alt="Картина «На старом буфете», картон, 2025" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">На старом буфете</span>
+											<span class="gallery-item__size">60×80</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Гуашь</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, монотипия">
+								<a class="gallery-item" href="img/works/031-torgovye-ryady.webp" data-fancybox="gallery" data-caption="Торговые ряды — пейзаж, бумага, монотипия, 20×30">
+									<img class="gallery-item__img" src="img/works/031-torgovye-ryady.webp" alt="Картина «Торговые ряды», бумага, 2024" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Торговые ряды</span>
+											<span class="gallery-item__size">20×30</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Монотипия</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/004-inzhir-i-gladiolusy.webp" data-fancybox="gallery" data-caption="Инжир и гладиолусы — натюрморт, бумага, акварель, 85×55">
+									<img class="gallery-item__img" src="img/works/004-inzhir-i-gladiolusy.webp" alt="Картина «Инжир и гладиолусы», бумага, 2019" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Инжир и гладиолусы</span>
+											<span class="gallery-item__size">85×55</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/028-chay-v-sadu.webp" data-fancybox="gallery" data-caption="Чай в саду — натюрморт, бумага, акварель, 90×70">
+									<img class="gallery-item__img" src="img/works/028-chay-v-sadu.webp" alt="Картина «Чай в саду», бумага, 2021" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Чай в саду</span>
+											<span class="gallery-item__size">90×70</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/071-irisy-v-mednom-kuvshine.webp" data-fancybox="gallery" data-caption="Ирисы в медном кувшине — натюрморт, бумага, акварель, 70×50">
+									<img class="gallery-item__img" src="img/works/071-irisy-v-mednom-kuvshine.webp" alt="Картина «Ирисы в медном кувшине», бумага, 2020" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Ирисы в медном кувшине</span>
+											<span class="gallery-item__size">70×50</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/025-korzina-sireni.webp" data-fancybox="gallery" data-caption="Корзина сирени — натюрморт, бумага, акварель, 60×90">
+									<img class="gallery-item__img" src="img/works/025-korzina-sireni.webp" alt="Картина «Корзина сирени», бумага, 2021" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Корзина сирени</span>
+											<span class="gallery-item__size">60×90</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
+										</span>
+									</span>
+								</a>
+							</div>
 <div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/001-vetrenyy-den-v-novorossiyske.webp" data-fancybox="gallery" data-caption="Ветреный день в Новороссийске — пейзаж, бумага, акварель, 55×75">
 									<img class="gallery-item__img" src="img/works/001-vetrenyy-den-v-novorossiyske.webp" alt="Картина «Ветреный день в Новороссийске», бумага, 2020" width="875" height="585" loading="lazy">
@@ -224,30 +397,13 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, гуашь, пастель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/002-zimniy-natyurmort.webp" data-fancybox="gallery" data-caption="Зимний натюрморт — натюрморт, бумага, гуашь, пастель, 90×70">
-									<img class="gallery-item__img" src="img/works/002-zimniy-natyurmort.webp" alt="Картина «Зимний натюрморт», бумага, 2021" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/073-vetka-ayvy.webp" data-fancybox="gallery" data-caption="Ветка айвы — натюрморт, бумага, акварель, 80×60">
+									<img class="gallery-item__img" src="img/works/073-vetka-ayvy.webp" alt="Картина «Ветка айвы», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Зимний натюрморт</span>
-											<span class="gallery-item__size">90×70</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Пастель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/013-vozvrashchenie-s-etyudov.webp" data-fancybox="gallery" data-caption="Возвращение с этюдов — натюрморт, бумага, акварель, 90×60">
-									<img class="gallery-item__img" src="img/works/013-vozvrashchenie-s-etyudov.webp" alt="Картина «Возвращение с этюдов», бумага, 2020" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Возвращение с этюдов</span>
-											<span class="gallery-item__size">90×60</span>
+											<span class="gallery-item__name">Ветка айвы</span>
+											<span class="gallery-item__size">80×60</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
@@ -259,12 +415,29 @@
 								</a>
 							</div>
 <div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/008-son-ryzhego-kota.webp" data-fancybox="gallery" data-caption="Сон рыжего кота — натюрморт, бумага, акварель, 70×90">
-									<img class="gallery-item__img" src="img/works/008-son-ryzhego-kota.webp" alt="Картина «Сон рыжего кота», бумага, 2021" width="875" height="585" loading="lazy">
+								<a class="gallery-item gallery-item--portrait" href="img/works/072-ayva.webp" data-fancybox="gallery" data-caption="Айва — натюрморт, бумага, акварель, 80×60">
+									<img class="gallery-item__img" src="img/works/072-ayva.webp" alt="Картина «Айва», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Сон рыжего кота</span>
-											<span class="gallery-item__size">70×90</span>
+											<span class="gallery-item__name">Айва</span>
+											<span class="gallery-item__size">80×60</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/060-zheltye-khrizantemy.webp" data-fancybox="gallery" data-caption="Желтые хризантемы — натюрморт, бумага, акварель, 70×50">
+									<img class="gallery-item__img" src="img/works/060-zheltye-khrizantemy.webp" alt="Картина «Желтые хризантемы», бумага, 2019" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Желтые хризантемы</span>
+											<span class="gallery-item__size">70×50</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
@@ -292,47 +465,13 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, монотипия">
-								<a class="gallery-item" href="img/works/031-torgovye-ryady.webp" data-fancybox="gallery" data-caption="Торговые ряды — пейзаж, бумага, монотипия, 20×30">
-									<img class="gallery-item__img" src="img/works/031-torgovye-ryady.webp" alt="Картина «Торговые ряды», бумага, 2024" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Торговые ряды</span>
-											<span class="gallery-item__size">20×30</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Монотипия</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/010-nemnogo-italii-v-kholodnoy-moskve.webp" data-fancybox="gallery" data-caption="Немного Италии в холодной Москве — пейзаж, бумага, акварель, 65×55">
-									<img class="gallery-item__img" src="img/works/010-nemnogo-italii-v-kholodnoy-moskve.webp" alt="Картина «Немного Италии в холодной Москве», бумага, 2020" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Немного Италии в холодной Москве</span>
-											<span class="gallery-item__size">65×55</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
 <div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/005-na-kukhne-siren.webp" data-fancybox="gallery" data-caption="На кухне. Сирень. — натюрморт, бумага, акварель, 85×55">
-									<img class="gallery-item__img" src="img/works/005-na-kukhne-siren.webp" alt="Картина «На кухне. Сирень.», бумага, 2022" width="875" height="585" loading="lazy">
+								<a class="gallery-item" href="img/works/062-starye-utyuzhki.webp" data-fancybox="gallery" data-caption="Старые утюжки — натюрморт, бумага, акварель, 60×80">
+									<img class="gallery-item__img" src="img/works/062-starye-utyuzhki.webp" alt="Картина «Старые утюжки», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">На кухне. Сирень.</span>
-											<span class="gallery-item__size">85×55</span>
+											<span class="gallery-item__name">Старые утюжки</span>
+											<span class="gallery-item__size">60×80</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
@@ -342,42 +481,59 @@
 										</span>
 									</span>
 								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
-								<a class="gallery-item gallery-item--portrait" href="img/works/021-sneg-na-kryshakh.webp" data-fancybox="gallery" data-caption="СНЕГ на крышах — пейзаж, холст, масло, 30×40">
-									<img class="gallery-item__img" src="img/works/021-sneg-na-kryshakh.webp" alt="Картина «СНЕГ на крышах», холст, 2015" width="875" height="585" loading="lazy">
+							</div></div>
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+								<a class="gallery-item gallery-item--portrait" href="img/works/077-yablochnyy-spas.webp" data-fancybox="gallery" data-caption="Яблочный Спас — натюрморт, картон, гуашь, 90×70">
+									<img class="gallery-item__img" src="img/works/077-yablochnyy-spas.webp" alt="Картина «Яблочный Спас», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">СНЕГ на крышах</span>
-											<span class="gallery-item__size">30×40</span>
+											<span class="gallery-item__name">Яблочный Спас</span>
+											<span class="gallery-item__size">90×70</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Масло</span>
+											<span>Гуашь</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
-							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
-								<a class="gallery-item" href="img/works/006-zima-ukhodit.webp" data-fancybox="gallery" data-caption="Зима уходит — пейзаж, картон, темпера, 70×90">
-									<img class="gallery-item__img" src="img/works/006-zima-ukhodit.webp" alt="Картина «Зима уходит», картон, 2022" width="875" height="585" loading="lazy">
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+								<a class="gallery-item gallery-item--portrait" href="img/works/076-romashki.webp" data-fancybox="gallery" data-caption="Ромашки — натюрморт, картон, акрил, 80×60">
+									<img class="gallery-item__img" src="img/works/076-romashki.webp" alt="Картина «Ромашки», картон, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Зима уходит</span>
-											<span class="gallery-item__size">70×90</span>
+											<span class="gallery-item__name">Ромашки</span>
+											<span class="gallery-item__size">80×60</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Темпера</span>
+											<span>Акрил</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
 							</div>
 <div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/027-utrennyaya-siren.webp" data-fancybox="gallery" data-caption="Утренняя сирень — натюрморт, бумага, акварель, 80×65">
+									<img class="gallery-item__img" src="img/works/027-utrennyaya-siren.webp" alt="Картина «Утренняя сирень», бумага, 2023" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Утренняя сирень</span>
+											<span class="gallery-item__size">80×65</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/014-zima-v-malenkom-pereulke.webp" data-fancybox="gallery" data-caption="Зима в маленьком переулке — натюрморт, бумага, акварель, 70×90">
 									<img class="gallery-item__img" src="img/works/014-zima-v-malenkom-pereulke.webp" alt="Картина «Зима в маленьком переулке», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -393,14 +549,31 @@
 										</span>
 									</span>
 								</a>
-							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/027-utrennyaya-siren.webp" data-fancybox="gallery" data-caption="Утренняя сирень — натюрморт, бумага, акварель, 80×65">
-									<img class="gallery-item__img" src="img/works/027-utrennyaya-siren.webp" alt="Картина «Утренняя сирень», бумага, 2023" width="875" height="585" loading="lazy">
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/056-gde-to-v-tsentre-krasnodara.webp" data-fancybox="gallery" data-caption="Где-то в центре Краснодара — пейзаж, бумага, акварель, 40×60">
+									<img class="gallery-item__img" src="img/works/056-gde-to-v-tsentre-krasnodara.webp" alt="Картина «Где-то в центре Краснодара», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Утренняя сирень</span>
-											<span class="gallery-item__size">80×65</span>
+											<span class="gallery-item__name">Где-то в центре Краснодара</span>
+											<span class="gallery-item__size">40×60</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/005-na-kukhne-siren.webp" data-fancybox="gallery" data-caption="На кухне. Сирень. — натюрморт, бумага, акварель, 85×55">
+									<img class="gallery-item__img" src="img/works/005-na-kukhne-siren.webp" alt="Картина «На кухне. Сирень.», бумага, 2022" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">На кухне. Сирень.</span>
+											<span class="gallery-item__size">85×55</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
@@ -428,127 +601,8 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/028-chay-v-sadu.webp" data-fancybox="gallery" data-caption="Чай в саду — натюрморт, бумага, акварель, 90×70">
-									<img class="gallery-item__img" src="img/works/028-chay-v-sadu.webp" alt="Картина «Чай в саду», бумага, 2021" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Чай в саду</span>
-											<span class="gallery-item__size">90×70</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
-								<a class="gallery-item" href="img/works/007-vesna-u-sinikh-dverey.webp" data-fancybox="gallery" data-caption="Весна у синих дверей — пейзаж, картон, темпера, 60×65">
-									<img class="gallery-item__img" src="img/works/007-vesna-u-sinikh-dverey.webp" alt="Картина «Весна у синих дверей», картон, 2023" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Весна у синих дверей</span>
-											<span class="gallery-item__size">60×65</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Темпера</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/018-mimoza-i-limony.webp" data-fancybox="gallery" data-caption="Мимоза и лимоны — натюрморт, бумага, акварель, 60×40">
-									<img class="gallery-item__img" src="img/works/018-mimoza-i-limony.webp" alt="Картина «Мимоза и лимоны», бумага, 2023" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Мимоза и лимоны</span>
-											<span class="gallery-item__size">60×40</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/025-korzina-sireni.webp" data-fancybox="gallery" data-caption="Корзина сирени — натюрморт, бумага, акварель, 60×90">
-									<img class="gallery-item__img" src="img/works/025-korzina-sireni.webp" alt="Картина «Корзина сирени», бумага, 2021" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Корзина сирени</span>
-											<span class="gallery-item__size">60×90</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
-								<a class="gallery-item gallery-item--portrait" href="img/works/026-rozhdestvenskaya-zvezda.webp" data-fancybox="gallery" data-caption="Рождественская звезда — натюрморт, картон, акрил, 80×60">
-									<img class="gallery-item__img" src="img/works/026-rozhdestvenskaya-zvezda.webp" alt="Картина «Рождественская звезда», картон, 2023" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Рождественская звезда</span>
-											<span class="gallery-item__size">80×60</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акрил</span>
-											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
-										</span>
-									</span>
-								</a>
-							</div>
 <div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
-								<a class="gallery-item gallery-item--portrait" href="img/works/030-na-starom-bufete.webp" data-fancybox="gallery" data-caption="На старом буфете — натюрморт, картон, гуашь, 60×80">
-									<img class="gallery-item__img" src="img/works/030-na-starom-bufete.webp" alt="Картина «На старом буфете», картон, 2025" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">На старом буфете</span>
-											<span class="gallery-item__size">60×80</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Гуашь</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/032-dozhdlivyy-den-na-volge.webp" data-fancybox="gallery" data-caption="Дождливый день на Волге — пейзаж, бумага, акварель, 40×60">
-									<img class="gallery-item__img" src="img/works/032-dozhdlivyy-den-na-volge.webp" alt="Картина «Дождливый день на Волге», бумага, 2025" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Дождливый день на Волге</span>
-											<span class="gallery-item__size">40×60</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
-								<a class="gallery-item" href="img/works/033-zheltye-piony.webp" data-fancybox="gallery" data-caption="Желтые пионы — натюрморт, картон, гуашь, 50×60">
+								<a class="gallery-item gallery-item--portrait" href="img/works/033-zheltye-piony.webp" data-fancybox="gallery" data-caption="Желтые пионы — натюрморт, картон, гуашь, 50×60">
 									<img class="gallery-item__img" src="img/works/033-zheltye-piony.webp" alt="Картина «Желтые пионы», картон, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
@@ -564,30 +618,13 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/035-mokryy-sneg-v-krasnodare.webp" data-fancybox="gallery" data-caption="Мокрый снег в Краснодаре — пейзаж, бумага, акварель, 30×40">
-									<img class="gallery-item__img" src="img/works/035-mokryy-sneg-v-krasnodare.webp" alt="Картина «Мокрый снег в Краснодаре», бумага, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/054-redkiy-sneg-v-sochi.webp" data-fancybox="gallery" data-caption="Редкий снег в Сочи — натюрморт, бумага, акварель, 60×40">
+									<img class="gallery-item__img" src="img/works/054-redkiy-sneg-v-sochi.webp" alt="Картина «Редкий снег в Сочи», бумага, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Мокрый снег в Краснодаре</span>
-											<span class="gallery-item__size">30×40</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/038-zheltaya-vesna.webp" data-fancybox="gallery" data-caption="Желтая весна — натюрморт, бумага, акварель, 80×60">
-									<img class="gallery-item__img" src="img/works/038-zheltaya-vesna.webp" alt="Картина «Желтая весна», бумага, 2022" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Желтая весна</span>
-											<span class="gallery-item__size">80×60</span>
+											<span class="gallery-item__name">Редкий снег в Сочи</span>
+											<span class="gallery-item__size">60×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
@@ -598,25 +635,25 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
-								<a class="gallery-item gallery-item--portrait" href="img/works/039-pro-vesnu-i-tramvaychik.webp" data-fancybox="gallery" data-caption="Про весну и трамвайчик — пейзаж, картон, гуашь, 70×40">
-									<img class="gallery-item__img" src="img/works/039-pro-vesnu-i-tramvaychik.webp" alt="Картина «Про весну и трамвайчик», картон, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+								<a class="gallery-item" href="img/works/026-rozhdestvenskaya-zvezda.webp" data-fancybox="gallery" data-caption="Рождественская звезда — натюрморт, картон, акрил, 80×60">
+									<img class="gallery-item__img" src="img/works/026-rozhdestvenskaya-zvezda.webp" alt="Картина «Рождественская звезда», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Про весну и трамвайчик</span>
-											<span class="gallery-item__size">70×40</span>
+											<span class="gallery-item__name">Рождественская звезда</span>
+											<span class="gallery-item__size">80×60</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Гуашь</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
+											<span>Акрил</span>
+											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
 										</span>
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
-								<a class="gallery-item" href="img/works/040-vaza-s-limonami.webp" data-fancybox="gallery" data-caption="Ваза с лимонами — натюрморт, картон, акрил, 90×70">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+								<a class="gallery-item gallery-item--portrait" href="img/works/040-vaza-s-limonami.webp" data-fancybox="gallery" data-caption="Ваза с лимонами — натюрморт, картон, акрил, 90×70">
 									<img class="gallery-item__img" src="img/works/040-vaza-s-limonami.webp" alt="Картина «Ваза с лимонами», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
@@ -632,137 +669,18 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
-								<a class="gallery-item" href="img/works/043-polevye-tsvety.webp" data-fancybox="gallery" data-caption="Полевые цветы — натюрморт, картон, акрил, 90×70">
-									<img class="gallery-item__img" src="img/works/043-polevye-tsvety.webp" alt="Картина «Полевые цветы», картон, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, гуашь, пастель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/002-zimniy-natyurmort.webp" data-fancybox="gallery" data-caption="Зимний натюрморт — натюрморт, бумага, гуашь, пастель, 90×70">
+									<img class="gallery-item__img" src="img/works/002-zimniy-natyurmort.webp" alt="Картина «Зимний натюрморт», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Полевые цветы</span>
+											<span class="gallery-item__name">Зимний натюрморт</span>
 											<span class="gallery-item__size">90×70</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акрил</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/045-tikhaya-zavod.webp" data-fancybox="gallery" data-caption="Тихая заводь — пейзаж, бумага, акварель, 40×30">
-									<img class="gallery-item__img" src="img/works/045-tikhaya-zavod.webp" alt="Картина «Тихая заводь», бумага, 2025" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Тихая заводь</span>
-											<span class="gallery-item__size">40×30</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/046-krasnye-yaly-na-volge.webp" data-fancybox="gallery" data-caption="Красные ялы на Волге — пейзаж, бумага, акварель, 60×60">
-									<img class="gallery-item__img" src="img/works/046-krasnye-yaly-na-volge.webp" alt="Картина «Красные ялы на Волге», бумага, 2025" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Красные ялы на Волге</span>
-											<span class="gallery-item__size">60×60</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/047-chay-s-kalinoy.webp" data-fancybox="gallery" data-caption="Чай с калиной — натюрморт, бумага, акварель, 70×90">
-									<img class="gallery-item__img" src="img/works/047-chay-s-kalinoy.webp" alt="Картина «Чай с калиной», бумага, 2020" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Чай с калиной</span>
-											<span class="gallery-item__size">70×90</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/048-vesna-u-danilovskogo-monastyrya.webp" data-fancybox="gallery" data-caption="Весна у Даниловского монастыря — пейзаж, бумага, акварель, 60×40">
-									<img class="gallery-item__img" src="img/works/048-vesna-u-danilovskogo-monastyrya.webp" alt="Картина «Весна у Даниловского монастыря», бумага, 2021" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Весна у Даниловского монастыря</span>
-											<span class="gallery-item__size">60×40</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/049-bukhta-rybachya-kerch.webp" data-fancybox="gallery" data-caption="Бухта Рыбачья. Керчь. — натюрморт, бумага, акварель, 40×60">
-									<img class="gallery-item__img" src="img/works/049-bukhta-rybachya-kerch.webp" alt="Картина «Бухта Рыбачья. Керчь.», бумага, 2020" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Бухта Рыбачья. Керчь.</span>
-											<span class="gallery-item__size">40×60</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
-								<a class="gallery-item gallery-item--portrait" href="img/works/050-krasnaya-vesna.webp" data-fancybox="gallery" data-caption="Красная весна — натюрморт, картон, акрил, 80×40">
-									<img class="gallery-item__img" src="img/works/050-krasnaya-vesna.webp" alt="Картина «Красная весна», картон, 2023" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Красная весна</span>
-											<span class="gallery-item__size">80×40</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акрил</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/082-natyurmort-s-fialkoy.webp" data-fancybox="gallery" data-caption="Натюрморт с фиалкой — натюрморт, бумага, акварель, 70×50">
-									<img class="gallery-item__img" src="img/works/082-natyurmort-s-fialkoy.webp" alt="Картина «Натюрморт с фиалкой», бумага, 2025" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Натюрморт с фиалкой</span>
-											<span class="gallery-item__size">70×50</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
+											<span>Пастель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -785,16 +703,16 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
-								<a class="gallery-item" href="img/works/053-gortenziya-tsvetet.webp" data-fancybox="gallery" data-caption="Гортензия цветет — пейзаж, картон, гуашь, 50×60">
-									<img class="gallery-item__img" src="img/works/053-gortenziya-tsvetet.webp" alt="Картина «Гортензия цветет», картон, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+								<a class="gallery-item" href="img/works/080-letniy-zavtrak-c-rozami.webp" data-fancybox="gallery" data-caption="Летний завтрак c розами — натюрморт, картон, гуашь, 55×65">
+									<img class="gallery-item__img" src="img/works/080-letniy-zavtrak-c-rozami.webp" alt="Картина «Летний завтрак c розами», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Гортензия цветет</span>
-											<span class="gallery-item__size">50×60</span>
+											<span class="gallery-item__name">Летний завтрак c розами</span>
+											<span class="gallery-item__size">55×65</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Гуашь</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
@@ -802,18 +720,103 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/054-redkiy-sneg-v-sochi.webp" data-fancybox="gallery" data-caption="Редкий снег в Сочи — натюрморт, бумага, акварель, 60×40">
-									<img class="gallery-item__img" src="img/works/054-redkiy-sneg-v-sochi.webp" alt="Картина «Редкий снег в Сочи», бумага, 2022" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
+								<a class="gallery-item" href="img/works/007-vesna-u-sinikh-dverey.webp" data-fancybox="gallery" data-caption="Весна у синих дверей — пейзаж, картон, темпера, 60×65">
+									<img class="gallery-item__img" src="img/works/007-vesna-u-sinikh-dverey.webp" alt="Картина «Весна у синих дверей», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Редкий снег в Сочи</span>
+											<span class="gallery-item__name">Весна у синих дверей</span>
+											<span class="gallery-item__size">60×65</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Темпера</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/018-mimoza-i-limony.webp" data-fancybox="gallery" data-caption="Мимоза и лимоны — натюрморт, бумага, акварель, 60×40">
+									<img class="gallery-item__img" src="img/works/018-mimoza-i-limony.webp" alt="Картина «Мимоза и лимоны», бумага, 2023" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Мимоза и лимоны</span>
 											<span class="gallery-item__size">60×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Акварель</span>
+											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/082-natyurmort-s-fialkoy.webp" data-fancybox="gallery" data-caption="Натюрморт с фиалкой — натюрморт, бумага, акварель, 70×50">
+									<img class="gallery-item__img" src="img/works/082-natyurmort-s-fialkoy.webp" alt="Картина «Натюрморт с фиалкой», бумага, 2025" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Натюрморт с фиалкой</span>
+											<span class="gallery-item__size">70×50</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, пастель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/061-morskoy-briz.webp" data-fancybox="gallery" data-caption="Морской бриз — пейзаж, бумага, пастель, 30×40">
+									<img class="gallery-item__img" src="img/works/061-morskoy-briz.webp" alt="Картина «Морской бриз», бумага, 2019" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Морской бриз</span>
+											<span class="gallery-item__size">30×40</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Пастель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
+								<a class="gallery-item" href="img/works/079-v-karlovykh-varakh.webp" data-fancybox="gallery" data-caption="В Карловых Варах — пейзаж, холст, масло, 30×40">
+									<img class="gallery-item__img" src="img/works/079-v-karlovykh-varakh.webp" alt="Картина «В Карловых Варах», холст, 2005" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">В Карловых Варах</span>
+											<span class="gallery-item__size">30×40</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Масло</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
+								<a class="gallery-item" href="img/works/006-zima-ukhodit.webp" data-fancybox="gallery" data-caption="Зима уходит — пейзаж, картон, темпера, 70×90">
+									<img class="gallery-item__img" src="img/works/006-zima-ukhodit.webp" alt="Картина «Зима уходит», картон, 2022" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Зима уходит</span>
+											<span class="gallery-item__size">70×90</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Темпера</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -870,30 +873,30 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/055-rybnyy-den.webp" data-fancybox="gallery" data-caption="Рыбный день — натюрморт, бумага, акварель, 70×90">
-									<img class="gallery-item__img" src="img/works/055-rybnyy-den.webp" alt="Картина «Рыбный день», бумага, 2025" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+								<a class="gallery-item" href="img/works/057-posledniy-luch-nad-morem.webp" data-fancybox="gallery" data-caption="Последний луч над морем — пейзаж, картон, гуашь, 30×40">
+									<img class="gallery-item__img" src="img/works/057-posledniy-luch-nad-morem.webp" alt="Картина «Последний луч над морем», картон, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Рыбный день</span>
-											<span class="gallery-item__size">70×90</span>
+											<span class="gallery-item__name">Последний луч над морем</span>
+											<span class="gallery-item__size">30×40</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
+											<span>Гуашь</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
-								<a class="gallery-item" href="img/works/023-zakat-nad-morem.webp" data-fancybox="gallery" data-caption="Закат над морем — пейзаж, картон, пастель, 20×30">
-									<img class="gallery-item__img" src="img/works/023-zakat-nad-morem.webp" alt="Картина «Закат над морем», картон, 2002" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, пастель">
+								<a class="gallery-item" href="img/works/078-oblaka-nad-otvodnym-kanalom.webp" data-fancybox="gallery" data-caption="Облака над Отводным каналом — пейзаж, холст, пастель, 30×40">
+									<img class="gallery-item__img" src="img/works/078-oblaka-nad-otvodnym-kanalom.webp" alt="Картина «Облака над Отводным каналом», холст, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Закат над морем</span>
-											<span class="gallery-item__size">20×30</span>
+											<span class="gallery-item__name">Облака над Отводным каналом</span>
+											<span class="gallery-item__size">30×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Пейзаж</span>
@@ -921,16 +924,16 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/004-inzhir-i-gladiolusy.webp" data-fancybox="gallery" data-caption="Инжир и гладиолусы — натюрморт, бумага, акварель, 85×55">
-									<img class="gallery-item__img" src="img/works/004-inzhir-i-gladiolusy.webp" alt="Картина «Инжир и гладиолусы», бумага, 2019" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/035-mokryy-sneg-v-krasnodare.webp" data-fancybox="gallery" data-caption="Мокрый снег в Краснодаре — пейзаж, бумага, акварель, 30×40">
+									<img class="gallery-item__img" src="img/works/035-mokryy-sneg-v-krasnodare.webp" alt="Картина «Мокрый снег в Краснодаре», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Инжир и гладиолусы</span>
-											<span class="gallery-item__size">85×55</span>
+											<span class="gallery-item__name">Мокрый снег в Краснодаре</span>
+											<span class="gallery-item__size">30×40</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
@@ -955,35 +958,35 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/056-gde-to-v-tsentre-krasnodara.webp" data-fancybox="gallery" data-caption="Где-то в центре Краснодара — пейзаж, бумага, акварель, 40×60">
-									<img class="gallery-item__img" src="img/works/056-gde-to-v-tsentre-krasnodara.webp" alt="Картина «Где-то в центре Краснодара», бумага, 2025" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+								<a class="gallery-item" href="img/works/053-gortenziya-tsvetet.webp" data-fancybox="gallery" data-caption="Гортензия цветет — пейзаж, картон, гуашь, 50×60">
+									<img class="gallery-item__img" src="img/works/053-gortenziya-tsvetet.webp" alt="Картина «Гортензия цветет», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Где-то в центре Краснодара</span>
-											<span class="gallery-item__size">40×60</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
-								<a class="gallery-item" href="img/works/057-posledniy-luch-nad-morem.webp" data-fancybox="gallery" data-caption="Последний луч над морем — пейзаж, картон, гуашь, 30×40">
-									<img class="gallery-item__img" src="img/works/057-posledniy-luch-nad-morem.webp" alt="Картина «Последний луч над морем», картон, 2024" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Последний луч над морем</span>
-											<span class="gallery-item__size">30×40</span>
+											<span class="gallery-item__name">Гортензия цветет</span>
+											<span class="gallery-item__size">50×60</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Гуашь</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/046-krasnye-yaly-na-volge.webp" data-fancybox="gallery" data-caption="Красные ялы на Волге — пейзаж, бумага, акварель, 60×60">
+									<img class="gallery-item__img" src="img/works/046-krasnye-yaly-na-volge.webp" alt="Картина «Красные ялы на Волге», бумага, 2025" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Красные ялы на Волге</span>
+											<span class="gallery-item__size">60×60</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1006,16 +1009,16 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/060-zheltye-khrizantemy.webp" data-fancybox="gallery" data-caption="Желтые хризантемы — натюрморт, бумага, акварель, 70×50">
-									<img class="gallery-item__img" src="img/works/060-zheltye-khrizantemy.webp" alt="Картина «Желтые хризантемы», бумага, 2019" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/010-nemnogo-italii-v-kholodnoy-moskve.webp" data-fancybox="gallery" data-caption="Немного Италии в холодной Москве — пейзаж, бумага, акварель, 65×55">
+									<img class="gallery-item__img" src="img/works/010-nemnogo-italii-v-kholodnoy-moskve.webp" alt="Картина «Немного Италии в холодной Москве», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Желтые хризантемы</span>
-											<span class="gallery-item__size">70×50</span>
+											<span class="gallery-item__name">Немного Италии в холодной Москве</span>
+											<span class="gallery-item__size">65×55</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
@@ -1040,103 +1043,18 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, пастель">
-								<a class="gallery-item" href="img/works/061-morskoy-briz.webp" data-fancybox="gallery" data-caption="Морской бриз — пейзаж, бумага, пастель, 30×40">
-									<img class="gallery-item__img" src="img/works/061-morskoy-briz.webp" alt="Картина «Морской бриз», бумага, 2019" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
+								<a class="gallery-item" href="img/works/068-v-gelendzhikskoy-bukhte.webp" data-fancybox="gallery" data-caption="В Геленджикской бухте — пейзаж, картон, пастель, 20×30">
+									<img class="gallery-item__img" src="img/works/068-v-gelendzhikskoy-bukhte.webp" alt="Картина «В Геленджикской бухте», картон, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Морской бриз</span>
-											<span class="gallery-item__size">30×40</span>
+											<span class="gallery-item__name">В Геленджикской бухте</span>
+											<span class="gallery-item__size">20×30</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Пастель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/062-starye-utyuzhki.webp" data-fancybox="gallery" data-caption="Старые утюжки — натюрморт, бумага, акварель, 60×80">
-									<img class="gallery-item__img" src="img/works/062-starye-utyuzhki.webp" alt="Картина «Старые утюжки», бумага, 2025" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Старые утюжки</span>
-											<span class="gallery-item__size">60×80</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/063-pozdnie-tsvety.webp" data-fancybox="gallery" data-caption="Поздние цветы — натюрморт, бумага, акварель, 70×40">
-									<img class="gallery-item__img" src="img/works/063-pozdnie-tsvety.webp" alt="Картина «Поздние цветы», бумага, 2018" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Поздние цветы</span>
-											<span class="gallery-item__size">70×40</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/064-buket-iz-kolokolchikov.webp" data-fancybox="gallery" data-caption="Букет из колокольчиков — натюрморт, бумага, акварель, 70×40">
-									<img class="gallery-item__img" src="img/works/064-buket-iz-kolokolchikov.webp" alt="Картина «Букет из колокольчиков», бумага, 2019" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Букет из колокольчиков</span>
-											<span class="gallery-item__size">70×40</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/065-letniy-svet.webp" data-fancybox="gallery" data-caption="Летний свет — натюрморт, бумага, акварель, 80×60">
-									<img class="gallery-item__img" src="img/works/065-letniy-svet.webp" alt="Картина «Летний свет», бумага, 2023" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Летний свет</span>
-											<span class="gallery-item__size">80×60</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail">Можно приобрести</span>
-										</span>
-									</span>
-								</a>
-							</div></div>
-<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
-								<a class="gallery-item" href="img/works/066-belyy-zontik.webp" data-fancybox="gallery" data-caption="Белый зонтик — пейзаж, картон, акрил, 40×35">
-									<img class="gallery-item__img" src="img/works/066-belyy-zontik.webp" alt="Картина «Белый зонтик», картон, 2020" width="875" height="585" loading="lazy">
-									<span class="gallery-item__caption">
-										<span class="gallery-item__top">
-											<span class="gallery-item__name">Белый зонтик</span>
-											<span class="gallery-item__size">40×35</span>
-										</span>
-										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
-											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акрил</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1154,6 +1072,91 @@
 											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/013-vozvrashchenie-s-etyudov.webp" data-fancybox="gallery" data-caption="Возвращение с этюдов — натюрморт, бумага, акварель, 90×60">
+									<img class="gallery-item__img" src="img/works/013-vozvrashchenie-s-etyudov.webp" alt="Картина «Возвращение с этюдов», бумага, 2020" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Возвращение с этюдов</span>
+											<span class="gallery-item__size">90×60</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/069-krasnyy-mostik.webp" data-fancybox="gallery" data-caption="Красный мостик — пейзаж, бумага, акварель, 40×40">
+									<img class="gallery-item__img" src="img/works/069-krasnyy-mostik.webp" alt="Картина «Красный мостик», бумага, 2022" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Красный мостик</span>
+											<span class="gallery-item__size">40×40</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/045-tikhaya-zavod.webp" data-fancybox="gallery" data-caption="Тихая заводь — пейзаж, бумага, акварель, 40×30">
+									<img class="gallery-item__img" src="img/works/045-tikhaya-zavod.webp" alt="Картина «Тихая заводь», бумага, 2025" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Тихая заводь</span>
+											<span class="gallery-item__size">40×30</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div></div>
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/055-rybnyy-den.webp" data-fancybox="gallery" data-caption="Рыбный день — натюрморт, бумага, акварель, 70×90">
+									<img class="gallery-item__img" src="img/works/055-rybnyy-den.webp" alt="Картина «Рыбный день», бумага, 2025" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Рыбный день</span>
+											<span class="gallery-item__size">70×90</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Натюрморт</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акварель</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
+										</span>
+									</span>
+								</a>
+							</div>
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
+								<a class="gallery-item" href="img/works/051-poslednie-listya-pervyy-sneg.webp" data-fancybox="gallery" data-caption="Последние листья, первый снег — пейзаж, картон, акрил, 70×80">
+									<img class="gallery-item__img" src="img/works/051-poslednie-listya-pervyy-sneg.webp" alt="Картина «Последние листья, первый снег», картон, 2023" width="875" height="585" loading="lazy">
+									<span class="gallery-item__caption">
+										<span class="gallery-item__top">
+											<span class="gallery-item__name">Последние листья, первый снег</span>
+											<span class="gallery-item__size">70×80</span>
+										</span>
+										<span class="gallery-item__meta">
+											<span>Пейзаж</span>
+											<span class="gallery-item__sep" aria-hidden="true"></span>
+											<span>Акрил</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1193,30 +1196,30 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/068-v-gelendzhikskoy-bukhte.webp" data-fancybox="gallery" data-caption="В Геленджикской бухте — пейзаж, картон, пастель, 20×30">
-									<img class="gallery-item__img" src="img/works/068-v-gelendzhikskoy-bukhte.webp" alt="Картина «В Геленджикской бухте», картон, 2020" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+								<a class="gallery-item gallery-item--portrait" href="img/works/043-polevye-tsvety.webp" data-fancybox="gallery" data-caption="Полевые цветы — натюрморт, картон, акрил, 90×70">
+									<img class="gallery-item__img" src="img/works/043-polevye-tsvety.webp" alt="Картина «Полевые цветы», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">В Геленджикской бухте</span>
-											<span class="gallery-item__size">20×30</span>
+											<span class="gallery-item__name">Полевые цветы</span>
+											<span class="gallery-item__size">90×70</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Пастель</span>
+											<span>Акрил</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
 							</div></div>
 <div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/069-krasnyy-mostik.webp" data-fancybox="gallery" data-caption="Красный мостик — пейзаж, бумага, акварель, 40×40">
-									<img class="gallery-item__img" src="img/works/069-krasnyy-mostik.webp" alt="Картина «Красный мостик», бумага, 2022" width="875" height="585" loading="lazy">
+								<a class="gallery-item" href="img/works/048-vesna-u-danilovskogo-monastyrya.webp" data-fancybox="gallery" data-caption="Весна у Даниловского монастыря — пейзаж, бумага, акварель, 60×40">
+									<img class="gallery-item__img" src="img/works/048-vesna-u-danilovskogo-monastyrya.webp" alt="Картина «Весна у Даниловского монастыря», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Красный мостик</span>
-											<span class="gallery-item__size">40×40</span>
+											<span class="gallery-item__name">Весна у Даниловского монастыря</span>
+											<span class="gallery-item__size">60×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Пейзаж</span>
@@ -1227,19 +1230,19 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/071-irisy-v-mednom-kuvshine.webp" data-fancybox="gallery" data-caption="Ирисы в медном кувшине — натюрморт, бумага, акварель, 70×50">
-									<img class="gallery-item__img" src="img/works/071-irisy-v-mednom-kuvshine.webp" alt="Картина «Ирисы в медном кувшине», бумага, 2020" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
+								<a class="gallery-item" href="img/works/066-belyy-zontik.webp" data-fancybox="gallery" data-caption="Белый зонтик — пейзаж, картон, акрил, 40×35">
+									<img class="gallery-item__img" src="img/works/066-belyy-zontik.webp" alt="Картина «Белый зонтик», картон, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Ирисы в медном кувшине</span>
-											<span class="gallery-item__size">70×50</span>
+											<span class="gallery-item__name">Белый зонтик</span>
+											<span class="gallery-item__size">40×35</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
-											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
+											<span>Акрил</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
@@ -1279,11 +1282,11 @@
 								</a>
 							</div>
 <div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/072-ayva.webp" data-fancybox="gallery" data-caption="Айва — натюрморт, бумага, акварель, 80×60">
-									<img class="gallery-item__img" src="img/works/072-ayva.webp" alt="Картина «Айва», бумага, 2019" width="875" height="585" loading="lazy">
+								<a class="gallery-item gallery-item--portrait" href="img/works/065-letniy-svet.webp" data-fancybox="gallery" data-caption="Летний свет — натюрморт, бумага, акварель, 80×60">
+									<img class="gallery-item__img" src="img/works/065-letniy-svet.webp" alt="Картина «Летний свет», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Айва</span>
+											<span class="gallery-item__name">Летний свет</span>
 											<span class="gallery-item__size">80×60</span>
 										</span>
 										<span class="gallery-item__meta">
@@ -1329,35 +1332,35 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--asymmetric"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--narrow" href="img/works/073-vetka-ayvy.webp" data-fancybox="gallery" data-caption="Ветка айвы — натюрморт, бумага, акварель, 80×60">
-									<img class="gallery-item__img" src="img/works/073-vetka-ayvy.webp" alt="Картина «Ветка айвы», бумага, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--asymmetric"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
+								<a class="gallery-item gallery-item--narrow" href="img/works/021-sneg-na-kryshakh.webp" data-fancybox="gallery" data-caption="СНЕГ на крышах — пейзаж, холст, масло, 30×40">
+									<img class="gallery-item__img" src="img/works/021-sneg-na-kryshakh.webp" alt="Картина «СНЕГ на крышах», холст, 2015" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Ветка айвы</span>
-											<span class="gallery-item__size">80×60</span>
+											<span class="gallery-item__name">СНЕГ на крышах</span>
+											<span class="gallery-item__size">30×40</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акварель</span>
+											<span>Масло</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
-								<a class="gallery-item gallery-item--wide" href="img/works/051-poslednie-listya-pervyy-sneg.webp" data-fancybox="gallery" data-caption="Последние листья, первый снег — пейзаж, картон, акрил, 70×80">
-									<img class="gallery-item__img" src="img/works/051-poslednie-listya-pervyy-sneg.webp" alt="Картина «Последние листья, первый снег», картон, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+								<a class="gallery-item gallery-item--wide" href="img/works/039-pro-vesnu-i-tramvaychik.webp" data-fancybox="gallery" data-caption="Про весну и трамвайчик — пейзаж, картон, гуашь, 70×40">
+									<img class="gallery-item__img" src="img/works/039-pro-vesnu-i-tramvaychik.webp" alt="Картина «Про весну и трамвайчик», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Последние листья, первый снег</span>
-											<span class="gallery-item__size">70×80</span>
+											<span class="gallery-item__name">Про весну и трамвайчик</span>
+											<span class="gallery-item__size">70×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акрил</span>
+											<span>Гуашь</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1414,35 +1417,35 @@
 									</span>
 								</a>
 							</div></div>
-<div class="gallery__row gallery__row--quad"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
-								<a class="gallery-item gallery-item--quad" href="img/works/076-romashki.webp" data-fancybox="gallery" data-caption="Ромашки — натюрморт, картон, акрил, 80×60">
-									<img class="gallery-item__img" src="img/works/076-romashki.webp" alt="Картина «Ромашки», картон, 2022" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--quad"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--quad" href="img/works/064-buket-iz-kolokolchikov.webp" data-fancybox="gallery" data-caption="Букет из колокольчиков — натюрморт, бумага, акварель, 70×40">
+									<img class="gallery-item__img" src="img/works/064-buket-iz-kolokolchikov.webp" alt="Картина «Букет из колокольчиков», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Ромашки</span>
-											<span class="gallery-item__size">80×60</span>
+											<span class="gallery-item__name">Букет из колокольчиков</span>
+											<span class="gallery-item__size">70×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Акрил</span>
+											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
-								<a class="gallery-item gallery-item--quad" href="img/works/077-yablochnyy-spas.webp" data-fancybox="gallery" data-caption="Яблочный Спас — натюрморт, картон, гуашь, 90×70">
-									<img class="gallery-item__img" src="img/works/077-yablochnyy-spas.webp" alt="Картина «Яблочный Спас», картон, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--quad" href="img/works/063-pozdnie-tsvety.webp" data-fancybox="gallery" data-caption="Поздние цветы — натюрморт, бумага, акварель, 70×40">
+									<img class="gallery-item__img" src="img/works/063-pozdnie-tsvety.webp" alt="Картина «Поздние цветы», бумага, 2018" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Яблочный Спас</span>
-											<span class="gallery-item__size">90×70</span>
+											<span class="gallery-item__name">Поздние цветы</span>
+											<span class="gallery-item__size">70×40</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Гуашь</span>
+											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1465,18 +1468,18 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, пастель">
-								<a class="gallery-item gallery-item--quad" href="img/works/078-oblaka-nad-otvodnym-kanalom.webp" data-fancybox="gallery" data-caption="Облака над Отводным каналом — пейзаж, холст, пастель, 30×40">
-									<img class="gallery-item__img" src="img/works/078-oblaka-nad-otvodnym-kanalom.webp" alt="Картина «Облака над Отводным каналом», холст, 2022" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+								<a class="gallery-item gallery-item--quad" href="img/works/050-krasnaya-vesna.webp" data-fancybox="gallery" data-caption="Красная весна — натюрморт, картон, акрил, 80×40">
+									<img class="gallery-item__img" src="img/works/050-krasnaya-vesna.webp" alt="Картина «Красная весна», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Облака над Отводным каналом</span>
-											<span class="gallery-item__size">30×40</span>
+											<span class="gallery-item__name">Красная весна</span>
+											<span class="gallery-item__size">80×40</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Пастель</span>
+											<span>Акрил</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1499,18 +1502,18 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
-								<a class="gallery-item" href="img/works/079-v-karlovykh-varakh.webp" data-fancybox="gallery" data-caption="В Карловых Варах — пейзаж, холст, масло, 30×40">
-									<img class="gallery-item__img" src="img/works/079-v-karlovykh-varakh.webp" alt="Картина «В Карловых Варах», холст, 2005" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/047-chay-s-kalinoy.webp" data-fancybox="gallery" data-caption="Чай с калиной — натюрморт, бумага, акварель, 70×90">
+									<img class="gallery-item__img" src="img/works/047-chay-s-kalinoy.webp" alt="Картина «Чай с калиной», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">В Карловых Варах</span>
-											<span class="gallery-item__size">30×40</span>
+											<span class="gallery-item__name">Чай с калиной</span>
+											<span class="gallery-item__size">70×90</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Пейзаж</span>
+											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Масло</span>
+											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1534,34 +1537,34 @@
 								</a>
 							</div>
 <div class="gallery__stack"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--banner" href="img/works/024-suveniry-dalnikh-beregov.webp" data-fancybox="gallery" data-caption="Сувениры дальних берегов — натюрморт, бумага, акварель, 70×50">
-									<img class="gallery-item__img" src="img/works/024-suveniry-dalnikh-beregov.webp" alt="Картина «Сувениры дальних берегов», бумага, 2025" width="875" height="585" loading="lazy">
+								<a class="gallery-item gallery-item--banner" href="img/works/049-bukhta-rybachya-kerch.webp" data-fancybox="gallery" data-caption="Бухта Рыбачья. Керчь. — натюрморт, бумага, акварель, 40×60">
+									<img class="gallery-item__img" src="img/works/049-bukhta-rybachya-kerch.webp" alt="Картина «Бухта Рыбачья. Керчь.», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Сувениры дальних берегов</span>
-											<span class="gallery-item__size">70×50</span>
+											<span class="gallery-item__name">Бухта Рыбачья. Керчь.</span>
+											<span class="gallery-item__size">40×60</span>
 										</span>
 										<span class="gallery-item__meta">
 											<span>Натюрморт</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Акварель</span>
-											<span class="gallery-item__avail gallery-item__avail--sold">В коллекции</span>
+											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
-								<a class="gallery-item gallery-item--banner" href="img/works/080-letniy-zavtrak-c-rozami.webp" data-fancybox="gallery" data-caption="Летний завтрак c розами — натюрморт, картон, гуашь, 55×65">
-									<img class="gallery-item__img" src="img/works/080-letniy-zavtrak-c-rozami.webp" alt="Картина «Летний завтрак c розами», картон, 2023" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
+								<a class="gallery-item gallery-item--banner" href="img/works/023-zakat-nad-morem.webp" data-fancybox="gallery" data-caption="Закат над морем — пейзаж, картон, пастель, 20×30">
+									<img class="gallery-item__img" src="img/works/023-zakat-nad-morem.webp" alt="Картина «Закат над морем», картон, 2002" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Летний завтрак c розами</span>
-											<span class="gallery-item__size">55×65</span>
+											<span class="gallery-item__name">Закат над морем</span>
+											<span class="gallery-item__size">20×30</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
-											<span>Гуашь</span>
+											<span>Пастель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>
 										</span>
 									</span>
@@ -1584,16 +1587,16 @@
 									</span>
 								</a>
 							</div>
-<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/081-zheltaya-pizhma.webp" data-fancybox="gallery" data-caption="Желтая пижма — натюрморт, бумага, акварель, 80×60">
-									<img class="gallery-item__img" src="img/works/081-zheltaya-pizhma.webp" alt="Картина «Желтая пижма», бумага, 2021" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/032-dozhdlivyy-den-na-volge.webp" data-fancybox="gallery" data-caption="Дождливый день на Волге — пейзаж, бумага, акварель, 40×60">
+									<img class="gallery-item__img" src="img/works/032-dozhdlivyy-den-na-volge.webp" alt="Картина «Дождливый день на Волге», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
-											<span class="gallery-item__name">Желтая пижма</span>
-											<span class="gallery-item__size">80×60</span>
+											<span class="gallery-item__name">Дождливый день на Волге</span>
+											<span class="gallery-item__size">40×60</span>
 										</span>
 										<span class="gallery-item__meta">
-											<span>Натюрморт</span>
+											<span>Пейзаж</span>
 											<span class="gallery-item__sep" aria-hidden="true"></span>
 											<span>Акварель</span>
 											<span class="gallery-item__avail">Можно приобрести</span>

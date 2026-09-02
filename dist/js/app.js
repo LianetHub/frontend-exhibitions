@@ -73,8 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         new Swiper(slider, {
             slidesPerView: 1,
+            slidesPerGroup: 1,
             spaceBetween: 24,
             watchOverflow: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,
+                    spaceBetween: 24,
+                },
+            },
             navigation: {
                 prevEl,
                 nextEl,
@@ -389,29 +397,87 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function revealGalleryImage(img) {
-        img.classList.add("is-loaded");
-    }
-
-    function initGalleryImageReveal() {
+    function initGalleryReveal() {
         if (!galleryRoot) return;
+
+        const items = [...galleryRoot.querySelectorAll(".gallery-item")];
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const queuedItems = new Set();
+        let flushScheduled = false;
+
+        function revealGalleryImage(img) {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => img.classList.add("is-loaded"));
+            });
+        }
+
+        function flushRevealQueue() {
+            const batch = [...queuedItems].sort((a, b) => {
+                const aRect = a.getBoundingClientRect();
+                const bRect = b.getBoundingClientRect();
+                const rowDelta = aRect.top - bRect.top;
+                if (Math.abs(rowDelta) > 12) return rowDelta;
+                return aRect.left - bRect.left;
+            });
+
+            queuedItems.clear();
+            flushScheduled = false;
+
+            batch.forEach((item, index) => {
+                item.style.setProperty("--gallery-reveal-delay", `${index * 80}ms`);
+            });
+
+            requestAnimationFrame(() => {
+                batch.forEach((item) => item.classList.add("is-visible"));
+            });
+        }
+
+        function queueGalleryReveal(item) {
+            if (item.classList.contains("is-visible") || queuedItems.has(item)) return;
+            queuedItems.add(item);
+            if (flushScheduled) return;
+            flushScheduled = true;
+            requestAnimationFrame(flushRevealQueue);
+        }
 
         galleryRoot.querySelectorAll(".gallery-item__img").forEach((img) => {
             if (img.classList.contains("is-loaded")) return;
 
             if (img.complete && img.naturalWidth > 0) {
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => revealGalleryImage(img));
-                });
+                revealGalleryImage(img);
                 return;
             }
 
             img.addEventListener("load", () => revealGalleryImage(img), { once: true });
             img.addEventListener("error", () => revealGalleryImage(img), { once: true });
         });
+
+        if (reducedMotion) {
+            items.forEach((item) => {
+                item.classList.add("is-visible");
+                item.querySelector(".gallery-item__img")?.classList.add("is-loaded");
+            });
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    queueGalleryReveal(entry.target);
+                    observer.unobserve(entry.target);
+                });
+            },
+            {
+                rootMargin: "0px 0px -10% 0px",
+                threshold: 0.12,
+            },
+        );
+
+        items.forEach((item) => observer.observe(item));
     }
 
-    initGalleryImageReveal();
+    initGalleryReveal();
 
     function handleCustomSelectKeyboard(event) {
         const list = event.target.closest(".custom-select__list");

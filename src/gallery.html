@@ -22,26 +22,29 @@
 									авторства.
 								</p>
 								<div class="gallery-hero__filters" data-gallery-filters>
-									@@include('html/templates/custom-select.html', {
-									"id": "gallery-genre",
-									"name": "genre",
-									"label": "Жанр",
-									"placeholder": "Жанр",
-									"modClass": "gallery-hero__select",
-									"options": "html/json/gallery-filter-genre.json",
-									"clearable": true,
-									"multiple": true
-									})
-									@@include('html/templates/custom-select.html', {
-									"id": "gallery-technique",
-									"name": "technique",
-									"label": "Материал",
-									"placeholder": "Материал",
-									"modClass": "gallery-hero__select",
-									"options": "html/json/gallery-filter-technique.json",
-									"clearable": true,
-									"multiple": true
-									})
+									<div class="gallery-hero__filters-row">
+										@@include('html/templates/custom-select.html', {
+										"id": "gallery-genre",
+										"name": "genre",
+										"label": "Жанр",
+										"placeholder": "Жанр",
+										"modClass": "gallery-hero__select",
+										"options": "html/json/gallery-filter-genre.json",
+										"clearable": true,
+										"multiple": true
+										})
+										@@include('html/templates/custom-select.html', {
+										"id": "gallery-technique",
+										"name": "technique",
+										"label": "Материал",
+										"placeholder": "Материал",
+										"modClass": "gallery-hero__select",
+										"options": "html/json/gallery-filter-technique.json",
+										"clearable": true,
+										"multiple": true
+										})
+									</div>
+									<button class="gallery-hero__filters-clear btn btn--light icon-cross">СБРОСИТЬ НАСТРОЙКИ</button>
 								</div>
 							</div>
 						</div>

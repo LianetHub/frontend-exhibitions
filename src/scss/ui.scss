@@ -4,8 +4,7 @@
 	justify-content: center;
 	min-height: rem(49);
 	padding: rem(10) rem(40);
-	border: none;
-	border-radius: 0;
+
 	background: $color-dark;
 	color: $color-white;
 	font-weight: 300;
@@ -15,6 +14,18 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+	&.btn--light {
+		border: 1.5px solid #111B10;
+		background: rgba(17, 27, 16, 0.30);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: $color-dark;
+				color: $color-white;
+			}
+		}
+	}
 
 	@media (any-hover: hover) {
 		&:hover {

@@ -14,7 +14,7 @@
 		margin-bottom: rem(32);
 
 		@media (min-width: $md4) {
-			margin-bottom: rem(48);
+			margin-bottom: rem(60);
 			grid-template-columns: repeat(2, 1fr);
 
 			.works__head-title {
@@ -73,23 +73,6 @@
 		position: relative;
 	}
 
-	// works__grid
-	&__grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: rem(24);
-		list-style: none;
-
-		@media (min-width: $md4) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	// works__grid-item
-	&__grid-item {
-		min-width: 0;
-	}
-
 	// works__nav
 	&__nav {
 		display: flex;
@@ -134,7 +117,8 @@
 	.swiper-pagination {
 		position: static;
 		width: auto;
-		gap: rem(18);
+		flex-wrap: wrap;
+		gap: rem(8) rem(18);
 	}
 
 	.swiper-pagination-bullet {
@@ -165,27 +149,13 @@
 
 .gallery-card {
 	position: relative;
+	// padding: 0 rem(16);
 
 	// gallery-card__frame
 	&__frame {
 		position: relative;
 		aspect-ratio: 557 / 388;
-		background-image: url("@img/home/frame.png");
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-		background-position: center;
-
-		&::before {
-			content: "";
-			position: absolute;
-			inset: 8% 7%;
-			z-index: 0;
-			background-color: rgba(231, 223, 205, 0.84);
-			background-image: url("@img/home/matte.jpg");
-			background-size: cover;
-			background-position: center;
-			pointer-events: none;
-		}
+		background: url("@img/home/frame.png") 0 0 / cover no-repeat, url("@img/home/matte.jpg") 0 0 / cover no-repeat;
 	}
 
 	// gallery-card__img
@@ -220,15 +190,35 @@
 		left: rem(-10);
 		right: rem(-10);
 		bottom: rem(20);
-		z-index: 2;
+		z-index: 3;
 		padding: rem(16) rem(30);
 		background: rgba(17, 27, 16, 0.92);
 		backdrop-filter: blur(4px);
 		color: $color-white;
+		opacity: 1;
+		transition: opacity 0.25s ease;
 
 		@media (min-width: $md4) {
 			bottom: rem(40);
+
+			@media (any-hover: hover) {
+				opacity: 0;
+				pointer-events: none;
+			}
 		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover .gallery-card__caption {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+
+	&:focus-visible .gallery-card__caption,
+	&:focus-within .gallery-card__caption {
+		opacity: 1;
+		pointer-events: auto;
 	}
 
 	// gallery-card__name

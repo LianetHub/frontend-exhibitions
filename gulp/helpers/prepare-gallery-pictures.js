@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const loopFile = join(root, "src/html/json/gallery-pictures.json");
+const worksLoopFile = join(root, "src/html/json/works-pictures.json");
 
 const typeCount = { duo: 2, trio: 3, asymmetric: 3, quad: 4, stack: 3 };
 
@@ -120,6 +121,25 @@ export function prepareGalleryPictures() {
 	return loopFile;
 }
 
+export function prepareWorksPictures() {
+	const catalog = JSON.parse(readFileSync(join(root, "src/html/json/pictures.json"), "utf8"));
+	const items = [...catalog.pictures]
+		.sort((a, b) => a.order - b.order)
+		.map((picture) => ({
+			src: imgSrc(picture.image.src),
+			alt: picture.image.alt,
+			name: picture.title,
+			genreLabel: genreLabel(picture.genre),
+			techniqueLabel: techniqueLabel(picture.technique),
+		}));
+
+	mkdirSync(dirname(worksLoopFile), { recursive: true });
+	writeFileSync(worksLoopFile, `${JSON.stringify(items, null, "\t")}\n`);
+
+	return worksLoopFile;
+}
+
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
 	prepareGalleryPictures();
+	prepareWorksPictures();
 }
