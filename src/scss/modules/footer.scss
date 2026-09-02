@@ -4,7 +4,7 @@
 
 	// footer__inner
 	&__inner {
-		padding-block: rem(50) rem(60);
+		padding-block: rem(30) rem(22);
 
 		@media (min-width: $md4) {
 			padding-block: rem(50) rem(80);
@@ -20,7 +20,7 @@
 			"contacts contacts"
 			"copy copy";
 		column-gap: rem(10);
-		row-gap: rem(24);
+		row-gap: rem(14);
 
 		@media (min-width: $md4) {
 			grid-template-columns: repeat(3, 1fr);
@@ -73,21 +73,29 @@
 
 	// footer__list
 	&__list {
-		margin-top: rem(10);
 		display: flex;
 		flex-direction: column;
-		gap: rem(4);
+		justify-content: space-between;
+		margin-top: rem(8);
+		gap: rem(2);
+
+		@media (min-width:$md4) {
+			margin-top: rem(10);
+
+		}
 	}
 
 	// footer__link
 	&__link {
 		font-size: rem(12);
-		line-height: 1.4;
 		letter-spacing: -0.01em;
 		color: rgba(0, 0, 0, 0.7);
 		transition: color 0.2s ease;
+		line-height: 1.4;
+		display: inline-block;
 
 		@media (min-width: $md4) {
+			line-height: 1.4;
 			font-size: rem(16);
 		}
 
@@ -130,8 +138,8 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: rem(59);
-		height: rem(59);
+		width: rem(57);
+		height: rem(57);
 		border-radius: 50%;
 		background: $color-beige;
 		color: $color-brown;

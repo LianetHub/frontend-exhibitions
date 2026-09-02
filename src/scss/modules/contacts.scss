@@ -1,6 +1,6 @@
 .contacts {
 	position: relative;
-	padding: rem(70) 0 rem(80);
+	padding: rem(32) 0 rem(70);
 
 	color: $color-white;
 
@@ -12,7 +12,7 @@
 	&__row {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: rem(66);
+		gap: rem(43);
 		align-items: flex-start;
 
 		@media (min-width: $md4) {
@@ -46,6 +46,7 @@
 		gap: rem(32);
 		align-items: stretch;
 		background: $color-green;
+		padding: rem(20) rem(0) rem(20);
 
 		@media (min-width: $md4) {
 			grid-template-columns: 0.75fr 1fr;

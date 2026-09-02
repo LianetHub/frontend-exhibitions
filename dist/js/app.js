@@ -552,6 +552,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			closeMobileMenu();
 		}
 
+		if (header?.classList.contains("is-menu-open") && !target.closest(".header__mobile") && !target.closest(".header__burger")) {
+			closeMobileMenu();
+		}
+
 		const exhibitionsChip = target.closest("[data-exhibitions-filters] .exhibitions-hero__chip");
 		if (exhibitionsChip) {
 			const filters = exhibitionsChip.closest("[data-exhibitions-filters]");
@@ -646,7 +650,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	window.addEventListener("resize", () => {
-		if (window.matchMedia(`(min-width: 992px)`).matches) {
+		const minWidth = header?.classList.contains("header--home") ? 767.98 : 991.98;
+		if (window.matchMedia(`(min-width: ${minWidth}px)`).matches) {
 			closeMobileMenu();
 		}
 	});

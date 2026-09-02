@@ -1,6 +1,6 @@
 .works {
 	position: relative;
-	padding: rem(70) 0 rem(56);
+	padding: rem(70) 0 rem(40);
 
 	&::before {
 		content: '';
@@ -128,7 +128,7 @@
 	&__btn {
 		order: 5;
 		width: 100%;
-		margin-top: rem(16);
+		margin-top: rem(10);
 		min-height: rem(56);
 
 		@media (min-width: $md4) {
@@ -149,7 +149,10 @@
 		margin-top: rem(24);
 		margin-bottom: rem(8);
 
+		overflow: visible;
+
 		@media (min-width: $md4) {
+
 			order: 0;
 			grid-column: 1 / -1;
 			margin-top: 0;
@@ -162,6 +165,14 @@
 
 		@media (min-width: $md4) {
 			display: block;
+		}
+	}
+
+	&__slider {
+		overflow: visible;
+
+		@media (min-width:$md4) {
+			overflow: hidden;
 		}
 	}
 

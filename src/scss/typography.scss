@@ -13,3 +13,9 @@
 	color: $color-text;
 	letter-spacing: em(-0.16, 16);
 }
+
+.text-desktop {
+	@media (max-width:$md4) {
+		display: none;
+	}
+}
