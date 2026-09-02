@@ -1,19 +1,6 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-	// webp
-	function testWebP(callback) {
-		const webP = new Image();
-		webP.onload = webP.onerror = function () {
-			callback(webP.height === 2);
-		};
-		webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-	}
-
-	testWebP(function (support) {
-		document.querySelector("body").classList.add(support ? "webp" : "no-webp");
-	});
-
 	// header
 	const header = document.querySelector(".header");
 	const burger = header?.querySelector(".header__burger");
@@ -108,18 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		const nextEl = wrap?.querySelector(".exhibitions-slider__next");
 
 		exhibitionsSwiper = new Swiper(slider, {
-			slidesPerView: 1,
-			spaceBetween: 16,
-			speed: 800,
+			effect: "coverflow",
+			grabCursor: true,
 			centeredSlides: true,
-			watchOverflow: true,
-			breakpoints: {
-				992: {
-					slidesPerView: "auto",
-					spaceBetween: 46,
-					centeredSlides: true,
-				},
+			initialSlide: 1,
+			spaceBetween: 160,
+			slidesPerView: 1,
+			coverflowEffect: {
+				rotate: 0,
+				stretch: 0,
+				depth: 300,
+				modifier: 1,
+				slideShadows: false,
 			},
+			watchOverflow: true,
 			navigation: {
 				prevEl,
 				nextEl,
@@ -133,11 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
 						},
 					}
 				: undefined,
-			on: {
-				slideChangeTransitionStart() {
-					this.update();
-				},
-			},
 		});
 	}
 

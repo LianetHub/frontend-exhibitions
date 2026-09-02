@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Medium.woff2") format("woff2"), url("../fonts/Heraclito-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Heraclito-Medium.woff2") format("woff2"), url("../fonts/Heraclito-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -20,17 +20,17 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Heraclito";
-  font-display: swap;
-  src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Heraclito";
+  font-display: swap;
+  src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 :root {
@@ -670,7 +670,7 @@ img {
   z-index: 5;
   width: 100%;
   color: var(--color-white);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%), url("../img/decor/header-bg.jpg") 0 0/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%), url("../img/decor/header-bg.webp") 0 0/cover no-repeat;
   min-height: 3.375rem;
   align-content: center;
 }
@@ -988,7 +988,7 @@ img {
   isolation: isolate;
   min-height: 45rem;
   overflow: hidden;
-  background: url("../img/home/boiserie.jpg") 0 100%/auto 14.9375rem repeat-x, url("../img/home/hero-overlay.svg") center 0/auto 100% no-repeat, linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 0 0/max(0px, (100% - 120rem) / 2) 100% no-repeat, linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0/max(0px, (100% - 120rem) / 2) 100% no-repeat, url("../img/home/hero-bg.jpg") 0 0/cover no-repeat, var(--color-dark);
+  background: url("../img/home/boiserie.webp") 0 100%/auto 14.9375rem repeat-x, url("../img/home/hero-overlay.svg") center 0/auto 100% no-repeat, linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 0 0/max(0px, (100% - 120rem) / 2) 100% no-repeat, linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0/max(0px, (100% - 120rem) / 2) 100% no-repeat, url("../img/home/hero-bg.webp") 0 0/cover no-repeat, var(--color-dark);
   color: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -1253,7 +1253,7 @@ img {
   display: block;
   position: relative;
   aspect-ratio: 557/388;
-  background: url("../img/home/frame.png") 0 0/cover no-repeat, url("../img/home/matte.jpg") 0 0/cover no-repeat;
+  background: url("../img/home/frame.webp") 0 0/cover no-repeat, url("../img/home/matte.webp") 0 0/cover no-repeat;
 }
 .gallery-card__img {
   position: absolute;
@@ -1487,7 +1487,7 @@ img {
   width: 100%;
   height: 3.9375rem;
   background-color: var(--color-brown);
-  background-image: url("../img/wood.jpg");
+  background-image: url("../img/wood.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2189,6 +2189,9 @@ img {
   position: relative;
 }
 .exhibitions-slider__swiper {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  max-width: 48rem;
   overflow: visible;
 }
 .exhibitions-slider__nav {
@@ -2255,25 +2258,27 @@ img {
 }
 
 .exhibitions-slide {
-  width: 100%;
+  width: 80%;
+  max-width: 20rem;
   height: auto;
   display: flex;
   flex-direction: column;
   align-self: center;
 }
-@media (min-width: 991.98px) {
+@media (min-width: 767.98px) {
   .exhibitions-slide {
     width: 27.375rem;
-    height: 31.5625rem;
+    max-width: none;
   }
-  .exhibitions-slide.swiper-slide-active {
-    width: 56.5rem;
-    height: 42.375rem;
-    z-index: 2;
+}
+@media (min-width: 1199.98px) {
+  .exhibitions-slide {
+    width: 40rem;
   }
-  .exhibitions-slide:not(.swiper-slide-active) .exhibitions-slide__caption {
-    display: none;
-  }
+}
+.exhibitions-slide:not(.swiper-slide-active) .exhibitions-slide__caption {
+  opacity: 0;
+  pointer-events: none;
 }
 .exhibitions-slide.is-hidden {
   display: none !important;
@@ -2282,23 +2287,15 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0;
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 .exhibitions-slide__media {
   display: block;
   width: 100%;
-  height: 100%;
   aspect-ratio: 904/678;
   overflow: hidden;
   background: var(--color-beige);
-}
-@media (min-width: 991.98px) {
-  .exhibitions-slide__media {
-    aspect-ratio: auto;
-  }
 }
 .exhibitions-slide__img {
   display: block;
@@ -2322,6 +2319,12 @@ img {
   backdrop-filter: blur(4px);
   min-height: 3.8125rem;
   box-sizing: border-box;
+  transition: opacity 0.8s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .exhibitions-slide__caption {
+    transition: none;
+  }
 }
 @media (min-width: 991.98px) {
   .exhibitions-slide__caption {
