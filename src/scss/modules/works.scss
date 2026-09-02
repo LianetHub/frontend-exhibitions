@@ -1,9 +1,9 @@
 .works {
 	position: relative;
-	padding-block: rem(48) rem(56);
+	padding: rem(48) 0 rem(56);
 
 	@media (min-width: $md4) {
-		padding-block: rem(80) rem(72);
+		padding: rem(200) 0 rem(72);
 	}
 
 	// works__head
@@ -23,7 +23,8 @@
 		}
 
 		@media (min-width: $md3) {
-			grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 4fr);
+			grid-template-columns: minmax(0, 5.5fr) minmax(0, 3fr) minmax(0, 4fr);
+			gap: 2rem;
 
 			.works__head-title {
 				grid-column: auto;
@@ -47,6 +48,7 @@
 	// works__text
 	&__text {
 		color: $color-white;
+		max-width: rem(350);
 
 		// works__text--aside
 		&--aside {

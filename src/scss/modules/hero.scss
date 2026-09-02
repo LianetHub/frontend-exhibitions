@@ -3,13 +3,12 @@
 	isolation: isolate;
 	min-height: rem(720);
 	overflow: hidden;
-	background:
-		url("@img/home/boiserie.jpg") 0 100% / auto rem(239) repeat-x,
-		url("@img/home/hero-overlay.svg") center 0 / auto 100% no-repeat,
-		linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 0 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
-		linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
-		url("@img/home/hero-bg.jpg") 0 0 / cover no-repeat,
-		$color-dark;
+	background: url("@img/home/boiserie.jpg") 0 100% / auto rem(239) repeat-x,
+	url("@img/home/hero-overlay.svg") center 0 / auto 100% no-repeat,
+	linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 0 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
+	linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
+	url("@img/home/hero-bg.jpg") 0 0 / cover no-repeat,
+	$color-dark;
 	color: $color-white;
 	display: flex;
 	flex-direction: column;

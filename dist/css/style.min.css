@@ -13,16 +13,16 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "icons";
+  font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Heraclito";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -98,6 +98,14 @@
 [class^=icon-]:before,
 [class*=" icon-"]:before {
   display: block;
+}
+
+.icon-prev:before {
+  content: "\e909";
+}
+
+.icon-next:before {
+  content: "\e908";
 }
 
 .icon-check:before {
@@ -1055,11 +1063,11 @@ img {
 
 .works {
   position: relative;
-  padding-block: 3rem 3.5rem;
+  padding: 3rem 0 3.5rem;
 }
 @media (min-width: 767.98px) {
   .works {
-    padding-block: 5rem 4.5rem;
+    padding: 12.5rem 0 4.5rem;
   }
 }
 .works__head {
@@ -1079,7 +1087,8 @@ img {
 }
 @media (min-width: 991.98px) {
   .works__head {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 4fr);
+    grid-template-columns: minmax(0, 5.5fr) minmax(0, 3fr) minmax(0, 4fr);
+    gap: 2rem;
   }
   .works__head .works__head-title {
     grid-column: auto;
@@ -1096,6 +1105,7 @@ img {
 }
 .works__text {
   color: var(--color-white);
+  max-width: 21.875rem;
 }
 @media (min-width: 991.98px) {
   .works__text--aside {

@@ -26,6 +26,14 @@
   }
 }
 
+.icon-prev:before {
+  content: "\e909";
+}
+
+.icon-next:before {
+  content: "\e908";
+}
+
 .icon-check:before {
   content: "\e900";
 }
