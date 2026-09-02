@@ -736,5 +736,14 @@ if (typeof Fancybox !== "undefined") {
 		autoFocus: true,
 		dragToClose: (fancybox) => fancybox.getSlide()?.type !== "inline",
 		closeButton: false,
+		// Zoom-to-thumb only when preview is the same image (gallery/works).
+		// Mismatched thumbs (e.g. about photo → diplom) fly back incorrectly.
+		zoomEffect: (fancybox) => {
+			const slide = fancybox.getSlide();
+			if (!slide || slide.zoomEffect === false) return false;
+			const src = slide.src || "";
+			const thumb = slide.thumbSrc || slide.thumbEl?.getAttribute?.("src") || "";
+			return !thumb || !src || thumb === src;
+		},
 	});
 }
