@@ -90,6 +90,7 @@
 		padding-top: rem(43);
 		padding-bottom: rem(80);
 
+
 		@media (min-width: $md3) {
 			padding-top: rem(64);
 			padding-bottom: rem(72);
@@ -134,12 +135,41 @@
 
 	// about__list
 	&__list {
+		position: relative;
+		z-index: 0;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: rem(30) rem(20);
 		margin-top: rem(51);
+		padding: rem(30) rem(20);
+
+		@media (max-width:$md3) {
+			margin-inline: rem(-20);
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			height: 100%;
+			bottom: 0;
+			background: $color-green;
+			pointer-events: none;
+
+			@media (max-width:$md3) {
+				width: 100%;
+			}
+
+			@media (min-width:$md3) {
+				left: rem(-40);
+				top: -100vmax;
+				width: 100vw;
+			}
+		}
 
 		@media (min-width: $md3) {
+			padding: 0;
 			display: flex;
 			flex-direction: column;
 			gap: 0;
