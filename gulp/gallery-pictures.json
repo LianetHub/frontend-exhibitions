@@ -11,8 +11,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": true,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -27,9 +28,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/002-zimniy-natyurmort.jpg",
@@ -43,8 +45,9 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -59,6 +62,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -75,9 +79,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/003-letniy-natyurmort.jpg",
@@ -91,8 +96,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -107,9 +113,10 @@
 		"techniqueLabel": "Монотипия",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/010-nemnogo-italii-v-kholodnoy-moskve.jpg",
@@ -123,8 +130,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -139,6 +147,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -155,9 +164,10 @@
 		"techniqueLabel": "Масло",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/006-zima-ukhodit.jpg",
@@ -171,8 +181,9 @@
 		"techniqueLabel": "Темпера",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -187,9 +198,10 @@
 		"techniqueLabel": "Акварель",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/027-utrennyaya-siren.jpg",
@@ -203,8 +215,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -219,6 +232,7 @@
 		"techniqueLabel": "Темпера",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -235,9 +249,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/007-vesna-u-sinikh-dverey.jpg",
@@ -251,8 +266,9 @@
 		"techniqueLabel": "Темпера",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -267,9 +283,10 @@
 		"techniqueLabel": "Акварель",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/025-korzina-sireni.jpg",
@@ -283,8 +300,9 @@
 		"techniqueLabel": "Акварель",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -299,6 +317,7 @@
 		"techniqueLabel": "Акрил",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -315,9 +334,10 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/032-dozhdlivyy-den-na-volge.jpg",
@@ -331,8 +351,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -347,9 +368,10 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/035-mokryy-sneg-v-krasnodare.jpg",
@@ -363,8 +385,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -379,6 +402,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -395,9 +419,10 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/040-vaza-s-limonami.jpg",
@@ -411,8 +436,9 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -427,9 +453,10 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/045-tikhaya-zavod.jpg",
@@ -443,8 +470,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -459,6 +487,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -475,9 +504,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/048-vesna-u-danilovskogo-monastyrya.jpg",
@@ -491,8 +521,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -507,9 +538,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/050-krasnaya-vesna.jpg",
@@ -523,8 +555,9 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -539,6 +572,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -555,9 +589,10 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/053-gortenziya-tsvetet.png",
@@ -571,8 +606,9 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -587,9 +623,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/059-pered-dozhdem.jpg",
@@ -603,8 +640,9 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -619,6 +657,7 @@
 		"techniqueLabel": "Масло",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -635,9 +674,10 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/055-rybnyy-den.jpg",
@@ -651,8 +691,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -667,9 +708,10 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/011-staryy-stul.jpg",
@@ -683,8 +725,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -699,6 +742,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -715,9 +759,10 @@
 		"techniqueLabel": "Акварель",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/056-gde-to-v-tsentre-krasnodara.jpg",
@@ -731,8 +776,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -747,9 +793,10 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/041-zimniy-den-v-pereulke.jpg",
@@ -763,8 +810,9 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -779,6 +827,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -795,9 +844,10 @@
 		"techniqueLabel": "Акрил",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/061-morskoy-briz.jpg",
@@ -811,8 +861,9 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -827,9 +878,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/063-pozdnie-tsvety.jpg",
@@ -843,8 +895,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -859,6 +912,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -875,9 +929,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/066-belyy-zontik.jpg",
@@ -891,8 +946,9 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -907,9 +963,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/044-v-otpusk.jpg",
@@ -923,8 +980,9 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -939,6 +997,7 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -955,9 +1014,10 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/069-krasnyy-mostik.jpg",
@@ -971,8 +1031,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -987,9 +1048,10 @@
 		"techniqueLabel": "Акварель",
 		"available": false,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/012-sirenevyy-buket.jpg",
@@ -1003,8 +1065,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1019,6 +1082,7 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
@@ -1035,9 +1099,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-4",
 		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/009-vechereet.jpg",
@@ -1051,8 +1116,9 @@
 		"techniqueLabel": "Темпера",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1067,9 +1133,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/073-vetka-ayvy.jpg",
@@ -1083,8 +1150,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-3",
 		"ratio": "gallery-item--narrow",
-		"before": "<div class=\"gallery__row gallery__row--asymmetric\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1099,6 +1167,7 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "gallery-item--wide",
 		"before": "",
 		"after": ""
@@ -1115,9 +1184,10 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-3",
 		"ratio": "gallery-item--narrow",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/036-vecher-okraina.jpg",
@@ -1131,8 +1201,9 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1147,9 +1218,10 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/076-romashki.jpg",
@@ -1163,8 +1235,9 @@
 		"techniqueLabel": "Акрил",
 		"available": true,
 		"priority": false,
-		"ratio": "gallery-item--quad",
-		"before": "<div class=\"gallery__row gallery__row--quad\">",
+		"col": "col-12 col-md-6 col-xl-3",
+		"ratio": "gallery-item--portrait",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1179,7 +1252,8 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
-		"ratio": "gallery-item--quad",
+		"col": "col-12 col-md-6 col-xl-3",
+		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
 	},
@@ -1195,7 +1269,8 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
-		"ratio": "gallery-item--quad",
+		"col": "col-12 col-md-6 col-xl-3",
+		"ratio": "gallery-item--portrait",
 		"before": "",
 		"after": ""
 	},
@@ -1211,9 +1286,10 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
-		"ratio": "gallery-item--quad",
+		"col": "col-12 col-md-6 col-xl-3",
+		"ratio": "gallery-item--portrait",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/034-buket-iz-podsolnukhov.jpg",
@@ -1227,8 +1303,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1243,9 +1320,10 @@
 		"techniqueLabel": "Масло",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	},
 	{
 		"src": "@img/works/020-zima-v-arkhangelskom.jpg",
@@ -1259,8 +1337,9 @@
 		"techniqueLabel": "Монотипия",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "gallery-item--tall",
-		"before": "<div class=\"gallery__row gallery__row--stack\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1275,8 +1354,9 @@
 		"techniqueLabel": "Акварель",
 		"available": false,
 		"priority": false,
+		"col": "col-12",
 		"ratio": "gallery-item--banner",
-		"before": "<div class=\"gallery__stack\">",
+		"before": "<div class=\"col-12 col-md-6\"><div class=\"row\">",
 		"after": ""
 	},
 	{
@@ -1291,6 +1371,7 @@
 		"techniqueLabel": "Гуашь",
 		"available": true,
 		"priority": false,
+		"col": "col-12",
 		"ratio": "gallery-item--banner",
 		"before": "",
 		"after": "</div></div>"
@@ -1307,8 +1388,9 @@
 		"techniqueLabel": "Пастель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
+		"before": "",
 		"after": ""
 	},
 	{
@@ -1323,8 +1405,9 @@
 		"techniqueLabel": "Акварель",
 		"available": true,
 		"priority": false,
+		"col": "col-12 col-md-6",
 		"ratio": "",
 		"before": "",
-		"after": "</div>"
+		"after": ""
 	}
 ]

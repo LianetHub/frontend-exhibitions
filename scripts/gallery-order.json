@@ -38,6 +38,7 @@
     "work-053",
     "work-054",
     "work-059",
+    "work-021",
     "work-058",
     "work-055",
     "work-023",
@@ -311,6 +312,12 @@
       "layer": "Перед дождем",
       "hint": "Перед дождем",
       "how": "hint"
+    },
+    {
+      "id": "work-021",
+      "layer": "21 2",
+      "hint": "СНЕГ на крышах",
+      "how": "duplicate"
     },
     {
       "id": "work-058",
@@ -593,7 +600,7 @@
     "duo",
     "trio",
     "duo",
-    "duo",
+    "trio",
     "duo",
     "trio",
     "duo",

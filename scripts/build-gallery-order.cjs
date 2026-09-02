@@ -67,7 +67,7 @@ const layers = [
 	{ y: 11925, x: 50, name: "PICT0198", hint: null },
 	{ y: 11925, x: 995, name: "IMG_4622", hint: null },
 	{ y: 12730, x: 50, name: "Перед дождем", hint: "Перед дождем" },
-	{ y: 12730, x: 697, name: "21 2", hint: null, skip: true },
+	{ y: 12730, x: 697, name: "21 2", hint: "СНЕГ на крышах", duplicate: "work-021" },
 	{ y: 12730, x: 1308, name: "У зеркала", hint: "У зеркала" },
 	{ y: 13598, x: 51, name: "IMG_0915", hint: null },
 	{ y: 13598, x: 995, name: "23 1", hint: null },
@@ -127,24 +127,38 @@ function claimSlot(slot, p, how) {
 	return true;
 }
 
-// Pass 1: title hints
+function layerOf(slot) {
+	return layers.find((layer) => layer.name === slot.layer && !layer.skip);
+}
+
+// Pass 1: title hints (skip duplicate slots)
 for (const slot of ordered) {
-	const layer = layers.find((l) => l.name === slot.layer && !l.skip);
+	const layer = layerOf(slot);
+	if (layer?.duplicate) continue;
 	const byHint = findByTitleHint(slot.hint);
 	if (byHint) claimSlot(slot, byHint, "hint");
 }
 
 // Pass 2: numeric names for remaining slots
 for (const slot of ordered) {
-	if (slot.id) continue;
+	if (slot.id || layerOf(slot)?.duplicate) continue;
 	const m = slot.layer.match(/^(\d+)/);
 	if (!m) continue;
-	const num = String(parseInt(m[1], 10)).padStart(3, "0");
-	const id = `work-${num}`;
+	const id = `work-${String(parseInt(m[1], 10)).padStart(3, "0")}`;
 	if (byId[id]) claimSlot(slot, byId[id], "num");
 }
 
-// Pass 3: fill remaining with unused pictures (JSON order)
+// Pass 3: explicit Figma duplicates (same painting in a later row)
+for (const slot of ordered) {
+	if (slot.id) continue;
+	const duplicateId = layerOf(slot)?.duplicate;
+	if (duplicateId && byId[duplicateId]) {
+		slot.id = duplicateId;
+		slot.how = "duplicate";
+	}
+}
+
+// Pass 4: fill remaining with unused pictures (JSON order)
 const remaining = pictures.filter((p) => !used.has(p.id));
 let ri = 0;
 for (const slot of ordered) {
@@ -165,27 +179,29 @@ console.log(
 	"hints",
 	ordered.filter((o) => o.how === "hint").length,
 	"nums",
-	ordered.filter((o) => o.how === "num").length
+	ordered.filter((o) => o.how === "num").length,
+	"duplicates",
+	ordered.filter((o) => o.how === "duplicate").length
 );
 
 const rows = [
-	"duo",
-	"trio",
-	"duo",
-	"trio",
-	"duo",
-	"trio",
-	"duo",
-	"trio",
-	"duo",
-	"trio",
-	"duo",
-	"trio",
-	"duo",
-	"trio",
-	"duo",
-	"duo",
-	"duo",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
+		"trio",
+		"duo",
 	"trio",
 	"duo",
 	"trio",
