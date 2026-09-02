@@ -30,7 +30,6 @@
 										"placeholder": "Жанр",
 										"modClass": "gallery-hero__select",
 										"options": "html/json/gallery-filter-genre.json",
-										"clearable": true,
 										"multiple": true
 										})
 										@@include('html/templates/custom-select.html', {
@@ -40,11 +39,10 @@
 										"placeholder": "Материал",
 										"modClass": "gallery-hero__select",
 										"options": "html/json/gallery-filter-technique.json",
-										"clearable": true,
 										"multiple": true
 										})
 									</div>
-									<button class="gallery-hero__filters-clear btn btn--light icon-cross">СБРОСИТЬ НАСТРОЙКИ</button>
+									<button class="gallery-hero__filters-clear btn btn--light icon-cross" type="button">СБРОСИТЬ НАСТРОЙКИ</button>
 								</div>
 							</div>
 						</div>
@@ -57,6 +55,13 @@
 					<div class="container">
 						<div class="gallery__grid">
 							@@loop('html/templates/gallery-item.html', 'html/json/gallery-pictures.json')
+						</div>
+						<div class="gallery__empty" hidden role="status">
+							<h2 class="text-subtitle gallery__empty-title">По выбранным фильтрам работ нет</h2>
+							<p class="text gallery__empty-text">
+								В коллекции нет картин с таким сочетанием жанра и материала. Сбросьте настройки, чтобы снова увидеть все работы.
+							</p>
+							<button class="btn gallery__empty-reset" type="button">Сбросить настройки</button>
 						</div>
 					</div>
 				</section>

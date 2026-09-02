@@ -32,32 +32,19 @@ function ratioClass(type, index) {
 	return "";
 }
 
-function wrapRow(type, index, count) {
-	if (index === 0) {
-		return {
-			before: `<div class="gallery__row gallery__row--${type}">`,
-			after: "",
-		};
+function cellSpan(type, index) {
+	if (type === "trio") return { col: 4, row: 1 };
+	if (type === "quad") return { col: 3, row: 1 };
+	if (type === "asymmetric") {
+		return index === 1 ? { col: 6, row: 1 } : { col: 3, row: 1 };
 	}
-
 	if (type === "stack") {
-		if (index === 1) {
-			return { before: '<div class="gallery__stack">', after: "" };
-		}
-
-		if (index === count - 1) {
-			return { before: "", after: "</div></div>" };
-		}
+		return index === 0 ? { col: 6, row: 2 } : { col: 6, row: 1 };
 	}
-
-	if (index === count - 1) {
-		return { before: "", after: "</div>" };
-	}
-
-	return { before: "", after: "" };
+	return { col: 6, row: 1 };
 }
 
-function toLoopItem(picture, { ratio, priority, before, after }) {
+function toLoopItem(picture, { ratio, priority, col, row }) {
 	return {
 		src: imgSrc(picture.image.src),
 		alt: picture.image.alt,
@@ -71,8 +58,8 @@ function toLoopItem(picture, { ratio, priority, before, after }) {
 		available: picture.available,
 		priority,
 		ratio,
-		before,
-		after,
+		col,
+		row,
 	};
 }
 
@@ -99,13 +86,13 @@ export function prepareGalleryPictures() {
 				throw new Error("Missing picture " + id);
 			}
 
-			const { before, after } = wrapRow(type, index, count);
+			const { col, row } = cellSpan(type, index);
 			items.push(
 				toLoopItem(picture, {
 					ratio: ratioClass(type, index),
 					priority: items.length === 0,
-					before,
-					after,
+					col,
+					row,
 				}),
 			);
 		});
@@ -121,17 +108,35 @@ export function prepareGalleryPictures() {
 	return loopFile;
 }
 
+const worksOrder = [
+	"work-034",
+	"work-053",
+	"work-078",
+	"work-070",
+	"work-008",
+	"work-014",
+	"work-025",
+	"work-030",
+	"work-009",
+];
+
 export function prepareWorksPictures() {
 	const catalog = JSON.parse(readFileSync(join(root, "src/html/json/pictures.json"), "utf8"));
-	const items = [...catalog.pictures]
-		.sort((a, b) => a.order - b.order)
-		.map((picture) => ({
+	const byId = Object.fromEntries(catalog.pictures.map((picture) => [picture.id, picture]));
+	const items = worksOrder.map((id) => {
+		const picture = byId[id];
+		if (!picture) {
+			throw new Error("Missing featured work " + id);
+		}
+
+		return {
 			src: imgSrc(picture.image.src),
 			alt: picture.image.alt,
 			name: picture.title,
 			genreLabel: genreLabel(picture.genre),
 			techniqueLabel: techniqueLabel(picture.technique),
-		}));
+		};
+	});
 
 	mkdirSync(dirname(worksLoopFile), { recursive: true });
 	writeFileSync(worksLoopFile, `${JSON.stringify(items, null, "\t")}\n`);

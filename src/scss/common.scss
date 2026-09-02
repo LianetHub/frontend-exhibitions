@@ -50,9 +50,17 @@ img {
 	overflow-x: clip;
 	display: flex;
 	flex-direction: column;
+	background-color: $color-green;
+	background-image: repeating-linear-gradient(to right,
+		transparent 0,
+		transparent #{rem(20)},
+		#{$color-green-2} #{rem(20)},
+		#{$color-green-2} #{rem(86)},
+		transparent #{rem(86)},
+		transparent #{rem(105)});
 
-	&.page--home {
-		background-color: $color-green;
+	@media (min-width: $md4) {
+
 		background-image: repeating-linear-gradient(to right,
 			transparent 0,
 			transparent #{rem(51)},
@@ -61,6 +69,10 @@ img {
 			transparent #{rem(154)},
 			transparent #{rem(221)});
 	}
+
+
+
+
 }
 
 .container {

@@ -12,8 +12,8 @@
 		"available": true,
 		"priority": true,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/008-son-ryzhego-kota.webp",
@@ -28,8 +28,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/038-zheltaya-vesna.webp",
@@ -44,8 +44,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/024-suveniry-dalnikh-beregov.webp",
@@ -60,8 +60,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/081-zheltaya-pizhma.webp",
@@ -76,8 +76,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/030-na-starom-bufete.webp",
@@ -92,8 +92,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/031-torgovye-ryady.webp",
@@ -108,8 +108,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/004-inzhir-i-gladiolusy.webp",
@@ -124,8 +124,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/028-chay-v-sadu.webp",
@@ -140,8 +140,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/071-irisy-v-mednom-kuvshine.webp",
@@ -156,8 +156,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/025-korzina-sireni.webp",
@@ -172,8 +172,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/001-vetrenyy-den-v-novorossiyske.webp",
@@ -188,8 +188,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/073-vetka-ayvy.webp",
@@ -204,8 +204,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/072-ayva.webp",
@@ -220,8 +220,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/060-zheltye-khrizantemy.webp",
@@ -236,8 +236,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/003-letniy-natyurmort.webp",
@@ -252,8 +252,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/062-starye-utyuzhki.webp",
@@ -268,8 +268,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/077-yablochnyy-spas.webp",
@@ -284,8 +284,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/076-romashki.webp",
@@ -300,8 +300,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/027-utrennyaya-siren.webp",
@@ -316,8 +316,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/014-zima-v-malenkom-pereulke.webp",
@@ -332,8 +332,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/056-gde-to-v-tsentre-krasnodara.webp",
@@ -348,8 +348,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/005-na-kukhne-siren.webp",
@@ -364,8 +364,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/017-v-ozhidanii-vesny.webp",
@@ -380,8 +380,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/033-zheltye-piony.webp",
@@ -396,8 +396,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/054-redkiy-sneg-v-sochi.webp",
@@ -412,8 +412,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/026-rozhdestvenskaya-zvezda.webp",
@@ -428,8 +428,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/040-vaza-s-limonami.webp",
@@ -444,8 +444,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/002-zimniy-natyurmort.webp",
@@ -460,8 +460,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/052-roza-i-zerkalo.webp",
@@ -476,8 +476,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/080-letniy-zavtrak-c-rozami.webp",
@@ -492,8 +492,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/007-vesna-u-sinikh-dverey.webp",
@@ -508,8 +508,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/018-mimoza-i-limony.webp",
@@ -524,8 +524,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/082-natyurmort-s-fialkoy.webp",
@@ -540,8 +540,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/061-morskoy-briz.webp",
@@ -556,8 +556,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/079-v-karlovykh-varakh.webp",
@@ -572,8 +572,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/006-zima-ukhodit.webp",
@@ -588,8 +588,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/059-pered-dozhdem.webp",
@@ -604,8 +604,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/021-sneg-na-kryshakh.webp",
@@ -620,8 +620,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/058-u-zerkala.webp",
@@ -636,8 +636,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/057-posledniy-luch-nad-morem.webp",
@@ -652,8 +652,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/078-oblaka-nad-otvodnym-kanalom.webp",
@@ -668,8 +668,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/011-staryy-stul.webp",
@@ -684,8 +684,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/035-mokryy-sneg-v-krasnodare.webp",
@@ -700,8 +700,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/016-orkhidei-na-zimney-verande.webp",
@@ -716,8 +716,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/053-gortenziya-tsvetet.webp",
@@ -732,8 +732,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/046-krasnye-yaly-na-volge.webp",
@@ -748,8 +748,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/041-zimniy-den-v-pereulke.webp",
@@ -764,8 +764,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/010-nemnogo-italii-v-kholodnoy-moskve.webp",
@@ -780,8 +780,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/015-yukka-krasnodarskaya.webp",
@@ -796,8 +796,8 @@
 		"available": false,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/068-v-gelendzhikskoy-bukhte.webp",
@@ -812,8 +812,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/067-belye-oblaka-nad-moykoy.webp",
@@ -828,8 +828,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/013-vozvrashchenie-s-etyudov.webp",
@@ -844,8 +844,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/069-krasnyy-mostik.webp",
@@ -860,8 +860,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/045-tikhaya-zavod.webp",
@@ -876,8 +876,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/055-rybnyy-den.webp",
@@ -892,8 +892,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/051-poslednie-listya-pervyy-sneg.webp",
@@ -908,8 +908,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/044-v-otpusk.webp",
@@ -924,8 +924,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/042-prazdnichnyy-natyurmort.webp",
@@ -940,8 +940,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/043-polevye-tsvety.webp",
@@ -956,8 +956,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/048-vesna-u-danilovskogo-monastyrya.webp",
@@ -972,8 +972,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/066-belyy-zontik.webp",
@@ -988,8 +988,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/012-sirenevyy-buket.webp",
@@ -1004,8 +1004,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "<div class=\"gallery__row gallery__row--trio\">",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/019-portret-asi.webp",
@@ -1020,8 +1020,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": ""
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/065-letniy-svet.webp",
@@ -1036,8 +1036,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--portrait",
-		"before": "",
-		"after": "</div>"
+		"col": 4,
+		"row": 1
 	},
 	{
 		"src": "@img/works/009-vechereet.webp",
@@ -1052,8 +1052,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/029-vesna-prikhodit-v-gory.webp",
@@ -1068,8 +1068,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/021-sneg-na-kryshakh.webp",
@@ -1084,8 +1084,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--narrow",
-		"before": "<div class=\"gallery__row gallery__row--asymmetric\">",
-		"after": ""
+		"col": 3,
+		"row": 1
 	},
 	{
 		"src": "@img/works/039-pro-vesnu-i-tramvaychik.webp",
@@ -1100,8 +1100,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--wide",
-		"before": "",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/074-zimniy-buket.webp",
@@ -1116,8 +1116,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--narrow",
-		"before": "",
-		"after": "</div>"
+		"col": 3,
+		"row": 1
 	},
 	{
 		"src": "@img/works/036-vecher-okraina.webp",
@@ -1132,8 +1132,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/075-belye-slivy.webp",
@@ -1148,8 +1148,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/064-buket-iz-kolokolchikov.webp",
@@ -1164,8 +1164,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--quad",
-		"before": "<div class=\"gallery__row gallery__row--quad\">",
-		"after": ""
+		"col": 3,
+		"row": 1
 	},
 	{
 		"src": "@img/works/063-pozdnie-tsvety.webp",
@@ -1180,8 +1180,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--quad",
-		"before": "",
-		"after": ""
+		"col": 3,
+		"row": 1
 	},
 	{
 		"src": "@img/works/037-limony-na-siney-tarelke.webp",
@@ -1196,8 +1196,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--quad",
-		"before": "",
-		"after": ""
+		"col": 3,
+		"row": 1
 	},
 	{
 		"src": "@img/works/050-krasnaya-vesna.webp",
@@ -1212,8 +1212,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--quad",
-		"before": "",
-		"after": "</div>"
+		"col": 3,
+		"row": 1
 	},
 	{
 		"src": "@img/works/034-buket-iz-podsolnukhov.webp",
@@ -1228,8 +1228,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/047-chay-s-kalinoy.webp",
@@ -1244,8 +1244,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/020-zima-v-arkhangelskom.webp",
@@ -1260,8 +1260,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--tall",
-		"before": "<div class=\"gallery__row gallery__row--stack\">",
-		"after": ""
+		"col": 6,
+		"row": 2
 	},
 	{
 		"src": "@img/works/049-bukhta-rybachya-kerch.webp",
@@ -1276,8 +1276,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--banner",
-		"before": "<div class=\"gallery__stack\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/023-zakat-nad-morem.webp",
@@ -1292,8 +1292,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "gallery-item--banner",
-		"before": "",
-		"after": "</div></div>"
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/022-osen-za-oknom.webp",
@@ -1308,8 +1308,8 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "<div class=\"gallery__row gallery__row--duo\">",
-		"after": ""
+		"col": 6,
+		"row": 1
 	},
 	{
 		"src": "@img/works/032-dozhdlivyy-den-na-volge.webp",
@@ -1324,7 +1324,7 @@
 		"available": true,
 		"priority": false,
 		"ratio": "",
-		"before": "",
-		"after": "</div>"
+		"col": 6,
+		"row": 1
 	}
 ]

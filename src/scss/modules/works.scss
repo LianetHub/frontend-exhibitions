@@ -79,7 +79,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: rem(16);
-		margin-top: rem(28);
+		margin-top: rem(36);
 	}
 
 	.swiper-button-next,
@@ -91,7 +91,7 @@
 		height: rem(36);
 		background: transparent;
 		color: $color-white;
-		font-size: rem(14);
+		font-size: rem(20);
 
 		@media (any-hover: hover) {
 			&:hover {
@@ -187,9 +187,9 @@
 	// gallery-card__caption
 	&__caption {
 		position: absolute;
-		left: rem(-10);
-		right: rem(-10);
-		bottom: rem(20);
+		left: rem(-20);
+		right: rem(-20);
+		bottom: rem(0);
 		z-index: 3;
 		padding: rem(16) rem(30);
 		background: rgba(17, 27, 16, 0.92);
@@ -199,7 +199,7 @@
 		transition: opacity 0.25s ease;
 
 		@media (min-width: $md4) {
-			bottom: rem(40);
+
 
 			@media (any-hover: hover) {
 				opacity: 0;

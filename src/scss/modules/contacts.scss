@@ -1,18 +1,11 @@
 .contacts {
 	position: relative;
-	padding-block: rem(48) rem(64);
-	background-color: $color-green;
-	background-image: repeating-linear-gradient(to right,
-		transparent 0,
-		transparent #{rem(51)},
-		#{$color-green-2} #{rem(51)},
-		#{$color-green-2} #{rem(154)},
-		transparent #{rem(154)},
-		transparent #{rem(221)});
+	padding: rem(48) 0 rem(64);
+
 	color: $color-white;
 
 	@media (min-width: $md4) {
-		padding-block: rem(72) rem(96);
+		padding: rem(120) 0 rem(96);
 	}
 
 	// contacts__row

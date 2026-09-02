@@ -1,24 +1,8 @@
 .about {
 	padding-top: $header;
-	background-color: $color-green;
-	background-image: repeating-linear-gradient(to right,
-		transparent 0,
-		transparent #{rem(20)},
-		#{$color-green-2} #{rem(20)},
-		#{$color-green-2} #{rem(86)},
-		transparent #{rem(86)},
-		transparent #{rem(105)});
-	color: $color-white;
 
-	@media (min-width: $md4) {
-		background-image: repeating-linear-gradient(to right,
-			transparent 0,
-			transparent #{rem(67)},
-			#{$color-green-2} #{rem(67)},
-			#{$color-green-2} #{rem(170)},
-			transparent #{rem(170)},
-			transparent #{rem(237)});
-	}
+
+
 
 	// about__main
 	&__main {
@@ -29,42 +13,12 @@
 		@media (min-width: $md3) {
 			min-height: rem(700);
 
-			&::before {
-				content: "";
-				position: absolute;
-				z-index: 0;
-				left: 0;
-				top: 0;
-				bottom: 0;
-				width: rem(280);
-				background-color: $color-green-2;
-				background-image: var(--about-image);
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center bottom;
-				pointer-events: none;
-			}
 
-			&::after {
-				content: "";
-				position: absolute;
-				z-index: 0;
-				left: 0;
-				top: 0;
-				bottom: 0;
-				width: rem(280);
-				background: rgba(0, 0, 0, 0.4);
-				pointer-events: none;
-			}
 		}
 
 		@media (min-width: $md2) {
 			min-height: rem(818);
 
-			&::before,
-			&::after {
-				width: rem(360);
-			}
 		}
 	}
 
