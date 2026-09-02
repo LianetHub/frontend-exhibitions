@@ -125,9 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	let exhibitionsSwiper = null;
+	const exhibitionsSlider = document.querySelector("[data-exhibitions-slider]");
+	const exhibitionsSlides = exhibitionsSlider ? [...exhibitionsSlider.querySelectorAll(".exhibitions-slide")] : [];
 
-	if (document.querySelector("[data-exhibitions-slider]") && typeof Swiper !== "undefined") {
-		const slider = document.querySelector("[data-exhibitions-slider]");
+	if (exhibitionsSlider && typeof Swiper !== "undefined") {
+		const slider = exhibitionsSlider;
 		const wrap = slider.closest(".exhibitions-slider__wrap");
 		const pagination = wrap?.querySelector(".exhibitions-slider__pagination");
 		const prevEl = wrap?.querySelector(".exhibitions-slider__prev");
@@ -165,18 +167,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function applyExhibitionsCityFilter(city) {
-		const slider = document.querySelector("[data-exhibitions-slider]");
-		if (!slider) return;
+		if (!exhibitionsSlider || !exhibitionsSwiper) return;
 
-		slider.querySelectorAll(".exhibitions-slide").forEach((slide) => {
-			const match = !city || slide.getAttribute("data-city") === city;
-			slide.classList.toggle("is-hidden", !match);
-		});
+		const nextSlides = city ? exhibitionsSlides.filter((slide) => slide.getAttribute("data-city") === city) : exhibitionsSlides.slice();
 
-		if (exhibitionsSwiper) {
-			exhibitionsSwiper.update();
-			exhibitionsSwiper.slideTo(0, 0);
-		}
+		exhibitionsSwiper.removeAllSlides();
+		if (nextSlides.length) exhibitionsSwiper.appendSlide(nextSlides);
+		exhibitionsSwiper.slideTo(0, 0);
 	}
 
 	// custom select

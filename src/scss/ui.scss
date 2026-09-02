@@ -105,6 +105,10 @@
 		opacity: 0.4;
 		pointer-events: none;
 	}
+
+	&.swiper-button-lock {
+		display: none;
+	}
 }
 
 .swiper-button-prev {

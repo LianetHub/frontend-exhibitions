@@ -251,6 +251,10 @@
   opacity: 0.4;
   pointer-events: none;
 }
+.swiper-button-next.swiper-button-lock,
+.swiper-button-prev.swiper-button-lock {
+  display: none;
+}
 
 .swiper-button-prev.icon-chevron-right::before {
   transform: rotate(180deg);
@@ -2660,9 +2664,11 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  padding-top: 2rem;
 }
 @media (min-width: 991.98px) {
   .exhibitions-hero__layout {
+    padding-top: 0;
     flex-direction: row;
     align-items: center;
     gap: 2.5rem;
@@ -2671,8 +2677,12 @@ img {
 .exhibitions-hero__title {
   margin: 0;
   min-width: 0;
-  flex: 0 1 40%;
-  align-self: center;
+}
+@media (min-width: 991.98px) {
+  .exhibitions-hero__title {
+    flex: 0 1 40%;
+    align-self: center;
+  }
 }
 .exhibitions-hero__title-img {
   display: block;
