@@ -913,24 +913,24 @@
 			}
 		},
 		{
-			"id": "work-035",
-			"order": 35,
-			"slug": "mokryy-sneg-v-krasnodare",
-			"title": "Мокрый снег в Краснодаре",
-			"genre": "пейзаж",
-			"genreId": "landscape",
+			"id": "work-075",
+			"order": 75,
+			"slug": "belye-slivy",
+			"title": "Белые сливы",
+			"genre": "натюрморт",
+			"genreId": "still-life",
 			"technique": "бумага, акварель",
 			"techniqueShort": "бум., акварель",
 			"size": "30×40",
 			"sizeRaw": "30x40",
 			"year": 2023,
-			"price": 18000,
-			"priceFormatted": "18 000 ₽",
+			"price": 30000,
+			"priceFormatted": "30 000 ₽",
 			"priceNote": null,
 			"available": true,
 			"image": {
-				"src": "img/works/035-mokryy-sneg-v-krasnodare.webp",
-				"alt": "Картина «Мокрый снег в Краснодаре», бумага, 2023"
+				"src": "img/works/075-belye-slivy.webp",
+				"alt": "Картина «Белые сливы», бумага, 2023"
 			}
 		},
 		{
@@ -1750,27 +1750,6 @@
 			"image": {
 				"src": "img/works/074-zimniy-buket.webp",
 				"alt": "Картина «Зимний букет», картон, 2021"
-			}
-		},
-		{
-			"id": "work-075",
-			"order": 75,
-			"slug": "belye-slivy",
-			"title": "Белые сливы",
-			"genre": "натюрморт",
-			"genreId": "still-life",
-			"technique": "бумага, акварель",
-			"techniqueShort": "бум., акварель",
-			"size": "80×60",
-			"sizeRaw": "80x60",
-			"year": 2023,
-			"price": 30000,
-			"priceFormatted": "30 000 ₽",
-			"priceNote": null,
-			"available": true,
-			"image": {
-				"src": "img/works/075-belye-slivy.webp",
-				"alt": "Картина «Белые сливы», бумага, 2023"
 			}
 		},
 		{
