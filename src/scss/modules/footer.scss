@@ -14,11 +14,11 @@
 	// footer__grid
 	&__grid {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: 1fr;
 		row-gap: rem(24);
 
 		@media (min-width: $md4) {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-columns: repeat(3, 1fr);
 			column-gap: rem(24);
 			row-gap: 0;
 		}

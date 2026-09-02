@@ -1,27 +1,23 @@
 .about {
 	padding-top: $header;
 	background-color: $color-green;
-	background-image: repeating-linear-gradient(
-		to right,
+	background-image: repeating-linear-gradient(to right,
 		transparent 0,
 		transparent #{rem(20)},
 		#{$color-green-2} #{rem(20)},
 		#{$color-green-2} #{rem(86)},
 		transparent #{rem(86)},
-		transparent #{rem(105)}
-	);
+		transparent #{rem(105)});
 	color: $color-white;
 
 	@media (min-width: $md4) {
-		background-image: repeating-linear-gradient(
-			to right,
+		background-image: repeating-linear-gradient(to right,
 			transparent 0,
 			transparent #{rem(67)},
 			#{$color-green-2} #{rem(67)},
 			#{$color-green-2} #{rem(170)},
 			transparent #{rem(170)},
-			transparent #{rem(237)}
-		);
+			transparent #{rem(237)});
 	}
 
 	// about__main
@@ -106,7 +102,7 @@
 
 		@media (min-width: $md3) {
 			display: grid;
-			grid-template-columns: minmax(rem(200), 0.42fr) minmax(0, 1fr);
+			grid-template-columns: minmax(rem(200), 0.42fr) 1fr;
 			grid-template-areas:
 				"title list"
 				". list";
@@ -151,7 +147,7 @@
 	&__list {
 		grid-area: list;
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(2, 1fr);
 		gap: rem(28) rem(20);
 		list-style: none;
 
@@ -173,7 +169,7 @@
 
 		@media (min-width: $md3) {
 			display: grid;
-			grid-template-columns: rem(40) rem(200) minmax(0, 1fr);
+			grid-template-columns: rem(40) rem(200) 1fr;
 			column-gap: rem(24);
 			row-gap: rem(0);
 			align-items: start;

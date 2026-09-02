@@ -8,6 +8,8 @@
 	width: 100%;
 	color: $color-white;
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%), url("@img/decor/header-bg.jpg") 0 0 / cover no-repeat;
+	min-height: rem(54);
+	align-content: center;
 
 	&--transparent {
 		background: transparent;

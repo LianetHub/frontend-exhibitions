@@ -1,17 +1,37 @@
 .gallery-hero {
 	background-color: $color-green;
+	background-image: repeating-linear-gradient(to right,
+		transparent 0,
+		transparent #{rem(51)},
+		#{$color-green-2} #{rem(51)},
+		#{$color-green-2} #{rem(154)},
+		transparent #{rem(154)},
+		transparent #{rem(221)});
 	color: $color-white;
+	padding-top: rem(40);
+	padding-bottom: rem(40);
+	position: relative;
 
-	// gallery-hero__inner
-	&__inner {
-		padding-top: rem(40);
-		padding-bottom: rem(40);
-
-		@media (min-width: $md4) {
-			padding-top: rem(56);
-			padding-bottom: rem(48);
-		}
+	@media (min-width: $md4) {
+		padding-top: rem(154);
+		padding-bottom: rem(114);
 	}
+
+	&__band-top,
+	&__band-bottom {
+		position: absolute;
+		left: 0;
+		z-index: 4;
+	}
+
+	&__band-top {
+		top: $header;
+	}
+
+	&__band-bottom {
+		bottom: 0;
+	}
+
 
 	// gallery-hero__layout
 	&__layout {
@@ -112,7 +132,7 @@
 	&__row {
 		display: grid;
 		align-items: stretch;
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: 1fr;
 		gap: rem(16);
 
 		@media (min-width: $md4) {
@@ -131,25 +151,25 @@
 		// gallery__row--duo
 		&--duo {
 			@media (min-width: $md4) {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
+				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 
 		// gallery__row--trio
 		&--trio {
 			@media (min-width: $md4) {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
+				grid-template-columns: repeat(3, 1fr);
 			}
 		}
 
 		// gallery__row--quad
 		&--quad {
 			@media (min-width: $md4) {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
+				grid-template-columns: repeat(2, 1fr);
 			}
 
 			@media (min-width: $md2) {
-				grid-template-columns: repeat(4, minmax(0, 1fr));
+				grid-template-columns: repeat(4, 1fr);
 			}
 
 			@media (min-width: $md1) {
@@ -167,7 +187,7 @@
 		// gallery__row--stack
 		&--stack {
 			@media (min-width: $md4) {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
+				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 	}
@@ -175,7 +195,7 @@
 	// gallery__stack
 	&__stack {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: 1fr;
 		gap: rem(16);
 
 		@media (min-width: $md4) {
@@ -215,7 +235,7 @@
 		width: 100%;
 		height: auto;
 		aspect-ratio: 875 / 585;
-		object-fit: cover;
+		// object-fit: cover;
 		opacity: 0;
 		transition: opacity 0.45s ease;
 

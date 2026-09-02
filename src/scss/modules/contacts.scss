@@ -2,15 +2,13 @@
 	position: relative;
 	padding-block: rem(48) rem(64);
 	background-color: $color-green;
-	background-image: repeating-linear-gradient(
-		to right,
+	background-image: repeating-linear-gradient(to right,
 		transparent 0,
 		transparent #{rem(51)},
 		#{$color-green-2} #{rem(51)},
 		#{$color-green-2} #{rem(154)},
 		transparent #{rem(154)},
-		transparent #{rem(221)}
-	);
+		transparent #{rem(221)});
 	color: $color-white;
 
 	@media (min-width: $md4) {
@@ -20,12 +18,12 @@
 	// contacts__row
 	&__row {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: 1fr;
 		gap: rem(32);
 		align-items: flex-start;
 
 		@media (min-width: $md4) {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-columns: repeat(2, 1fr);
 
 			.contacts__head-title {
 				grid-column: 1 / -1;
@@ -87,7 +85,7 @@
 	// contacts__item
 	&__item {
 		display: grid;
-		grid-template-columns: rem(59) minmax(0, 1fr);
+		grid-template-columns: rem(59) 1fr;
 		grid-template-rows: auto auto;
 		column-gap: rem(20);
 		row-gap: rem(2);
