@@ -184,19 +184,21 @@
 	&__swiper {
 		padding-top: rem(24);
 		padding-bottom: rem(24);
+		margin-inline: auto;
 		max-width: rem(768);
 		overflow: visible;
 	}
 
 	// exhibitions-slider__nav
 	&__nav {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0;
 		margin-top: rem(30);
+		display: none;
 
 		@media (min-width: $md4) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0;
 			margin-top: rem(30);
 		}
 	}
@@ -275,9 +277,46 @@
 	}
 
 	&:not(.swiper-slide-active) {
-		.exhibitions-slide__caption {
+		.exhibitions-slide__caption,
+		.exhibitions-slide__flag {
 			opacity: 0;
 			pointer-events: none;
+			visibility: hidden;
+		}
+	}
+
+	&.is-open {
+		.exhibitions-slide__flag {
+			display: none;
+		}
+
+		.exhibitions-slide__caption {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+		}
+	}
+
+	@media (min-width: $md4) {
+		.exhibitions-slide__flag {
+			display: none;
+		}
+
+		&.is-open .exhibitions-slide__caption {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		@media (any-hover: hover) {
+			&.swiper-slide-active:hover .exhibitions-slide__caption {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+
+		&.swiper-slide-active:focus-within .exhibitions-slide__caption {
+			opacity: 1;
+			pointer-events: auto;
 		}
 	}
 
@@ -291,7 +330,39 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		overflow: hidden;
+	}
+
+	// exhibitions-slide__flag
+	&__flag {
+		position: absolute;
+		top: 0;
+		right: rem(11);
+		z-index: 2;
+		display: block;
+		width: rem(23);
+		height: rem(53);
+		background: none;
+		cursor: pointer;
+
+		@media (min-width: $md4) {
+			display: none;
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: $focus-ring;
+		}
+	}
+
+	// exhibitions-slide__flag-img
+	&__flag-img {
+		position: absolute;
+		top: rem(-2);
+		right: rem(4);
+		width: rem(37);
+		height: rem(67);
+		max-width: none;
+		pointer-events: none;
 	}
 
 	// exhibitions-slide__media
@@ -314,8 +385,7 @@
 	// exhibitions-slide__caption
 	&__caption {
 		position: absolute;
-		left: 0;
-		right: 0;
+		left: 50%;
 		bottom: 0;
 		z-index: 1;
 		display: flex;
@@ -323,20 +393,30 @@
 		align-items: flex-start;
 		justify-content: space-between;
 		gap: rem(12) rem(24);
+		width: 100vw;
+		min-height: rem(61);
 		padding: rem(10) rem(16);
 		background: $color-beige;
 		backdrop-filter: blur(4px);
-		min-height: rem(61);
 		box-sizing: border-box;
-		transition: opacity 0.8s ease;
+		transform: translateX(-50%);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.25s ease, visibility 0.25s ease;
 
 		@media (prefers-reduced-motion: reduce) {
 			transition: none;
 		}
 
-		@media (min-width: $md3) {
+		@media (min-width: $md4) {
+			left: 0;
+			right: 0;
+			width: auto;
 			padding: rem(18) rem(28);
 			min-height: rem(92);
+			transform: none;
+			visibility: visible;
 		}
 	}
 

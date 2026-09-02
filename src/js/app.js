@@ -140,8 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			grabCursor: true,
 			centeredSlides: true,
 			initialSlide: 1,
-			spaceBetween: 160,
-			slidesPerView: 1,
+			spaceBetween: 24,
+			slidesPerView: "auto",
+			watchOverflow: true,
 			coverflowEffect: {
 				rotate: 0,
 				stretch: 0,
@@ -149,7 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
 				modifier: 1,
 				slideShadows: false,
 			},
-			watchOverflow: true,
+			breakpoints: {
+				767.98: {
+					spaceBetween: 40,
+				},
+				1199.98: {
+					spaceBetween: 160,
+				},
+			},
 			navigation: {
 				prevEl,
 				nextEl,
@@ -164,6 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
 					}
 				: undefined,
 		});
+		exhibitionsSwiper.on("slideChange", closeExhibitionsSlideInfo);
+	}
+
+	function closeExhibitionsSlideInfo() {
+		exhibitionsSlider?.querySelectorAll(".exhibitions-slide.is-open").forEach((item) => {
+			item.classList.remove("is-open");
+			item.querySelector(".exhibitions-slide__flag")?.setAttribute("aria-expanded", "false");
+		});
 	}
 
 	function applyExhibitionsCityFilter(city) {
@@ -174,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		exhibitionsSwiper.removeAllSlides();
 		if (nextSlides.length) exhibitionsSwiper.appendSlide(nextSlides);
 		exhibitionsSwiper.slideTo(0, 0);
+		closeExhibitionsSlideInfo();
 	}
 
 	// custom select
@@ -624,21 +641,24 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
-		const galleryFlag = target.closest(".gallery-item__flag");
-		if (galleryFlag) {
+		const infoFlag = target.closest(".gallery-item__flag, .exhibitions-slide__flag");
+		if (infoFlag) {
 			e.preventDefault();
-			const item = galleryFlag.closest(".gallery-item");
+			const item = infoFlag.closest(".gallery-item, .exhibitions-slide");
 			if (!item) return;
 
 			const isOpen = item.classList.contains("is-open");
-			document.querySelectorAll(".gallery-item.is-open").forEach((openItem) => {
+			const flagSelector = item.classList.contains("exhibitions-slide") ? ".exhibitions-slide__flag" : ".gallery-item__flag";
+			const openSelector = item.classList.contains("exhibitions-slide") ? ".exhibitions-slide.is-open" : ".gallery-item.is-open";
+
+			document.querySelectorAll(openSelector).forEach((openItem) => {
 				openItem.classList.remove("is-open");
-				openItem.querySelector(".gallery-item__flag")?.setAttribute("aria-expanded", "false");
+				openItem.querySelector(flagSelector)?.setAttribute("aria-expanded", "false");
 			});
 
 			if (!isOpen) {
 				item.classList.add("is-open");
-				galleryFlag.setAttribute("aria-expanded", "true");
+				infoFlag.setAttribute("aria-expanded", "true");
 			}
 			return;
 		}
