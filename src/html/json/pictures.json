@@ -215,7 +215,7 @@
 			"priceNote": null,
 			"available": true,
 			"image": {
-				"src": "img/works/001-vetrenyy-den-v-novorossiyske.png",
+				"src": "img/works/001-vetrenyy-den-v-novorossiyske.jpg",
 				"alt": "Картина «Ветреный день в Новороссийске», бумага, 2020"
 			}
 		},
@@ -236,7 +236,7 @@
 			"priceNote": null,
 			"available": true,
 			"image": {
-				"src": "img/works/002-zimniy-natyurmort.png",
+				"src": "img/works/002-zimniy-natyurmort.jpg",
 				"alt": "Картина «Зимний натюрморт», бумага, 2021"
 			}
 		},
@@ -278,7 +278,7 @@
 			"priceNote": null,
 			"available": true,
 			"image": {
-				"src": "img/works/004-inzhir-i-gladiolusy.png",
+				"src": "img/works/004-inzhir-i-gladiolusy.jpg",
 				"alt": "Картина «Инжир и гладиолусы», бумага, 2019"
 			}
 		},
@@ -446,7 +446,7 @@
 			"priceNote": null,
 			"available": true,
 			"image": {
-				"src": "img/works/012-sirenevyy-buket.png",
+				"src": "img/works/012-sirenevyy-buket.jpg",
 				"alt": "Картина «Сиреневый букет», бумага, 2020"
 			}
 		},
@@ -488,7 +488,7 @@
 			"priceNote": null,
 			"available": false,
 			"image": {
-				"src": "img/works/014-zima-v-malenkom-pereulke.png",
+				"src": "img/works/014-zima-v-malenkom-pereulke.jpg",
 				"alt": "Картина «Зима в маленьком переулке», бумага, 2021"
 			}
 		},

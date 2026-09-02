@@ -3,7 +3,7 @@
 	isolation: isolate;
 	min-height: rem(720);
 	overflow: hidden;
-	background: url("@img/home/boiserie.jpg") 0 100% / auto rem(239) repeat-x, $color-dark;
+	background: url("@img/home/boiserie.jpg") 0 100% / auto rem(239) repeat-x, url("@img/home/hero-bg.jpg") 0 0 / cover no-repeat, $color-dark;
 
 	color: $color-white;
 

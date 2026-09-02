@@ -19,8 +19,26 @@
 
 	// contacts__row
 	&__row {
-		--gutter-y: #{rem(32)};
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: rem(32);
 		align-items: flex-start;
+
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+
+			.contacts__head-title {
+				grid-column: 1 / -1;
+			}
+		}
+
+		@media (min-width: $md3) {
+			grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 4fr);
+
+			.contacts__head-title {
+				grid-column: auto;
+			}
+		}
 	}
 
 	// contacts__title

@@ -146,13 +146,121 @@ document.addEventListener("DOMContentLoaded", () => {
     // custom select
     const customSelectPlaceholders = new WeakMap();
 
+    function isMultiCustomSelect(root) {
+        return root?.classList.contains("custom-select--multiple");
+    }
+
+    function getCustomSelectDropdown(root) {
+        return root.querySelector(".custom-select__panel") || root.querySelector(".custom-select__list");
+    }
+
+    function parseCustomSelectValues(raw) {
+        if (!raw) return [];
+        return raw.split(",").map((item) => item.trim()).filter(Boolean);
+    }
+
+    function serializeCustomSelectValues(values) {
+        return values.join(",");
+    }
+
+    function getCustomSelectOptionLabel(root, value) {
+        const list = root.querySelector(".custom-select__list");
+        const option = [...list.querySelectorAll(".custom-select__option")].find(
+            (item) => (item.dataset.value ?? "") === value
+        );
+        return option?.querySelector(".custom-select__option-label")?.textContent?.trim() || "";
+    }
+
+    function getAppliedCustomSelectValues(root) {
+        const hidden = root.querySelector('input[type="hidden"]');
+        return parseCustomSelectValues(hidden?.value || "");
+    }
+
+    function getDraftCustomSelectValues(root) {
+        const list = root.querySelector(".custom-select__list");
+        return [...list.querySelectorAll(".custom-select__option.is-selected")]
+            .map((option) => option.dataset.value ?? "")
+            .filter(Boolean);
+    }
+
+    function renderCustomSelectOptions(root, values) {
+        const list = root.querySelector(".custom-select__list");
+        if (!list) return;
+
+        list.querySelectorAll(".custom-select__option").forEach((option) => {
+            const optionValue = option.dataset.value ?? "";
+            if (!optionValue) return;
+
+            const isSelected = values.includes(optionValue);
+            option.classList.toggle("is-selected", isSelected);
+            option.setAttribute("aria-selected", isSelected ? "true" : "false");
+        });
+    }
+
+    function updateCustomSelectTrigger(root, values) {
+        const valueEl = root.querySelector(".custom-select__value");
+        const placeholder = customSelectPlaceholders.get(root) || "";
+        if (!valueEl) return;
+
+        if (!values.length) {
+            valueEl.textContent = placeholder;
+        } else if (isMultiCustomSelect(root)) {
+            const labels = values.map((value) => getCustomSelectOptionLabel(root, value)).filter(Boolean);
+            valueEl.textContent = labels.join(", ");
+        } else {
+            valueEl.textContent = getCustomSelectOptionLabel(root, values[0]) || placeholder;
+        }
+
+        root.classList.toggle("has-value", values.length > 0);
+    }
+
+    function isCustomSelectDirty(root) {
+        const applied = getAppliedCustomSelectValues(root);
+        const draft = getDraftCustomSelectValues(root);
+
+        if (applied.length !== draft.length) return true;
+        return applied.some((value) => !draft.includes(value));
+    }
+
+    function setCustomSelectDirty(root, isDirty) {
+        root.classList.toggle("is-dirty", isDirty);
+    }
+
+    function commitCustomSelectDraft(root) {
+        const draft = getDraftCustomSelectValues(root);
+        const hidden = root.querySelector('input[type="hidden"]');
+        if (!hidden) return;
+
+        hidden.value = serializeCustomSelectValues(draft);
+        updateCustomSelectTrigger(root, draft);
+        setCustomSelectDirty(root, false);
+        root.dispatchEvent(
+            new CustomEvent("change", {
+                bubbles: true,
+                detail: { value: hidden.value, values: draft },
+            })
+        );
+    }
+
+    function toggleCustomSelectOption(root, optionValue) {
+        if (!optionValue) return;
+
+        let draft = getDraftCustomSelectValues(root);
+        draft = draft.includes(optionValue)
+            ? draft.filter((value) => value !== optionValue)
+            : [...draft, optionValue];
+
+        renderCustomSelectOptions(root, draft);
+        setCustomSelectDirty(root, isCustomSelectDirty(root));
+    }
+
     function closeCustomSelect(root) {
         const trigger = root.querySelector(".custom-select__trigger");
-        const list = root.querySelector(".custom-select__list");
+        const dropdown = getCustomSelectDropdown(root);
 
         root.classList.remove("is-open");
         trigger?.setAttribute("aria-expanded", "false");
-        if (list) list.hidden = true;
+        if (dropdown) dropdown.hidden = true;
     }
 
     function openCustomSelect(root) {
@@ -162,11 +270,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const trigger = root.querySelector(".custom-select__trigger");
         const list = root.querySelector(".custom-select__list");
+        const dropdown = getCustomSelectDropdown(root);
 
         root.classList.add("is-open");
         trigger?.setAttribute("aria-expanded", "true");
-        if (list) {
-            list.hidden = false;
+        if (dropdown) {
+            dropdown.hidden = false;
             const focusTarget =
                 list.querySelector(".custom-select__option.is-selected") ||
                 list.querySelector(".custom-select__option");
@@ -175,47 +284,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function syncCustomSelectValue(root, value) {
-        const native = root.querySelector(".custom-select__native");
+        const hidden = root.querySelector('input[type="hidden"]');
         const list = root.querySelector(".custom-select__list");
+        if (!hidden || !list) return;
+
+        if (isMultiCustomSelect(root)) {
+            const values = Array.isArray(value) ? value : parseCustomSelectValues(value);
+            hidden.value = serializeCustomSelectValues(values);
+            renderCustomSelectOptions(root, values);
+            updateCustomSelectTrigger(root, values);
+            setCustomSelectDirty(root, false);
+            root.dispatchEvent(
+                new CustomEvent("change", {
+                    bubbles: true,
+                    detail: { value: hidden.value, values },
+                })
+            );
+            return;
+        }
+
         const valueEl = root.querySelector(".custom-select__value");
         const placeholder = customSelectPlaceholders.get(root) || "";
 
-        if (!native || !list) return;
-
-        native.value = value;
+        hidden.value = value;
 
         list.querySelectorAll(".custom-select__option").forEach((option) => {
-            const isSelected = option.getAttribute("value") === value;
+            const optionValue = option.dataset.value ?? "";
+            const isSelected = optionValue === value;
             option.classList.toggle("is-selected", isSelected);
             option.setAttribute("aria-selected", isSelected ? "true" : "false");
         });
 
-        const selectedOption = list.querySelector(`.custom-select__option[value="${value}"]`);
+        const selectedOption = [...list.querySelectorAll(".custom-select__option")].find(
+            (option) => (option.dataset.value ?? "") === value
+        );
         if (valueEl) {
-            valueEl.textContent = selectedOption?.textContent?.trim() || placeholder;
+            const labelEl = selectedOption?.querySelector(".custom-select__option-label");
+            valueEl.textContent = labelEl?.textContent?.trim() || placeholder;
         }
 
         root.classList.toggle("has-value", Boolean(value));
-        native.dispatchEvent(new Event("change", { bubbles: true }));
+        root.dispatchEvent(new CustomEvent("change", { bubbles: true, detail: { value } }));
     }
 
     function setupCustomSelect(root) {
-        const native = root.querySelector(".custom-select__native");
+        const hidden = root.querySelector('input[type="hidden"]');
         const valueEl = root.querySelector(".custom-select__value");
-        if (!native || !valueEl) return;
+        if (!hidden || !valueEl) return;
 
         if (!customSelectPlaceholders.has(root)) {
             customSelectPlaceholders.set(root, valueEl.textContent.trim());
         }
 
-        const selectedNativeOption = native.options[native.selectedIndex];
-        const value = selectedNativeOption?.value || "";
+        const values = isMultiCustomSelect(root)
+            ? getAppliedCustomSelectValues(root)
+            : parseCustomSelectValues(hidden.value || "");
 
-        if (value) {
-            syncCustomSelectValue(root, value);
+        if (values.length) {
+            syncCustomSelectValue(root, isMultiCustomSelect(root) ? values : values[0]);
         } else {
             valueEl.textContent = customSelectPlaceholders.get(root) || "";
             root.classList.remove("has-value");
+            if (isMultiCustomSelect(root)) {
+                renderCustomSelectOptions(root, []);
+                setCustomSelectDirty(root, false);
+            }
         }
     }
 
@@ -225,27 +358,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // gallery filters
     const galleryRoot = document.querySelector("[data-gallery]");
-    const galleryGenre = document.querySelector("#gallery-genre");
-    const galleryTechnique = document.querySelector("#gallery-technique");
+    const galleryFilters = document.querySelector("[data-gallery-filters]");
+
+    function getCustomSelectValues(root) {
+        return getAppliedCustomSelectValues(root);
+    }
 
     function applyGalleryFilters() {
-        if (!galleryRoot) return;
+        if (!galleryRoot || !galleryFilters) return;
 
-        const genre = galleryGenre?.value || "";
-        const technique = galleryTechnique?.value || "";
+        const genres = getCustomSelectValues(galleryFilters.querySelector("#gallery-genre"));
+        const techniques = getCustomSelectValues(galleryFilters.querySelector("#gallery-technique"));
         const cells = galleryRoot.querySelectorAll("[data-gallery-cell]");
 
         cells.forEach((cell) => {
-            const matchGenre = !genre || cell.getAttribute("data-genre") === genre;
-            const matchTechnique = !technique || cell.getAttribute("data-technique") === technique;
+            const cellGenre = cell.getAttribute("data-genre") || "";
+            const cellTechniqueParts = (cell.getAttribute("data-technique") || "")
+                .split(",")
+                .map((part) => part.trim());
+            const matchGenre = !genres.length || genres.includes(cellGenre);
+            const matchTechnique =
+                !techniques.length || techniques.some((technique) => cellTechniqueParts.includes(technique));
             cell.classList.toggle("is-hidden", !(matchGenre && matchTechnique));
         });
     }
 
-    if (galleryRoot && (galleryGenre || galleryTechnique)) {
-        galleryGenre?.addEventListener("change", applyGalleryFilters);
-        galleryTechnique?.addEventListener("change", applyGalleryFilters);
+    if (galleryRoot && galleryFilters) {
+        galleryFilters.addEventListener("change", (e) => {
+            if (e.target.closest(".custom-select")) applyGalleryFilters();
+        });
     }
+
+    function revealGalleryImage(img) {
+        img.classList.add("is-loaded");
+    }
+
+    function initGalleryImageReveal() {
+        if (!galleryRoot) return;
+
+        galleryRoot.querySelectorAll(".gallery-item__img").forEach((img) => {
+            if (img.classList.contains("is-loaded")) return;
+
+            if (img.complete && img.naturalWidth > 0) {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => revealGalleryImage(img));
+                });
+                return;
+            }
+
+            img.addEventListener("load", () => revealGalleryImage(img), { once: true });
+            img.addEventListener("error", () => revealGalleryImage(img), { once: true });
+        });
+    }
+
+    initGalleryImageReveal();
 
     function handleCustomSelectKeyboard(event) {
         const list = event.target.closest(".custom-select__list");
@@ -284,12 +450,15 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             const option = document.activeElement;
             if (option?.classList.contains("custom-select__option")) {
-                const value = option.getAttribute("value");
-                if (value !== null) {
-                    syncCustomSelectValue(root, value);
-                    closeCustomSelect(root);
-                    trigger.focus();
+                const optionValue = option.dataset.value ?? "";
+                if (isMultiCustomSelect(root)) {
+                    toggleCustomSelectOption(root, optionValue);
+                    return;
                 }
+
+                syncCustomSelectValue(root, optionValue);
+                closeCustomSelect(root);
+                trigger.focus();
             }
         }
 
@@ -331,13 +500,42 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        const selectApply = target.closest(".custom-select__apply");
+        if (selectApply) {
+            const root = selectApply.closest(".custom-select");
+            const trigger = root?.querySelector(".custom-select__trigger");
+            if (root) {
+                commitCustomSelectDraft(root);
+                closeCustomSelect(root);
+                trigger?.focus();
+            }
+            return;
+        }
+
+        const selectClear = target.closest(".custom-select__clear");
+        if (selectClear) {
+            const root = selectClear.closest(".custom-select");
+            const trigger = root?.querySelector(".custom-select__trigger");
+            if (root) {
+                syncCustomSelectValue(root, isMultiCustomSelect(root) ? [] : "");
+                closeCustomSelect(root);
+                trigger?.focus();
+            }
+            return;
+        }
+
         const selectOption = target.closest(".custom-select__option");
         if (selectOption) {
             const root = selectOption.closest(".custom-select");
             const trigger = root?.querySelector(".custom-select__trigger");
-            const value = selectOption.getAttribute("value");
-            if (root && value !== null) {
-                syncCustomSelectValue(root, value);
+            if (root) {
+                const optionValue = selectOption.dataset.value ?? "";
+                if (isMultiCustomSelect(root)) {
+                    toggleCustomSelectOption(root, optionValue);
+                    return;
+                }
+
+                syncCustomSelectValue(root, optionValue);
                 closeCustomSelect(root);
                 trigger?.focus();
             }

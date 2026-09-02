@@ -1,1 +1,4 @@
-<li class="custom-select__option@@if(typeof selected !== 'undefined' && selected){ is-selected}" role="option" value="@@value" aria-selected="@@if(typeof selected !== 'undefined' && selected){true}@@if(typeof selected === 'undefined' || !selected){false}" tabindex="-1">@@text</li>
+<li class="custom-select__option" role="option" data-value="@@value" aria-selected="false" tabindex="-1">
+	<span class="custom-select__option-label">@@text</span>
+	<span class="custom-select__option-check" aria-hidden="true"></span>
+</li>

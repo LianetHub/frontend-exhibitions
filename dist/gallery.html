@@ -79,58 +79,122 @@
 									авторства.
 								</p>
 								<div class="gallery-hero__filters" data-gallery-filters>
-									<div class="custom-select gallery-hero__select">
-										<label class="visually-hidden" for="gallery-genre">Жанр</label>
-										<select class="custom-select__native" id="gallery-genre" name="genre" tabindex="-1" aria-hidden="true">
-											<option value="" selected>Жанр</option>
-											<option value="landscape">Пейзаж</option>
-											<option value="still-life">Натюрморт</option>
-											<option value="portrait">Портрет</option>
-										</select>
-										<button type="button" class="custom-select__trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="gallery-genre-list">
-											<span class="custom-select__value">Жанр</span>
-										</button>
-										<ul class="custom-select__list" id="gallery-genre-list" role="listbox" tabindex="-1" hidden>
-											<li class="custom-select__option is-selected" role="option" value="" aria-selected="true" tabindex="-1">Жанр</li>
-											<li class="custom-select__option" role="option" value="landscape" aria-selected="false" tabindex="-1">Пейзаж</li>
-											<li class="custom-select__option" role="option" value="still-life" aria-selected="false" tabindex="-1">Натюрморт</li>
-											<li class="custom-select__option" role="option" value="portrait" aria-selected="false" tabindex="-1">Портрет</li>
-										</ul>
+									<div class="custom-select gallery-hero__select custom-select--multiple" id="gallery-genre" data-name="genre">
+										<span class="visually-hidden" id="gallery-genre-label">Жанр</span>
+										<div class="custom-select__head">
+											<button
+												type="button"
+												class="custom-select__trigger"
+												aria-labelledby="gallery-genre-label"
+												aria-haspopup="listbox"
+												aria-expanded="false"
+												aria-controls="gallery-genre-list">
+												<span class="custom-select__value">Жанр</span>
+											</button>
+											
+											<button type="button" class="custom-select__clear" aria-label="Очистить фильтр Жанр">Очистить</button>
+											
+										</div>
+										
+										<div class="custom-select__panel" hidden>
+											<ul class="custom-select__list" id="gallery-genre-list" role="listbox" aria-multiselectable="true" tabindex="-1">
+												<li class="custom-select__option" role="option" data-value="landscape" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Пейзаж</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="still-life" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Натюрморт</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="portrait" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Портрет</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+
+											</ul>
+											<div class="custom-select__foot">
+												<button type="button" class="custom-select__apply btn">Применить</button>
+											</div>
+										</div>
+										
+										
+										<input type="hidden" name="genre" value="">
 									</div>
-									<div class="custom-select gallery-hero__select gallery-hero__select--technique">
-										<label class="visually-hidden" for="gallery-technique">Материал</label>
-										<select class="custom-select__native" id="gallery-technique" name="technique" tabindex="-1" aria-hidden="true">
-											<option value="" selected>Материал</option>
-											<option value="бумага, акварель">Бумага, акварель</option>
-											<option value="бумага, гуашь, пастель">Бумага, гуашь, пастель</option>
-											<option value="картон, темпера">Картон, темпера</option>
-											<option value="холст, акрил">Холст, акрил</option>
-											<option value="бумага, монотипия">Бумага, монотипия</option>
-											<option value="холст, масло">Холст, масло</option>
-											<option value="картон, пастель">Картон, пастель</option>
-											<option value="картон, акрил">Картон, акрил</option>
-											<option value="картон, гуашь">Картон, гуашь</option>
-											<option value="бумага, пастель">Бумага, пастель</option>
-											<option value="холст, пастель">Холст, пастель</option>
-										</select>
-										<button type="button" class="custom-select__trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="gallery-technique-list">
-											<span class="custom-select__value">Материал</span>
-										</button>
-										<ul class="custom-select__list" id="gallery-technique-list" role="listbox" tabindex="-1" hidden>
-											<li class="custom-select__option is-selected" role="option" value="" aria-selected="true" tabindex="-1">Материал</li>
-											<li class="custom-select__option" role="option" value="бумага, акварель" aria-selected="false" tabindex="-1">Бумага, акварель</li>
-											<li class="custom-select__option" role="option" value="бумага, гуашь, пастель" aria-selected="false" tabindex="-1">Бумага, гуашь, пастель</li>
-											<li class="custom-select__option" role="option" value="картон, темпера" aria-selected="false" tabindex="-1">Картон, темпера</li>
-											<li class="custom-select__option" role="option" value="холст, акрил" aria-selected="false" tabindex="-1">Холст, акрил</li>
-											<li class="custom-select__option" role="option" value="бумага, монотипия" aria-selected="false" tabindex="-1">Бумага, монотипия</li>
-											<li class="custom-select__option" role="option" value="холст, масло" aria-selected="false" tabindex="-1">Холст, масло</li>
-											<li class="custom-select__option" role="option" value="картон, пастель" aria-selected="false" tabindex="-1">Картон, пастель</li>
-											<li class="custom-select__option" role="option" value="картон, акрил" aria-selected="false" tabindex="-1">Картон, акрил</li>
-											<li class="custom-select__option" role="option" value="картон, гуашь" aria-selected="false" tabindex="-1">Картон, гуашь</li>
-											<li class="custom-select__option" role="option" value="бумага, пастель" aria-selected="false" tabindex="-1">Бумага, пастель</li>
-											<li class="custom-select__option" role="option" value="холст, пастель" aria-selected="false" tabindex="-1">Холст, пастель</li>
-										</ul>
+
+									<div class="custom-select gallery-hero__select custom-select--multiple" id="gallery-technique" data-name="technique">
+										<span class="visually-hidden" id="gallery-technique-label">Материал</span>
+										<div class="custom-select__head">
+											<button
+												type="button"
+												class="custom-select__trigger"
+												aria-labelledby="gallery-technique-label"
+												aria-haspopup="listbox"
+												aria-expanded="false"
+												aria-controls="gallery-technique-list">
+												<span class="custom-select__value">Материал</span>
+											</button>
+											
+											<button type="button" class="custom-select__clear" aria-label="Очистить фильтр Материал">Очистить</button>
+											
+										</div>
+										
+										<div class="custom-select__panel" hidden>
+											<ul class="custom-select__list" id="gallery-technique-list" role="listbox" aria-multiselectable="true" tabindex="-1">
+												<li class="custom-select__option" role="option" data-value="бумага, акварель" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Бумага, акварель</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="бумага, гуашь, пастель" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Бумага, гуашь, пастель</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="картон, темпера" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Картон, темпера</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="холст, акрил" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Холст, акрил</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="бумага, монотипия" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Бумага, монотипия</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="холст, масло" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Холст, масло</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="картон, пастель" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Картон, пастель</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="картон, акрил" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Картон, акрил</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="картон, гуашь" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Картон, гуашь</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="бумага, пастель" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Бумага, пастель</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+<li class="custom-select__option" role="option" data-value="холст, пастель" aria-selected="false" tabindex="-1">
+													<span class="custom-select__option-label">Холст, пастель</span>
+													<span class="custom-select__option-check" aria-hidden="true"></span>
+												</li>
+
+											</ul>
+											<div class="custom-select__foot">
+												<button type="button" class="custom-select__apply btn">Применить</button>
+											</div>
+										</div>
+										
+										
+										<input type="hidden" name="technique" value="">
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -140,8 +204,8 @@
 
 				<section class="gallery" data-gallery>
 					<div class="container">
-						<div class="row gallery__grid">
-							<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+						<div class="gallery__grid">
+							<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/070-poselok-v-gorakh.jpg" data-fancybox="gallery" data-caption="Поселок в горах — пейзаж, бумага, акварель, 40×60">
 									<img class="gallery-item__img" src="img/works/070-poselok-v-gorakh.jpg" alt="Картина «Поселок в горах», бумага, 2025" width="875" height="585" fetchpriority="high">
 									<span class="gallery-item__caption">
@@ -158,9 +222,9 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/001-vetrenyy-den-v-novorossiyske.png" data-fancybox="gallery" data-caption="Ветреный день в Новороссийске — пейзаж, бумага, акварель, 55×75">
-									<img class="gallery-item__img" src="img/works/001-vetrenyy-den-v-novorossiyske.png" alt="Картина «Ветреный день в Новороссийске», бумага, 2020" width="875" height="585" loading="lazy">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/001-vetrenyy-den-v-novorossiyske.jpg" data-fancybox="gallery" data-caption="Ветреный день в Новороссийске — пейзаж, бумага, акварель, 55×75">
+									<img class="gallery-item__img" src="img/works/001-vetrenyy-den-v-novorossiyske.jpg" alt="Картина «Ветреный день в Новороссийске», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
 											<span class="gallery-item__name">Ветреный день в Новороссийске</span>
@@ -175,9 +239,9 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, гуашь, пастель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/002-zimniy-natyurmort.png" data-fancybox="gallery" data-caption="Зимний натюрморт — натюрморт, бумага, гуашь, пастель, 90×70">
-									<img class="gallery-item__img" src="img/works/002-zimniy-natyurmort.png" alt="Картина «Зимний натюрморт», бумага, 2021" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, гуашь, пастель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/002-zimniy-natyurmort.jpg" data-fancybox="gallery" data-caption="Зимний натюрморт — натюрморт, бумага, гуашь, пастель, 90×70">
+									<img class="gallery-item__img" src="img/works/002-zimniy-natyurmort.jpg" alt="Картина «Зимний натюрморт», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
 											<span class="gallery-item__name">Зимний натюрморт</span>
@@ -192,7 +256,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/013-vozvrashchenie-s-etyudov.png" data-fancybox="gallery" data-caption="Возвращение с этюдов — натюрморт, бумага, акварель, 90×60">
 									<img class="gallery-item__img" src="img/works/013-vozvrashchenie-s-etyudov.png" alt="Картина «Возвращение с этюдов», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -209,7 +273,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/008-son-ryzhego-kota.png" data-fancybox="gallery" data-caption="Сон рыжего кота — натюрморт, бумага, акварель, 70×90">
 									<img class="gallery-item__img" src="img/works/008-son-ryzhego-kota.png" alt="Картина «Сон рыжего кота», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -226,7 +290,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/003-letniy-natyurmort.png" data-fancybox="gallery" data-caption="Летний натюрморт — натюрморт, бумага, акварель, 55×75">
 									<img class="gallery-item__img" src="img/works/003-letniy-natyurmort.png" alt="Картина «Летний натюрморт», бумага, 2014" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -243,7 +307,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, монотипия">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, монотипия">
 								<a class="gallery-item" href="img/works/031-torgovye-ryady.jpg" data-fancybox="gallery" data-caption="Торговые ряды — пейзаж, бумага, монотипия, 20×30">
 									<img class="gallery-item__img" src="img/works/031-torgovye-ryady.jpg" alt="Картина «Торговые ряды», бумага, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -260,7 +324,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/010-nemnogo-italii-v-kholodnoy-moskve.png" data-fancybox="gallery" data-caption="Немного Италии в холодной Москве — пейзаж, бумага, акварель, 65×55">
 									<img class="gallery-item__img" src="img/works/010-nemnogo-italii-v-kholodnoy-moskve.png" alt="Картина «Немного Италии в холодной Москве», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -277,7 +341,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/005-na-kukhne-siren.jpg" data-fancybox="gallery" data-caption="На кухне. Сирень. — натюрморт, бумага, акварель, 85×55">
 									<img class="gallery-item__img" src="img/works/005-na-kukhne-siren.jpg" alt="Картина «На кухне. Сирень.», бумага, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -294,7 +358,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
 								<a class="gallery-item gallery-item--portrait" href="img/works/021-sneg-na-kryshakh.jpg" data-fancybox="gallery" data-caption="СНЕГ на крышах — пейзаж, холст, масло, 30×40">
 									<img class="gallery-item__img" src="img/works/021-sneg-na-kryshakh.jpg" alt="Картина «СНЕГ на крышах», холст, 2015" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -311,7 +375,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
 								<a class="gallery-item" href="img/works/006-zima-ukhodit.jpg" data-fancybox="gallery" data-caption="Зима уходит — пейзаж, картон, темпера, 70×90">
 									<img class="gallery-item__img" src="img/works/006-zima-ukhodit.jpg" alt="Картина «Зима уходит», картон, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -328,9 +392,9 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item" href="img/works/014-zima-v-malenkom-pereulke.png" data-fancybox="gallery" data-caption="Зима в маленьком переулке — натюрморт, бумага, акварель, 70×90">
-									<img class="gallery-item__img" src="img/works/014-zima-v-malenkom-pereulke.png" alt="Картина «Зима в маленьком переулке», бумага, 2021" width="875" height="585" loading="lazy">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item" href="img/works/014-zima-v-malenkom-pereulke.jpg" data-fancybox="gallery" data-caption="Зима в маленьком переулке — натюрморт, бумага, акварель, 70×90">
+									<img class="gallery-item__img" src="img/works/014-zima-v-malenkom-pereulke.jpg" alt="Картина «Зима в маленьком переулке», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
 											<span class="gallery-item__name">Зима в маленьком переулке</span>
@@ -345,7 +409,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/027-utrennyaya-siren.jpg" data-fancybox="gallery" data-caption="Утренняя сирень — натюрморт, бумага, акварель, 80×65">
 									<img class="gallery-item__img" src="img/works/027-utrennyaya-siren.jpg" alt="Картина «Утренняя сирень», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -362,7 +426,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, темпера">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, темпера">
 								<a class="gallery-item gallery-item--portrait" href="img/works/017-v-ozhidanii-vesny.jpg" data-fancybox="gallery" data-caption="В ожидании весны — натюрморт, картон, темпера, 90×70">
 									<img class="gallery-item__img" src="img/works/017-v-ozhidanii-vesny.jpg" alt="Картина «В ожидании весны», картон, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -379,7 +443,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/028-chay-v-sadu.jpg" data-fancybox="gallery" data-caption="Чай в саду — натюрморт, бумага, акварель, 90×70">
 									<img class="gallery-item__img" src="img/works/028-chay-v-sadu.jpg" alt="Картина «Чай в саду», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -396,7 +460,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
 								<a class="gallery-item" href="img/works/007-vesna-u-sinikh-dverey.jpg" data-fancybox="gallery" data-caption="Весна у синих дверей — пейзаж, картон, темпера, 60×65">
 									<img class="gallery-item__img" src="img/works/007-vesna-u-sinikh-dverey.jpg" alt="Картина «Весна у синих дверей», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -413,7 +477,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/018-mimoza-i-limony.jpg" data-fancybox="gallery" data-caption="Мимоза и лимоны — натюрморт, бумага, акварель, 60×40">
 									<img class="gallery-item__img" src="img/works/018-mimoza-i-limony.jpg" alt="Картина «Мимоза и лимоны», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -430,7 +494,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/025-korzina-sireni.jpg" data-fancybox="gallery" data-caption="Корзина сирени — натюрморт, бумага, акварель, 60×90">
 									<img class="gallery-item__img" src="img/works/025-korzina-sireni.jpg" alt="Картина «Корзина сирени», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -447,7 +511,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/026-rozhdestvenskaya-zvezda.jpg" data-fancybox="gallery" data-caption="Рождественская звезда — натюрморт, картон, акрил, 80×60">
 									<img class="gallery-item__img" src="img/works/026-rozhdestvenskaya-zvezda.jpg" alt="Картина «Рождественская звезда», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -464,7 +528,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
 								<a class="gallery-item gallery-item--portrait" href="img/works/030-na-starom-bufete.jpg" data-fancybox="gallery" data-caption="На старом буфете — натюрморт, картон, гуашь, 60×80">
 									<img class="gallery-item__img" src="img/works/030-na-starom-bufete.jpg" alt="Картина «На старом буфете», картон, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -481,7 +545,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/032-dozhdlivyy-den-na-volge.jpg" data-fancybox="gallery" data-caption="Дождливый день на Волге — пейзаж, бумага, акварель, 40×60">
 									<img class="gallery-item__img" src="img/works/032-dozhdlivyy-den-na-volge.jpg" alt="Картина «Дождливый день на Волге», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -498,7 +562,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
 								<a class="gallery-item" href="img/works/033-zheltye-piony.jpg" data-fancybox="gallery" data-caption="Желтые пионы — натюрморт, картон, гуашь, 50×60">
 									<img class="gallery-item__img" src="img/works/033-zheltye-piony.jpg" alt="Картина «Желтые пионы», картон, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -515,7 +579,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/035-mokryy-sneg-v-krasnodare.jpg" data-fancybox="gallery" data-caption="Мокрый снег в Краснодаре — пейзаж, бумага, акварель, 30×40">
 									<img class="gallery-item__img" src="img/works/035-mokryy-sneg-v-krasnodare.jpg" alt="Картина «Мокрый снег в Краснодаре», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -532,7 +596,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/038-zheltaya-vesna.jpg" data-fancybox="gallery" data-caption="Желтая весна — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/038-zheltaya-vesna.jpg" alt="Картина «Желтая весна», бумага, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -549,7 +613,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
 								<a class="gallery-item gallery-item--portrait" href="img/works/039-pro-vesnu-i-tramvaychik.jpg" data-fancybox="gallery" data-caption="Про весну и трамвайчик — пейзаж, картон, гуашь, 70×40">
 									<img class="gallery-item__img" src="img/works/039-pro-vesnu-i-tramvaychik.jpg" alt="Картина «Про весну и трамвайчик», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -566,7 +630,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item" href="img/works/040-vaza-s-limonami.jpg" data-fancybox="gallery" data-caption="Ваза с лимонами — натюрморт, картон, акрил, 90×70">
 									<img class="gallery-item__img" src="img/works/040-vaza-s-limonami.jpg" alt="Картина «Ваза с лимонами», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -583,7 +647,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item" href="img/works/043-polevye-tsvety.jpg" data-fancybox="gallery" data-caption="Полевые цветы — натюрморт, картон, акрил, 90×70">
 									<img class="gallery-item__img" src="img/works/043-polevye-tsvety.jpg" alt="Картина «Полевые цветы», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -600,7 +664,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/045-tikhaya-zavod.jpg" data-fancybox="gallery" data-caption="Тихая заводь — пейзаж, бумага, акварель, 40×30">
 									<img class="gallery-item__img" src="img/works/045-tikhaya-zavod.jpg" alt="Картина «Тихая заводь», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -617,7 +681,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/046-krasnye-yaly-na-volge.jpg" data-fancybox="gallery" data-caption="Красные ялы на Волге — пейзаж, бумага, акварель, 60×60">
 									<img class="gallery-item__img" src="img/works/046-krasnye-yaly-na-volge.jpg" alt="Картина «Красные ялы на Волге», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -634,7 +698,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/047-chay-s-kalinoy.jpg" data-fancybox="gallery" data-caption="Чай с калиной — натюрморт, бумага, акварель, 70×90">
 									<img class="gallery-item__img" src="img/works/047-chay-s-kalinoy.jpg" alt="Картина «Чай с калиной», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -651,7 +715,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/048-vesna-u-danilovskogo-monastyrya.jpg" data-fancybox="gallery" data-caption="Весна у Даниловского монастыря — пейзаж, бумага, акварель, 60×40">
 									<img class="gallery-item__img" src="img/works/048-vesna-u-danilovskogo-monastyrya.jpg" alt="Картина «Весна у Даниловского монастыря», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -668,7 +732,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/049-bukhta-rybachya-kerch.jpg" data-fancybox="gallery" data-caption="Бухта Рыбачья. Керчь. — натюрморт, бумага, акварель, 40×60">
 									<img class="gallery-item__img" src="img/works/049-bukhta-rybachya-kerch.jpg" alt="Картина «Бухта Рыбачья. Керчь.», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -685,7 +749,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/050-krasnaya-vesna.jpg" data-fancybox="gallery" data-caption="Красная весна — натюрморт, картон, акрил, 80×40">
 									<img class="gallery-item__img" src="img/works/050-krasnaya-vesna.jpg" alt="Картина «Красная весна», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -702,7 +766,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/082-natyurmort-s-fialkoy.jpg" data-fancybox="gallery" data-caption="Натюрморт с фиалкой — натюрморт, бумага, акварель, 70×50">
 									<img class="gallery-item__img" src="img/works/082-natyurmort-s-fialkoy.jpg" alt="Картина «Натюрморт с фиалкой», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -719,7 +783,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/052-roza-i-zerkalo.jpg" data-fancybox="gallery" data-caption="Роза и зеркало — натюрморт, картон, акрил, 80×60">
 									<img class="gallery-item__img" src="img/works/052-roza-i-zerkalo.jpg" alt="Картина «Роза и зеркало», картон, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -736,7 +800,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
 								<a class="gallery-item" href="img/works/053-gortenziya-tsvetet.png" data-fancybox="gallery" data-caption="Гортензия цветет — пейзаж, картон, гуашь, 50×60">
 									<img class="gallery-item__img" src="img/works/053-gortenziya-tsvetet.png" alt="Картина «Гортензия цветет», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -753,7 +817,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/054-redkiy-sneg-v-sochi.jpg" data-fancybox="gallery" data-caption="Редкий снег в Сочи — натюрморт, бумага, акварель, 60×40">
 									<img class="gallery-item__img" src="img/works/054-redkiy-sneg-v-sochi.jpg" alt="Картина «Редкий снег в Сочи», бумага, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -770,7 +834,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
 								<a class="gallery-item" href="img/works/059-pered-dozhdem.jpg" data-fancybox="gallery" data-caption="Перед дождем — пейзаж, картон, гуашь, 80×50">
 									<img class="gallery-item__img" src="img/works/059-pered-dozhdem.jpg" alt="Картина «Перед дождем», картон, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -787,7 +851,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
 								<a class="gallery-item" href="img/works/058-u-zerkala.jpg" data-fancybox="gallery" data-caption="У зеркала — натюрморт, картон, гуашь, 80×60">
 									<img class="gallery-item__img" src="img/works/058-u-zerkala.jpg" alt="Картина «У зеркала», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -804,7 +868,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/055-rybnyy-den.jpg" data-fancybox="gallery" data-caption="Рыбный день — натюрморт, бумага, акварель, 70×90">
 									<img class="gallery-item__img" src="img/works/055-rybnyy-den.jpg" alt="Картина «Рыбный день», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -821,7 +885,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
 								<a class="gallery-item" href="img/works/023-zakat-nad-morem.jpg" data-fancybox="gallery" data-caption="Закат над морем — пейзаж, картон, пастель, 20×30">
 									<img class="gallery-item__img" src="img/works/023-zakat-nad-morem.jpg" alt="Картина «Закат над морем», картон, 2002" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -838,7 +902,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/011-staryy-stul.jpg" data-fancybox="gallery" data-caption="Старый стул — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/011-staryy-stul.jpg" alt="Картина «Старый стул», бумага, 2018" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -855,9 +919,9 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/004-inzhir-i-gladiolusy.png" data-fancybox="gallery" data-caption="Инжир и гладиолусы — натюрморт, бумага, акварель, 85×55">
-									<img class="gallery-item__img" src="img/works/004-inzhir-i-gladiolusy.png" alt="Картина «Инжир и гладиолусы», бумага, 2019" width="875" height="585" loading="lazy">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/004-inzhir-i-gladiolusy.jpg" data-fancybox="gallery" data-caption="Инжир и гладиолусы — натюрморт, бумага, акварель, 85×55">
+									<img class="gallery-item__img" src="img/works/004-inzhir-i-gladiolusy.jpg" alt="Картина «Инжир и гладиолусы», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
 											<span class="gallery-item__name">Инжир и гладиолусы</span>
@@ -872,7 +936,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/016-orkhidei-na-zimney-verande.jpg" data-fancybox="gallery" data-caption="Орхидеи на зимней веранде — натюрморт, бумага, акварель, 90×60">
 									<img class="gallery-item__img" src="img/works/016-orkhidei-na-zimney-verande.jpg" alt="Картина «Орхидеи на зимней веранде», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -889,7 +953,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/056-gde-to-v-tsentre-krasnodara.jpg" data-fancybox="gallery" data-caption="Где-то в центре Краснодара — пейзаж, бумага, акварель, 40×60">
 									<img class="gallery-item__img" src="img/works/056-gde-to-v-tsentre-krasnodara.jpg" alt="Картина «Где-то в центре Краснодара», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -906,7 +970,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, гуашь">
 								<a class="gallery-item" href="img/works/057-posledniy-luch-nad-morem.jpg" data-fancybox="gallery" data-caption="Последний луч над морем — пейзаж, картон, гуашь, 30×40">
 									<img class="gallery-item__img" src="img/works/057-posledniy-luch-nad-morem.jpg" alt="Картина «Последний луч над морем», картон, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -923,7 +987,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/041-zimniy-den-v-pereulke.jpg" data-fancybox="gallery" data-caption="Зимний день в переулке — пейзаж, картон, акрил, 70×45">
 									<img class="gallery-item__img" src="img/works/041-zimniy-den-v-pereulke.jpg" alt="Картина «Зимний день в переулке», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -940,7 +1004,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/060-zheltye-khrizantemy.jpg" data-fancybox="gallery" data-caption="Желтые хризантемы — натюрморт, бумага, акварель, 70×50">
 									<img class="gallery-item__img" src="img/works/060-zheltye-khrizantemy.jpg" alt="Картина «Желтые хризантемы», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -957,7 +1021,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="холст, акрил">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/015-yukka-krasnodarskaya.jpg" data-fancybox="gallery" data-caption="Юкка краснодарская — пейзаж, холст, акрил, 90×70">
 									<img class="gallery-item__img" src="img/works/015-yukka-krasnodarskaya.jpg" alt="Картина «Юкка краснодарская», холст, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -974,7 +1038,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, пастель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, пастель">
 								<a class="gallery-item" href="img/works/061-morskoy-briz.jpg" data-fancybox="gallery" data-caption="Морской бриз — пейзаж, бумага, пастель, 30×40">
 									<img class="gallery-item__img" src="img/works/061-morskoy-briz.jpg" alt="Картина «Морской бриз», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -991,7 +1055,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/062-starye-utyuzhki.jpg" data-fancybox="gallery" data-caption="Старые утюжки — натюрморт, бумага, акварель, 60×80">
 									<img class="gallery-item__img" src="img/works/062-starye-utyuzhki.jpg" alt="Картина «Старые утюжки», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1008,7 +1072,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/063-pozdnie-tsvety.jpg" data-fancybox="gallery" data-caption="Поздние цветы — натюрморт, бумага, акварель, 70×40">
 									<img class="gallery-item__img" src="img/works/063-pozdnie-tsvety.jpg" alt="Картина «Поздние цветы», бумага, 2018" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1025,7 +1089,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/064-buket-iz-kolokolchikov.jpg" data-fancybox="gallery" data-caption="Букет из колокольчиков — натюрморт, бумага, акварель, 70×40">
 									<img class="gallery-item__img" src="img/works/064-buket-iz-kolokolchikov.jpg" alt="Картина «Букет из колокольчиков», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1042,7 +1106,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/065-letniy-svet.jpg" data-fancybox="gallery" data-caption="Летний свет — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/065-letniy-svet.jpg" alt="Картина «Летний свет», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1059,7 +1123,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
 								<a class="gallery-item" href="img/works/066-belyy-zontik.jpg" data-fancybox="gallery" data-caption="Белый зонтик — пейзаж, картон, акрил, 40×35">
 									<img class="gallery-item__img" src="img/works/066-belyy-zontik.jpg" alt="Картина «Белый зонтик», картон, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1076,7 +1140,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/067-belye-oblaka-nad-moykoy.jpg" data-fancybox="gallery" data-caption="Белые облака над Мойкой — пейзаж, бумага, акварель, 30×40">
 									<img class="gallery-item__img" src="img/works/067-belye-oblaka-nad-moykoy.jpg" alt="Картина «Белые облака над Мойкой», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1093,7 +1157,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/044-v-otpusk.jpg" data-fancybox="gallery" data-caption="В отпуск — натюрморт, картон, акрил, 90×70">
 									<img class="gallery-item__img" src="img/works/044-v-otpusk.jpg" alt="Картина «В отпуск», картон, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1110,7 +1174,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/042-prazdnichnyy-natyurmort.jpg" data-fancybox="gallery" data-caption="Праздничный натюрморт — натюрморт, картон, акрил, 70×55">
 									<img class="gallery-item__img" src="img/works/042-prazdnichnyy-natyurmort.jpg" alt="Картина «Праздничный натюрморт», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1127,7 +1191,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, пастель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/068-v-gelendzhikskoy-bukhte.jpg" data-fancybox="gallery" data-caption="В Геленджикской бухте — пейзаж, картон, пастель, 20×30">
 									<img class="gallery-item__img" src="img/works/068-v-gelendzhikskoy-bukhte.jpg" alt="Картина «В Геленджикской бухте», картон, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1144,7 +1208,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/069-krasnyy-mostik.jpg" data-fancybox="gallery" data-caption="Красный мостик — пейзаж, бумага, акварель, 40×40">
 									<img class="gallery-item__img" src="img/works/069-krasnyy-mostik.jpg" alt="Картина «Красный мостик», бумага, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1161,7 +1225,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/071-irisy-v-mednom-kuvshine.jpg" data-fancybox="gallery" data-caption="Ирисы в медном кувшине — натюрморт, бумага, акварель, 70×50">
 									<img class="gallery-item__img" src="img/works/071-irisy-v-mednom-kuvshine.jpg" alt="Картина «Ирисы в медном кувшине», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1178,9 +1242,9 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
-								<a class="gallery-item gallery-item--portrait" href="img/works/012-sirenevyy-buket.png" data-fancybox="gallery" data-caption="Сиреневый букет — натюрморт, бумага, акварель, 80×60">
-									<img class="gallery-item__img" src="img/works/012-sirenevyy-buket.png" alt="Картина «Сиреневый букет», бумага, 2020" width="875" height="585" loading="lazy">
+<div class="gallery__row gallery__row--trio"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+								<a class="gallery-item gallery-item--portrait" href="img/works/012-sirenevyy-buket.jpg" data-fancybox="gallery" data-caption="Сиреневый букет — натюрморт, бумага, акварель, 80×60">
+									<img class="gallery-item__img" src="img/works/012-sirenevyy-buket.jpg" alt="Картина «Сиреневый букет», бумага, 2020" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
 										<span class="gallery-item__top">
 											<span class="gallery-item__name">Сиреневый букет</span>
@@ -1195,7 +1259,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="portrait" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="portrait" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/019-portret-asi.jpg" data-fancybox="gallery" data-caption="Портрет Аси — портрет, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/019-portret-asi.jpg" alt="Картина «Портрет Аси», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1212,7 +1276,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-4" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/072-ayva.jpg" data-fancybox="gallery" data-caption="Айва — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/072-ayva.jpg" alt="Картина «Айва», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1229,7 +1293,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, темпера">
 								<a class="gallery-item" href="img/works/009-vechereet.jpg" data-fancybox="gallery" data-caption="Вечереет — пейзаж, картон, темпера, 60×80">
 									<img class="gallery-item__img" src="img/works/009-vechereet.jpg" alt="Картина «Вечереет», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1246,7 +1310,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/029-vesna-prikhodit-v-gory.jpg" data-fancybox="gallery" data-caption="Весна приходит в горы — пейзаж, бумага, акварель, 40×60">
 									<img class="gallery-item__img" src="img/works/029-vesna-prikhodit-v-gory.jpg" alt="Картина «Весна приходит в горы», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1263,7 +1327,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-3" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--asymmetric"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--narrow" href="img/works/073-vetka-ayvy.jpg" data-fancybox="gallery" data-caption="Ветка айвы — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/073-vetka-ayvy.jpg" alt="Картина «Ветка айвы», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1280,7 +1344,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
+<div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--wide" href="img/works/051-poslednie-listya-pervyy-sneg.jpg" data-fancybox="gallery" data-caption="Последние листья, первый снег — пейзаж, картон, акрил, 70×80">
 									<img class="gallery-item__img" src="img/works/051-poslednie-listya-pervyy-sneg.jpg" alt="Картина «Последние листья, первый снег», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1297,7 +1361,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-3" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--narrow" href="img/works/074-zimniy-buket.jpg" data-fancybox="gallery" data-caption="Зимний букет — натюрморт, картон, акрил, 60×55">
 									<img class="gallery-item__img" src="img/works/074-zimniy-buket.jpg" alt="Картина «Зимний букет», картон, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1314,7 +1378,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, пастель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, пастель">
 								<a class="gallery-item" href="img/works/036-vecher-okraina.jpg" data-fancybox="gallery" data-caption="Вечер. Окраина. — пейзаж, бумага, пастель, 40×50">
 									<img class="gallery-item__img" src="img/works/036-vecher-okraina.jpg" alt="Картина «Вечер. Окраина.», бумага, 2019" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1331,7 +1395,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/075-belye-slivy.jpg" data-fancybox="gallery" data-caption="Белые сливы — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/075-belye-slivy.jpg" alt="Картина «Белые сливы», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1348,7 +1412,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6 col-xl-3" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
+<div class="gallery__row gallery__row--quad"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, акрил">
 								<a class="gallery-item gallery-item--portrait" href="img/works/076-romashki.jpg" data-fancybox="gallery" data-caption="Ромашки — натюрморт, картон, акрил, 80×60">
 									<img class="gallery-item__img" src="img/works/076-romashki.jpg" alt="Картина «Ромашки», картон, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1365,7 +1429,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6 col-xl-3" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
 								<a class="gallery-item gallery-item--portrait" href="img/works/077-yablochnyy-spas.jpg" data-fancybox="gallery" data-caption="Яблочный Спас — натюрморт, картон, гуашь, 90×70">
 									<img class="gallery-item__img" src="img/works/077-yablochnyy-spas.jpg" alt="Картина «Яблочный Спас», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1382,7 +1446,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6 col-xl-3" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/037-limony-na-siney-tarelke.jpg" data-fancybox="gallery" data-caption="Лимоны на синей тарелке — натюрморт, бумага, акварель, 70×35">
 									<img class="gallery-item__img" src="img/works/037-limony-na-siney-tarelke.jpg" alt="Картина «Лимоны на синей тарелке», бумага, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1399,7 +1463,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6 col-xl-3" data-gallery-cell data-genre="landscape" data-technique="холст, пастель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, пастель">
 								<a class="gallery-item gallery-item--portrait" href="img/works/078-oblaka-nad-otvodnym-kanalom.jpg" data-fancybox="gallery" data-caption="Облака над Отводным каналом — пейзаж, холст, пастель, 30×40">
 									<img class="gallery-item__img" src="img/works/078-oblaka-nad-otvodnym-kanalom.jpg" alt="Картина «Облака над Отводным каналом», холст, 2022" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1416,7 +1480,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/034-buket-iz-podsolnukhov.jpg" data-fancybox="gallery" data-caption="Букет из подсолнухов — натюрморт, бумага, акварель, 60×80">
 									<img class="gallery-item__img" src="img/works/034-buket-iz-podsolnukhov.jpg" alt="Картина «Букет из подсолнухов», бумага, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1433,7 +1497,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
+</div><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="холст, масло">
 								<a class="gallery-item" href="img/works/079-v-karlovykh-varakh.jpg" data-fancybox="gallery" data-caption="В Карловых Варах — пейзаж, холст, масло, 30×40">
 									<img class="gallery-item__img" src="img/works/079-v-karlovykh-varakh.jpg" alt="Картина «В Карловых Варах», холст, 2005" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1450,7 +1514,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="landscape" data-technique="бумага, монотипия">
+<div class="gallery__row gallery__row--stack"><div class="gallery__cell" data-gallery-cell data-genre="landscape" data-technique="бумага, монотипия">
 								<a class="gallery-item gallery-item--tall" href="img/works/020-zima-v-arkhangelskom.jpg" data-fancybox="gallery" data-caption="Зима в Архангельском — пейзаж, бумага, монотипия, 20×30">
 									<img class="gallery-item__img" src="img/works/020-zima-v-arkhangelskom.jpg" alt="Картина «Зима в Архангельском», бумага, 2024" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1467,7 +1531,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6"><div class="row"><div class="col-12" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+<div class="gallery__stack"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item gallery-item--banner" href="img/works/024-suveniry-dalnikh-beregov.jpg" data-fancybox="gallery" data-caption="Сувениры дальних берегов — натюрморт, бумага, акварель, 70×50">
 									<img class="gallery-item__img" src="img/works/024-suveniry-dalnikh-beregov.jpg" alt="Картина «Сувениры дальних берегов», бумага, 2025" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1484,7 +1548,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
+</div></div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, гуашь">
 								<a class="gallery-item gallery-item--banner" href="img/works/080-letniy-zavtrak-c-rozami.jpg" data-fancybox="gallery" data-caption="Летний завтрак c розами — натюрморт, картон, гуашь, 55×65">
 									<img class="gallery-item__img" src="img/works/080-letniy-zavtrak-c-rozami.jpg" alt="Картина «Летний завтрак c розами», картон, 2023" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1500,8 +1564,8 @@
 										</span>
 									</span>
 								</a>
-							</div></div></div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="картон, пастель">
+							</div>
+<div class="gallery__row gallery__row--duo"><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="картон, пастель">
 								<a class="gallery-item" href="img/works/022-osen-za-oknom.jpg" data-fancybox="gallery" data-caption="Осень за окном — натюрморт, картон, пастель, 70×90">
 									<img class="gallery-item__img" src="img/works/022-osen-za-oknom.jpg" alt="Картина «Осень за окном», картон, 2012" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1518,7 +1582,7 @@
 									</span>
 								</a>
 							</div>
-<div class="col-12 col-md-6" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
+</div><div class="gallery__cell" data-gallery-cell data-genre="still-life" data-technique="бумага, акварель">
 								<a class="gallery-item" href="img/works/081-zheltaya-pizhma.jpg" data-fancybox="gallery" data-caption="Желтая пижма — натюрморт, бумага, акварель, 80×60">
 									<img class="gallery-item__img" src="img/works/081-zheltaya-pizhma.jpg" alt="Картина «Желтая пижма», бумага, 2021" width="875" height="585" loading="lazy">
 									<span class="gallery-item__caption">
@@ -1544,65 +1608,60 @@
 			<footer class="footer">
 				<div class="band band--wood" aria-hidden="true"></div>
 				<div class="footer__inner container">
-					<div class="row gy-4">
-						<div class="col-12 col-md-4">
-							<div class="footer__col">
-								<p class="footer__title">Документы</p>
-								<ul class="footer__list">
-									<li>
-										<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
-									</li>
-									<li>
-										<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
-									</li>
-								</ul>
-								<p class="footer__copy">© 2026г. – Анастасия Ярыгина. Все права защищены</p>
-							</div>
+					<div class="footer__grid">
+						<div class="footer__col">
+							<p class="footer__title">Документы</p>
+							<ul class="footer__list">
+								<li>
+									<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
+								</li>
+								<li>
+									<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
+								</li>
+							</ul>
+							<p class="footer__copy">© 2026г. – Анастасия Ярыгина. Все права защищены</p>
 						</div>
-						<div class="col-12 col-md-4">
-							<div class="footer__col">
-								<p class="footer__title">Навигация по сайту</p>
-								<ul class="footer__list">
-									<li>
-										<a class="footer__link" href="index.html">Главная</a>
-									</li>
-									<li>
-										<a class="footer__link" href="about.html">О себе</a>
-									</li>
-									<li>
-										<a class="footer__link" href="gallery.html">Галерея</a>
-									</li>
-									<li>
-										<a class="footer__link" href="exhibitions.html">Выставки</a>
-									</li>
-								</ul>
-							</div>
+						<div class="footer__col">
+							<p class="footer__title">Навигация по сайту</p>
+							<ul class="footer__list">
+								<li>
+									<a class="footer__link" href="index.html">Главная</a>
+								</li>
+								<li>
+									<a class="footer__link" href="about.html">О себе</a>
+								</li>
+								<li>
+									<a class="footer__link" href="gallery.html">Галерея</a>
+								</li>
+								<li>
+									<a class="footer__link" href="exhibitions.html">Выставки</a>
+								</li>
+							</ul>
 						</div>
-						<div class="col-12 col-md-4">
-							<div class="footer__col">
-								<p class="footer__title">Контакты</p>
-								<ul class="footer__socials">
-									<li>
-										<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
-									</li>
-								</ul>
-							</div>
+						<div class="footer__col">
+							<p class="footer__title">Контакты</p>
+							<ul class="footer__socials">
+								<li>
+									<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</footer>
+
 		</div>
 		<div class="popups visually-hidden" aria-hidden="true">
 			<div id="modal-max-qr" class="popup popup--max-qr">

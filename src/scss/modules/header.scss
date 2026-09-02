@@ -60,26 +60,25 @@
 		transition: opacity 0.2s ease;
 
 		&.is-active {
-			&::before {
-				content: "(";
-				margin-right: rem(6);
-				font-family: $fontfamily;
-				font-style: italic;
-				font-weight: 300;
-				font-size: rem(28);
-				line-height: 1;
+			&::before,
+			&::after {
+				content: "";
+				display: inline-block;
+				width: rem(10);
+				height: rem(33);
 				vertical-align: middle;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+
+			&::before {
+				margin-right: rem(6);
+				background-image: url("@img/decor/bracket-left.svg");
 			}
 
 			&::after {
-				content: ")";
 				margin-left: rem(6);
-				font-family: $fontfamily;
-				font-style: italic;
-				font-weight: 300;
-				font-size: rem(28);
-				line-height: 1;
-				vertical-align: middle;
+				background-image: url("@img/decor/bracket-right.svg");
 			}
 		}
 

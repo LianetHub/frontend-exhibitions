@@ -66,7 +66,7 @@
 				</div>
 			</header>
 			<main class="page">
-				<section class="hero" style="--hero-image: url('img/home/hero-bg.jpg');">
+				<section class="hero">
 					<div class="hero__photo-wrap">
 						<img class="hero__photo" src="img/home/hero-photo.webp" alt="Художник Анастасия Ярыгина с картинной рамой" width="1282" height="985" fetchpriority="high">
 					</div>
@@ -86,16 +86,16 @@
 
 				<div class="stats">
 					<div class="container">
-						<ul class="row stats__row">
-							<li class="col-12 col-md-4 stats__card">
+						<ul class="stats__row">
+							<li class="stats__card">
 								<img class="stats__value" src="img/home/stat-35.svg" alt="35+" width="189" height="114" loading="lazy">
 								<p class="stats__label">Лет стажа</p>
 							</li>
-							<li class="col-12 col-md-4 stats__card">
+							<li class="stats__card">
 								<img class="stats__value" src="img/home/stat-40.svg" alt="40+" width="199" height="114" loading="lazy">
 								<p class="stats__label">Выставок</p>
 							</li>
-							<li class="col-12 col-md-4 stats__card">
+							<li class="stats__card">
 								<img class="stats__value" src="img/home/stat-200.svg" alt="200+" width="270" height="114" loading="lazy">
 								<p class="stats__label">Работ</p>
 							</li>
@@ -106,21 +106,21 @@
 
 				<section class="works">
 					<div class="container">
-						<div class="works__head row">
-							<div class="col-12 col-lg-5">
+						<div class="works__head">
+							<div class="works__head-title">
 								<h2 class="works__title">
 									<span class="visually-hidden">Мои работы</span>
 									<img class="works__title-img" src="img/home/title-works.svg" alt="Мои работы" width="759" height="153" loading="lazy" aria-hidden="true">
 								</h2>
 							</div>
-							<div class="col-12 col-md-6 col-lg-3">
+							<div class="works__head-main">
 								<p class="text works__text">
 									Полная коллекция академической живописи и академических рисунков ждёт вас во вкладке
 									«Галерея», куда вы можете перейти нажав на кнопку ниже.
 								</p>
 								<a class="btn works__btn" href="gallery.html">Смотреть в галерее</a>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4">
+							<div class="works__head-aside">
 								<p class="text works__text works__text--aside">
 									Здесь представлено несколько ключевых работ для знакомства с моим художественным
 									почерком. В случае заинтересованности обращайтесь по указанному номеру телефона, почте
@@ -133,8 +133,8 @@
 							<div class="swiper works__slider">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
-										<ul class="row works__grid">
-											<li class="col-12 col-md-4">
+										<ul class="works__grid">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/home/work-1-sm.jpg" alt="Картина «Букет из подсолнухов», натюрморт, акварель" width="457" height="300" loading="lazy">
@@ -149,14 +149,14 @@
 													</figcaption>
 												</figure>
 											</li>
-											<li class="col-12 col-md-4">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/home/work-2-sm.jpg" alt="Пейзаж с деревенскими домами" width="457" height="299" loading="lazy">
 													</div>
 												</figure>
 											</li>
-											<li class="col-12 col-md-4">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/home/work-3-sm.jpg" alt="Пейзаж с мостом и церковью" width="457" height="300" loading="lazy">
@@ -166,11 +166,11 @@
 										</ul>
 									</div>
 									<div class="swiper-slide">
-										<ul class="row works__grid">
-											<li class="col-12 col-md-4">
+										<ul class="works__grid">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
-														<img class="gallery-card__img" src="img/works/001-vetrenyy-den-v-novorossiyske.png" alt="Картина «Ветреный день в Новороссийске»" width="457" height="300" loading="lazy">
+														<img class="gallery-card__img" src="img/works/001-vetrenyy-den-v-novorossiyske.jpg" alt="Картина «Ветреный день в Новороссийске»" width="457" height="300" loading="lazy">
 													</div>
 													<figcaption class="gallery-card__caption">
 														<p class="gallery-card__name">Ветреный день в Новороссийске</p>
@@ -182,14 +182,14 @@
 													</figcaption>
 												</figure>
 											</li>
-											<li class="col-12 col-md-4">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
-														<img class="gallery-card__img" src="img/works/002-zimniy-natyurmort.png" alt="Картина «Зимний натюрморт»" width="457" height="300" loading="lazy">
+														<img class="gallery-card__img" src="img/works/002-zimniy-natyurmort.jpg" alt="Картина «Зимний натюрморт»" width="457" height="300" loading="lazy">
 													</div>
 												</figure>
 											</li>
-											<li class="col-12 col-md-4">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/works/003-letniy-natyurmort.png" alt="Картина «Летний натюрморт»" width="457" height="300" loading="lazy">
@@ -199,8 +199,8 @@
 										</ul>
 									</div>
 									<div class="swiper-slide">
-										<ul class="row works__grid">
-											<li class="col-12 col-md-4">
+										<ul class="works__grid">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/works/005-na-kukhne-siren.jpg" alt="Картина «На кухне. Сирень.»" width="457" height="300" loading="lazy">
@@ -215,14 +215,14 @@
 													</figcaption>
 												</figure>
 											</li>
-											<li class="col-12 col-md-4">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/works/006-zima-ukhodit.jpg" alt="Картина «Зима уходит»" width="457" height="300" loading="lazy">
 													</div>
 												</figure>
 											</li>
-											<li class="col-12 col-md-4">
+											<li class="works__grid-item">
 												<figure class="gallery-card">
 													<div class="gallery-card__frame">
 														<img class="gallery-card__img" src="img/works/007-vesna-u-sinikh-dverey.jpg" alt="Картина «Весна у синих дверей»" width="457" height="300" loading="lazy">
@@ -245,14 +245,14 @@
 
 				<section class="contacts" id="contacts">
 					<div class="container">
-						<div class="row contacts__row">
-							<div class="col-12 col-lg-5">
+						<div class="contacts__row">
+							<div class="contacts__head-title">
 								<h2 class="contacts__title">
 									<span class="visually-hidden">Контакты для связи</span>
 									<img class="contacts__title-img" src="img/home/title-contacts.svg" alt="Контакты для связи" width="592" height="361" loading="lazy" aria-hidden="true">
 								</h2>
 							</div>
-							<div class="col-12 col-md-6 col-lg-3">
+							<div class="contacts__head-text">
 								<div class="contacts__text">
 									<p class="text">
 										Если вы хотите обсудить творческие проекты, задать вопрос о работах или предложить
@@ -265,7 +265,7 @@
 									<p class="text contacts__farewell">Буду рада обратной связи!</p>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4">
+							<div class="contacts__head-list">
 								<ul class="contacts__list">
 									<li>
 										<a class="contacts__item icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer">
@@ -307,65 +307,60 @@
 			<footer class="footer">
 				<div class="band band--wood" aria-hidden="true"></div>
 				<div class="footer__inner container">
-					<div class="row gy-4">
-						<div class="col-12 col-md-4">
-							<div class="footer__col">
-								<p class="footer__title">Документы</p>
-								<ul class="footer__list">
-									<li>
-										<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
-									</li>
-									<li>
-										<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
-									</li>
-								</ul>
-								<p class="footer__copy">© 2026г. – Анастасия Ярыгина. Все права защищены</p>
-							</div>
+					<div class="footer__grid">
+						<div class="footer__col">
+							<p class="footer__title">Документы</p>
+							<ul class="footer__list">
+								<li>
+									<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
+								</li>
+								<li>
+									<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
+								</li>
+							</ul>
+							<p class="footer__copy">© 2026г. – Анастасия Ярыгина. Все права защищены</p>
 						</div>
-						<div class="col-12 col-md-4">
-							<div class="footer__col">
-								<p class="footer__title">Навигация по сайту</p>
-								<ul class="footer__list">
-									<li>
-										<a class="footer__link" href="index.html">Главная</a>
-									</li>
-									<li>
-										<a class="footer__link" href="about.html">О себе</a>
-									</li>
-									<li>
-										<a class="footer__link" href="gallery.html">Галерея</a>
-									</li>
-									<li>
-										<a class="footer__link" href="exhibitions.html">Выставки</a>
-									</li>
-								</ul>
-							</div>
+						<div class="footer__col">
+							<p class="footer__title">Навигация по сайту</p>
+							<ul class="footer__list">
+								<li>
+									<a class="footer__link" href="index.html">Главная</a>
+								</li>
+								<li>
+									<a class="footer__link" href="about.html">О себе</a>
+								</li>
+								<li>
+									<a class="footer__link" href="gallery.html">Галерея</a>
+								</li>
+								<li>
+									<a class="footer__link" href="exhibitions.html">Выставки</a>
+								</li>
+							</ul>
 						</div>
-						<div class="col-12 col-md-4">
-							<div class="footer__col">
-								<p class="footer__title">Контакты</p>
-								<ul class="footer__socials">
-									<li>
-										<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
-									</li>
-									<li>
-										<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
-									</li>
-								</ul>
-							</div>
+						<div class="footer__col">
+							<p class="footer__title">Контакты</p>
+							<ul class="footer__socials">
+								<li>
+									<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</footer>
+
 		</div>
 		<div class="popups visually-hidden" aria-hidden="true">
 			<div id="modal-max-qr" class="popup popup--max-qr">

@@ -19,11 +19,26 @@
 
 	// works__head
 	&__head {
-		--gutter-y: #{rem(24)};
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: rem(24);
 		margin-bottom: rem(32);
 
 		@media (min-width: $md4) {
 			margin-bottom: rem(48);
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+
+			.works__head-title {
+				grid-column: 1 / -1;
+			}
+		}
+
+		@media (min-width: $md3) {
+			grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 4fr);
+
+			.works__head-title {
+				grid-column: auto;
+			}
 		}
 	}
 
@@ -69,8 +84,19 @@
 
 	// works__grid
 	&__grid {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(24)};
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: rem(24);
+		list-style: none;
+
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	// works__grid-item
+	&__grid-item {
+		min-width: 0;
 	}
 
 	// works__nav
