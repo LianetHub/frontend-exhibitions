@@ -21,8 +21,8 @@
 	}
 
 	&.btn--light {
-		border: 1.5px solid #111B10;
-		background: rgba(17, 27, 16, 0.30);
+		background: $color-dark;
+		color: $color-white;
 
 		@media (any-hover: hover) {
 			&:hover {
@@ -39,10 +39,7 @@
 		}
 	}
 
-	&:active {
-		background: $color-brown;
-		color: $color-dark;
-	}
+
 
 	&:focus-visible {
 		outline: none;

@@ -1,3 +1,8 @@
+import webpack from "webpack";
+import webpackStream from "webpack-stream";
+
+const bundleJs = webpackStream.default ?? webpackStream;
+
 export const js = () => {
 	return app.gulp
 		.src(app.path.src.js, { sourcemaps: app.isDev })
@@ -7,6 +12,20 @@ export const js = () => {
 					title: "JS",
 					message: "Error: <%= error.message %>",
 				})
+			)
+		)
+		.pipe(
+			app.plugins.if(
+				app.isBuild,
+				bundleJs(
+					{
+						mode: "production",
+						output: {
+							filename: "app.js",
+						},
+					},
+					webpack
+				)
 			)
 		)
 		.pipe(app.gulp.dest(app.path.build.js))

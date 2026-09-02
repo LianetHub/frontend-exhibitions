@@ -44,10 +44,27 @@ function watcher() {
 
 const fonts = gulp.series(otf2ttf, ttfToWoff, copyWoff, fontsStyle);
 
+const contentTasks = [
+    copy,
+    copyCssLibs,
+    copyJsLibs,
+    html,
+    normalize,
+    scss,
+    favicon,
+    js,
+    images,
+    php,
+];
+
+if (!app.isBuild) {
+    contentTasks.push(json);
+}
+
 const mainTasks = gulp.series(
     fonts,
     // svgSpriteTask,
-    gulp.parallel(copy, copyCssLibs, copyJsLibs, html, normalize, scss, favicon, js, json, images, php)
+    gulp.parallel(...contentTasks)
 );
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

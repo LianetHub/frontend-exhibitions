@@ -47,9 +47,7 @@ export const copyWoff = () => {
         .src(`${app.path.srcFolder}/fonts/*.woff`)
         .pipe(app.gulp.dest(`${app.path.build.fonts}`))
         .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.woff2`))
-        .pipe(app.gulp.dest(`${app.path.build.fonts}`))
-        .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/iconfont/**/*.*`))
-        .pipe(app.gulp.dest(`${app.path.build.fonts}/iconfont`));
+        .pipe(app.gulp.dest(`${app.path.build.fonts}`));
 };
 
 export const fontsStyle = () => {
