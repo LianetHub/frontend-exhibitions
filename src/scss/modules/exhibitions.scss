@@ -1,36 +1,9 @@
 .exhibitions-hero {
-	background-color: $color-green;
-	background-image: repeating-linear-gradient(to right,
-		transparent 0,
-		transparent #{rem(51)},
-		#{$color-green-2} #{rem(51)},
-		#{$color-green-2} #{rem(154)},
-		transparent #{rem(154)},
-		transparent #{rem(221)});
-	color: $color-white;
-	padding-top: rem(105);
-	padding-bottom: rem(40);
+
+	padding-top: $header;
 	position: relative;
 
-	@media (min-width: $md4) {
-		padding-top: rem(175);
-		padding-bottom: rem(63);
-	}
 
-	&__band-top,
-	&__band-bottom {
-		position: absolute;
-		left: 0;
-		z-index: 1;
-	}
-
-	&__band-top {
-		top: $header;
-	}
-
-	&__band-bottom {
-		bottom: 0;
-	}
 
 	// exhibitions-hero__layout
 	&__layout {
@@ -40,6 +13,7 @@
 
 		@media (min-width: $md3) {
 			flex-direction: row;
+			align-items: center;
 			gap: rem(40);
 		}
 	}
@@ -48,8 +22,8 @@
 	&__title {
 		margin: 0;
 		min-width: 0;
-		flex: 0 1 41%;
-		align-self: flex-start;
+		flex: 0 1 40%;
+		align-self: center;
 	}
 
 	// exhibitions-hero__title-img
@@ -72,11 +46,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(20);
-		padding-bottom: rem(40);
+		padding-block: rem(40);
 
 		@media (min-width: $md3) {
 			gap: rem(30);
-			padding-bottom: rem(70);
+			padding-block: rem(70);
 		}
 	}
 
@@ -97,7 +71,7 @@
 		padding: 0 rem(15);
 		border: 1px solid $color-dark;
 		border-radius: 0;
-		background: $color-green-2;
+		background: rgba(17, 27, 16, 0.30);
 		color: $color-white;
 		font-weight: 300;
 		font-size: rem(20);
@@ -147,7 +121,7 @@
 		min-height: rem(49);
 		padding: rem(10) rem(24);
 		border: 1px solid $color-dark;
-		background: $color-green-2;
+		background: rgba(17, 27, 16, 0.30);
 		color: $color-white;
 		font-weight: 300;
 		font-size: rem(20);
