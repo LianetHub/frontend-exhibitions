@@ -2479,7 +2479,8 @@ img {
 }
 @media (min-width: 991.98px) {
   .about__body {
-    flex: 1 1 55%;
+    flex: 0 0 100%;
+    transform: translateX(-45%);
   }
 }
 .about__container {
@@ -2540,7 +2541,7 @@ img {
     gap: 0;
     margin-top: 0;
     width: 100%;
-    max-width: 63.25rem;
+    max-width: 55%;
     margin-left: auto;
   }
 }
@@ -2562,7 +2563,7 @@ img {
 }
 @media (min-width: 1199.98px) {
   .about__item {
-    grid-template-columns: 1.75rem minmax(0, 17.5rem) minmax(0, 35rem);
+    grid-template-columns: 1.75rem 1fr minmax(0, 35rem);
     column-gap: 1.75rem;
     padding-top: 1.5rem;
     padding-bottom: 4.125rem;

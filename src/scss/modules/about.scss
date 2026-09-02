@@ -80,7 +80,8 @@
 		min-width: 0;
 
 		@media (min-width: $md3) {
-			flex: 1 1 55%;
+			flex: 0 0 100%;
+			transform: translateX(-45%);
 		}
 	}
 
@@ -144,7 +145,7 @@
 			gap: 0;
 			margin-top: 0;
 			width: 100%;
-			max-width: rem(1012);
+			max-width: 55%;
 			margin-left: auto;
 		}
 	}
@@ -166,7 +167,7 @@
 		}
 
 		@media (min-width: $md2) {
-			grid-template-columns: rem(28) minmax(0, rem(280)) minmax(0, rem(560));
+			grid-template-columns: rem(28) 1fr minmax(0, rem(560));
 			column-gap: rem(28);
 			padding-top: rem(24);
 			padding-bottom: rem(66);
