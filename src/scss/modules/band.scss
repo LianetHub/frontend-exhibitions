@@ -1,7 +1,7 @@
 .band {
 	display: block;
 	width: 100%;
-	height: rem(63);
+	height: rem(23);
 	background-color: $color-brown;
 	background-image: url("@img/wood.webp");
 	background-size: cover;
@@ -9,9 +9,16 @@
 	background-repeat: no-repeat;
 	position: relative;
 
+	@media (min-width: $md4) {
+		height: rem(63);
+	}
 
 	// band--wood
 	&--wood {
-		height: rem(63);
+		height: rem(23);
+
+		@media (min-width: $md4) {
+			height: rem(63);
+		}
 	}
 }

@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		const nextEl = wrap?.querySelector(".works__next");
 
 		new Swiper(slider, {
-			slidesPerView: 1,
+			slidesPerView: 1.25,
 			slidesPerGroup: 1,
-			spaceBetween: 24,
+			spaceBetween: 13,
 			watchOverflow: true,
 			breakpoints: {
 				767.98: {

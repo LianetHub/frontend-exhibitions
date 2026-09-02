@@ -1,20 +1,28 @@
+@use "sass:math";
+
 .hero {
 	position: relative;
 	isolation: isolate;
-	min-height: rem(720);
+	min-height: rem(876);
 	overflow: hidden;
-	background: url("@img/home/boiserie.webp") 0 100% / auto rem(239) repeat-x,
-	url("@img/home/hero-overlay.svg") center 0 / auto 100% no-repeat,
-	linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 0 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
-	linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
-	url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
-	$color-dark;
+	background:
+		linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%),
+		url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
+		$color-dark;
 	color: $color-white;
 	display: flex;
 	flex-direction: column;
 
 	@media (min-width: $md4) {
-		min-height: rem(1080);
+		min-height: 0;
+		aspect-ratio: 1920 / 1080;
+		background:
+			url("@img/home/boiserie.webp") 0 100% / auto #{math.div(239, 1080) * 100%} repeat-x,
+			url("@img/home/hero-overlay.svg") center 0 / auto 100% no-repeat,
+			linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 0 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
+			linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.61) 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
+			url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
+			$color-dark;
 	}
 
 	.band {
@@ -22,55 +30,72 @@
 		bottom: 0;
 		left: 0;
 		z-index: 4;
+		height: rem(84);
+
+		@media (min-width: $md4) {
+			height: rem(63);
+		}
 	}
 
 	// hero__content
 	&__content {
 		position: relative;
 		z-index: 2;
-		padding-top: rem(80);
+		padding-top: rem(48);
 		height: 100%;
 		flex: 1;
 
 		@media (min-width: $md4) {
-			padding-top: rem(68);
-
+			padding-top: min(#{rem(68)}, #{math.div(68, 1920) * 100vw});
 		}
 	}
-
 
 	// hero__photo-wrap
 	&__photo-wrap {
 		position: absolute;
 		z-index: 2;
-		left: 50%;
-		bottom: rem(120);
-		width: min(100%, rem(720));
-		transform: translateX(-50%);
+		left: rem(-64);
+		bottom: rem(84);
+		width: rem(408);
+		aspect-ratio: 408 / 456;
+		overflow: hidden;
 		pointer-events: none;
 
 		@media (min-width: $md4) {
-			bottom: rem(80);
-			width: rem(980);
-		}
-
-		@media (min-width: $md2) {
-			width: rem(1282);
-			bottom: rem(60);
+			left: 50%;
+			bottom: min(#{rem(64)}, #{math.div(64, 1920) * 100vw});
+			width: math.div(1282, 1920) * 100%;
+			max-width: rem(1282);
+			aspect-ratio: 1282 / 985;
+			overflow: visible;
+			transform: translateX(-50%);
 		}
 	}
 
 	// hero__photo
 	&__photo {
 		display: block;
-		width: 100%;
-		height: auto;
-		object-fit: contain;
+		width: 145.51%;
+		max-width: none;
+		height: 100%;
+		margin-left: -21.73%;
+		object-fit: cover;
+
+		@media (min-width: $md4) {
+			width: 100%;
+			height: auto;
+			margin-left: 0;
+			object-fit: contain;
+		}
 	}
 
 	// hero__title
 	&__title {
-		max-width: rem(1810);
+		max-width: 100%;
+
+		@media (min-width: $md4) {
+			max-width: rem(1810);
+		}
 	}
 
 	// hero__title-img
@@ -78,15 +103,29 @@
 		display: block;
 		width: 100%;
 		height: auto;
-		max-width: rem(1810);
+		max-width: rem(320);
+
+		@media (min-width: $md4) {
+			max-width: rem(1810);
+		}
 	}
 
 	// hero__lead
 	&__lead {
-		max-width: rem(434);
+		position: relative;
+		max-width: rem(320);
+		margin-top: rem(22);
 		color: $color-white;
-		position: absolute;
-		top: 22.9rem;
-	}
+		font-size: rem(12);
+		line-height: 1.3;
 
+		@media (min-width: $md4) {
+			position: absolute;
+			top: min(#{rem(367)}, #{math.div(367, 1920) * 100vw});
+			max-width: rem(434);
+			margin-top: 0;
+			font-size: rem(16);
+			line-height: 1.3;
+		}
+	}
 }

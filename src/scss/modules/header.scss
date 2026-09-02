@@ -241,4 +241,42 @@
 			color: $color-white;
 		}
 	}
+
+	// header--home
+	&--home {
+		.header__logo {
+			display: none;
+
+			@media (min-width: $md4) {
+				display: inline-flex;
+			}
+		}
+
+		.header__phone {
+			display: inline-flex;
+			font-size: rem(12);
+
+			@media (min-width: $md4) {
+				font-size: rem(16);
+			}
+
+			@media (min-width: $md3) {
+				display: inline-flex;
+			}
+		}
+
+		.header__burger {
+			order: -1;
+
+			@media (min-width: $md4) {
+				display: none;
+			}
+		}
+
+		.header__nav {
+			@media (min-width: $md4) {
+				display: block;
+			}
+		}
+	}
 }
