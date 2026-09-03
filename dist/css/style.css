@@ -1281,7 +1281,17 @@ img {
 }
 @media (min-width: 991.98px) {
   .hero__title {
-    max-width: 113.125rem;
+    max-width: 100%;
+  }
+}
+.hero__title-desktop {
+  display: none;
+}
+@media (min-width: 991.98px) {
+  .hero__title-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .hero__title-img {
@@ -1290,9 +1300,17 @@ img {
   height: auto;
 }
 @media (min-width: 991.98px) {
-  .hero__title-img {
-    max-width: 113.125rem;
+  .hero__title-img--mobile {
+    display: none;
   }
+}
+.hero__title-img--name {
+  max-width: 80.75rem;
+}
+.hero__title-img--surname {
+  width: 63.5448916409%;
+  max-width: 51.3125rem;
+  margin-left: auto;
 }
 .hero__lead {
   position: relative;

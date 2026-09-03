@@ -164,11 +164,22 @@
 
 		@media (min-width:$md5) {
 			max-width: rem(480);
-
 		}
 
 		@media (min-width: $md3) {
-			max-width: rem(1810);
+			max-width: 100%;
+		}
+	}
+
+	// hero__title-desktop
+	&__title-desktop {
+		display: none;
+
+		@media (min-width: $md3) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
 		}
 	}
 
@@ -178,9 +189,23 @@
 		width: 100%;
 		height: auto;
 
+		// hero__title-img--mobile
+		&--mobile {
+			@media (min-width: $md3) {
+				display: none;
+			}
+		}
 
-		@media (min-width: $md3) {
-			max-width: rem(1810);
+		// hero__title-img--name
+		&--name {
+			max-width: rem(1292);
+		}
+
+		// hero__title-img--surname
+		&--surname {
+			width: math.div(821, 1292) * 100%;
+			max-width: rem(821);
+			margin-left: auto;
 		}
 	}
 
