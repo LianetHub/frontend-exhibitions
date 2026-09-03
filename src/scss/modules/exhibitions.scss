@@ -292,6 +292,7 @@
 		line-height: 1.3;
 		letter-spacing: -0.01em;
 		opacity: 1;
+		cursor: pointer;
 
 		&::before {
 			content: attr(data-index);
@@ -301,6 +302,21 @@
 	.swiper-pagination-bullet-active {
 		background: transparent;
 		box-shadow: inset 0 0 0 1px $color-dark;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	.swiper-pagination-ellipsis {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: rem(29);
+		height: rem(29);
+		color: $color-dark;
+		font-size: rem(16);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		user-select: none;
 	}
 }
 
@@ -367,11 +383,20 @@
 	}
 
 	&:not(.swiper-slide-active) {
+
 		.exhibitions-slide__caption,
 		.exhibitions-slide__flag {
 			opacity: 0;
 			pointer-events: none;
 			visibility: hidden;
+		}
+
+		.exhibitions-slide__caption {
+			transform: translate(-50%, 100%);
+
+			@media (min-width: $md4) {
+				transform: translateY(100%);
+			}
 		}
 	}
 
@@ -384,6 +409,7 @@
 			opacity: 1;
 			visibility: visible;
 			pointer-events: auto;
+			transform: translate(-50%, 0);
 		}
 	}
 
@@ -395,18 +421,21 @@
 		&.is-open .exhibitions-slide__caption {
 			opacity: 0;
 			pointer-events: none;
+			transform: translateY(100%);
 		}
 
 		@media (any-hover: hover) {
 			&.swiper-slide-active:hover .exhibitions-slide__caption {
 				opacity: 1;
 				pointer-events: auto;
+				transform: translateY(0);
 			}
 		}
 
 		&.swiper-slide-active:focus-within .exhibitions-slide__caption {
 			opacity: 1;
 			pointer-events: auto;
+			transform: translateY(0);
 		}
 	}
 
@@ -420,6 +449,16 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		// full-bleed caption on mobile, clip bottom so it slides in from the image
+		clip-path: inset(#{rem(-4)} -100vw 0 -100vw);
+
+		@media (min-width: $md4) {
+			clip-path: inset(0);
+		}
+
+		@media (min-width: $md1) {
+			clip-path: inset(0 rem(-20) 0 rem(-20));
+		}
 	}
 
 	// exhibitions-slide__flag
@@ -489,14 +528,17 @@
 		background: $color-beige;
 		backdrop-filter: blur(1.5px);
 		box-sizing: border-box;
-		transform: translateX(-50%);
+		transform: translate(-50%, 100%);
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition: opacity 0.25s ease, visibility 0.25s ease;
+		transition:
+			transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+			opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+			visibility 0.35s;
 
 		@media (prefers-reduced-motion: reduce) {
-			transition: none;
+			transition: opacity 0.2s ease, visibility 0.2s ease;
 		}
 
 		@media (min-width: $md4) {
@@ -505,9 +547,9 @@
 			width: auto;
 			min-height: auto;
 			padding: rem(16) rem(20);
-			background: rgba(217, 202, 180, 0.92);
+			background: rgba(217, 202, 180, 1);
 			backdrop-filter: blur(4px);
-			transform: none;
+			transform: translateY(100%);
 			visibility: visible;
 		}
 

@@ -133,6 +133,40 @@ document.addEventListener("DOMContentLoaded", () => {
 	const interiorSlider = document.querySelector("[data-interior-slider]");
 	const exhibitionsSlides = exhibitionsSlider ? [...exhibitionsSlider.querySelectorAll(".exhibitions-slide")] : [];
 
+	function getExhibitionsPaginationItems(current, total) {
+		if (total <= 0) return [];
+
+		if (total <= 5) {
+			return Array.from({ length: total }, (_, index) => index + 1);
+		}
+
+		if (current <= 3) {
+			return [1, 2, 3, "ellipsis", total];
+		}
+
+		if (current >= total - 2) {
+			return [1, "ellipsis", total - 2, total - 1, total];
+		}
+
+		return [1, "ellipsis", current - 1, current, current + 1, "ellipsis", total];
+	}
+
+	function renderExhibitionsPagination(current, total) {
+		return getExhibitionsPaginationItems(current, total)
+			.map((item) => {
+				if (item === "ellipsis") {
+					return '<span class="swiper-pagination-ellipsis" aria-hidden="true">…</span>';
+				}
+
+				const isActive = item === current;
+				const activeClass = isActive ? " swiper-pagination-bullet-active" : "";
+				const currentAttr = isActive ? ' aria-current="true"' : "";
+
+				return `<button type="button" class="swiper-pagination-bullet${activeClass}" data-index="${item}" aria-label="Слайд ${item}"${currentAttr}></button>`;
+			})
+			.join("");
+	}
+
 	function getExhibitionsCoverflowOptions(wrap) {
 		const pagination = wrap?.querySelector(".exhibitions-slider__pagination");
 		const prevEl = wrap?.querySelector(".exhibitions-slider__prev");
@@ -168,9 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			pagination: pagination
 				? {
 						el: pagination,
-						clickable: true,
-						renderBullet(index, className) {
-							return `<button type="button" class="${className}" data-index="${index + 1}" aria-label="Слайд ${index + 1}"></button>`;
+						type: "custom",
+						renderCustom(_swiper, current, total) {
+							return renderExhibitionsPagination(current, total);
 						},
 					}
 				: undefined,
@@ -662,6 +696,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (header?.classList.contains("is-menu-open") && !target.closest(".header__mobile") && !target.closest(".header__burger")) {
 			closeMobileMenu();
+		}
+
+		const exhibitionsPaginationBullet = target.closest(".exhibitions-slider__pagination .swiper-pagination-bullet[data-index]");
+		if (exhibitionsPaginationBullet) {
+			const wrap = exhibitionsPaginationBullet.closest(".exhibitions-slider__wrap");
+			const swiperInstance = wrap?.querySelector(".swiper")?.swiper;
+			const index = Number(exhibitionsPaginationBullet.getAttribute("data-index")) - 1;
+
+			if (swiperInstance && Number.isFinite(index)) {
+				swiperInstance.slideTo(index);
+			}
+			return;
 		}
 
 		const exhibitionsChip = target.closest("[data-exhibitions-filters] .exhibitions-hero__chip");
