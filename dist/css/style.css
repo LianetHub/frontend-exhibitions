@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -15,8 +15,8 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
@@ -29,8 +29,8 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 :root {
@@ -1888,6 +1888,11 @@ img {
     padding: 4.375rem 0 8.75rem;
   }
 }
+@media (min-width: 1199.98px) {
+  .contacts {
+    overflow: visible;
+  }
+}
 .contacts__row {
   display: grid;
   grid-template-columns: 1fr;
@@ -1911,6 +1916,8 @@ img {
 }
 .contacts__title {
   margin: 0;
+  position: relative;
+  z-index: 2;
 }
 .contacts__title-img {
   display: block;
@@ -1947,18 +1954,32 @@ img {
 }
 @media (min-width: 1199.98px) {
   .contacts__body {
-    background: transparent;
+    overflow: visible;
+    background: var(--color-green);
   }
-  .contacts__body::before {
+  .contacts__body::before, .contacts__body::after {
     content: "";
     position: absolute;
-    z-index: -1;
     top: 0;
-    bottom: 0;
-    left: var(--contacts-fill-left, 0px);
-    right: var(--contacts-fill-right, 0px);
-    background: var(--color-green);
+    height: 100%;
+    width: 0;
     pointer-events: none;
+  }
+  .contacts__body::before {
+    right: 100%;
+    background: var(--color-green);
+    z-index: -1;
+  }
+  .contacts__body::after {
+    left: 100%;
+    background: var(--color-green);
+    z-index: 0;
+  }
+  .contacts__body--stripe-before::before {
+    width: 6.90625rem;
+  }
+  .contacts__body--stripe-after::after {
+    width: 6.90625rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -2726,22 +2747,20 @@ img {
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0;
-  height: 100%;
-  bottom: 0;
   background: var(--color-green);
   pointer-events: none;
 }
 @media (max-width: 991.98px) {
   .about__list::before {
-    width: 100%;
+    inset: 0;
   }
 }
 @media (min-width: 991.98px) {
   .about__list::before {
     left: -2.5rem;
-    top: -100vmax;
     width: 100vw;
+    top: -100vmax;
+    bottom: 0;
   }
 }
 @media (min-width: 991.98px) {
@@ -2961,9 +2980,9 @@ img {
 }
 @media (any-hover: hover) {
   .exhibitions-hero__cta:hover:not(.is-active) {
-    border-color: var(--color-beige);
-    background: var(--color-beige);
-    color: var(--color-dark);
+    background: var(--color-dark);
+    border-color: var(--color-dark);
+    color: var(--color-white);
   }
 }
 .exhibitions-hero__cta:focus-visible {
@@ -2974,11 +2993,6 @@ img {
   background: var(--color-dark);
   border-color: var(--color-dark);
   color: var(--color-white);
-}
-.exhibitions-hero__cta:active:not(.is-active) {
-  background: var(--color-brown);
-  border-color: var(--color-brown);
-  color: var(--color-dark);
 }
 
 .exhibitions-slider {

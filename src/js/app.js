@@ -467,7 +467,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		armWorksReveal();
 	}
 
-	// #region agent log
 	function readStripeToken(name) {
 		const raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 		if (!raw) return NaN;
@@ -488,82 +487,63 @@ document.addEventListener("DOMContentLoaded", () => {
 		};
 	}
 
-	function isStripeLightBand(pos, darkEnd, gap) {
-		return pos >= darkEnd || pos < gap;
+	function isPageGreenStripeArea(viewportX, origin, period, darkEnd, gap) {
+		const pos = ((viewportX - origin) % period + period) % period;
+		return pos >= gap && pos < darkEnd;
 	}
 
-	function updateContactsStripeFill(runId = "post-fix") {
+	function updateContactsStripeFill() {
 		const body = document.querySelector(".contacts__body");
 		if (!body) return;
 
 		if (!window.matchMedia("(min-width: 1199.98px)").matches) {
-			body.style.removeProperty("--contacts-fill-left");
-			body.style.removeProperty("--contacts-fill-right");
+			body.classList.remove("contacts__body--stripe-before", "contacts__body--stripe-after");
 			return;
 		}
 
 		const { period, darkEnd, gap } = getPageStripeMetrics();
+		const pageLeft = document.querySelector(".page")?.getBoundingClientRect().left ?? 0;
 		const rect = body.getBoundingClientRect();
-		const leftVp = rect.left;
-		const rightVp = rect.right;
-		const posL = ((leftVp % period) + period) % period;
-		const posR = ((rightVp % period) + period) % period;
 
-		let leftInset = 0;
-		let rightInset = 0;
+		body.classList.toggle(
+			"contacts__body--stripe-before",
+			isPageGreenStripeArea(rect.left, pageLeft, period, darkEnd, gap),
+		);
+		body.classList.toggle(
+			"contacts__body--stripe-after",
+			isPageGreenStripeArea(rect.right, pageLeft, period, darkEnd, gap),
+		);
+	}
 
-		if (isStripeLightBand(posL, darkEnd, gap)) {
-			const snappedLeftVp = posL < gap
-				? Math.floor(leftVp / period) * period + gap
-				: Math.ceil((leftVp - gap) / period) * period + gap;
-			leftInset = Math.max(0, snappedLeftVp - leftVp);
-		}
+	function initContactsStripeFill() {
+		const body = document.querySelector(".contacts__body");
+		if (!body) return;
 
-		if (isStripeLightBand(posR, darkEnd, gap)) {
-			const snappedRightVp = Math.floor((rightVp - darkEnd) / period) * period + darkEnd;
-			rightInset = Math.max(0, rightVp - snappedRightVp);
-		}
+		let resizeTimer = 0;
 
-		body.style.setProperty("--contacts-fill-left", `${leftInset}px`);
-		body.style.setProperty("--contacts-fill-right", `${rightInset}px`);
+		const scheduleUpdate = () => {
+			window.clearTimeout(resizeTimer);
+			resizeTimer = window.setTimeout(() => {
+				if (typeof ScrollTrigger !== "undefined") {
+					ScrollTrigger.refresh(false);
+				}
 
-		const beforeStyle = getComputedStyle(body, "::before");
-		const beforeLeft = parseFloat(beforeStyle.left) || 0;
-		const beforeRight = parseFloat(beforeStyle.right) || 0;
-		const actualBeforeRightVp = rect.right - beforeRight;
-		const actualBeforeLeftVp = rect.left + beforeLeft;
-		const stripePos = (x) => {
-			const pos = ((x % period) + period) % period;
-			return { pos, inLight: isStripeLightBand(pos, darkEnd, gap) };
+				updateContactsStripeFill();
+			}, 50);
 		};
 
-		fetch("http://127.0.0.1:7381/ingest/928954ce-0212-40b4-84b3-3a5a743a519b", {
-			method: "POST",
-			headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "14a9fd" },
-			body: JSON.stringify({
-				sessionId: "14a9fd",
-				runId,
-				hypothesisId: "G-H",
-				location: "app.js:updateContactsStripeFill",
-				message: "contacts conditional stripe snap",
-				data: {
-					innerWidth: window.innerWidth,
-					leftInset,
-					rightInset,
-					bodyRect: { left: leftVp, right: rightVp },
-					posL,
-					posR,
-					beforeInsets: { left: beforeLeft, right: beforeRight },
-					actualBeforeEdges: { left: actualBeforeLeftVp, right: actualBeforeRightVp },
-					bodyRightStripe: stripePos(rightVp),
-					pseudoRightStripe: stripePos(actualBeforeRightVp),
-					pseudoLeftStripe: stripePos(actualBeforeLeftVp),
-				},
-				timestamp: Date.now(),
-			}),
-		}).catch(() => {});
+		updateContactsStripeFill();
+		window.addEventListener("resize", scheduleUpdate);
+
+		window.matchMedia("(min-width: 1199.98px)").addEventListener("change", scheduleUpdate);
+
+		if (typeof ResizeObserver !== "undefined") {
+			const row = body.closest(".contacts__row");
+			const observer = new ResizeObserver(scheduleUpdate);
+			observer.observe(body);
+			if (row) observer.observe(row);
+		}
 	}
-	// #endregion
 
 	// contacts reveal
 	const contactsEl = document.querySelector(".contacts");
@@ -591,7 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const finishContactsReveal = () => {
 			if (contactsTitle) gsap.set(contactsTitle, { clearProps: "transform,opacity" });
 			if (contactsBody) gsap.set(contactsBody, { clearProps: "clipPath" });
-			updateContactsStripeFill("post-fix");
+			updateContactsStripeFill();
 		};
 
 		const contactsTl = gsap.timeline({
@@ -1401,8 +1381,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	updateContactsStripeFill("post-fix");
-	window.addEventListener("resize", () => updateContactsStripeFill("post-fix"));
+	initContactsStripeFill();
 });
 
 if (typeof Fancybox !== "undefined") {

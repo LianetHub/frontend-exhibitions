@@ -151,20 +151,18 @@
 			content: "";
 			position: absolute;
 			z-index: -1;
-			top: 0;
-			height: 100%;
-			bottom: 0;
 			background: $color-green;
 			pointer-events: none;
 
-			@media (max-width:$md3) {
-				width: 100%;
+			@media (max-width: $md3) {
+				inset: 0;
 			}
 
-			@media (min-width:$md3) {
+			@media (min-width: $md3) {
 				left: rem(-40);
-				top: -100vmax;
 				width: 100vw;
+				top: -100vmax;
+				bottom: 0;
 			}
 		}
 

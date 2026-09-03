@@ -8,6 +8,10 @@
 		padding: rem(70) 0 rem(140);
 	}
 
+	@media (min-width: $md2) {
+		overflow: visible;
+	}
+
 	// contacts__row
 	&__row {
 		display: grid;
@@ -34,6 +38,8 @@
 	// contacts__title
 	&__title {
 		margin: 0;
+		position: relative;
+		z-index: 2;
 	}
 
 	// contacts__title-img
@@ -70,18 +76,37 @@
 		}
 
 		@media (min-width: $md2) {
-			background: transparent;
+			overflow: visible;
+			background: $color-green;
 
-			&::before {
+			&::before,
+			&::after {
 				content: "";
 				position: absolute;
-				z-index: -1;
 				top: 0;
-				bottom: 0;
-				left: var(--contacts-fill-left, 0px);
-				right: var(--contacts-fill-right, 0px);
-				background: $color-green;
+				height: 100%;
+				width: 0;
 				pointer-events: none;
+			}
+
+			&::before {
+				right: 100%;
+				background: $color-green;
+				z-index: -1;
+			}
+
+			&::after {
+				left: 100%;
+				background: $color-green;
+				z-index: 0;
+			}
+
+			&--stripe-before::before {
+				width: rem(math.div($page-stripe-period, 2));
+			}
+
+			&--stripe-after::after {
+				width: rem(math.div($page-stripe-period, 2));
 			}
 		}
 

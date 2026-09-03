@@ -144,9 +144,9 @@
 
 		@media (any-hover: hover) {
 			&:hover:not(.is-active) {
-				border-color: $color-beige;
-				background: $color-beige;
-				color: $color-dark;
+				background: $color-dark;
+				border-color: $color-dark;
+				color: $color-white;
 			}
 		}
 
@@ -159,12 +159,6 @@
 			background: $color-dark;
 			border-color: $color-dark;
 			color: $color-white;
-		}
-
-		&:active:not(.is-active) {
-			background: $color-brown;
-			border-color: $color-brown;
-			color: $color-dark;
 		}
 	}
 }

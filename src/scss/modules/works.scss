@@ -205,6 +205,11 @@
 
 	&__slider {
 		overflow: visible;
+
+		// @media (min-width:$md4) {
+		// 	overflow: hidden;
+
+		// }
 	}
 
 	// works__nav
@@ -288,7 +293,7 @@
 
 .gallery-card {
 	position: relative;
-	// padding: 0 rem(16);
+	// padding: 0 rem(40);
 
 	@media (min-width: $md4) {
 		clip-path: inset(0);
