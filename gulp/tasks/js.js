@@ -15,17 +15,24 @@ export const js = () => {
 			)
 		)
 		.pipe(
-			app.plugins.if(
-				app.isBuild,
-				bundleJs(
-					{
-						mode: "production",
-						output: {
-							filename: "app.js",
-						},
+			bundleJs(
+				{
+					mode: app.isBuild ? "production" : "development",
+					output: {
+						filename: "app.js",
 					},
-					webpack
-				)
+					module: {
+						rules: [
+							{
+								test: /\.m?js$/,
+								resolve: {
+									fullySpecified: false,
+								},
+							},
+						],
+					},
+				},
+				webpack
 			)
 		)
 		.pipe(app.gulp.dest(app.path.build.js))

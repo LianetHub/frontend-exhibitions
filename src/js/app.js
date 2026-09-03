@@ -1,5 +1,10 @@
 "use strict";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener("DOMContentLoaded", () => {
 	// header
 	const header = document.querySelector(".header");
@@ -81,6 +86,56 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (!burger) return;
 		if (burger.classList.contains("is-open")) closeMobileMenu();
 		else openMobileMenu();
+	}
+
+	// stats reveal
+	const statsEl = document.querySelector(".stats");
+
+	if (statsEl && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+		const heroBand = document.querySelector(".hero__band");
+		const statsCards = statsEl.querySelectorAll(".stats__card");
+		const statsValues = statsEl.querySelectorAll(".stats__value");
+		const statsLabels = statsEl.querySelectorAll(".stats__label");
+		const heightTargets = [statsEl, heroBand].filter(Boolean);
+
+		gsap.set(statsEl, { height: 0, overflow: "hidden" });
+		if (heroBand) gsap.set(heroBand, { height: 0, overflow: "hidden" });
+		gsap.set(statsCards, { scaleY: 0, transformOrigin: "top center" });
+		gsap.set(statsValues, { opacity: 0, y: 40 });
+		gsap.set(statsLabels, { opacity: 0, y: 10 });
+
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: statsEl,
+				start: "top 80%",
+				once: true,
+			},
+		})
+			.to(heightTargets, {
+				height: "auto",
+				duration: 0.8,
+				ease: "power2.out",
+				onComplete() {
+					gsap.set(heightTargets, { clearProps: "height,overflow" });
+				},
+			})
+			.to(statsCards, {
+				scaleY: 1,
+				duration: 0.6,
+				ease: "power2.out",
+			})
+			.to(statsValues, {
+				opacity: 1,
+				y: 0,
+				duration: 0.5,
+				ease: "power2.out",
+			})
+			.to(statsLabels, {
+				opacity: 1,
+				y: 0,
+				duration: 0.4,
+				ease: "power2.out",
+			});
 	}
 
 	// sliders
@@ -845,8 +900,6 @@ if (typeof Fancybox !== "undefined") {
 		autoFocus: true,
 		dragToClose: (fancybox) => fancybox.getSlide()?.type !== "inline",
 		closeButton: false,
-		// Zoom-to-thumb only when preview is the same image (gallery/works).
-		// Mismatched thumbs (e.g. about photo → diplom) fly back incorrectly.
 		zoomEffect: (fancybox) => {
 			const slide = fancybox.getSlide();
 			if (!slide || slide.zoomEffect === false) return false;

@@ -20,17 +20,17 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "Heraclito";
   font-display: swap;
   src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 :root {
@@ -1375,6 +1375,7 @@ img {
   gap: 0.75rem;
   min-height: 8.3125rem;
   padding: 1.5rem 1.25rem 1.25rem;
+  overflow: hidden;
   background: #dfcfb9;
 }
 @media (min-width: 767.98px) {
