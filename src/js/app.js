@@ -90,11 +90,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// stats + works reveal
 	const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	const heroEl = document.querySelector(".hero");
 	const statsEl = document.querySelector(".stats");
 	const worksEl = document.querySelector(".works");
 	let statsRevealDone = !statsEl || reducedMotion;
 	let worksRevealTl = null;
 	let worksRevealArmed = false;
+
+	function splitTextLines(el, lineClass, innerClass) {
+		const text = el.textContent.replace(/\s+/g, " ").trim();
+		if (!text) return [];
+
+		el.textContent = "";
+		const words = text.split(" ");
+		const wordSpans = words.map((word, index) => {
+			const span = document.createElement("span");
+			span.textContent = word + (index < words.length - 1 ? " " : "");
+			el.appendChild(span);
+			return span;
+		});
+
+		const lineGroups = [];
+		let currentTop = null;
+		let currentLine = [];
+
+		wordSpans.forEach((span) => {
+			const top = span.offsetTop;
+			if (currentTop === null || Math.abs(top - currentTop) > 2) {
+				if (currentLine.length) lineGroups.push(currentLine);
+				currentLine = [span];
+				currentTop = top;
+			} else {
+				currentLine.push(span);
+			}
+		});
+		if (currentLine.length) lineGroups.push(currentLine);
+
+		return lineGroups.map((lineWords) => {
+			const lineEl = document.createElement("span");
+			lineEl.className = lineClass;
+			const inner = document.createElement("span");
+			inner.className = innerClass;
+			lineWords.forEach((word) => inner.appendChild(word));
+			lineEl.appendChild(inner);
+			el.appendChild(lineEl);
+			return inner;
+		});
+	}
 
 	function armWorksReveal() {
 		if (!worksRevealTl || !statsRevealDone || worksRevealArmed) return;
@@ -110,15 +152,108 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	// hero intro
+	if (heroEl && !reducedMotion) {
+		const heroBoiserie = heroEl.querySelector(".hero__boiserie");
+		const heroPhotoWrap = heroEl.querySelector(".hero__photo-wrap");
+		const heroTitleMobile = heroEl.querySelector(".hero__title-img--mobile");
+		const heroTitleName = heroEl.querySelector(".hero__title-img--name");
+		const heroTitleSurname = heroEl.querySelector(".hero__title-img--surname");
+		const heroLead = heroEl.querySelector(".hero__lead");
+		const heroLeadLines = heroLead ? splitTextLines(heroLead, "hero__lead-line", "hero__lead-line-inner") : [];
+		const isDesktopTitle = window.matchMedia("(min-width: 991.98px)").matches;
+
+		if (heroBoiserie) gsap.set(heroBoiserie, { yPercent: 100 });
+		if (heroPhotoWrap) gsap.set(heroPhotoWrap, { yPercent: 100 });
+		if (heroTitleMobile) gsap.set(heroTitleMobile, { yPercent: 40, opacity: 0 });
+		if (heroTitleName) gsap.set(heroTitleName, { xPercent: -120, opacity: 0 });
+		if (heroTitleSurname) gsap.set(heroTitleSurname, { xPercent: 120, opacity: 0 });
+		if (heroLeadLines.length) gsap.set(heroLeadLines, { yPercent: 100, opacity: 0 });
+
+		const heroTl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+		if (heroBoiserie) {
+			heroTl.to(heroBoiserie, {
+				yPercent: 0,
+				duration: 1.25,
+				ease: "power3.out",
+			});
+		}
+
+		if (heroPhotoWrap) {
+			heroTl.to(
+				heroPhotoWrap,
+				{
+					yPercent: 0,
+					duration: 1,
+					ease: "power2.out",
+					onComplete() {
+						heroEl.classList.add("is-ready");
+					},
+				},
+				">-=0.15",
+			);
+		} else {
+			heroEl.classList.add("is-ready");
+		}
+
+		if (isDesktopTitle) {
+			if (heroTitleName) {
+				heroTl.to(
+					heroTitleName,
+					{
+						xPercent: 0,
+						opacity: 1,
+						duration: 1,
+						ease: "back.out(1.6)",
+					},
+					">-=0.1",
+				);
+			}
+			if (heroTitleSurname) {
+				heroTl.to(
+					heroTitleSurname,
+					{
+						xPercent: 0,
+						opacity: 1,
+						duration: 1,
+						ease: "back.out(1.6)",
+					},
+					"<",
+				);
+			}
+		} else if (heroTitleMobile) {
+			heroTl.to(
+				heroTitleMobile,
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.85,
+					ease: "back.out(1.4)",
+				},
+				">-=0.1",
+			);
+		}
+
+		if (heroLeadLines.length) {
+			heroTl.to(heroLeadLines, {
+				yPercent: 0,
+				opacity: 1,
+				duration: 0.75,
+				stagger: 0.12,
+				ease: "power2.out",
+			});
+		}
+	} else if (heroEl) {
+		heroEl.classList.add("is-ready");
+	}
+
 	if (statsEl && !reducedMotion) {
-		const heroBand = document.querySelector(".hero__band");
 		const statsCards = statsEl.querySelectorAll(".stats__card");
 		const statsValues = statsEl.querySelectorAll(".stats__value");
 		const statsLabels = statsEl.querySelectorAll(".stats__label");
-		const heightTargets = [statsEl, heroBand].filter(Boolean);
 
 		gsap.set(statsEl, { height: 0, overflow: "hidden" });
-		if (heroBand) gsap.set(heroBand, { height: 0, overflow: "hidden" });
 		gsap.set(statsCards, { scaleY: 0, transformOrigin: "top center" });
 		gsap.set(statsValues, { opacity: 0, y: 40 });
 		gsap.set(statsLabels, { opacity: 0, y: 10 });
@@ -135,12 +270,12 @@ document.addEventListener("DOMContentLoaded", () => {
 				armWorksReveal();
 			},
 		})
-			.to(heightTargets, {
+			.to(statsEl, {
 				height: "auto",
 				duration: 0.8,
 				ease: "power2.out",
 				onComplete() {
-					gsap.set(heightTargets, { clearProps: "height,overflow" });
+					gsap.set(statsEl, { clearProps: "height,overflow" });
 					ScrollTrigger.refresh();
 				},
 			})
@@ -206,47 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// works reveal
 	if (worksEl && !reducedMotion) {
-		function splitTextLines(el) {
-			const text = el.textContent.replace(/\s+/g, " ").trim();
-			if (!text) return [];
-
-			el.textContent = "";
-			const words = text.split(" ");
-			const wordSpans = words.map((word, index) => {
-				const span = document.createElement("span");
-				span.textContent = word + (index < words.length - 1 ? " " : "");
-				el.appendChild(span);
-				return span;
-			});
-
-			const lineGroups = [];
-			let currentTop = null;
-			let currentLine = [];
-
-			wordSpans.forEach((span) => {
-				const top = span.offsetTop;
-				if (currentTop === null || Math.abs(top - currentTop) > 2) {
-					if (currentLine.length) lineGroups.push(currentLine);
-					currentLine = [span];
-					currentTop = top;
-				} else {
-					currentLine.push(span);
-				}
-			});
-			if (currentLine.length) lineGroups.push(currentLine);
-
-			return lineGroups.map((lineWords) => {
-				const lineEl = document.createElement("span");
-				lineEl.className = "works__text-line";
-				const inner = document.createElement("span");
-				inner.className = "works__text-line-inner";
-				lineWords.forEach((word) => inner.appendChild(word));
-				lineEl.appendChild(inner);
-				el.appendChild(lineEl);
-				return inner;
-			});
-		}
-
 		const worksTitle = worksEl.querySelector(".works__head-title");
 		const worksSlides = [...worksEl.querySelectorAll(".works__slider .swiper-slide")].slice(0, 3);
 		const worksNav = worksEl.querySelector(".works__nav");
@@ -254,8 +348,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		const worksTextAside = worksEl.querySelector(".works__text--aside");
 		const worksBtn = worksEl.querySelector(".works__btn");
 		const worksBtnLabel = worksBtn?.querySelector(".works__btn-label");
-		const mainLines = worksTextMain ? splitTextLines(worksTextMain) : [];
-		const asideLines = worksTextAside ? splitTextLines(worksTextAside) : [];
+		const mainLines = worksTextMain ? splitTextLines(worksTextMain, "works__text-line", "works__text-line-inner") : [];
+		const asideLines = worksTextAside ? splitTextLines(worksTextAside, "works__text-line", "works__text-line-inner") : [];
 		const textLines = [...mainLines, ...asideLines];
 		const btnRect = worksBtn?.getBoundingClientRect();
 		const btnWidth = btnRect?.width || 0;
@@ -361,8 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				onComplete() {
 					if (worksBtn) {
 						gsap.set(worksBtn, {
-							clearProps:
-								"width,height,minWidth,minHeight,paddingTop,paddingBottom,overflow,justifySelf,alignSelf,marginLeft,marginRight",
+							clearProps: "width,height,minWidth,minHeight,paddingTop,paddingBottom,overflow,justifySelf,alignSelf,marginLeft,marginRight",
 						});
 					}
 				},
@@ -380,9 +473,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (contactsEl && !reducedMotion) {
 		const contactsTitle = contactsEl.querySelector(".contacts__head-title");
 		const contactsBody = contactsEl.querySelector(".contacts__body");
-		const contactsTexts = [...contactsEl.querySelectorAll(".contacts__text .text")].filter(
-			(el) => !el.classList.contains("contacts__farewell"),
-		);
+		const contactsTexts = [...contactsEl.querySelectorAll(".contacts__text .text")].filter((el) => !el.classList.contains("contacts__farewell"));
 		const contactsFarewell = contactsEl.querySelector(".contacts__farewell");
 		const contactsItems = contactsEl.querySelectorAll(".contacts__list > li");
 
