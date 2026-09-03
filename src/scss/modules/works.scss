@@ -144,6 +144,7 @@
 		width: 100%;
 		margin-top: rem(10);
 		min-height: rem(56);
+		overflow: hidden;
 
 		@media (min-width: $md4) {
 			order: 0;
@@ -156,8 +157,23 @@
 
 		@media (min-width:$md1) {
 			margin-top: rem(20);
-
 		}
+	}
+
+	// works__btn-label
+	&__btn-label {
+		display: inline-block;
+	}
+
+	// works__text-line
+	&__text-line {
+		display: block;
+		overflow: hidden;
+	}
+
+	// works__text-line-inner
+	&__text-line-inner {
+		display: block;
 	}
 
 	// works__slider-wrap

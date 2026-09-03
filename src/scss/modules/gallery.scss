@@ -188,7 +188,7 @@
 			gap: rem(24);
 		}
 
-		@media (min-width: $md1) {
+		@media (min-width: $md2) {
 			column-gap: rem(70);
 			row-gap: rem(160);
 		}
@@ -261,11 +261,6 @@
 	color: inherit;
 	background: $color-beige;
 	opacity: 0;
-	transform: translate3d(0, rem(16), 0);
-	transition:
-		opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-		transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
-	transition-delay: var(--gallery-reveal-delay, 0s);
 	// full-bleed caption on mobile, clip bottom so it slides in from the image
 	clip-path: inset(#{rem(-4)} -100vw 0 -100vw);
 
@@ -277,15 +272,8 @@
 		clip-path: inset(0 rem(-20) 0 rem(-20));
 	}
 
-	&.is-visible {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-
 	@media (prefers-reduced-motion: reduce) {
 		opacity: 1;
-		transform: none;
-		transition: none;
 	}
 
 	&.is-open {
@@ -340,15 +328,9 @@
 		aspect-ratio: 875 / 585;
 		opacity: 0;
 		object-fit: cover;
-		transition: opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1);
-
-		&.is-loaded {
-			opacity: 1;
-		}
 
 		@media (prefers-reduced-motion: reduce) {
 			opacity: 1;
-			transition: none;
 		}
 	}
 
