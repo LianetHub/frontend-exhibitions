@@ -373,8 +373,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				overflow: "hidden",
 				justifySelf: "center",
 				alignSelf: "center",
-				marginLeft: "auto",
-				marginRight: "auto",
 			});
 		}
 		if (worksBtnLabel) gsap.set(worksBtnLabel, { yPercent: 100, opacity: 0 });
@@ -488,7 +486,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function isPageGreenStripeArea(viewportX, origin, period, darkEnd, gap) {
-		const pos = ((viewportX - origin) % period + period) % period;
+		const pos = (((viewportX - origin) % period) + period) % period;
 		return pos >= gap && pos < darkEnd;
 	}
 
@@ -505,14 +503,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		const pageLeft = document.querySelector(".page")?.getBoundingClientRect().left ?? 0;
 		const rect = body.getBoundingClientRect();
 
-		body.classList.toggle(
-			"contacts__body--stripe-before",
-			isPageGreenStripeArea(rect.left, pageLeft, period, darkEnd, gap),
-		);
-		body.classList.toggle(
-			"contacts__body--stripe-after",
-			isPageGreenStripeArea(rect.right, pageLeft, period, darkEnd, gap),
-		);
+		body.classList.toggle("contacts__body--stripe-before", isPageGreenStripeArea(rect.left, pageLeft, period, darkEnd, gap));
+		body.classList.toggle("contacts__body--stripe-after", isPageGreenStripeArea(rect.right, pageLeft, period, darkEnd, gap));
 	}
 
 	function initContactsStripeFill() {
@@ -557,10 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const contactsItems = contactsEl.querySelectorAll(".contacts__list > li");
 
 		if (contactsTitle) {
-			gsap.set(
-				contactsTitle,
-				contactsDesktopLayout ? { opacity: 0 } : { xPercent: -40, opacity: 0 },
-			);
+			gsap.set(contactsTitle, contactsDesktopLayout ? { opacity: 0 } : { xPercent: -40, opacity: 0 });
 		}
 
 		if (contactsBody) gsap.set(contactsBody, { clipPath: "inset(0 100% 0 0)" });
@@ -877,6 +866,90 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	function formatCustomSelectTooltipText(labels) {
+		if (!labels.length) return "";
+
+		const parts = labels
+			.map((label, index) => {
+				const text = label.trim();
+				if (!text) return "";
+
+				if (index === 0) {
+					return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+				}
+
+				return text.toLowerCase();
+			})
+			.filter(Boolean);
+
+		return `${parts.join(", ")}.`;
+	}
+
+	function hideCustomSelectTooltip(root) {
+		root?.classList.remove("is-tooltip-visible");
+	}
+
+	function showCustomSelectTooltip(root) {
+		if (!root) return;
+
+		if (root.classList.contains("is-value-overflow") && root.classList.contains("has-value") && !root.classList.contains("is-open")) {
+			root.classList.add("is-tooltip-visible");
+		}
+	}
+
+	function updateCustomSelectValueOverflow(root) {
+		if (!isMultiCustomSelect(root)) return;
+
+		const valueEl = root.querySelector(".custom-select__value");
+		const tooltipEl = root.querySelector(".custom-select__tooltip");
+		const trigger = root.querySelector(".custom-select__trigger");
+		if (!valueEl || !tooltipEl || !trigger) return;
+
+		const values = getAppliedCustomSelectValues(root);
+		const labels = values.map((value) => getCustomSelectOptionLabel(root, value)).filter(Boolean);
+
+		requestAnimationFrame(() => {
+			const isOverflowing = values.length > 0 && valueEl.scrollWidth > valueEl.clientWidth;
+			root.classList.toggle("is-value-overflow", isOverflowing);
+
+			if (isOverflowing) {
+				tooltipEl.textContent = formatCustomSelectTooltipText(labels);
+				tooltipEl.hidden = false;
+				trigger.setAttribute("aria-describedby", tooltipEl.id);
+				return;
+			}
+
+			tooltipEl.textContent = "";
+			tooltipEl.hidden = true;
+			trigger.removeAttribute("aria-describedby");
+			hideCustomSelectTooltip(root);
+		});
+	}
+
+	function setupCustomSelectTooltip(root) {
+		if (!isMultiCustomSelect(root)) return;
+
+		const trigger = root.querySelector(".custom-select__trigger");
+		const hoverTarget = root.querySelector(".custom-select__trigger-wrap") || trigger;
+		const valueEl = root.querySelector(".custom-select__value");
+		if (!trigger || !hoverTarget || hoverTarget.dataset.tooltipBound === "true") return;
+
+		hoverTarget.dataset.tooltipBound = "true";
+		hoverTarget.addEventListener("mouseenter", () => showCustomSelectTooltip(root));
+		hoverTarget.addEventListener("mouseleave", () => hideCustomSelectTooltip(root));
+		trigger.addEventListener("focus", () => showCustomSelectTooltip(root));
+		trigger.addEventListener("blur", () => hideCustomSelectTooltip(root));
+
+		if (valueEl && typeof ResizeObserver !== "undefined") {
+			const observer = new ResizeObserver(() => updateCustomSelectValueOverflow(root));
+			observer.observe(valueEl);
+			observer.observe(trigger);
+			if (hoverTarget !== trigger) observer.observe(hoverTarget);
+		}
+
+		updateCustomSelectValueOverflow(root);
+	}
+
 	function updateCustomSelectTrigger(root, values) {
 		const valueEl = root.querySelector(".custom-select__value");
 		const placeholder = customSelectPlaceholders.get(root) || "";
@@ -892,6 +965,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		root.classList.toggle("has-value", values.length > 0);
+		updateCustomSelectValueOverflow(root);
 	}
 
 	function isCustomSelectDirty(root) {
@@ -939,6 +1013,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		root.classList.remove("is-open");
 		trigger?.setAttribute("aria-expanded", "false");
 		if (dropdown) dropdown.hidden = true;
+		hideCustomSelectTooltip(root);
 	}
 
 	function openCustomSelect(root) {
@@ -957,6 +1032,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			const focusTarget = list.querySelector(".custom-select__option.is-selected") || list.querySelector(".custom-select__option");
 			focusTarget?.focus();
 		}
+
+		hideCustomSelectTooltip(root);
 	}
 
 	function syncCustomSelectValue(root, value) {
@@ -1020,8 +1097,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (isMultiCustomSelect(root)) {
 				renderCustomSelectOptions(root, []);
 				setCustomSelectDirty(root, false);
+				updateCustomSelectValueOverflow(root);
 			}
 		}
+
+		setupCustomSelectTooltip(root);
 	}
 
 	if (document.querySelectorAll(".custom-select").length > 0) {
@@ -1379,6 +1459,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (window.matchMedia("(min-width: 767.98px)").matches) {
 			closeMobileMenu(true);
 		}
+
+		document.querySelectorAll(".custom-select--multiple").forEach((root) => {
+			updateCustomSelectValueOverflow(root);
+		});
 	});
 
 	initContactsStripeFill();

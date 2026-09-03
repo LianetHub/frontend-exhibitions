@@ -148,10 +148,12 @@
 
 		@media (min-width: $md4) {
 			order: 0;
-			width: auto;
 			margin-top: rem(60);
 			min-width: rem(381);
 			min-height: rem(49);
+			width: 100%;
+			margin-right: auto;
+			margin-left: auto;
 			align-self: flex-start;
 		}
 
@@ -206,10 +208,7 @@
 	&__slider {
 		overflow: visible;
 
-		// @media (min-width:$md4) {
-		// 	overflow: hidden;
 
-		// }
 	}
 
 	// works__nav

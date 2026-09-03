@@ -83,6 +83,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(12);
+		overflow: visible;
 
 		@media (min-width: $md3) {
 			gap: rem(9);
@@ -101,6 +102,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(12);
+		overflow: visible;
 
 		@media (min-width: $md3) {
 			flex-direction: row;

@@ -1,6 +1,9 @@
 <div class="custom-select @@modClass@@if(typeof multiple !== 'undefined' && multiple){ custom-select--multiple}" id="@@id" data-name="@@name">
 	<span class="visually-hidden" id="@@id-label">@@label</span>
 	<div class="custom-select__head">
+		@@if(typeof multiple !== 'undefined' && multiple){
+		<div class="custom-select__trigger-wrap">
+		}
 		<button
 			type="button"
 			class="custom-select__trigger"
@@ -10,6 +13,10 @@
 			aria-controls="@@id-list">
 			<span class="custom-select__value">@@placeholder</span>
 		</button>
+		@@if(typeof multiple !== 'undefined' && multiple){
+		<span class="custom-select__tooltip" id="@@id-tooltip" role="tooltip" hidden></span>
+		</div>
+		}
 		@@if(typeof clearable !== 'undefined' && clearable){
 		<button type="button" class="custom-select__clear" aria-label="Очистить фильтр @@label">Очистить</button>
 		}
