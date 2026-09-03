@@ -200,6 +200,11 @@
 			flex-direction: column;
 			flex: 1 1 auto;
 			justify-content: center;
+			padding-bottom: rem(40);
+
+			@media (min-width: $md3) {
+				padding-bottom: rem(80);
+			}
 		}
 
 		.exhibitions-slider__swiper {

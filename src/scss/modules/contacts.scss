@@ -21,10 +21,14 @@
 			align-items: stretch;
 		}
 
-		@media (min-width: $md2) {
-			container-type: inline-size;
-			container-name: contacts-row;
+		@media (min-width: $md3) {
+			gap: rem(72);
 		}
+	}
+
+	// contacts__head-title
+	&__head-title {
+		min-width: 0;
 	}
 
 	// contacts__title
@@ -40,7 +44,7 @@
 		height: auto;
 
 		@media (min-width: $md4) {
-			max-width: rem(592);
+			max-width: 100%;
 		}
 	}
 
@@ -74,18 +78,10 @@
 				z-index: -1;
 				top: 0;
 				bottom: 0;
+				left: var(--contacts-fill-left, 0px);
+				right: var(--contacts-fill-right, 0px);
 				background: $color-green;
 				pointer-events: none;
-
-				--contacts-row-left: calc((100vw - 100cqw) / 2);
-				--contacts-row-right: calc((100vw + 100cqw) / 2);
-				--contacts-body-left: calc(var(--contacts-row-left) + (100cqw - #{rem(40)}) * 5 / 12 + #{rem(40)});
-				--contacts-body-right: var(--contacts-row-right);
-
-				@include page-stripe-snap-x($page-stripe-period,
-					$page-stripe-dark-end,
-					var(--contacts-body-left),
-					var(--contacts-body-right));
 			}
 		}
 

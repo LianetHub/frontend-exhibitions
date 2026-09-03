@@ -467,23 +467,135 @@ document.addEventListener("DOMContentLoaded", () => {
 		armWorksReveal();
 	}
 
+	// #region agent log
+	function readStripeToken(name) {
+		const raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+		if (!raw) return NaN;
+		if (raw.endsWith("rem")) {
+			const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+			return parseFloat(raw) * rootFont;
+		}
+		return parseFloat(raw);
+	}
+
+	function getPageStripeMetrics() {
+		const isDesktopStripe = window.matchMedia("(min-width: 767.98px)").matches;
+
+		return {
+			period: readStripeToken(isDesktopStripe ? "--page-stripe-period" : "--page-stripe-sm-period"),
+			darkEnd: readStripeToken(isDesktopStripe ? "--page-stripe-dark-end" : "--page-stripe-sm-dark-end"),
+			gap: readStripeToken(isDesktopStripe ? "--page-stripe-gap" : "--page-stripe-sm-gap"),
+		};
+	}
+
+	function isStripeLightBand(pos, darkEnd, gap) {
+		return pos >= darkEnd || pos < gap;
+	}
+
+	function updateContactsStripeFill(runId = "post-fix") {
+		const body = document.querySelector(".contacts__body");
+		if (!body) return;
+
+		if (!window.matchMedia("(min-width: 1199.98px)").matches) {
+			body.style.removeProperty("--contacts-fill-left");
+			body.style.removeProperty("--contacts-fill-right");
+			return;
+		}
+
+		const { period, darkEnd, gap } = getPageStripeMetrics();
+		const rect = body.getBoundingClientRect();
+		const leftVp = rect.left;
+		const rightVp = rect.right;
+		const posL = ((leftVp % period) + period) % period;
+		const posR = ((rightVp % period) + period) % period;
+
+		let leftInset = 0;
+		let rightInset = 0;
+
+		if (isStripeLightBand(posL, darkEnd, gap)) {
+			const snappedLeftVp = posL < gap
+				? Math.floor(leftVp / period) * period + gap
+				: Math.ceil((leftVp - gap) / period) * period + gap;
+			leftInset = Math.max(0, snappedLeftVp - leftVp);
+		}
+
+		if (isStripeLightBand(posR, darkEnd, gap)) {
+			const snappedRightVp = Math.floor((rightVp - darkEnd) / period) * period + darkEnd;
+			rightInset = Math.max(0, rightVp - snappedRightVp);
+		}
+
+		body.style.setProperty("--contacts-fill-left", `${leftInset}px`);
+		body.style.setProperty("--contacts-fill-right", `${rightInset}px`);
+
+		const beforeStyle = getComputedStyle(body, "::before");
+		const beforeLeft = parseFloat(beforeStyle.left) || 0;
+		const beforeRight = parseFloat(beforeStyle.right) || 0;
+		const actualBeforeRightVp = rect.right - beforeRight;
+		const actualBeforeLeftVp = rect.left + beforeLeft;
+		const stripePos = (x) => {
+			const pos = ((x % period) + period) % period;
+			return { pos, inLight: isStripeLightBand(pos, darkEnd, gap) };
+		};
+
+		fetch("http://127.0.0.1:7381/ingest/928954ce-0212-40b4-84b3-3a5a743a519b", {
+			method: "POST",
+			headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "14a9fd" },
+			body: JSON.stringify({
+				sessionId: "14a9fd",
+				runId,
+				hypothesisId: "G-H",
+				location: "app.js:updateContactsStripeFill",
+				message: "contacts conditional stripe snap",
+				data: {
+					innerWidth: window.innerWidth,
+					leftInset,
+					rightInset,
+					bodyRect: { left: leftVp, right: rightVp },
+					posL,
+					posR,
+					beforeInsets: { left: beforeLeft, right: beforeRight },
+					actualBeforeEdges: { left: actualBeforeLeftVp, right: actualBeforeRightVp },
+					bodyRightStripe: stripePos(rightVp),
+					pseudoRightStripe: stripePos(actualBeforeRightVp),
+					pseudoLeftStripe: stripePos(actualBeforeLeftVp),
+				},
+				timestamp: Date.now(),
+			}),
+		}).catch(() => {});
+	}
+	// #endregion
+
 	// contacts reveal
 	const contactsEl = document.querySelector(".contacts");
 
 	if (contactsEl && !reducedMotion) {
+		const contactsDesktopLayout = window.matchMedia("(min-width: 1199.98px)").matches;
 		const contactsTitle = contactsEl.querySelector(".contacts__head-title");
 		const contactsBody = contactsEl.querySelector(".contacts__body");
 		const contactsTexts = [...contactsEl.querySelectorAll(".contacts__text .text")].filter((el) => !el.classList.contains("contacts__farewell"));
 		const contactsFarewell = contactsEl.querySelector(".contacts__farewell");
 		const contactsItems = contactsEl.querySelectorAll(".contacts__list > li");
 
-		if (contactsTitle) gsap.set(contactsTitle, { xPercent: -40, opacity: 0 });
+		if (contactsTitle) {
+			gsap.set(
+				contactsTitle,
+				contactsDesktopLayout ? { opacity: 0 } : { xPercent: -40, opacity: 0 },
+			);
+		}
+
 		if (contactsBody) gsap.set(contactsBody, { clipPath: "inset(0 100% 0 0)" });
 		if (contactsTexts.length) gsap.set(contactsTexts, { y: 28, opacity: 0 });
 		if (contactsFarewell) gsap.set(contactsFarewell, { y: 20, opacity: 0 });
 		if (contactsItems.length) gsap.set(contactsItems, { x: 36, opacity: 0 });
 
+		const finishContactsReveal = () => {
+			if (contactsTitle) gsap.set(contactsTitle, { clearProps: "transform,opacity" });
+			if (contactsBody) gsap.set(contactsBody, { clearProps: "clipPath" });
+			updateContactsStripeFill("post-fix");
+		};
+
 		const contactsTl = gsap.timeline({
+			onComplete: finishContactsReveal,
 			scrollTrigger: {
 				trigger: contactsEl,
 				start: "top 75%",
@@ -495,7 +607,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			contactsTl.to(
 				contactsTitle,
 				{
-					xPercent: 0,
+					...(contactsDesktopLayout ? {} : { xPercent: 0 }),
 					opacity: 1,
 					duration: 0.9,
 					ease: "power3.out",
@@ -511,9 +623,6 @@ document.addEventListener("DOMContentLoaded", () => {
 					clipPath: "inset(0 0% 0 0)",
 					duration: 0.95,
 					ease: "power2.inOut",
-					onComplete() {
-						gsap.set(contactsBody, { clearProps: "clipPath" });
-					},
 				},
 				0.12,
 			);
@@ -559,6 +668,22 @@ document.addEventListener("DOMContentLoaded", () => {
 				"-=0.15",
 			);
 		}
+
+		const runContactsInViewCheck = () => {
+			ScrollTrigger.refresh();
+
+			if (contactsEl.getBoundingClientRect().top < window.innerHeight * 0.75) {
+				contactsTl.progress(1);
+				finishContactsReveal();
+			}
+		};
+
+		if (location.hash === "#contacts") {
+			contactsEl.scrollIntoView();
+		}
+
+		runContactsInViewCheck();
+		requestAnimationFrame(runContactsInViewCheck);
 	}
 
 	let exhibitionsSwiper = null;
@@ -1275,6 +1400,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			closeMobileMenu(true);
 		}
 	});
+
+	updateContactsStripeFill("post-fix");
+	window.addEventListener("resize", () => updateContactsStripeFill("post-fix"));
 });
 
 if (typeof Fancybox !== "undefined") {

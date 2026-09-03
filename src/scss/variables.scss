@@ -47,9 +47,16 @@ $page-stripe-period: 221;
 	--ease-layout: ease;
 	--header-height: #{rem(39)};
 
+	// Page stripe pattern (.page) — for JS snap of section fills
+	--page-stripe-sm-gap: #{rem($page-stripe-sm-gap)};
+	--page-stripe-sm-dark-end: #{rem($page-stripe-sm-dark-end)};
+	--page-stripe-sm-period: #{rem($page-stripe-sm-period)};
+
 	@media (min-width:$md4) {
 		--header-height: #{rem(54)};
-
+		--page-stripe-gap: #{rem($page-stripe-gap)};
+		--page-stripe-dark-end: #{rem($page-stripe-dark-end)};
+		--page-stripe-period: #{rem($page-stripe-period)};
 	}
 
 	@media (prefers-reduced-motion: reduce) {

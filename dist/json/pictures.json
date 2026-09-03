@@ -10,7 +10,7 @@
 			"picturesTotal": 82,
 			"picturesAvailable": 73,
 			"exhibitionsTotal": 6,
-			"exhibitionPhotosTotal": 21
+			"exhibitionPhotosTotal": 19
 		}
 	},
 	"genres": [
@@ -157,20 +157,12 @@
 					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 2"
 				},
 				{
-					"src": "img/exhibitions/kovalenko-krasnodar-2026/03-190dbc4b-76c4-4598-9020-a1248623ead5.webp",
+					"src": "img/exhibitions/kovalenko-krasnodar-2026/05-a0554838-029d-4527-bc8f-98a15b721d90.webp",
 					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 3"
 				},
 				{
-					"src": "img/exhibitions/kovalenko-krasnodar-2026/04-3484a1ab-85b4-4406-8779-6b51a58e86da.webp",
-					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 4"
-				},
-				{
-					"src": "img/exhibitions/kovalenko-krasnodar-2026/05-a0554838-029d-4527-bc8f-98a15b721d90.webp",
-					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 5"
-				},
-				{
 					"src": "img/exhibitions/kovalenko-krasnodar-2026/06-ae40b1a1-a3f6-40f9-8b62-4a5246507e27.webp",
-					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 6"
+					"alt": "Выставка «Краснодар — музей им. Коваленко, 2026», фото 4"
 				}
 			]
 		},
