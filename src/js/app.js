@@ -374,6 +374,102 @@ document.addEventListener("DOMContentLoaded", () => {
 		armWorksReveal();
 	}
 
+	// contacts reveal
+	const contactsEl = document.querySelector(".contacts");
+
+	if (contactsEl && !reducedMotion) {
+		const contactsTitle = contactsEl.querySelector(".contacts__head-title");
+		const contactsBody = contactsEl.querySelector(".contacts__body");
+		const contactsTexts = [...contactsEl.querySelectorAll(".contacts__text .text")].filter(
+			(el) => !el.classList.contains("contacts__farewell"),
+		);
+		const contactsFarewell = contactsEl.querySelector(".contacts__farewell");
+		const contactsItems = contactsEl.querySelectorAll(".contacts__list > li");
+
+		if (contactsTitle) gsap.set(contactsTitle, { xPercent: -40, opacity: 0 });
+		if (contactsBody) gsap.set(contactsBody, { clipPath: "inset(0 100% 0 0)" });
+		if (contactsTexts.length) gsap.set(contactsTexts, { y: 28, opacity: 0 });
+		if (contactsFarewell) gsap.set(contactsFarewell, { y: 20, opacity: 0 });
+		if (contactsItems.length) gsap.set(contactsItems, { x: 36, opacity: 0 });
+
+		const contactsTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: contactsEl,
+				start: "top 75%",
+				once: true,
+			},
+		});
+
+		if (contactsTitle) {
+			contactsTl.to(
+				contactsTitle,
+				{
+					xPercent: 0,
+					opacity: 1,
+					duration: 0.9,
+					ease: "power3.out",
+				},
+				0,
+			);
+		}
+
+		if (contactsBody) {
+			contactsTl.to(
+				contactsBody,
+				{
+					clipPath: "inset(0 0% 0 0)",
+					duration: 0.95,
+					ease: "power2.inOut",
+					onComplete() {
+						gsap.set(contactsBody, { clearProps: "clipPath" });
+					},
+				},
+				0.12,
+			);
+		}
+
+		if (contactsItems.length) {
+			contactsTl.to(
+				contactsItems,
+				{
+					x: 0,
+					opacity: 1,
+					duration: 0.55,
+					stagger: 0.09,
+					ease: "power2.out",
+				},
+				0.4,
+			);
+		}
+
+		if (contactsTexts.length) {
+			contactsTl.to(
+				contactsTexts,
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.55,
+					stagger: 0.12,
+					ease: "power2.out",
+				},
+				0.4,
+			);
+		}
+
+		if (contactsFarewell) {
+			contactsTl.to(
+				contactsFarewell,
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.65,
+					ease: "back.out(1.2)",
+				},
+				"-=0.15",
+			);
+		}
+	}
+
 	let exhibitionsSwiper = null;
 	let interiorSwiper = null;
 	const exhibitionsPanels = document.querySelector("[data-exhibitions-panels]");
