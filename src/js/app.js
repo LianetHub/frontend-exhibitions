@@ -2120,13 +2120,21 @@ document.addEventListener(
 		const target = e.target;
 		if (!(target instanceof Element)) return;
 
-		const trigger = target.closest(".exhibitions-slide [data-fancybox]");
+		const trigger = target.closest("[data-fancybox]");
 		if (!trigger) return;
 
-		const slide = trigger.closest(".swiper-slide");
+		const slide = trigger.closest(".exhibitions-slide.swiper-slide");
 		if (!slide || slide.classList.contains("swiper-slide-active")) return;
 
 		e.preventDefault();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+
+		const swiper = slide.closest(".swiper")?.swiper;
+		if (!swiper) return;
+
+		const index = swiper.slides.indexOf(slide);
+		if (index >= 0) swiper.slideTo(index);
 	},
 	true,
 );

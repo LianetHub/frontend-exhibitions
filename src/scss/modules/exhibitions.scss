@@ -273,6 +273,11 @@
 		color: $color-dark;
 		font-size: rem(14);
 
+		&.swiper-button-disabled {
+			opacity: 0 !important;
+			visibility: hidden !important;
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				background: transparent;
