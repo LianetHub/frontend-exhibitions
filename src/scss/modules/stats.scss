@@ -1,10 +1,5 @@
 .stats {
 	background: $color-surface;
-	padding: rem(20) 0;
-
-	@media (min-width:$md4) {
-		padding: 0;
-	}
 
 	// stats__row
 	&__row {
@@ -13,6 +8,7 @@
 		row-gap: rem(20);
 		column-gap: rem(70);
 		list-style: none;
+		padding-block: rem(20);
 		margin-inline: calc(-1 * #{rem(10)});
 
 		@media (min-width: $md5) {
@@ -22,8 +18,15 @@
 		@media (min-width: $md4) {
 			grid-template-columns: repeat(3, 1fr);
 			row-gap: rem(16);
+			padding-block: 0;
 			margin-inline: 0;
 		}
+	}
+
+	// stats__band
+	&__band {
+		position: relative;
+		z-index: 0;
 	}
 
 	// stats__card

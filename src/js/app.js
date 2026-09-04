@@ -309,16 +309,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	if (statsEl && !reducedMotion) {
+		const statsBand = document.querySelector(".stats__band");
 		const statsCards = statsEl.querySelectorAll(".stats__card");
 		const statsValues = statsEl.querySelectorAll(".stats__value");
 		const statsLabels = statsEl.querySelectorAll(".stats__label");
+		const getStatsBandHeight = () => (statsBand ? statsBand.offsetHeight : 0);
 
 		gsap.set(statsEl, { height: 0, overflow: "hidden" });
+		if (statsBand) gsap.set(statsBand, { marginTop: () => -getStatsBandHeight() });
 		gsap.set(statsCards, { scaleY: 0, transformOrigin: "top center" });
 		gsap.set(statsValues, { opacity: 0, y: 40 });
 		gsap.set(statsLabels, { opacity: 0, y: 10 });
 
-		gsap.timeline({
+		const statsTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: statsEl,
 				start: "top 80%",
@@ -329,16 +332,34 @@ document.addEventListener("DOMContentLoaded", () => {
 				ScrollTrigger.refresh();
 				armWorksReveal();
 			},
-		})
-			.to(statsEl, {
-				height: "auto",
-				duration: 0.8,
-				ease: "power2.out",
-				onComplete() {
-					gsap.set(statsEl, { clearProps: "height,overflow" });
-					ScrollTrigger.refresh();
+		});
+
+		statsTl.to(statsEl, {
+			height: "auto",
+			duration: 0.8,
+			ease: "power2.out",
+			onComplete() {
+				gsap.set(statsEl, { clearProps: "height,overflow" });
+				ScrollTrigger.refresh();
+			},
+		});
+
+		if (statsBand) {
+			statsTl.to(
+				statsBand,
+				{
+					marginTop: 0,
+					duration: 0.8,
+					ease: "power2.out",
+					onComplete() {
+						gsap.set(statsBand, { clearProps: "marginTop" });
+					},
 				},
-			})
+				"<",
+			);
+		}
+
+		statsTl
 			.to(statsCards, {
 				scaleY: 1,
 				duration: 0.6,
@@ -618,17 +639,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	const contactsEl = document.querySelector(".contacts");
 
 	if (contactsEl && !reducedMotion) {
-		const contactsDesktopLayout = window.matchMedia("(min-width: 1199.98px)").matches;
 		const contactsTitle = contactsEl.querySelector(".contacts__head-title");
 		const contactsBody = contactsEl.querySelector(".contacts__body");
 		const contactsTexts = [...contactsEl.querySelectorAll(".contacts__text .text")].filter((el) => !el.classList.contains("contacts__farewell"));
 		const contactsFarewell = contactsEl.querySelector(".contacts__farewell");
 		const contactsItems = contactsEl.querySelectorAll(".contacts__list > li");
 
-		if (contactsTitle) {
-			gsap.set(contactsTitle, contactsDesktopLayout ? { opacity: 0 } : { xPercent: -40, opacity: 0 });
-		}
-
+		if (contactsTitle) gsap.set(contactsTitle, { xPercent: -100, opacity: 0 });
 		if (contactsBody) gsap.set(contactsBody, { clipPath: "inset(0 100% 0 0)" });
 		if (contactsTexts.length) gsap.set(contactsTexts, { y: 28, opacity: 0 });
 		if (contactsFarewell) gsap.set(contactsFarewell, { y: 20, opacity: 0 });
@@ -653,7 +670,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			contactsTl.to(
 				contactsTitle,
 				{
-					...(contactsDesktopLayout ? {} : { xPercent: 0 }),
+					xPercent: 0,
 					opacity: 1,
 					duration: 0.9,
 					ease: "power3.out",
@@ -1590,45 +1607,52 @@ document.addEventListener("DOMContentLoaded", () => {
 			);
 		}
 
-		gallerySelectAnims.forEach((anim, index) => {
-			const startAt = index === 0 ? (galleryLeadLines.length || galleryTitle ? "-=0.15" : 0) : "-=0.2";
-
-			galleryHeroTl.to(
-				anim.expandEl,
-				{
-					width: anim.width,
-					duration: 0.5,
-					ease: "power2.out",
-				},
-				startAt,
+		if (gallerySelectAnims.length) {
+			galleryHeroTl.add(
+				"gallery-selects-expand",
+				galleryLeadLines.length || galleryTitle ? "-=0.15" : "+=0",
 			);
 
-			const contentAt = ">";
-
-			if (anim.value) {
+			gallerySelectAnims.forEach((anim) => {
 				galleryHeroTl.to(
-					anim.value,
+					anim.expandEl,
 					{
-						y: 0,
-						opacity: 1,
+						width: anim.width,
+						duration: 0.5,
+						ease: "power2.out",
+					},
+					"gallery-selects-expand",
+				);
+			});
+
+			galleryHeroTl.add("gallery-selects-reveal", "gallery-selects-expand+=0.5");
+
+			gallerySelectAnims.forEach((anim) => {
+				if (anim.value) {
+					galleryHeroTl.to(
+						anim.value,
+						{
+							y: 0,
+							opacity: 1,
+							duration: 0.45,
+							ease: "power2.out",
+						},
+						"gallery-selects-reveal",
+					);
+				}
+
+				galleryHeroTl.to(
+					anim.trigger,
+					{
+						"--select-reveal-y": "0%",
+						"--select-reveal-opacity": 1,
 						duration: 0.45,
 						ease: "power2.out",
 					},
-					contentAt,
+					"gallery-selects-reveal",
 				);
-			}
-
-			galleryHeroTl.to(
-				anim.trigger,
-				{
-					"--select-reveal-y": "0%",
-					"--select-reveal-opacity": 1,
-					duration: 0.45,
-					ease: "power2.out",
-				},
-				anim.value ? "<" : contentAt,
-			);
-		});
+			});
+		}
 	}
 
 	// exhibitions-hero reveal

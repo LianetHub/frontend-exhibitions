@@ -1261,6 +1261,7 @@ img {
 
 .hero {
   position: relative;
+  z-index: 1;
   isolation: isolate;
   min-height: 54.75rem;
   overflow: hidden;
@@ -1531,12 +1532,6 @@ img {
 
 .stats {
   background: var(--color-surface);
-  padding: 1.25rem 0;
-}
-@media (min-width: 767.98px) {
-  .stats {
-    padding: 0;
-  }
 }
 .stats__row {
   display: grid;
@@ -1544,6 +1539,7 @@ img {
   row-gap: 1.25rem;
   column-gap: 4.375rem;
   list-style: none;
+  padding-block: 1.25rem;
   margin-inline: calc(-1 * 0.625rem);
 }
 @media (min-width: 575.98px) {
@@ -1555,8 +1551,13 @@ img {
   .stats__row {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 1rem;
+    padding-block: 0;
     margin-inline: 0;
   }
+}
+.stats__band {
+  position: relative;
+  z-index: 0;
 }
 .stats__card {
   display: flex;

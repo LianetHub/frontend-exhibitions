@@ -2,6 +2,7 @@
 
 .hero {
 	position: relative;
+	z-index: 1;
 	isolation: isolate;
 	min-height: rem(876);
 	overflow: hidden;
