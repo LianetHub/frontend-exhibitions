@@ -5,6 +5,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+if ("scrollRestoration" in history) {
+	history.scrollRestoration = "manual";
+}
+
+function isPageReload() {
+	const nav = performance.getEntriesByType("navigation")[0];
+	return !nav || nav.type === "reload";
+}
+
+function scrollToPageTop() {
+	window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+}
+
+if (isPageReload()) {
+	scrollToPageTop();
+	window.addEventListener("load", scrollToPageTop);
+}
+
+window.addEventListener("pageshow", (event) => {
+	if (event.persisted && isPageReload()) scrollToPageTop();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
 	// header
 	const header = document.querySelector(".header");
@@ -176,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			heroTl.to(heroBoiserie, {
 				yPercent: 0,
 				duration: 1.25,
+				delay: 0.5,
 				ease: "power3.out",
 			});
 		}

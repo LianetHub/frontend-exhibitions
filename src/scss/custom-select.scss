@@ -228,8 +228,8 @@
 		pointer-events: none;
 		opacity: 0;
 		visibility: hidden;
-		filter: drop-shadow(0 0 1px $color-white);
 		transition: opacity 0.2s ease, visibility 0.2s ease;
+		border: 1px solid $color-white;
 
 		&[hidden] {
 			display: none;
@@ -238,15 +238,17 @@
 		&::before {
 			content: "";
 			position: absolute;
-			bottom: 100%;
+			bottom: calc(100% + 1px);
 			left: 50%;
-			width: 0;
-			height: 0;
-			margin-bottom: -1px;
-			transform: translateX(-50%);
-			border-right: rem(9) solid transparent;
-			border-bottom: rem(9) solid $color-green-2;
-			border-left: rem(9) solid transparent;
+			z-index: 1;
+			box-sizing: border-box;
+			width: rem(12);
+			height: rem(11);
+			background: $color-green-2;
+			border: 1px solid $color-white;
+			border-bottom: 0;
+			border-right: 0;
+			transform: translateX(-50%) translateY(50%) rotate(45deg);
 		}
 	}
 

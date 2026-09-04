@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Heraclito-Medium.woff2") format("woff2"), url("../fonts/Heraclito-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Medium.woff2") format("woff2"), url("../fonts/Heraclito-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
@@ -20,17 +20,17 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "Heraclito";
   font-display: swap;
   src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 :root {
@@ -581,8 +581,8 @@ textarea.form-control {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  filter: drop-shadow(0 0 1px var(--color-white));
   transition: opacity 0.2s ease, visibility 0.2s ease;
+  border: 1px solid var(--color-white);
 }
 .custom-select__tooltip[hidden] {
   display: none;
@@ -590,15 +590,17 @@ textarea.form-control {
 .custom-select__tooltip::before {
   content: "";
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% + 1px);
   left: 50%;
-  width: 0;
-  height: 0;
-  margin-bottom: -1px;
-  transform: translateX(-50%);
-  border-right: 0.5625rem solid transparent;
-  border-bottom: 0.5625rem solid var(--color-green-2);
-  border-left: 0.5625rem solid transparent;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 0.75rem;
+  height: 0.6875rem;
+  background: var(--color-green-2);
+  border: 1px solid var(--color-white);
+  border-bottom: 0;
+  border-right: 0;
+  transform: translateX(-50%) translateY(50%) rotate(45deg);
 }
 @media (any-hover: hover) {
   .custom-select.is-tooltip-visible .custom-select__tooltip:not([hidden]) {
