@@ -2152,6 +2152,19 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
+		const infoCaption = target.closest(".gallery-item__caption, .exhibitions-slide__caption");
+		if (infoCaption && window.matchMedia("(max-width: 767.98px)").matches) {
+			const item = infoCaption.closest(".gallery-item.is-open, .exhibitions-slide.is-open");
+			if (item) {
+				item.classList.remove("is-open");
+				const flagSelector = item.classList.contains("exhibitions-slide")
+					? ".exhibitions-slide__flag"
+					: ".gallery-item__flag";
+				item.querySelector(flagSelector)?.setAttribute("aria-expanded", "false");
+				return;
+			}
+		}
+
 		const galleryFiltersClear = target.closest(".gallery__empty-reset");
 		if (galleryFiltersClear) {
 			resetGalleryFilters();
