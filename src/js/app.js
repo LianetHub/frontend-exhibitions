@@ -1174,12 +1174,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		return getAppliedCustomSelectValues(root);
 	}
 
-	function applyGalleryFilters({ instantReveal = false } = {}) {
+	function applyGalleryFilters({ animateReveal = false } = {}) {
 		if (!galleryRoot || !galleryFilters) return;
 
 		const genres = getCustomSelectValues(galleryFilters.querySelector("#gallery-genre"));
 		const techniques = getCustomSelectValues(galleryFilters.querySelector("#gallery-technique"));
 		const cells = [...galleryRoot.querySelectorAll("[data-gallery-cell]")];
+		const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 		cells.forEach((cell) => {
 			const cellGenre = cell.getAttribute("data-genre") || "";
@@ -1194,22 +1195,65 @@ document.addEventListener("DOMContentLoaded", () => {
 		galleryRoot.classList.toggle("is-empty", !hasVisible);
 		if (empty) empty.hidden = hasVisible;
 
-		if (instantReveal) {
+		if (animateReveal) {
 			const visibleItems = cells
 				.filter((cell) => !cell.classList.contains("is-hidden"))
 				.map((cell) => cell.querySelector(".gallery-item"))
 				.filter(Boolean);
 
-			// Instant reveal after filter — avoid ScrollTrigger batch stagger on display:none reflow
 			gsap.killTweensOf(galleryRoot.querySelectorAll(".gallery-item, .gallery-item__img"));
-			gsap.set(visibleItems, { opacity: 1, y: 0 });
+			void galleryRoot.offsetHeight;
+
+			const inView = [];
+			const outView = [];
+
 			visibleItems.forEach((item) => {
-				const img = item.querySelector(".gallery-item__img");
-				if (!img) return;
-				if (img.loading === "lazy") img.loading = "eager";
-				img.classList.add("is-loaded");
-				gsap.set(img, { opacity: 1, y: 0 });
+				const rect = item.getBoundingClientRect();
+				if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+					inView.push(item);
+				} else {
+					outView.push(item);
+				}
 			});
+
+			const prepareImgs = (list, animate) => {
+				list.forEach((item) => {
+					const img = item.querySelector(".gallery-item__img");
+					if (!img) return;
+					if (img.loading === "lazy") img.loading = "eager";
+					img.classList.add("is-loaded");
+
+					if (animate && !reducedMotion) {
+						gsap.fromTo(
+							img,
+							{ opacity: 0, y: 24 },
+							{ opacity: 1, y: 0, duration: 0.7, ease: "power3.out", overwrite: true },
+						);
+						return;
+					}
+
+					gsap.set(img, { opacity: 1, y: 0 });
+				});
+			};
+
+			if (reducedMotion || !inView.length) {
+				gsap.set(visibleItems, { opacity: 1, y: 0 });
+				prepareImgs(visibleItems, false);
+			} else {
+				gsap.set(outView, { opacity: 1, y: 0 });
+				prepareImgs(outView, false);
+
+				gsap.set(inView, { opacity: 0, y: 16 });
+				prepareImgs(inView, true);
+				gsap.to(inView, {
+					opacity: 1,
+					y: 0,
+					duration: 0.7,
+					stagger: { each: 0.06, amount: 0.3 },
+					ease: "power3.out",
+					overwrite: true,
+				});
+			}
 		}
 
 		ScrollTrigger.refresh();
@@ -1222,13 +1266,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			syncCustomSelectValue(root, isMultiCustomSelect(root) ? [] : "");
 			closeCustomSelect(root);
 		});
-		applyGalleryFilters({ instantReveal: true });
+		applyGalleryFilters({ animateReveal: true });
 	}
 
 	if (galleryRoot && galleryFilters) {
 		galleryFilters.addEventListener("change", (e) => {
 			if (!e.target.closest(".custom-select")) return;
-			applyGalleryFilters({ instantReveal: true });
+			applyGalleryFilters({ animateReveal: true });
 		});
 		applyGalleryFilters();
 	}
