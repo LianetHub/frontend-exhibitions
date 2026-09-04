@@ -63,8 +63,8 @@
 			aspect-ratio: auto;
 			border-right: 0;
 			background: url("@img/home/hero-overlay.svg") center 0 / auto 100% no-repeat,
-				linear-gradient(180deg, #000 0%, #000 100%) 0 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
-				linear-gradient(180deg, #000 0%, #000 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat;
+			linear-gradient(180deg, #000 0%, #000 100%) 0 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat,
+			linear-gradient(180deg, #000 0%, #000 100%) 100% 0 / max(0px, calc((100% - #{rem($maxWidth)}) / 2)) 100% no-repeat;
 		}
 	}
 
@@ -87,7 +87,7 @@
 	// hero__boiserie — above overlay, under photo
 	&__boiserie {
 		position: absolute;
-		z-index: 2;
+		z-index: 4;
 		bottom: 0;
 		left: 0;
 		width: 100%;
@@ -96,6 +96,7 @@
 		background: url("@img/home/boiserie.webp") 0 100% / auto 100% repeat-x;
 
 		@media (min-width: $md3) {
+			z-index: 2;
 			height: rem(239);
 		}
 
@@ -107,7 +108,6 @@
 	// hero__content
 	&__content {
 		position: relative;
-		z-index: 4;
 		padding-top: rem(48);
 		height: 100%;
 		flex: 1;
@@ -182,8 +182,10 @@
 		}
 	}
 
-	// hero__title
+	// hero__title — under photo
 	&__title {
+		position: relative;
+		z-index: 2;
 		max-width: rem(320);
 
 		@media (min-width:$md5) {
@@ -232,9 +234,10 @@
 		}
 	}
 
-	// hero__lead
+	// hero__lead — above photo
 	&__lead {
 		position: relative;
+		z-index: 4;
 		max-width: rem(320);
 		margin-top: rem(22);
 		color: $color-white;

@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				y: overlayActive ? getHeroSlideY() - heroSeamOverlap : getHeroSlideY(),
 			});
 		}
-		if (heroTitleMobile) gsap.set(heroTitleMobile, { yPercent: 40, opacity: 0 });
+		if (heroTitleMobile) gsap.set(heroTitleMobile, { xPercent: 120, opacity: 0 });
 		if (heroTitleName) gsap.set(heroTitleName, { xPercent: -120, opacity: 0 });
 		if (heroTitleSurname) gsap.set(heroTitleSurname, { xPercent: 120, opacity: 0 });
 		if (heroLeadLines.length) gsap.set(heroLeadLines, { yPercent: 100, opacity: 0 });
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			heroTl.to(
 				heroTitleMobile,
 				{
-					yPercent: 0,
+					xPercent: 0,
 					opacity: 1,
 					duration: 0.85,
 					ease: "back.out(1.4)",

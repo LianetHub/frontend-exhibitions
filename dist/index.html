@@ -1,401 +1,429 @@
 <!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<title>Ярыгина А.А. — художник</title>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+			if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+		</script>
 
-<head>
-	<title>Ярыгина А.А. — художник</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script>
-		if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+		<!-- plugins -->
+		<link rel="stylesheet" href="css/libs/swiper-bundle.min.css">
+		<link rel="stylesheet" href="css/libs/fancybox.css">
+		<!-- plugins -->
 
-	</script>
-	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20260904132135">
-	<link rel="stylesheet" href="css/libs/fancybox.css?_v=20260904132135">
-	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20260904132135">
-	<link rel="stylesheet" href="css/style.min.css?_v=20260904132135">
-</head>
+		<link rel="stylesheet" href="css/reset.min.css">
+		<link rel="stylesheet" href="css/style.min.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header header--transparent">
+				<div class="header__container container">
+					<a class="header__logo" href="index.html">Ярыгина А.А.</a>
 
-<body>
-	<div class="wrapper">
-		<header class="header header--transparent">
-			<div class="header__container container">
-				<a class="header__logo" href="index.html">Ярыгина А.А.</a>
-				<nav class="header__nav" aria-label="Основная навигация">
-					<ul class="header__menu">
-						<li>
-							<a class="header__link is-active" href="index.html" aria-current="page">Главная</a>
-						</li>
-						<li>
-							<a class="header__link" href="about.html">О себе</a>
-						</li>
-						<li>
-							<a class="header__link" href="gallery.html">Галерея</a>
-						</li>
-						<li>
-							<a class="header__link" href="exhibitions.html">Выставки</a>
-						</li>
-					</ul>
-				</nav>
-				<a class="header__phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
-				<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-menu">
-					<span class="header__burger-line" aria-hidden="true"></span>
-					<span class="header__burger-line" aria-hidden="true"></span>
-					<span class="header__burger-line" aria-hidden="true"></span>
-				</button>
-			</div>
-			<div class="header__mobile" id="header-menu" hidden>
-				<nav class="header__mobile-nav" aria-label="Мобильная навигация">
-					<ul class="header__mobile-menu">
-						<li>
-							<a class="header__mobile-link is-active" href="index.html" aria-current="page">Главная</a>
-						</li>
-						<li>
-							<a class="header__mobile-link" href="about.html">О себе</a>
-						</li>
-						<li>
-							<a class="header__mobile-link" href="gallery.html">Галерея</a>
-						</li>
-						<li>
-							<a class="header__mobile-link" href="exhibitions.html">Выставки</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<main class="page">
-			<section class="hero">
-				<div class="hero__content container">
-					<h1 class="hero__title">
-						<span class="visually-hidden">Профессиональный художник - Анастасия Ярыгина</span>
-						<img class="hero__title-img hero__title-img--mobile" src="img/home/title-hero-mobile.svg" alt="Анастасия Ярыгина" width="320" height="150" fetchpriority="high" aria-hidden="true">
-						<span class="hero__title-desktop" aria-hidden="true">
-							<img class="hero__title-img hero__title-img--name" src="img/home/title-name.svg" alt="Анастасия" width="1292" height="294" fetchpriority="high">
-							<img class="hero__title-img hero__title-img--surname" src="img/home/title-surname.svg" alt="Ярыгина" width="821" height="279" fetchpriority="high">
-						</span>
-					</h1>
-					<p class="text hero__lead"> Профессиональный художник, автор и руководитель многих культурных проектов в области изобразительного искусства Кубани. Работы находятся в фондах худ. музеев Сочи, Курган Елабуга, Славянск-на-Кубани и частных коллекциях в России и за рубежом. </p>
-				</div>
-				<div class="hero__veils" aria-hidden="true">
-					<div class="hero__dim"></div>
-					<div class="hero__overlay"></div>
-				</div>
-				<div class="hero__photo-wrap">
-					<img class="hero__photo" src="img/home/hero-photo.webp" alt="Художник Анастасия Ярыгина с картинной рамой" width="1282" height="985" fetchpriority="high">
-				</div>
-				<div class="hero__boiserie" aria-hidden="true"></div>
-				<div class="hero__band band band--wood" aria-hidden="true"></div>
-			</section>
-			<div class="stats">
-				<div class="container">
-					<ul class="stats__row">
-						<li class="stats__card">
-							<img class="stats__value" src="img/home/stat-35.svg" alt="35+" width="189" height="114" loading="lazy">
-							<p class="stats__label">Лет стажа</p>
-						</li>
-						<li class="stats__card">
-							<img class="stats__value" src="img/home/stat-40.svg" alt="40+" width="199" height="114" loading="lazy">
-							<p class="stats__label">Выставок</p>
-						</li>
-						<li class="stats__card">
-							<img class="stats__value" src="img/home/stat-200.svg" alt="200+" width="270" height="114" loading="lazy">
-							<p class="stats__label">Работ</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="stats__band band band--wood" aria-hidden="true"></div>
-			<section class="works">
-				<div class="container">
-					<div class="works__head">
-						<div class="works__head-title">
-							<h2 class="works__title">
-								<span class="visually-hidden">Мои работы</span>
-								<img class="works__title-img" src="img/home/title-works.svg" alt="Мои работы" width="759" height="153" loading="lazy" aria-hidden="true">
-							</h2>
-						</div>
-						<div class="works__head-main">
-							<p class="text works__text"> Полная коллекция академической живописи и академических рисунков ждёт вас во вкладке «Галерея», куда вы можете перейти нажав на кнопку ниже. </p>
-							<a class="btn works__btn" href="gallery.html">
-								<span class="works__btn-label">Смотреть в галерее</span>
-							</a>
-						</div>
-						<div class="works__head-aside">
-							<p class="text works__text works__text--aside"> Здесь представлено несколько ключевых работ для знакомства с моим художественным почерком. В случае заинтересованности обращайтесь по указанному номеру телефона, почте или в соц. сетях! </p>
-						</div>
-					</div>
-					<div class="works__slider-wrap">
-						<div class="swiper works__slider">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/034-buket-iz-podsolnukhov.webp" data-fancybox="works" data-caption="Букет из подсолнухов — Натюрморт, Акварель">
-											<img class="gallery-card__img" src="img/works/034-buket-iz-podsolnukhov.webp" alt="Картина «Букет из подсолнухов», бумага, 2023" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Букет из подсолнухов</p>
-											<p class="gallery-card__meta">
-												<span>Натюрморт</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Акварель</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/053-gortenziya-tsvetet.webp" data-fancybox="works" data-caption="Гортензия цветет — Пейзаж, Гуашь">
-											<img class="gallery-card__img" src="img/works/053-gortenziya-tsvetet.webp" alt="Картина «Гортензия цветет», картон, 2023" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Гортензия цветет</p>
-											<p class="gallery-card__meta">
-												<span>Пейзаж</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Гуашь</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/078-oblaka-nad-otvodnym-kanalom.webp" data-fancybox="works" data-caption="Облака над Отводным каналом — Пейзаж, Пастель">
-											<img class="gallery-card__img" src="img/works/078-oblaka-nad-otvodnym-kanalom.webp" alt="Картина «Облака над Отводным каналом», холст, 2022" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Облака над Отводным каналом</p>
-											<p class="gallery-card__meta">
-												<span>Пейзаж</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Пастель</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/070-poselok-v-gorakh.webp" data-fancybox="works" data-caption="Поселок в горах — Пейзаж, Акварель">
-											<img class="gallery-card__img" src="img/works/070-poselok-v-gorakh.webp" alt="Картина «Поселок в горах», бумага, 2025" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Поселок в горах</p>
-											<p class="gallery-card__meta">
-												<span>Пейзаж</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Акварель</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/008-son-ryzhego-kota.webp" data-fancybox="works" data-caption="Сон рыжего кота — Натюрморт, Акварель">
-											<img class="gallery-card__img" src="img/works/008-son-ryzhego-kota.webp" alt="Картина «Сон рыжего кота», бумага, 2021" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Сон рыжего кота</p>
-											<p class="gallery-card__meta">
-												<span>Натюрморт</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Акварель</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/014-zima-v-malenkom-pereulke.webp" data-fancybox="works" data-caption="Зима в маленьком переулке — Натюрморт, Акварель">
-											<img class="gallery-card__img" src="img/works/014-zima-v-malenkom-pereulke.webp" alt="Картина «Зима в маленьком переулке», бумага, 2021" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Зима в маленьком переулке</p>
-											<p class="gallery-card__meta">
-												<span>Натюрморт</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Акварель</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/025-korzina-sireni.webp" data-fancybox="works" data-caption="Корзина сирени — Натюрморт, Акварель">
-											<img class="gallery-card__img" src="img/works/025-korzina-sireni.webp" alt="Картина «Корзина сирени», бумага, 2021" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Корзина сирени</p>
-											<p class="gallery-card__meta">
-												<span>Натюрморт</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Акварель</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/030-na-starom-bufete.webp" data-fancybox="works" data-caption="На старом буфете — Натюрморт, Гуашь">
-											<img class="gallery-card__img" src="img/works/030-na-starom-bufete.webp" alt="Картина «На старом буфете», картон, 2025" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">На старом буфете</p>
-											<p class="gallery-card__meta">
-												<span>Натюрморт</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Гуашь</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="swiper-slide">
-									<figure class="gallery-card">
-										<a class="gallery-card__frame" href="img/works/009-vechereet.webp" data-fancybox="works" data-caption="Вечереет — Пейзаж, Темпера">
-											<img class="gallery-card__img" src="img/works/009-vechereet.webp" alt="Картина «Вечереет», картон, 2023" width="457" height="300" loading="lazy">
-										</a>
-										<figcaption class="gallery-card__caption">
-											<p class="gallery-card__name">Вечереет</p>
-											<p class="gallery-card__meta">
-												<span>Пейзаж</span>
-												<span class="gallery-card__sep" aria-hidden="true"></span>
-												<span>Темпера</span>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div class="works__nav">
-							<button type="button" class="works__prev swiper-button-prev icon-prev" aria-label="Назад"></button>
-							<div class="works__pagination swiper-pagination"></div>
-							<button type="button" class="works__next swiper-button-next icon-next" aria-label="Далее"></button>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="contacts" id="contacts">
-				<div class="container">
-					<div class="contacts__row">
-						<div class="contacts__head-title">
-							<h2 class="contacts__title">
-								<span class="visually-hidden">Контакты для связи</span>
-								<img class="contacts__title-img" src="img/home/title-contacts.svg" alt="Контакты для связи" width="592" height="361" loading="lazy" aria-hidden="true">
-							</h2>
-						</div>
-						<div class="contacts__body">
-							<div class="contacts__text">
-								<p class="text"> Если вы хотите обсудить творческие проекты, задать вопрос о работах или предложить сотрудничество — напишите мне любым удобным способом. </p>
-								<p class="text"> Связаться со мной можно через WhatsApp, Telegram, Email или Max. Постараюсь ответить как можно быстрее и с удовольствием обсудить все детали. </p>
-								<p class="text contacts__farewell">Буду рада <br> обратной связи!</p>
-							</div>
-							<ul class="contacts__list">
-								<li>
-									<a class="contacts__item icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer">
-										<span class="contacts__value">+7 (918) 470-18-11</span>
-										<span class="contacts__label">WhatsApp</span>
-									</a>
-								</li>
-								<li>
-									<a class="contacts__item icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer">
-										<span class="contacts__value">@A_yarygina25</span>
-										<span class="contacts__label">Telegram</span>
-									</a>
-								</li>
-								<li>
-									<a class="contacts__item icon-envelope" href="mailto:a.a.yarygina2025@gmail.com">
-										<span class="contacts__value">a.a.yarygina2025@gmail.com</span>
-										<span class="contacts__label">Email</span>
-									</a>
-								</li>
-								<li>
-									<a class="contacts__item icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer">
-										<span class="contacts__value">id616087232</span>
-										<span class="contacts__label">ВКонтакте</span>
-									</a>
-								</li>
-								<li>
-									<a class="contacts__item icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline">
-										<span class="contacts__value">QR-code</span>
-										<span class="contacts__label">Max</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer">
-			<div class="band band--wood" aria-hidden="true"></div>
-			<div class="footer__inner container">
-				<div class="footer__grid">
-					<div class="footer__col">
-						<p class="footer__title">Документы</p>
-						<ul class="footer__list">
+					<nav class="header__nav" aria-label="Основная навигация">
+						<ul class="header__menu">
 							<li>
-								<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
+								<a class="header__link is-active" href="index.html" aria-current="page" >Главная</a>
 							</li>
 							<li>
-								<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
+								<a class="header__link" href="about.html" >О себе</a>
+							</li>
+							<li>
+								<a class="header__link" href="gallery.html" >Галерея</a>
+							</li>
+							<li>
+								<a class="header__link" href="exhibitions.html" >Выставки</a>
+							</li>
+						</ul>
+					</nav>
+
+					<a class="header__phone" href="tel:+79184701811">+7 (918) 470-18-11</a>
+
+					<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-menu">
+						<span class="header__burger-line" aria-hidden="true"></span>
+						<span class="header__burger-line" aria-hidden="true"></span>
+						<span class="header__burger-line" aria-hidden="true"></span>
+					</button>
+				</div>
+
+				<div class="header__mobile" id="header-menu" hidden>
+					<nav class="header__mobile-nav" aria-label="Мобильная навигация">
+						<ul class="header__mobile-menu">
+							<li>
+								<a class="header__mobile-link is-active" href="index.html" aria-current="page" >Главная</a>
+							</li>
+							<li>
+								<a class="header__mobile-link" href="about.html" >О себе</a>
+							</li>
+							<li>
+								<a class="header__mobile-link" href="gallery.html" >Галерея</a>
+							</li>
+							<li>
+								<a class="header__mobile-link" href="exhibitions.html" >Выставки</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<main class="page">
+				<section class="hero">
+					<div class="hero__content container">
+						<h1 class="hero__title">
+							<span class="visually-hidden">Профессиональный художник - Анастасия Ярыгина</span>
+							<img class="hero__title-img hero__title-img--mobile" src="img/home/title-hero-mobile.svg" alt="Анастасия Ярыгина" width="320" height="150" fetchpriority="high" aria-hidden="true">
+							<span class="hero__title-desktop" aria-hidden="true">
+								<img class="hero__title-img hero__title-img--name" src="img/home/title-name.svg" alt="Анастасия" width="1292" height="294" fetchpriority="high">
+								<img class="hero__title-img hero__title-img--surname" src="img/home/title-surname.svg" alt="Ярыгина" width="821" height="279" fetchpriority="high">
+							</span>
+						</h1>
+						<p class="text hero__lead">
+							Профессиональный художник, автор и руководитель многих культурных проектов в области
+							изобразительного искусства Кубани. Работы находятся в фондах худ. музеев Сочи, Курган
+							Елабуга, Славянск-на-Кубани и частных коллекциях в России и за рубежом.
+						</p>
+					</div>
+					<div class="hero__veils" aria-hidden="true">
+						<div class="hero__dim"></div>
+						<div class="hero__overlay"></div>
+					</div>
+					<div class="hero__photo-wrap">
+						<img class="hero__photo" src="img/home/hero-photo.webp" alt="Художник Анастасия Ярыгина с картинной рамой" width="1282" height="985" fetchpriority="high">
+					</div>
+					<div class="hero__boiserie" aria-hidden="true"></div>
+					<div class="hero__band band band--wood" aria-hidden="true"></div>
+				</section>
+
+				<div class="stats">
+					<div class="container">
+						<ul class="stats__row">
+							<li class="stats__card">
+								<img class="stats__value" src="img/home/stat-35.svg" alt="35+" width="189" height="114" loading="lazy">
+								<p class="stats__label">Лет стажа</p>
+							</li>
+							<li class="stats__card">
+								<img class="stats__value" src="img/home/stat-40.svg" alt="40+" width="199" height="114" loading="lazy">
+								<p class="stats__label">Выставок</p>
+							</li>
+							<li class="stats__card">
+								<img class="stats__value" src="img/home/stat-200.svg" alt="200+" width="270" height="114" loading="lazy">
+								<p class="stats__label">Работ</p>
 							</li>
 						</ul>
 					</div>
-					<div class="footer__col">
-						<div class="footer__menu">
-							<p class="footer__title">Навигация <span class="text-desktop">по сайту</span></p>
+				</div>
+				<div class="stats__band band band--wood" aria-hidden="true"></div>
+
+				<section class="works">
+					<div class="container">
+						<div class="works__head">
+							<div class="works__head-title">
+								<h2 class="works__title">
+									<span class="visually-hidden">Мои работы</span>
+									<img class="works__title-img" src="img/home/title-works.svg" alt="Мои работы" width="759" height="153" loading="lazy" aria-hidden="true">
+								</h2>
+							</div>
+							<div class="works__head-main">
+								<p class="text works__text">
+									Полная коллекция академической живописи и академических рисунков ждёт вас во вкладке
+									«Галерея», куда вы можете перейти нажав на кнопку ниже.
+								</p>
+								<a class="btn works__btn" href="gallery.html">
+									<span class="works__btn-label">Смотреть в галерее</span>
+								</a>
+							</div>
+							<div class="works__head-aside">
+								<p class="text works__text works__text--aside">
+									Здесь представлено несколько ключевых работ для знакомства с моим художественным
+									почерком. В случае заинтересованности обращайтесь по указанному номеру телефона, почте
+									или в соц. сетях!
+								</p>
+							</div>
+						</div>
+
+						<div class="works__slider-wrap">
+							<div class="swiper works__slider">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/034-buket-iz-podsolnukhov.webp" data-fancybox="works" data-caption="Букет из подсолнухов — Натюрморт, Акварель">
+												<img class="gallery-card__img" src="img/works/034-buket-iz-podsolnukhov.webp" alt="Картина «Букет из подсолнухов», бумага, 2023" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Букет из подсолнухов</p>
+												<p class="gallery-card__meta">
+													<span>Натюрморт</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Акварель</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/053-gortenziya-tsvetet.webp" data-fancybox="works" data-caption="Гортензия цветет — Пейзаж, Гуашь">
+												<img class="gallery-card__img" src="img/works/053-gortenziya-tsvetet.webp" alt="Картина «Гортензия цветет», картон, 2023" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Гортензия цветет</p>
+												<p class="gallery-card__meta">
+													<span>Пейзаж</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Гуашь</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/078-oblaka-nad-otvodnym-kanalom.webp" data-fancybox="works" data-caption="Облака над Отводным каналом — Пейзаж, Пастель">
+												<img class="gallery-card__img" src="img/works/078-oblaka-nad-otvodnym-kanalom.webp" alt="Картина «Облака над Отводным каналом», холст, 2022" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Облака над Отводным каналом</p>
+												<p class="gallery-card__meta">
+													<span>Пейзаж</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Пастель</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/070-poselok-v-gorakh.webp" data-fancybox="works" data-caption="Поселок в горах — Пейзаж, Акварель">
+												<img class="gallery-card__img" src="img/works/070-poselok-v-gorakh.webp" alt="Картина «Поселок в горах», бумага, 2025" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Поселок в горах</p>
+												<p class="gallery-card__meta">
+													<span>Пейзаж</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Акварель</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/008-son-ryzhego-kota.webp" data-fancybox="works" data-caption="Сон рыжего кота — Натюрморт, Акварель">
+												<img class="gallery-card__img" src="img/works/008-son-ryzhego-kota.webp" alt="Картина «Сон рыжего кота», бумага, 2021" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Сон рыжего кота</p>
+												<p class="gallery-card__meta">
+													<span>Натюрморт</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Акварель</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/014-zima-v-malenkom-pereulke.webp" data-fancybox="works" data-caption="Зима в маленьком переулке — Натюрморт, Акварель">
+												<img class="gallery-card__img" src="img/works/014-zima-v-malenkom-pereulke.webp" alt="Картина «Зима в маленьком переулке», бумага, 2021" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Зима в маленьком переулке</p>
+												<p class="gallery-card__meta">
+													<span>Натюрморт</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Акварель</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/025-korzina-sireni.webp" data-fancybox="works" data-caption="Корзина сирени — Натюрморт, Акварель">
+												<img class="gallery-card__img" src="img/works/025-korzina-sireni.webp" alt="Картина «Корзина сирени», бумага, 2021" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Корзина сирени</p>
+												<p class="gallery-card__meta">
+													<span>Натюрморт</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Акварель</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/030-na-starom-bufete.webp" data-fancybox="works" data-caption="На старом буфете — Натюрморт, Гуашь">
+												<img class="gallery-card__img" src="img/works/030-na-starom-bufete.webp" alt="Картина «На старом буфете», картон, 2025" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">На старом буфете</p>
+												<p class="gallery-card__meta">
+													<span>Натюрморт</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Гуашь</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+<div class="swiper-slide">
+										<figure class="gallery-card">
+											<a class="gallery-card__frame" href="img/works/009-vechereet.webp" data-fancybox="works" data-caption="Вечереет — Пейзаж, Темпера">
+												<img class="gallery-card__img" src="img/works/009-vechereet.webp" alt="Картина «Вечереет», картон, 2023" width="457" height="300" loading="lazy">
+											</a>
+											<figcaption class="gallery-card__caption">
+												<p class="gallery-card__name">Вечереет</p>
+												<p class="gallery-card__meta">
+													<span>Пейзаж</span>
+													<span class="gallery-card__sep" aria-hidden="true"></span>
+													<span>Темпера</span>
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="works__nav">
+								<button type="button" class="works__prev swiper-button-prev icon-prev" aria-label="Назад"></button>
+								<div class="works__pagination swiper-pagination"></div>
+								<button type="button" class="works__next swiper-button-next icon-next" aria-label="Далее"></button>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="contacts" id="contacts">
+					<div class="container">
+						<div class="contacts__row">
+							<div class="contacts__head-title">
+								<h2 class="contacts__title">
+									<span class="visually-hidden">Контакты для связи</span>
+									<img class="contacts__title-img" src="img/home/title-contacts.svg" alt="Контакты для связи" width="592" height="361" loading="lazy" aria-hidden="true">
+								</h2>
+							</div>
+							<div class="contacts__body">
+								<div class="contacts__text">
+									<p class="text">
+										Если вы хотите обсудить творческие проекты, задать вопрос о работах или предложить
+										сотрудничество — напишите мне любым удобным способом.
+									</p>
+									<p class="text">
+										Связаться со мной можно через WhatsApp, Telegram, Email или Max. Постараюсь ответить
+										как можно быстрее и с удовольствием обсудить все детали.
+									</p>
+									<p class="text contacts__farewell">Буду рада <br> обратной связи!</p>
+								</div>
+								<ul class="contacts__list">
+									<li>
+										<a class="contacts__item icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer">
+											<span class="contacts__value">+7 (918) 470-18-11</span>
+											<span class="contacts__label">WhatsApp</span>
+										</a>
+									</li>
+									<li>
+										<a class="contacts__item icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer">
+											<span class="contacts__value">@A_yarygina25</span>
+											<span class="contacts__label">Telegram</span>
+										</a>
+									</li>
+									<li>
+										<a class="contacts__item icon-envelope" href="mailto:a.a.yarygina2025@gmail.com">
+											<span class="contacts__value">a.a.yarygina2025@gmail.com</span>
+											<span class="contacts__label">Email</span>
+										</a>
+									</li>
+									<li>
+										<a class="contacts__item icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer">
+											<span class="contacts__value">id616087232</span>
+											<span class="contacts__label">ВКонтакте</span>
+										</a>
+									</li>
+									<li>
+										<a class="contacts__item icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline">
+											<span class="contacts__value">QR-code</span>
+											<span class="contacts__label">Max</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+			<footer class="footer">
+				<div class="band band--wood" aria-hidden="true"></div>
+				<div class="footer__inner container">
+					<div class="footer__grid">
+						<div class="footer__col">
+							<p class="footer__title">Документы</p>
 							<ul class="footer__list">
 								<li>
-									<a class="footer__link" href="index.html">Главная</a>
+									<a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
 								</li>
 								<li>
-									<a class="footer__link" href="about.html">О себе</a>
-								</li>
-								<li>
-									<a class="footer__link" href="gallery.html">Галерея</a>
-								</li>
-								<li>
-									<a class="footer__link" href="exhibitions.html">Выставки</a>
+									<a class="footer__link" href="terms.html">Пользовательское соглашение</a>
 								</li>
 							</ul>
 						</div>
+						<div class="footer__col">
+							<div class="footer__menu">
+								<p class="footer__title">Навигация <span class="text-desktop">по сайту</span></p>
+								<ul class="footer__list">
+									<li>
+										<a class="footer__link" href="index.html">Главная</a>
+									</li>
+									<li>
+										<a class="footer__link" href="about.html">О себе</a>
+									</li>
+									<li>
+										<a class="footer__link" href="gallery.html">Галерея</a>
+									</li>
+									<li>
+										<a class="footer__link" href="exhibitions.html">Выставки</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__col">
+							<p class="footer__title">Контакты</p>
+							<ul class="footer__socials">
+								<li>
+									<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
+								</li>
+								<li>
+									<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
+								</li>
+							</ul>
+						</div>
+						<p class="footer__copy">© 2026&nbsp;<span class="abbr">г.</span> – Анастасия Ярыгина. Все права защищены</p>
 					</div>
-					<div class="footer__col">
-						<p class="footer__title">Контакты</p>
-						<ul class="footer__socials">
-							<li>
-								<a class="footer__social icon-phone" href="https://wa.me/79184701811" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
-							</li>
-							<li>
-								<a class="footer__social icon-telegram" href="https://t.me/A_yarygina25" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a>
-							</li>
-							<li>
-								<a class="footer__social icon-envelope" href="mailto:a.a.yarygina2025@gmail.com" aria-label="Email"></a>
-							</li>
-							<li>
-								<a class="footer__social icon-vk" href="https://vk.com/id616087232" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
-							</li>
-							<li>
-								<a class="footer__social icon-max" href="#modal-max-qr" data-fancybox data-src="#modal-max-qr" data-type="inline" aria-label="Max"></a>
-							</li>
-						</ul>
-					</div>
-					<p class="footer__copy">© 2026&nbsp;<span class="abbr">г.</span> – Анастасия Ярыгина. Все права защищены</p>
 				</div>
-			</div>
-		</footer>
-	</div>
-	<div class="popups visually-hidden" aria-hidden="true">
-		<div id="modal-max-qr" class="popup popup--max-qr">
-			<img class="popup__qr" src="img/contacts/max-qr.webp" alt="QR-код Max для связи" width="540" height="539" loading="lazy">
+			</footer>
 		</div>
-	</div>
-	<!-- plugins -->
-	<script defer src="js/libs/swiper-bundle.min.js?_v=20260904132135"></script>
-	<script defer src="js/libs/fancybox.umd.js?_v=20260904132135"></script>
-	<!-- plugins -->
-	<script defer src="js/app.js?_v=20260904132135"></script>
-</body>
+		<div class="popups visually-hidden" aria-hidden="true">
+			<div id="modal-max-qr" class="popup popup--max-qr">
+				<img class="popup__qr" src="img/contacts/max-qr.webp" alt="QR-код Max для связи" width="540" height="539" loading="lazy">
+			</div>
+		</div>
 
+		<!-- plugins -->
+		<script defer src="js/libs/swiper-bundle.min.js"></script>
+		<script defer src="js/libs/fancybox.umd.js"></script>
+		<!-- plugins -->
+
+		<script defer src="js/app.js"></script>
+	</body>
 </html>
