@@ -177,6 +177,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	// hero intro
 	if (heroEl && !reducedMotion) {
 		const heroBoiserie = heroEl.querySelector(".hero__boiserie");
+		const heroDim = heroEl.querySelector(".hero__dim");
+		const heroOverlay = heroEl.querySelector(".hero__overlay");
 		const heroPhotoWrap = heroEl.querySelector(".hero__photo-wrap");
 		const heroTitleMobile = heroEl.querySelector(".hero__title-img--mobile");
 		const heroTitleName = heroEl.querySelector(".hero__title-img--name");
@@ -184,9 +186,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		const heroLead = heroEl.querySelector(".hero__lead");
 		const heroLeadLines = heroLead ? splitTextLines(heroLead, "hero__lead-line", "hero__lead-line-inner") : [];
 		const isDesktopTitle = window.matchMedia("(min-width: 991.98px)").matches;
+		const overlayActive = Boolean(heroOverlay && getComputedStyle(heroOverlay).display !== "none");
+		const heroSeamOverlap = 2;
+		const getHeroSlideY = () => heroEl.offsetHeight;
+		const heroIncoming = [overlayActive ? heroOverlay : null, heroPhotoWrap].filter(Boolean);
 
 		if (heroBoiserie) gsap.set(heroBoiserie, { yPercent: 100 });
-		if (heroPhotoWrap) gsap.set(heroPhotoWrap, { yPercent: 100 });
+		if (overlayActive && heroDim) gsap.set(heroDim, { y: 0 });
+		if (heroIncoming.length) {
+			gsap.set(heroIncoming, {
+				y: overlayActive ? getHeroSlideY() - heroSeamOverlap : getHeroSlideY(),
+			});
+		}
 		if (heroTitleMobile) gsap.set(heroTitleMobile, { yPercent: 40, opacity: 0 });
 		if (heroTitleName) gsap.set(heroTitleName, { xPercent: -120, opacity: 0 });
 		if (heroTitleSurname) gsap.set(heroTitleSurname, { xPercent: 120, opacity: 0 });
@@ -203,21 +214,41 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 
-		if (heroPhotoWrap) {
-			heroTl.to(
-				heroPhotoWrap,
-				{
-					yPercent: 0,
-					duration: 1,
-					ease: "power2.out",
-					onComplete() {
-						heroEl.classList.add("is-ready");
+		if (heroIncoming.length) {
+			const slideAt = ">-=0.15";
+			const slideVars = {
+				duration: 1,
+				ease: "power2.out",
+			};
+
+			if (overlayActive && heroDim) {
+				heroTl.to(
+					heroDim,
+					{
+						y: () => -getHeroSlideY() + heroSeamOverlap,
+						...slideVars,
 					},
-				},
-				">-=0.15",
-			);
-		} else {
-			heroEl.classList.add("is-ready");
+					slideAt,
+				);
+				heroTl.to(
+					heroIncoming,
+					{
+						y: 0,
+						...slideVars,
+					},
+					"<",
+				);
+			} else {
+				// Tablet: full dim stays; only photo slides in
+				heroTl.to(
+					heroIncoming,
+					{
+						y: 0,
+						...slideVars,
+					},
+					slideAt,
+				);
+			}
 		}
 
 		if (isDesktopTitle) {
@@ -268,7 +299,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 	} else if (heroEl) {
-		heroEl.classList.add("is-ready");
+		const heroDim = heroEl.querySelector(".hero__dim");
+		const heroOverlay = heroEl.querySelector(".hero__overlay");
+		const overlayActive = Boolean(heroOverlay && getComputedStyle(heroOverlay).display !== "none");
+
+		if (overlayActive && heroDim) {
+			gsap.set(heroDim, { yPercent: -100 });
+		}
 	}
 
 	if (statsEl && !reducedMotion) {
@@ -1224,11 +1261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					img.classList.add("is-loaded");
 
 					if (animate && !reducedMotion) {
-						gsap.fromTo(
-							img,
-							{ opacity: 0, y: 24 },
-							{ opacity: 1, y: 0, duration: 0.7, ease: "power3.out", overwrite: true },
-						);
+						gsap.fromTo(img, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", overwrite: true });
 						return;
 					}
 
@@ -1326,7 +1359,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			img.addEventListener("error", () => revealGalleryImage(img), { once: true });
 
 			if (typeof img.decode === "function") {
-				img.decode().then(() => revealGalleryImage(img)).catch(() => {});
+				img.decode()
+					.then(() => revealGalleryImage(img))
+					.catch(() => {});
 			}
 		}
 
@@ -1345,15 +1380,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			start: "top 92%",
 			once: true,
 			onEnter(entered) {
-				const sorted = entered
-					.filter(isGalleryItemVisible)
-					.sort((a, b) => {
-						const aRect = a.getBoundingClientRect();
-						const bRect = b.getBoundingClientRect();
-						const rowDelta = aRect.top - bRect.top;
-						if (Math.abs(rowDelta) > 12) return rowDelta;
-						return aRect.left - bRect.left;
-					});
+				const sorted = entered.filter(isGalleryItemVisible).sort((a, b) => {
+					const aRect = a.getBoundingClientRect();
+					const bRect = b.getBoundingClientRect();
+					const rowDelta = aRect.top - bRect.top;
+					if (Math.abs(rowDelta) > 12) return rowDelta;
+					return aRect.left - bRect.left;
+				});
 
 				if (!sorted.length) return;
 

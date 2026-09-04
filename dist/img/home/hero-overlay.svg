@@ -2,8 +2,7 @@
     xmlns="http://www.w3.org/2000/svg">
     <path
         d="M1920 1080H0V0H1920V1080ZM654.438 872.251L1179.5 960.481L1301.59 228.606L776.53 140.376L654.438 872.251Z"
-        fill="black" fill-opacity="0.61" />
+        fill="black" />
     <rect x="771.933" y="127.82" width="559.489" height="754.548"
-        transform="rotate(9.69883 771.933 127.82)" fill="black" fill-opacity="0.32" />
+        transform="rotate(9.69883 771.933 127.82)" fill="black" fill-opacity="0.5246" />
 </svg>
-    
