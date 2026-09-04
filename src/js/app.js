@@ -443,14 +443,31 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		const worksCopyTl = gsap.timeline();
-		if (textLines.length) {
-			worksCopyTl.to(textLines, {
-				yPercent: 0,
-				opacity: 1,
-				duration: 0.75,
-				stagger: 0.12,
-				ease: "power2.out",
-			});
+		if (mainLines.length) {
+			worksCopyTl.to(
+				mainLines,
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.75,
+					stagger: 0.12,
+					ease: "power2.out",
+				},
+				0,
+			);
+		}
+		if (asideLines.length) {
+			worksCopyTl.to(
+				asideLines,
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.75,
+					stagger: 0.12,
+					ease: "power2.out",
+				},
+				0,
+			);
 		}
 		if (worksBtn && btnWidth > 0 && btnHeight > 0) {
 			worksCopyTl
