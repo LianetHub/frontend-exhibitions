@@ -1423,6 +1423,149 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".custom-select").forEach(setupCustomSelect);
 	}
 
+	// gallery-hero reveal
+	const galleryHeroEl = document.querySelector(".gallery-hero");
+
+	if (galleryHeroEl && !reducedMotion) {
+		const galleryTitle = galleryHeroEl.querySelector(".gallery-hero__title");
+		const galleryLead = galleryHeroEl.querySelector(".gallery-hero__lead");
+		const gallerySelects = [...galleryHeroEl.querySelectorAll(".gallery-hero__select")];
+		const galleryLeadLines = galleryLead
+			? splitTextLines(galleryLead, "gallery-hero__lead-line", "gallery-hero__lead-line-inner")
+			: [];
+
+		const gallerySelectAnims = gallerySelects
+			.map((select) => {
+				const expandEl =
+					select.querySelector(".custom-select__trigger-wrap") || select.querySelector(".custom-select__trigger");
+				const trigger = select.querySelector(".custom-select__trigger");
+				const value = select.querySelector(".custom-select__value");
+				if (!expandEl || !trigger) return null;
+
+				gsap.set(expandEl, {
+					clearProps: "width,minWidth,overflow,pointerEvents",
+				});
+				gsap.set(trigger, {
+					clearProps: "overflow,--select-reveal-y,--select-reveal-opacity",
+				});
+				if (value) {
+					gsap.set(value, {
+						clearProps: "y,opacity,transform",
+					});
+				}
+
+				const width = expandEl.getBoundingClientRect().width;
+				if (!(width > 0)) return null;
+
+				gsap.set(expandEl, {
+					width: 0,
+					minWidth: 0,
+					overflow: "hidden",
+					pointerEvents: "none",
+				});
+				gsap.set(trigger, {
+					overflow: "hidden",
+					"--select-reveal-y": "100%",
+					"--select-reveal-opacity": 0,
+				});
+				if (value) {
+					gsap.set(value, {
+						y: "100%",
+						opacity: 0,
+					});
+				}
+
+				return { expandEl, trigger, value, width };
+			})
+			.filter(Boolean);
+
+		if (galleryTitle) gsap.set(galleryTitle, { xPercent: -100, opacity: 0 });
+		if (galleryLeadLines.length) gsap.set(galleryLeadLines, { yPercent: 100, opacity: 0 });
+
+		const clearGallerySelectAnimProps = () => {
+			gallerySelectAnims.forEach((item) => {
+				gsap.set(item.expandEl, {
+					clearProps: "width,minWidth,overflow,pointerEvents",
+				});
+				gsap.set(item.trigger, {
+					clearProps: "overflow,--select-reveal-y,--select-reveal-opacity",
+				});
+				if (item.value) {
+					gsap.set(item.value, {
+						clearProps: "y,opacity,transform",
+					});
+				}
+			});
+		};
+
+		const galleryHeroTl = gsap.timeline({
+			defaults: { ease: "power2.out" },
+			onComplete: clearGallerySelectAnimProps,
+		});
+
+		if (galleryTitle) {
+			galleryHeroTl.to(galleryTitle, {
+				xPercent: 0,
+				opacity: 1,
+				duration: 0.9,
+				ease: "power3.out",
+			});
+		}
+
+		if (galleryLeadLines.length) {
+			galleryHeroTl.to(
+				galleryLeadLines,
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.75,
+					stagger: 0.12,
+				},
+				galleryTitle ? "-=0.35" : 0,
+			);
+		}
+
+		gallerySelectAnims.forEach((anim, index) => {
+			const startAt = index === 0 ? (galleryLeadLines.length || galleryTitle ? "-=0.15" : 0) : "-=0.2";
+
+			galleryHeroTl.to(
+				anim.expandEl,
+				{
+					width: anim.width,
+					duration: 0.5,
+					ease: "power2.out",
+				},
+				startAt,
+			);
+
+			const contentAt = ">";
+
+			if (anim.value) {
+				galleryHeroTl.to(
+					anim.value,
+					{
+						y: 0,
+						opacity: 1,
+						duration: 0.45,
+						ease: "power2.out",
+					},
+					contentAt,
+				);
+			}
+
+			galleryHeroTl.to(
+				anim.trigger,
+				{
+					"--select-reveal-y": "0%",
+					"--select-reveal-opacity": 1,
+					duration: 0.45,
+					ease: "power2.out",
+				},
+				anim.value ? "<" : contentAt,
+			);
+		});
+	}
+
 	// gallery filters
 	const galleryRoot = document.querySelector("[data-gallery]");
 	const galleryFilters = document.querySelector("[data-gallery-filters]");
