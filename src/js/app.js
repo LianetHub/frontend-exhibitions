@@ -893,6 +893,182 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// custom select
 	const customSelectPlaceholders = new WeakMap();
+	const customSelectClearMetrics = new WeakMap();
+
+	function getCustomSelectClearMetrics(clearBtn) {
+		let metrics = customSelectClearMetrics.get(clearBtn);
+		if (metrics?.width > 0) return metrics;
+
+		const root = clearBtn.closest(".custom-select");
+		const hadValue = root?.classList.contains("has-value");
+		root?.classList.add("has-value");
+
+		gsap.set(clearBtn, {
+			clearProps: "width,minWidth,marginLeft,overflow,pointerEvents,visibility",
+		});
+
+		const icon = clearBtn.querySelector(".custom-select__clear-icon");
+		if (icon) {
+			gsap.set(icon, {
+				clearProps: "y,opacity,transform",
+			});
+		}
+
+		const rect = clearBtn.getBoundingClientRect();
+		const styles = getComputedStyle(clearBtn);
+		metrics = {
+			width: rect.width || 49,
+			marginLeft: parseFloat(styles.marginLeft) || 9,
+		};
+		customSelectClearMetrics.set(clearBtn, metrics);
+
+		if (!hadValue) {
+			root?.classList.remove("has-value");
+			collapseCustomSelectClear(clearBtn);
+		}
+
+		return metrics;
+	}
+
+	function collapseCustomSelectClear(clearBtn) {
+		const icon = clearBtn.querySelector(".custom-select__clear-icon");
+
+		gsap.set(clearBtn, {
+			width: 0,
+			minWidth: 0,
+			marginLeft: 0,
+			overflow: "hidden",
+			pointerEvents: "none",
+			visibility: "hidden",
+		});
+
+		if (icon) {
+			gsap.set(icon, {
+				y: "100%",
+				opacity: 0,
+			});
+		}
+	}
+
+	function setCustomSelectHasValue(root, hasValue, { animate = true } = {}) {
+		const clearBtn = root.querySelector(".custom-select__clear");
+		const isShown = root.classList.contains("has-value");
+
+		if (!clearBtn) {
+			root.classList.toggle("has-value", hasValue);
+			return;
+		}
+
+		const icon = clearBtn.querySelector(".custom-select__clear-icon");
+
+		if (hasValue === isShown) {
+			if (!hasValue) collapseCustomSelectClear(clearBtn);
+			return;
+		}
+
+		gsap.killTweensOf(clearBtn);
+		if (icon) gsap.killTweensOf(icon);
+
+		if (!animate || reducedMotion) {
+			root.classList.toggle("has-value", hasValue);
+			if (hasValue) {
+				gsap.set(clearBtn, {
+					clearProps: "width,minWidth,marginLeft,overflow,pointerEvents,visibility",
+				});
+				if (icon) {
+					gsap.set(icon, {
+						clearProps: "y,opacity,transform",
+					});
+				}
+			} else {
+				collapseCustomSelectClear(clearBtn);
+			}
+			return;
+		}
+
+		const metrics = getCustomSelectClearMetrics(clearBtn);
+
+		if (hasValue) {
+			root.classList.add("has-value");
+			gsap.set(clearBtn, {
+				width: 0,
+				minWidth: 0,
+				marginLeft: 0,
+				overflow: "hidden",
+				pointerEvents: "none",
+				visibility: "visible",
+			});
+			if (icon) {
+				gsap.set(icon, {
+					y: "100%",
+					opacity: 0,
+				});
+			}
+
+			const tl = gsap.timeline({
+				onComplete() {
+					gsap.set(clearBtn, {
+						clearProps: "width,minWidth,marginLeft,overflow,pointerEvents,visibility",
+					});
+					clearBtn.style.pointerEvents = "auto";
+					if (icon) {
+						gsap.set(icon, { y: 0, opacity: 1 });
+					}
+				},
+			});
+
+			tl.to(clearBtn, {
+				width: metrics.width,
+				marginLeft: metrics.marginLeft,
+				duration: 0.5,
+				ease: "power2.out",
+			});
+
+			if (icon) {
+				tl.to(
+					icon,
+					{
+						y: 0,
+						opacity: 1,
+						duration: 0.45,
+						ease: "power2.out",
+					},
+					0.18,
+				);
+			}
+
+			return;
+		}
+
+		gsap.set(clearBtn, { visibility: "visible", pointerEvents: "none" });
+
+		const hideTl = gsap.timeline({
+			onComplete() {
+				root.classList.remove("has-value");
+				collapseCustomSelectClear(clearBtn);
+			},
+		});
+
+		if (icon) {
+			hideTl.to(icon, {
+				y: "100%",
+				opacity: 0,
+				duration: 0.28,
+				ease: "power2.in",
+			});
+		}
+
+		hideTl.to(
+			clearBtn,
+			{
+				width: 0,
+				marginLeft: 0,
+				duration: 0.35,
+				ease: "power2.in",
+			},
+			icon ? "-=0.08" : 0,
+		);
+	}
 
 	function isMultiCustomSelect(root) {
 		return root?.classList.contains("custom-select--multiple");
@@ -1028,7 +1204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateCustomSelectValueOverflow(root);
 	}
 
-	function updateCustomSelectTrigger(root, values) {
+	function updateCustomSelectTrigger(root, values, { animateClear = true } = {}) {
 		const valueEl = root.querySelector(".custom-select__value");
 		const placeholder = customSelectPlaceholders.get(root) || "";
 		if (!valueEl) return;
@@ -1042,7 +1218,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			valueEl.textContent = getCustomSelectOptionLabel(root, values[0]) || placeholder;
 		}
 
-		root.classList.toggle("has-value", values.length > 0);
+		setCustomSelectHasValue(root, values.length > 0, { animate: animateClear });
 		updateCustomSelectValueOverflow(root);
 	}
 
@@ -1098,13 +1274,53 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateCustomSelectCount(root);
 	}
 
+	function hideCustomSelectHighlight(list) {
+		list?.classList.remove("is-highlight-visible");
+	}
+
+	function moveCustomSelectHighlight(list, option) {
+		if (!list || !option) return;
+
+		list.style.setProperty("--highlight-y", `${option.offsetTop}px`);
+		list.style.setProperty("--highlight-h", `${option.offsetHeight}px`);
+		list.classList.add("is-highlight-visible");
+	}
+
+	function setupCustomSelectHighlight(root) {
+		const list = root.querySelector(".custom-select__list");
+		if (!list || list.dataset.highlightBound === "true") return;
+
+		list.dataset.highlightBound = "true";
+
+		list.addEventListener("pointerover", (event) => {
+			const option = event.target.closest(".custom-select__option");
+			if (!option || !list.contains(option)) return;
+			moveCustomSelectHighlight(list, option);
+		});
+
+		list.addEventListener("pointerleave", () => hideCustomSelectHighlight(list));
+
+		list.addEventListener("focusin", (event) => {
+			const option = event.target.closest(".custom-select__option");
+			if (!option || !list.contains(option)) return;
+			moveCustomSelectHighlight(list, option);
+		});
+
+		list.addEventListener("focusout", (event) => {
+			if (list.contains(event.relatedTarget)) return;
+			hideCustomSelectHighlight(list);
+		});
+	}
+
 	function closeCustomSelect(root) {
 		const trigger = root.querySelector(".custom-select__trigger");
 		const dropdown = getCustomSelectDropdown(root);
+		const list = root.querySelector(".custom-select__list");
 
 		root.classList.remove("is-open");
 		trigger?.setAttribute("aria-expanded", "false");
 		if (dropdown) dropdown.hidden = true;
+		hideCustomSelectHighlight(list);
 		hideCustomSelectTooltip(root);
 	}
 
@@ -1129,7 +1345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		hideCustomSelectTooltip(root);
 	}
 
-	function syncCustomSelectValue(root, value) {
+	function syncCustomSelectValue(root, value, { animateClear = true } = {}) {
 		const hidden = root.querySelector('input[type="hidden"]');
 		const list = root.querySelector(".custom-select__list");
 		if (!hidden || !list) return;
@@ -1138,7 +1354,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const values = Array.isArray(value) ? value : parseCustomSelectValues(value);
 			hidden.value = serializeCustomSelectValues(values);
 			renderCustomSelectOptions(root, values);
-			updateCustomSelectTrigger(root, values);
+			updateCustomSelectTrigger(root, values, { animateClear });
 			setCustomSelectDirty(root, false);
 			updateCustomSelectCount(root);
 			root.dispatchEvent(
@@ -1168,7 +1384,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			valueEl.textContent = labelEl?.textContent?.trim() || placeholder;
 		}
 
-		root.classList.toggle("has-value", Boolean(value));
+		setCustomSelectHasValue(root, Boolean(value), { animate: animateClear });
 		root.dispatchEvent(new CustomEvent("change", { bubbles: true, detail: { value } }));
 	}
 
@@ -1181,13 +1397,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			customSelectPlaceholders.set(root, valueEl.textContent.trim());
 		}
 
+		const clearBtn = root.querySelector(".custom-select__clear");
+		if (clearBtn) getCustomSelectClearMetrics(clearBtn);
+
 		const values = isMultiCustomSelect(root) ? getAppliedCustomSelectValues(root) : parseCustomSelectValues(hidden.value || "");
 
 		if (values.length) {
-			syncCustomSelectValue(root, isMultiCustomSelect(root) ? values : values[0]);
+			syncCustomSelectValue(root, isMultiCustomSelect(root) ? values : values[0], { animateClear: false });
 		} else {
 			valueEl.textContent = customSelectPlaceholders.get(root) || "";
-			root.classList.remove("has-value");
+			setCustomSelectHasValue(root, false, { animate: false });
 			if (isMultiCustomSelect(root)) {
 				renderCustomSelectOptions(root, []);
 				setCustomSelectDirty(root, false);
@@ -1197,6 +1416,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		setupCustomSelectTooltip(root);
+		setupCustomSelectHighlight(root);
 	}
 
 	if (document.querySelectorAll(".custom-select").length > 0) {

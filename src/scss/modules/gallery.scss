@@ -100,6 +100,11 @@
 			min-height: rem(56);
 		}
 
+		.custom-select__head {
+			width: fit-content;
+			max-width: calc(100% - #{rem(58)});
+		}
+
 		@media (min-width: $md3) {
 			max-width: rem(406);
 
@@ -107,8 +112,13 @@
 				min-height: rem(49);
 			}
 
-			.custom-select__trigger-wrap {
+			.custom-select__head {
 				max-width: rem(347);
+			}
+
+			.custom-select__trigger-wrap {
+				width: rem(347);
+				max-width: 100%;
 			}
 		}
 	}

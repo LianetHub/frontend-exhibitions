@@ -27,7 +27,9 @@
 		</div>
 		}
 		@@if(typeof clearable !== 'undefined' && clearable){
-		<button type="button" class="custom-select__clear icon-cross" aria-label="Очистить фильтр @@label"></button>
+		<button type="button" class="custom-select__clear" aria-label="Очистить фильтр @@label">
+			<span class="custom-select__clear-icon icon-cross" aria-hidden="true"></span>
+		</button>
 		}
 	</div>
 	@@if(typeof multiple === 'undefined' || !multiple){

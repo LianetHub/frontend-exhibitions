@@ -9,18 +9,23 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		gap: rem(9);
+		gap: 0;
 		overflow: visible;
 	}
 
 	// custom-select__clear
 	&__clear {
-		display: none;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		z-index: 1;
+		display: inline-flex;
 		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
 		width: rem(49);
 		height: rem(49);
+		margin-left: rem(9);
 		padding: 0;
 		border: 1.5px solid $color-dark;
 		background: $color-dark;
@@ -28,6 +33,7 @@
 		font-size: rem(18);
 		line-height: 1;
 		cursor: pointer;
+		overflow: hidden;
 		transition: color 0.2s ease, background-color 0.2s ease;
 
 		@media (any-hover: hover) {
@@ -43,9 +49,33 @@
 		}
 	}
 
-	&.has-value {
+	// custom-select__clear-icon
+	&__clear-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(49);
+		height: rem(49);
+		line-height: 1;
+	}
+
+	&:not(.has-value) {
 		.custom-select__clear {
-			display: inline-flex;
+			width: 0;
+			min-width: 0;
+			margin-left: 0;
+			border-left-width: 0;
+			border-right-width: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		.custom-select__clear-icon {
+			opacity: 0;
+			transform: translateY(100%);
 		}
 	}
 
@@ -120,6 +150,9 @@
 
 	// custom-select__list
 	&__list {
+		--highlight-y: 0px;
+		--highlight-h: 0px;
+
 		position: absolute;
 		top: calc(100% + #{rem(8)});
 		left: 0;
@@ -134,10 +167,41 @@
 		overflow: auto;
 		border: 1px solid $color-border;
 		background: $color-white;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: var(--highlight-h);
+			background: rgba(18, 28, 17, 0.2);
+			opacity: 0;
+			pointer-events: none;
+			transform: translate3d(0, var(--highlight-y), 0);
+			transition: transform 0.28s ease, height 0.28s ease, opacity 0.2s ease;
+		}
+
+		&:not(.is-highlight-visible)::before {
+			transition: opacity 0.2s ease;
+		}
+
+		&.is-highlight-visible::before {
+			opacity: 1;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			&::before {
+				transition: none;
+			}
+		}
 	}
 
 	// custom-select__option
 	&__option {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -157,10 +221,6 @@
 		}
 
 		@media (any-hover: hover) {
-			&:hover {
-				background: rgba(18, 28, 17, 0.2);
-			}
-
 			&:hover:not(.is-selected) {
 				.custom-select__option-check {
 					background: $color-white;
@@ -280,13 +340,13 @@
 		}
 
 		.custom-select__list {
-			position: static;
+			position: relative;
 			flex: 1 1 auto;
 			min-height: 0;
 			min-width: 0;
 			width: auto;
 			border: none;
-			padding: rem(16) 0 rem(12);
+			padding: rem(8) 0 rem(1);
 		}
 
 		.custom-select__foot {
@@ -295,7 +355,7 @@
 			align-items: center;
 			justify-content: space-between;
 			gap: rem(12);
-			padding: rem(11) rem(15) rem(15);
+			padding: rem(11) rem(15);
 			border-top: 1px solid rgba(18, 28, 17, 0.15);
 		}
 
