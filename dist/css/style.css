@@ -422,8 +422,7 @@ textarea.form-control {
 }
 @media (any-hover: hover) {
   .custom-select__clear:hover {
-    color: rgba(17, 27, 16, 0.75);
-    color: var(--color-white);
+    background-color: rgba(17, 27, 16, 0.75);
   }
 }
 .custom-select__clear:focus-visible {
@@ -1692,6 +1691,11 @@ img {
 .works__head-title {
   order: 1;
 }
+@media (max-width: 575.98px) {
+  .works__head-title {
+    max-width: 20rem;
+  }
+}
 @media (min-width: 767.98px) {
   .works__head-title {
     order: 0;
@@ -1765,6 +1769,11 @@ img {
   margin-top: 0.625rem;
   min-height: 3.5rem;
   overflow: hidden;
+}
+@media (max-width: 575.98px) {
+  .works__btn {
+    max-width: calc(100vw - 2.5rem);
+  }
 }
 @media (min-width: 767.98px) {
   .works__btn {
@@ -2037,6 +2046,11 @@ img {
 }
 .contacts__head-title {
   min-width: 0;
+}
+@media (max-width: 575.98px) {
+  .contacts__head-title {
+    max-width: 15rem;
+  }
 }
 .contacts__title {
   margin: 0;
@@ -2996,6 +3010,11 @@ img {
 .exhibitions-hero__title {
   margin: 0;
   min-width: 0;
+}
+@media (max-width: 575.98px) {
+  .exhibitions-hero__title {
+    max-width: 15.9375rem;
+  }
 }
 @media (min-width: 991.98px) {
   .exhibitions-hero__title {

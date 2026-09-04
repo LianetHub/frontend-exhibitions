@@ -937,11 +937,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			exhibitionsInteriorCta.setAttribute("aria-pressed", isInterior ? "true" : "false");
 		}
 
+		const chips = exhibitionsFilters?.querySelectorAll(".exhibitions-hero__chip");
+
 		if (isInterior) {
-			exhibitionsFilters?.querySelectorAll(".exhibitions-hero__chip").forEach((chip) => {
-				const isAll = !(chip.getAttribute("data-city") || "");
-				chip.classList.toggle("is-active", isAll);
-				chip.setAttribute("aria-pressed", isAll ? "true" : "false");
+			chips?.forEach((chip) => {
+				chip.classList.remove("is-active");
+				chip.setAttribute("aria-pressed", "false");
 			});
 			applyExhibitionsCityFilter("");
 			requestAnimationFrame(() => {
@@ -949,6 +950,16 @@ document.addEventListener("DOMContentLoaded", () => {
 				interiorSwiper?.slideTo(0, 0);
 			});
 			return;
+		}
+
+		const hasActiveChip = [...(chips || [])].some((chip) => chip.classList.contains("is-active"));
+		if (!hasActiveChip) {
+			chips?.forEach((chip) => {
+				const isAll = !(chip.getAttribute("data-city") || "");
+				chip.classList.toggle("is-active", isAll);
+				chip.setAttribute("aria-pressed", isAll ? "true" : "false");
+			});
+			applyExhibitionsCityFilter("");
 		}
 
 		requestAnimationFrame(() => {
@@ -2113,28 +2124,48 @@ document.addEventListener("DOMContentLoaded", () => {
 	initContactsStripeFill();
 });
 
-// Inactive coverflow slides: activate on click; Fancybox only from the active slide
+// Inactive coverflow slides: activate on click; Fancybox only from the active slide.
+// Swiper marks the clicked slide active before `click`, so we remember inactivity on pointerdown.
+let exhibitionsSlideGestureInactive = false;
+
+document.addEventListener(
+	"pointerdown",
+	(e) => {
+		const target = e.target;
+		if (!(target instanceof Element)) {
+			exhibitionsSlideGestureInactive = false;
+			return;
+		}
+
+		const trigger = target.closest(".exhibitions-slide [data-fancybox]");
+		const slide = trigger?.closest(".swiper-slide");
+		exhibitionsSlideGestureInactive = Boolean(slide && !slide.classList.contains("swiper-slide-active"));
+	},
+	true,
+);
+
 document.addEventListener(
 	"click",
 	(e) => {
 		const target = e.target;
 		if (!(target instanceof Element)) return;
 
-		const trigger = target.closest("[data-fancybox]");
-		if (!trigger) return;
+		const trigger = target.closest(".exhibitions-slide [data-fancybox]");
+		const slide = trigger?.closest(".swiper-slide");
+		if (!trigger || !slide) return;
 
-		const slide = trigger.closest(".exhibitions-slide.swiper-slide");
-		if (!slide || slide.classList.contains("swiper-slide-active")) return;
+		const shouldSelectOnly = exhibitionsSlideGestureInactive || !slide.classList.contains("swiper-slide-active");
+		if (!shouldSelectOnly) return;
 
 		e.preventDefault();
 		e.stopPropagation();
 		e.stopImmediatePropagation();
 
 		const swiper = slide.closest(".swiper")?.swiper;
-		if (!swiper) return;
+		const index = swiper ? swiper.slides.indexOf(slide) : -1;
+		if (swiper && index >= 0 && swiper.activeIndex !== index) swiper.slideTo(index);
 
-		const index = swiper.slides.indexOf(slide);
-		if (index >= 0) swiper.slideTo(index);
+		exhibitionsSlideGestureInactive = false;
 	},
 	true,
 );

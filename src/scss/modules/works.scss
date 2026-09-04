@@ -65,6 +65,10 @@
 	&__head-title {
 		order: 1;
 
+		@media (max-width:$md5) {
+			max-width: rem(320);
+		}
+
 		@media (min-width: $md4) {
 			order: 0;
 		}
@@ -145,6 +149,10 @@
 		margin-top: rem(10);
 		min-height: rem(56);
 		overflow: hidden;
+
+		@media (max-width:$md5) {
+			max-width: calc(100vw - #{rem(40)});
+		}
 
 		@media (min-width: $md4) {
 			order: 0;

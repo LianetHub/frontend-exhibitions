@@ -33,6 +33,10 @@
 	// contacts__head-title
 	&__head-title {
 		min-width: 0;
+
+		@media (max-width:$md5) {
+			max-width: rem(240);
+		}
 	}
 
 	// contacts__title

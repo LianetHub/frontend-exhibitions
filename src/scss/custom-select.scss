@@ -38,8 +38,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: rgba($color: #111B10, $alpha: .75);
-				color: $color-white;
+				background-color: rgba($color: #111B10, $alpha: .75);
 			}
 		}
 

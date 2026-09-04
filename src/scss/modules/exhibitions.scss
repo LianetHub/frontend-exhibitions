@@ -25,6 +25,10 @@
 		margin: 0;
 		min-width: 0;
 
+		@media (max-width:$md5) {
+			max-width: rem(255);
+		}
+
 		@media (min-width:$md3) {
 			flex: 0 1 40%;
 			align-self: center;
