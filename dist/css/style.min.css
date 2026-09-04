@@ -490,6 +490,11 @@ textarea.form-control {
   border-color: var(--color-white);
   box-shadow: var(--focus-ring);
 }
+@media (any-hover: hover) {
+  .custom-select__trigger:hover {
+    background: rgba(17, 27, 16, 0.75);
+  }
+}
 .custom-select__value {
   min-width: 0;
   overflow: hidden;
@@ -1533,6 +1538,14 @@ img {
 .stats {
   background: var(--color-surface);
 }
+.stats > .container {
+  padding-bottom: 1.4375rem;
+}
+@media (min-width: 767.98px) {
+  .stats > .container {
+    padding-bottom: 3.9375rem;
+  }
+}
 .stats__row {
   display: grid;
   grid-template-columns: 1fr;
@@ -1558,6 +1571,12 @@ img {
 .stats__band {
   position: relative;
   z-index: 0;
+  margin-top: -1.4375rem;
+}
+@media (min-width: 767.98px) {
+  .stats__band {
+    margin-top: -3.9375rem;
+  }
 }
 .stats__card {
   display: flex;

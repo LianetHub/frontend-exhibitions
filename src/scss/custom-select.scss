@@ -118,6 +118,12 @@
 			border-color: $color-white;
 			box-shadow: $focus-ring;
 		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: rgba($color: #111B10, $alpha: .75);
+			}
+		}
 	}
 
 	// custom-select__value

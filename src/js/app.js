@@ -309,22 +309,22 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	if (statsEl && !reducedMotion) {
-		const statsBand = document.querySelector(".stats__band");
 		const statsCards = statsEl.querySelectorAll(".stats__card");
 		const statsValues = statsEl.querySelectorAll(".stats__value");
 		const statsLabels = statsEl.querySelectorAll(".stats__label");
-		const getStatsBandHeight = () => (statsBand ? statsBand.offsetHeight : 0);
 
+		// Band is a sibling with CSS margin-top: -height — stays under hero__band,
+		// not clipped/grown by this height tween
 		gsap.set(statsEl, { height: 0, overflow: "hidden" });
-		if (statsBand) gsap.set(statsBand, { marginTop: () => -getStatsBandHeight() });
 		gsap.set(statsCards, { scaleY: 0, transformOrigin: "top center" });
 		gsap.set(statsValues, { opacity: 0, y: 40 });
 		gsap.set(statsLabels, { opacity: 0, y: 10 });
 
-		const statsTl = gsap.timeline({
+		gsap.timeline({
+			delay: 0.15,
 			scrollTrigger: {
-				trigger: statsEl,
-				start: "top 80%",
+				trigger: heroEl || statsEl,
+				start: "bottom bottom-=48",
 				once: true,
 			},
 			onComplete() {
@@ -332,34 +332,16 @@ document.addEventListener("DOMContentLoaded", () => {
 				ScrollTrigger.refresh();
 				armWorksReveal();
 			},
-		});
-
-		statsTl.to(statsEl, {
-			height: "auto",
-			duration: 0.8,
-			ease: "power2.out",
-			onComplete() {
-				gsap.set(statsEl, { clearProps: "height,overflow" });
-				ScrollTrigger.refresh();
-			},
-		});
-
-		if (statsBand) {
-			statsTl.to(
-				statsBand,
-				{
-					marginTop: 0,
-					duration: 0.8,
-					ease: "power2.out",
-					onComplete() {
-						gsap.set(statsBand, { clearProps: "marginTop" });
-					},
+		})
+			.to(statsEl, {
+				height: "auto",
+				duration: 0.8,
+				ease: "power2.out",
+				onComplete() {
+					gsap.set(statsEl, { clearProps: "height,overflow" });
+					ScrollTrigger.refresh();
 				},
-				"<",
-			);
-		}
-
-		statsTl
+			})
 			.to(statsCards, {
 				scaleY: 1,
 				duration: 0.6,
@@ -866,6 +848,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			effect: "coverflow",
 			grabCursor: true,
 			centeredSlides: true,
+			slideToClickedSlide: true,
 			initialSlide: 1,
 			spaceBetween: 24,
 			slidesPerView: "auto",
@@ -1512,14 +1495,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		const galleryTitle = galleryHeroEl.querySelector(".gallery-hero__title");
 		const galleryLead = galleryHeroEl.querySelector(".gallery-hero__lead");
 		const gallerySelects = [...galleryHeroEl.querySelectorAll(".gallery-hero__select")];
-		const galleryLeadLines = galleryLead
-			? splitTextLines(galleryLead, "gallery-hero__lead-line", "gallery-hero__lead-line-inner")
-			: [];
+		const galleryLeadLines = galleryLead ? splitTextLines(galleryLead, "gallery-hero__lead-line", "gallery-hero__lead-line-inner") : [];
 
 		const gallerySelectAnims = gallerySelects
 			.map((select) => {
-				const expandEl =
-					select.querySelector(".custom-select__trigger-wrap") || select.querySelector(".custom-select__trigger");
+				const expandEl = select.querySelector(".custom-select__trigger-wrap") || select.querySelector(".custom-select__trigger");
 				const trigger = select.querySelector(".custom-select__trigger");
 				const value = select.querySelector(".custom-select__value");
 				if (!expandEl || !trigger) return null;
@@ -1608,10 +1588,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		if (gallerySelectAnims.length) {
-			galleryHeroTl.add(
-				"gallery-selects-expand",
-				galleryLeadLines.length || galleryTitle ? "-=0.15" : "+=0",
-			);
+			galleryHeroTl.add("gallery-selects-expand", galleryLeadLines.length || galleryTitle ? "-=0.15" : "+=0");
 
 			gallerySelectAnims.forEach((anim) => {
 				galleryHeroTl.to(
@@ -1660,10 +1637,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (exhibitionsHeroEl && !reducedMotion) {
 		const exhibitionsTitle = exhibitionsHeroEl.querySelector(".exhibitions-hero__title");
-		const exhibitionsAsideBlocks = [
-			...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"),
-			exhibitionsHeroEl.querySelector(".exhibitions-hero__cta"),
-		].filter(Boolean);
+		const exhibitionsAsideBlocks = [...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"), exhibitionsHeroEl.querySelector(".exhibitions-hero__cta")].filter(
+			Boolean,
+		);
 
 		if (exhibitionsTitle) gsap.set(exhibitionsTitle, { xPercent: -100, opacity: 0 });
 		if (exhibitionsAsideBlocks.length) gsap.set(exhibitionsAsideBlocks, { y: 28, opacity: 0 });
@@ -2136,6 +2112,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	initContactsStripeFill();
 });
+
+// Inactive coverflow slides: activate on click; Fancybox only from the active slide
+document.addEventListener(
+	"click",
+	(e) => {
+		const target = e.target;
+		if (!(target instanceof Element)) return;
+
+		const trigger = target.closest(".exhibitions-slide [data-fancybox]");
+		if (!trigger) return;
+
+		const slide = trigger.closest(".swiper-slide");
+		if (!slide || slide.classList.contains("swiper-slide-active")) return;
+
+		e.preventDefault();
+	},
+	true,
+);
 
 if (typeof Fancybox !== "undefined") {
 	Fancybox.bind("[data-fancybox]", {
