@@ -55,7 +55,7 @@
   --header-height: 2.4375rem;
   --page-stripe-sm-gap: 1.25rem;
   --page-stripe-sm-dark-end: 5.375rem;
-  --page-stripe-sm-period: 6.5625rem;
+  --page-stripe-sm-period: 5.375rem;
 }
 @media (min-width: 767.98px) {
   :root {
@@ -689,7 +689,7 @@ textarea.form-control {
   width: 1.125rem;
   height: 1.125rem;
   border: 1px solid rgba(18, 28, 17, 0.35);
-  background: transparent;
+  background: var(--color-white);
 }
 .custom-select.is-open {
   z-index: 6;
@@ -875,7 +875,7 @@ img {
   display: flex;
   flex-direction: column;
   background-color: var(--color-green);
-  background-image: repeating-linear-gradient(to right, transparent 0, transparent 1.25rem, var(--color-green-2) 1.25rem, var(--color-green-2) 5.375rem, transparent 5.375rem, transparent 6.5625rem);
+  background-image: repeating-linear-gradient(to right, transparent 0, transparent 1.25rem, var(--color-green-2) 1.25rem, var(--color-green-2) 5.375rem, transparent 5.375rem, transparent 5.375rem);
 }
 @media (min-width: 767.98px) {
   .page {
@@ -1742,7 +1742,7 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  left: calc(round(nearest, 40% - 5.375rem, 6.5625rem) + 5.375rem);
+  left: calc(round(nearest, 40% - 5.375rem, 5.375rem) + 5.375rem);
   width: auto;
   height: 32%;
   background: var(--color-green);
@@ -1930,6 +1930,7 @@ img {
 }
 .works__slider {
   overflow: visible;
+  max-width: 100%;
 }
 .works__nav {
   display: none;

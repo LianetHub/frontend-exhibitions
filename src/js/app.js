@@ -124,10 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (!text) return [];
 
 		el.textContent = "";
-		const words = text.split(" ");
-		const wordSpans = words.map((word, index) => {
+		const charSpans = Array.from(text, (char) => {
 			const span = document.createElement("span");
-			span.textContent = word + (index < words.length - 1 ? " " : "");
+			span.textContent = char;
 			el.appendChild(span);
 			return span;
 		});
@@ -136,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		let currentTop = null;
 		let currentLine = [];
 
-		wordSpans.forEach((span) => {
+		charSpans.forEach((span) => {
 			const top = span.offsetTop;
 			if (currentTop === null || Math.abs(top - currentTop) > 2) {
 				if (currentLine.length) lineGroups.push(currentLine);
@@ -148,12 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 		if (currentLine.length) lineGroups.push(currentLine);
 
-		return lineGroups.map((lineWords) => {
+		el.textContent = "";
+
+		return lineGroups.map((lineChars) => {
 			const lineEl = document.createElement("span");
 			lineEl.className = lineClass;
 			const inner = document.createElement("span");
 			inner.className = innerClass;
-			lineWords.forEach((word) => inner.appendChild(word));
+			inner.textContent = lineChars.map((span) => span.textContent).join("");
+			inner.style.whiteSpace = "nowrap";
 			lineEl.appendChild(inner);
 			el.appendChild(lineEl);
 			return inner;
@@ -275,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				y: overlayActive ? getHeroSlideY() - heroSeamOverlap : getHeroSlideY(),
 			});
 		}
-		if (heroTitleMobile) gsap.set(heroTitleMobile, { xPercent: 120, opacity: 0 });
+		if (heroTitleMobile) gsap.set(heroTitleMobile, { xPercent: -120, opacity: 0 });
 		if (heroTitleName) gsap.set(heroTitleName, { xPercent: -120, opacity: 0 });
 		if (heroTitleSurname) gsap.set(heroTitleSurname, { xPercent: 120, opacity: 0 });
 		if (heroLeadLines.length) gsap.set(heroLeadLines, { yPercent: 100, opacity: 0 });

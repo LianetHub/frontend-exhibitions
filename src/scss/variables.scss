@@ -12,11 +12,10 @@ $maxWidth: 1920;
 $maxWidthContainer: rem(1820);
 $containerPadding: 24;
 
-// Page stripe pattern (.page repeating-linear-gradient), px
-// stops: transparent → dark → transparent; period = last stop
+
 $page-stripe-sm-gap: 20;
 $page-stripe-sm-dark-end: 86;
-$page-stripe-sm-period: 105;
+$page-stripe-sm-period: 86;
 
 $page-stripe-gap: 51;
 $page-stripe-dark-end: 154;
