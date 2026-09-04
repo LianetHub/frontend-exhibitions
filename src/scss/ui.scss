@@ -27,29 +27,23 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				background: $color-dark;
-				color: $color-white;
+				background: rgba($color: #111B10, $alpha: .75)
 			}
 		}
 
 		&:active {
-			background: $color-dark;
-			color: $color-white;
-			box-shadow: none;
+			background: rgba($color: #111B10, $alpha: .75)
 		}
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			background: $color-white;
-			color: $color-dark;
+			background: rgba($color: #111B10, $alpha: .75)
 		}
 	}
 
 	&:active {
-		background: color-mix(in srgb, $color-white 60%, transparent);
-		color: $color-dark;
-		box-shadow: inset 0 0 0 rem(1.5) $color-dark;
+		background: rgba($color: #111B10, $alpha: .75)
 	}
 
 	&:focus-visible {

@@ -15,22 +15,21 @@
 		</button>
 		@@if(typeof multiple !== 'undefined' && multiple){
 		<span class="custom-select__tooltip" id="@@id-tooltip" role="tooltip" hidden></span>
+		<div class="custom-select__panel" hidden>
+			<ul class="custom-select__list" id="@@id-list" role="listbox" aria-multiselectable="true" tabindex="-1">
+				@@loop('custom-select-option-list.html', '@@options')
+			</ul>
+			<div class="custom-select__foot">
+				<span class="custom-select__count" aria-live="polite">0 из 0</span>
+				<button type="button" class="custom-select__apply btn">Готово</button>
+			</div>
+		</div>
 		</div>
 		}
 		@@if(typeof clearable !== 'undefined' && clearable){
-		<button type="button" class="custom-select__clear" aria-label="Очистить фильтр @@label">Очистить</button>
+		<button type="button" class="custom-select__clear icon-cross" aria-label="Очистить фильтр @@label"></button>
 		}
 	</div>
-	@@if(typeof multiple !== 'undefined' && multiple){
-	<div class="custom-select__panel" hidden>
-		<ul class="custom-select__list" id="@@id-list" role="listbox" aria-multiselectable="true" tabindex="-1">
-			@@loop('custom-select-option-list.html', '@@options')
-		</ul>
-		<div class="custom-select__foot">
-			<button type="button" class="custom-select__apply btn">Применить</button>
-		</div>
-	</div>
-	}
 	@@if(typeof multiple === 'undefined' || !multiple){
 	<ul class="custom-select__list" id="@@id-list" role="listbox" tabindex="-1" hidden>
 		@@if(typeof hidePlaceholderOption === 'undefined' || !hidePlaceholderOption){

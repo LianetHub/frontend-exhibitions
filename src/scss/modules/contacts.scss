@@ -194,6 +194,7 @@
 			border-radius: 50%;
 			font-size: rem(22);
 			color: $color-white;
+			transition: background-color 0.2s ease;
 
 			@media (min-width: $md4) {
 				width: rem(59);
@@ -203,6 +204,10 @@
 
 		@media (any-hover: hover) {
 			&:hover {
+				&::before {
+					background: rgba($color: #111B10, $alpha: .75);
+				}
+
 				.contacts__value {
 					color: $color-green-light;
 					text-decoration: underline;

@@ -166,8 +166,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				background: $color-brown;
-				color: $color-beige;
+				background: #D4C3AF;
 			}
 		}
 	}
@@ -200,8 +199,7 @@
 
 			@media (any-hover: hover) {
 				&:hover {
-					background: $color-white;
-					color: $color-dark;
+					background: rgba($color: #111B10, $alpha: .75);
 				}
 			}
 		}

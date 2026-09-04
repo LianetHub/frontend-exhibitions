@@ -1021,6 +1021,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		root.classList.toggle("is-dirty", isDirty);
 	}
 
+	function updateCustomSelectCount(root) {
+		if (!isMultiCustomSelect(root)) return;
+
+		const countEl = root.querySelector(".custom-select__count");
+		const list = root.querySelector(".custom-select__list");
+		if (!countEl || !list) return;
+
+		const total = [...list.querySelectorAll(".custom-select__option")].filter((option) => (option.dataset.value ?? "") !== "").length;
+		const selected = getDraftCustomSelectValues(root).length;
+		countEl.textContent = `${selected} из ${total}`;
+	}
+
 	function commitCustomSelectDraft(root) {
 		const draft = getDraftCustomSelectValues(root);
 		const hidden = root.querySelector('input[type="hidden"]');
@@ -1029,6 +1041,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		hidden.value = serializeCustomSelectValues(draft);
 		updateCustomSelectTrigger(root, draft);
 		setCustomSelectDirty(root, false);
+		updateCustomSelectCount(root);
 		root.dispatchEvent(
 			new CustomEvent("change", {
 				bubbles: true,
@@ -1045,6 +1058,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		renderCustomSelectOptions(root, draft);
 		setCustomSelectDirty(root, isCustomSelectDirty(root));
+		updateCustomSelectCount(root);
 	}
 
 	function closeCustomSelect(root) {
@@ -1074,6 +1088,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			focusTarget?.focus();
 		}
 
+		updateCustomSelectCount(root);
 		hideCustomSelectTooltip(root);
 	}
 
@@ -1088,6 +1103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			renderCustomSelectOptions(root, values);
 			updateCustomSelectTrigger(root, values);
 			setCustomSelectDirty(root, false);
+			updateCustomSelectCount(root);
 			root.dispatchEvent(
 				new CustomEvent("change", {
 					bubbles: true,
@@ -1139,6 +1155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				renderCustomSelectOptions(root, []);
 				setCustomSelectDirty(root, false);
 				updateCustomSelectValueOverflow(root);
+				updateCustomSelectCount(root);
 			}
 		}
 
@@ -1157,12 +1174,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		return getAppliedCustomSelectValues(root);
 	}
 
-	function applyGalleryFilters() {
+	function applyGalleryFilters({ instantReveal = false } = {}) {
 		if (!galleryRoot || !galleryFilters) return;
 
 		const genres = getCustomSelectValues(galleryFilters.querySelector("#gallery-genre"));
 		const techniques = getCustomSelectValues(galleryFilters.querySelector("#gallery-technique"));
-		const cells = galleryRoot.querySelectorAll("[data-gallery-cell]");
+		const cells = [...galleryRoot.querySelectorAll("[data-gallery-cell]")];
 
 		cells.forEach((cell) => {
 			const cellGenre = cell.getAttribute("data-genre") || "";
@@ -1172,18 +1189,30 @@ document.addEventListener("DOMContentLoaded", () => {
 			cell.classList.toggle("is-hidden", !(matchGenre && matchTechnique));
 		});
 
-		const hasVisible = [...cells].some((cell) => !cell.classList.contains("is-hidden"));
+		const hasVisible = cells.some((cell) => !cell.classList.contains("is-hidden"));
 		const empty = galleryRoot.querySelector(".gallery__empty");
 		galleryRoot.classList.toggle("is-empty", !hasVisible);
 		if (empty) empty.hidden = hasVisible;
+
+		if (instantReveal) {
+			const visibleItems = cells
+				.filter((cell) => !cell.classList.contains("is-hidden"))
+				.map((cell) => cell.querySelector(".gallery-item"))
+				.filter(Boolean);
+
+			// Instant reveal after filter — avoid ScrollTrigger batch stagger on display:none reflow
+			gsap.killTweensOf(galleryRoot.querySelectorAll(".gallery-item, .gallery-item__img"));
+			gsap.set(visibleItems, { opacity: 1, y: 0 });
+			visibleItems.forEach((item) => {
+				const img = item.querySelector(".gallery-item__img");
+				if (!img) return;
+				if (img.loading === "lazy") img.loading = "eager";
+				img.classList.add("is-loaded");
+				gsap.set(img, { opacity: 1, y: 0 });
+			});
+		}
+
 		ScrollTrigger.refresh();
-	}
-
-	function syncGalleryFiltersClear() {
-		if (!galleryFilters) return;
-
-		const hasFilters = [...galleryFilters.querySelectorAll(".custom-select")].some((root) => getCustomSelectValues(root).length > 0);
-		galleryFilters.classList.toggle("has-filters", hasFilters);
 	}
 
 	function resetGalleryFilters() {
@@ -1193,17 +1222,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			syncCustomSelectValue(root, isMultiCustomSelect(root) ? [] : "");
 			closeCustomSelect(root);
 		});
-		syncGalleryFiltersClear();
-		applyGalleryFilters();
+		applyGalleryFilters({ instantReveal: true });
 	}
 
 	if (galleryRoot && galleryFilters) {
 		galleryFilters.addEventListener("change", (e) => {
 			if (!e.target.closest(".custom-select")) return;
-			applyGalleryFilters();
-			syncGalleryFiltersClear();
+			applyGalleryFilters({ instantReveal: true });
 		});
-		syncGalleryFiltersClear();
 		applyGalleryFilters();
 	}
 
@@ -1214,8 +1240,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		const imgs = [...galleryRoot.querySelectorAll(".gallery-item__img")];
 		const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+		function isGalleryItemVisible(item) {
+			return !item.closest("[data-gallery-cell]")?.classList.contains("is-hidden");
+		}
+
 		function revealGalleryImage(img) {
-			if (img.classList.contains("is-loaded")) return;
+			if (!img || img.classList.contains("is-loaded")) return;
 			img.classList.add("is-loaded");
 
 			if (reducedMotion) {
@@ -1225,18 +1255,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			gsap.fromTo(
 				img,
-				{ opacity: 0, y: 40 },
+				{ opacity: 0, y: 24 },
 				{
 					opacity: 1,
 					y: 0,
-					duration: 1.5,
+					duration: 0.7,
 					ease: "power3.out",
+					overwrite: "auto",
 				},
 			);
 		}
 
-		imgs.forEach((img) => {
-			if (img.classList.contains("is-loaded")) return;
+		function prepareGalleryImage(img) {
+			if (!img || img.classList.contains("is-loaded")) return;
+
+			if (img.loading === "lazy") {
+				img.loading = "eager";
+			}
 
 			if (img.complete && img.naturalWidth > 0) {
 				revealGalleryImage(img);
@@ -1245,7 +1280,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			img.addEventListener("load", () => revealGalleryImage(img), { once: true });
 			img.addEventListener("error", () => revealGalleryImage(img), { once: true });
-		});
+
+			if (typeof img.decode === "function") {
+				img.decode().then(() => revealGalleryImage(img)).catch(() => {});
+			}
+		}
 
 		if (reducedMotion) {
 			gsap.set(items, { opacity: 1, clearProps: "transform" });
@@ -1257,32 +1296,48 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		gsap.set(items, { y: 16 });
-		gsap.set(
-			imgs.filter((img) => !img.classList.contains("is-loaded")),
-			{ y: 40 },
-		);
 
 		ScrollTrigger.batch(items, {
-			start: "top 88%",
+			start: "top 92%",
 			once: true,
-			onEnter(batch) {
-				const sorted = [...batch].sort((a, b) => {
-					const aRect = a.getBoundingClientRect();
-					const bRect = b.getBoundingClientRect();
-					const rowDelta = aRect.top - bRect.top;
-					if (Math.abs(rowDelta) > 12) return rowDelta;
-					return aRect.left - bRect.left;
+			onEnter(entered) {
+				const sorted = entered
+					.filter(isGalleryItemVisible)
+					.sort((a, b) => {
+						const aRect = a.getBoundingClientRect();
+						const bRect = b.getBoundingClientRect();
+						const rowDelta = aRect.top - bRect.top;
+						if (Math.abs(rowDelta) > 12) return rowDelta;
+						return aRect.left - bRect.left;
+					});
+
+				if (!sorted.length) return;
+
+				sorted.forEach((item) => {
+					prepareGalleryImage(item.querySelector(".gallery-item__img"));
 				});
 
 				gsap.to(sorted, {
 					opacity: 1,
 					y: 0,
-					duration: 0.85,
-					stagger: 0.08,
+					duration: 0.7,
+					stagger: { each: 0.05, amount: 0.35 },
 					ease: "power3.out",
 					overwrite: true,
 				});
 			},
+		});
+
+		items.forEach((item) => {
+			if (!isGalleryItemVisible(item)) return;
+			const rect = item.getBoundingClientRect();
+			if (rect.top < window.innerHeight * 1.1 && rect.bottom > 0) {
+				prepareGalleryImage(item.querySelector(".gallery-item__img"));
+			}
+		});
+
+		requestAnimationFrame(() => {
+			ScrollTrigger.refresh();
 		});
 	}
 
@@ -1432,7 +1487,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
-		const galleryFiltersClear = target.closest(".gallery-hero__filters-clear, .gallery__empty-reset");
+		const galleryFiltersClear = target.closest(".gallery__empty-reset");
 		if (galleryFiltersClear) {
 			resetGalleryFilters();
 			return;
