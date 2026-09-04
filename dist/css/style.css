@@ -3130,11 +3130,13 @@ img {
 }
 @media (min-width: 767.98px) {
   .exhibitions-slider__nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2.25rem 19.4375rem 2.25rem;
     align-items: center;
     justify-content: center;
-    gap: 0;
     margin-top: 1.875rem;
+    margin-inline: auto;
+    width: max-content;
   }
 }
 .exhibitions-slider .swiper-button-next,
@@ -3162,7 +3164,8 @@ img {
 }
 .exhibitions-slider .swiper-pagination {
   position: static;
-  width: auto;
+  width: 100%;
+  justify-content: center;
   gap: 1.125rem;
 }
 .exhibitions-slider .swiper-pagination-bullet {

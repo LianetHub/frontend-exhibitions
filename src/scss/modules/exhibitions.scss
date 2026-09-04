@@ -234,16 +234,19 @@
 	}
 
 	// exhibitions-slider__nav
+	// max pagination: 7 items (bullet/ellipsis 29 + gap 18) → arrows stay put on re-render
 	&__nav {
 		margin-top: rem(30);
 		display: none;
 
 		@media (min-width: $md4) {
-			display: flex;
+			display: grid;
+			grid-template-columns: rem(36) rem(311) rem(36);
 			align-items: center;
 			justify-content: center;
-			gap: 0;
 			margin-top: rem(30);
+			margin-inline: auto;
+			width: max-content;
 		}
 	}
 
@@ -273,7 +276,8 @@
 
 	.swiper-pagination {
 		position: static;
-		width: auto;
+		width: 100%;
+		justify-content: center;
 		gap: rem(18);
 	}
 
