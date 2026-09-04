@@ -453,6 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			slidesPerGroup: 1,
 			spaceBetween: 13,
 			watchOverflow: true,
+			loop: true,
 			breakpoints: {
 				767.98: {
 					slidesPerView: 2,
@@ -1718,10 +1719,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (exhibitionsHeroEl && !reducedMotion) {
 		const exhibitionsTitle = exhibitionsHeroEl.querySelector(".exhibitions-hero__title");
-		const exhibitionsAsideBlocks = [
-			...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"),
-			exhibitionsHeroEl.querySelector(".exhibitions-hero__cta"),
-		].filter(Boolean);
+		const exhibitionsAsideBlocks = [...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"), exhibitionsHeroEl.querySelector(".exhibitions-hero__cta")].filter(
+			Boolean,
+		);
 		const exhibitionsAsideAnims = exhibitionsAsideBlocks
 			.map((block) => {
 				const label = block.querySelector(".exhibitions-hero__chip-label, .exhibitions-hero__cta-label");
@@ -2118,9 +2118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const item = infoCaption.closest(".gallery-item.is-open, .exhibitions-slide.is-open");
 			if (item) {
 				item.classList.remove("is-open");
-				const flagSelector = item.classList.contains("exhibitions-slide")
-					? ".exhibitions-slide__flag"
-					: ".gallery-item__flag";
+				const flagSelector = item.classList.contains("exhibitions-slide") ? ".exhibitions-slide__flag" : ".gallery-item__flag";
 				item.querySelector(flagSelector)?.setAttribute("aria-expanded", "false");
 				return;
 			}
