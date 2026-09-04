@@ -1146,12 +1146,91 @@ document.addEventListener("DOMContentLoaded", () => {
 		);
 	}
 
+	const customSelectPanelHosts = new WeakMap();
+	const customSelectMobileMq = window.matchMedia("(max-width: 767.98px)");
+
+	function isCustomSelectMobile() {
+		return customSelectMobileMq.matches;
+	}
+
 	function isMultiCustomSelect(root) {
 		return root?.classList.contains("custom-select--multiple");
 	}
 
+	function getCustomSelectPanel(root) {
+		if (!root) return null;
+
+		const nested = root.querySelector(".custom-select__panel");
+		if (nested) return nested;
+
+		const ownerId = root.id;
+		if (!ownerId) return null;
+
+		return document.querySelector(`.custom-select__panel.is-modal[data-owner="${ownerId}"]`);
+	}
+
+	function getCustomSelectList(root) {
+		const panel = getCustomSelectPanel(root);
+		if (panel) return panel.querySelector(".custom-select__list");
+		return root.querySelector(".custom-select__list");
+	}
+
 	function getCustomSelectDropdown(root) {
-		return root.querySelector(".custom-select__panel") || root.querySelector(".custom-select__list");
+		return getCustomSelectPanel(root) || root.querySelector(".custom-select__list");
+	}
+
+	function getCustomSelectRootFromEl(el) {
+		if (!el) return null;
+
+		const nested = el.closest(".custom-select");
+		if (nested) return nested;
+
+		const panel = el.closest(".custom-select__panel.is-modal");
+		const ownerId = panel?.dataset.owner;
+		if (ownerId) return document.getElementById(ownerId);
+
+		return null;
+	}
+
+	function mountCustomSelectPanelModal(root) {
+		const panel = root.querySelector(".custom-select__panel");
+		if (!panel || panel.classList.contains("is-modal")) return panel;
+
+		customSelectPanelHosts.set(root, {
+			parent: panel.parentElement,
+			nextSibling: panel.nextSibling,
+		});
+		panel.dataset.owner = root.id || "";
+		panel.classList.add("is-modal");
+		document.body.appendChild(panel);
+		return panel;
+	}
+
+	function unmountCustomSelectPanelModal(root) {
+		const panel = getCustomSelectPanel(root);
+		if (!panel?.classList.contains("is-modal")) return;
+
+		const host = customSelectPanelHosts.get(root);
+		panel.classList.remove("is-modal");
+		delete panel.dataset.owner;
+
+		if (host?.parent) {
+			if (host.nextSibling && host.nextSibling.parentNode === host.parent) {
+				host.parent.insertBefore(panel, host.nextSibling);
+			} else {
+				host.parent.appendChild(panel);
+			}
+		}
+
+		customSelectPanelHosts.delete(root);
+	}
+
+	function lockBodyForCustomSelect() {
+		document.body.classList.add("is-custom-select-open");
+	}
+
+	function unlockBodyForCustomSelect() {
+		document.body.classList.remove("is-custom-select-open");
 	}
 
 	function parseCustomSelectValues(raw) {
@@ -1167,7 +1246,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function getCustomSelectOptionLabel(root, value) {
-		const list = root.querySelector(".custom-select__list");
+		const list = getCustomSelectList(root);
+		if (!list) return "";
+
 		const option = [...list.querySelectorAll(".custom-select__option")].find((item) => (item.dataset.value ?? "") === value);
 		return option?.querySelector(".custom-select__option-label")?.textContent?.trim() || "";
 	}
@@ -1178,12 +1259,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function getDraftCustomSelectValues(root) {
-		const list = root.querySelector(".custom-select__list");
+		const list = getCustomSelectList(root);
+		if (!list) return [];
+
 		return [...list.querySelectorAll(".custom-select__option.is-selected")].map((option) => option.dataset.value ?? "").filter(Boolean);
 	}
 
 	function renderCustomSelectOptions(root, values) {
-		const list = root.querySelector(".custom-select__list");
+		const list = getCustomSelectList(root);
 		if (!list) return;
 
 		list.querySelectorAll(".custom-select__option").forEach((option) => {
@@ -1288,8 +1371,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (!values.length) {
 			valueEl.textContent = placeholder;
 		} else if (isMultiCustomSelect(root)) {
-			const labels = values.map((value) => getCustomSelectOptionLabel(root, value)).filter(Boolean);
-			valueEl.textContent = labels.join(", ");
+			if (isCustomSelectMobile()) {
+				valueEl.textContent = placeholder;
+			} else {
+				const labels = values.map((value) => getCustomSelectOptionLabel(root, value)).filter(Boolean);
+				valueEl.textContent = labels.join(", ");
+			}
 		} else {
 			valueEl.textContent = getCustomSelectOptionLabel(root, values[0]) || placeholder;
 		}
@@ -1313,8 +1400,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	function updateCustomSelectCount(root) {
 		if (!isMultiCustomSelect(root)) return;
 
-		const countEl = root.querySelector(".custom-select__count");
-		const list = root.querySelector(".custom-select__list");
+		const countEl = getCustomSelectPanel(root)?.querySelector(".custom-select__count") || root.querySelector(".custom-select__count");
+		const list = getCustomSelectList(root);
 		if (!countEl || !list) return;
 
 		const total = [...list.querySelectorAll(".custom-select__option")].filter((option) => (option.dataset.value ?? "") !== "").length;
@@ -1363,7 +1450,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function setupCustomSelectHighlight(root) {
-		const list = root.querySelector(".custom-select__list");
+		const list = getCustomSelectList(root);
 		if (!list || list.dataset.highlightBound === "true") return;
 
 		list.dataset.highlightBound = "true";
@@ -1391,13 +1478,21 @@ document.addEventListener("DOMContentLoaded", () => {
 	function closeCustomSelect(root) {
 		const trigger = root.querySelector(".custom-select__trigger");
 		const dropdown = getCustomSelectDropdown(root);
-		const list = root.querySelector(".custom-select__list");
+		const list = getCustomSelectList(root);
+		const wasModal = getCustomSelectPanel(root)?.classList.contains("is-modal");
 
 		root.classList.remove("is-open");
 		trigger?.setAttribute("aria-expanded", "false");
 		if (dropdown) dropdown.hidden = true;
 		hideCustomSelectHighlight(list);
 		hideCustomSelectTooltip(root);
+
+		if (wasModal) {
+			unmountCustomSelectPanelModal(root);
+			if (!document.querySelector(".custom-select__panel.is-modal")) {
+				unlockBodyForCustomSelect();
+			}
+		}
 	}
 
 	function openCustomSelect(root) {
@@ -1406,14 +1501,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 
 		const trigger = root.querySelector(".custom-select__trigger");
-		const list = root.querySelector(".custom-select__list");
+		const useModal = isMultiCustomSelect(root) && isCustomSelectMobile();
+
+		if (useModal) {
+			mountCustomSelectPanelModal(root);
+			lockBodyForCustomSelect();
+		}
+
+		const list = getCustomSelectList(root);
 		const dropdown = getCustomSelectDropdown(root);
 
 		root.classList.add("is-open");
 		trigger?.setAttribute("aria-expanded", "true");
 		if (dropdown) {
 			dropdown.hidden = false;
-			const focusTarget = list.querySelector(".custom-select__option.is-selected") || list.querySelector(".custom-select__option");
+			const focusTarget = list?.querySelector(".custom-select__option.is-selected") || list?.querySelector(".custom-select__option");
 			focusTarget?.focus();
 		}
 
@@ -1423,7 +1525,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function syncCustomSelectValue(root, value, { animateClear = true } = {}) {
 		const hidden = root.querySelector('input[type="hidden"]');
-		const list = root.querySelector(".custom-select__list");
+		const list = getCustomSelectList(root);
 		if (!hidden || !list) return;
 
 		if (isMultiCustomSelect(root)) {
@@ -1910,7 +2012,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const list = event.target.closest(".custom-select__list");
 		if (!list) return;
 
-		const root = list.closest(".custom-select");
+		const root = getCustomSelectRootFromEl(list);
 		const trigger = root?.querySelector(".custom-select__trigger");
 		if (!root || !trigger) return;
 
@@ -2018,7 +2120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const selectApply = target.closest(".custom-select__apply");
 		if (selectApply) {
-			const root = selectApply.closest(".custom-select");
+			const root = getCustomSelectRootFromEl(selectApply);
 			const trigger = root?.querySelector(".custom-select__trigger");
 			if (root) {
 				commitCustomSelectDraft(root);
@@ -2070,7 +2172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const selectOption = target.closest(".custom-select__option");
 		if (selectOption) {
-			const root = selectOption.closest(".custom-select");
+			const root = getCustomSelectRootFromEl(selectOption);
 			const trigger = root?.querySelector(".custom-select__trigger");
 			if (root) {
 				const optionValue = selectOption.dataset.value ?? "";
@@ -2083,6 +2185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				closeCustomSelect(root);
 				trigger?.focus();
 			}
+			return;
 		}
 
 		const selectTrigger = target.closest(".custom-select__trigger");
@@ -2092,10 +2195,14 @@ document.addEventListener("DOMContentLoaded", () => {
 				if (root.classList.contains("is-open")) closeCustomSelect(root);
 				else openCustomSelect(root);
 			}
+			return;
 		}
 
 		document.querySelectorAll(".custom-select.is-open").forEach((root) => {
-			if (!root.contains(target)) closeCustomSelect(root);
+			if (root.contains(target)) return;
+			const panel = getCustomSelectPanel(root);
+			if (panel?.contains(target)) return;
+			closeCustomSelect(root);
 		});
 	});
 
@@ -2112,11 +2219,26 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	window.addEventListener("resize", () => {
-		if (window.matchMedia("(min-width: 767.98px)").matches) {
+		const isDesktop = window.matchMedia("(min-width: 767.98px)").matches;
+
+		if (isDesktop) {
 			closeMobileMenu(true);
 		}
 
+		document.querySelectorAll(".custom-select.is-open").forEach((root) => {
+			if (!isMultiCustomSelect(root)) return;
+
+			const isModal = Boolean(getCustomSelectPanel(root)?.classList.contains("is-modal"));
+			if (isModal === isDesktop) {
+				closeCustomSelect(root);
+			}
+		});
+
 		document.querySelectorAll(".custom-select--multiple").forEach((root) => {
+			const clearBtn = root.querySelector(".custom-select__clear");
+			if (clearBtn) customSelectClearMetrics.delete(clearBtn);
+
+			updateCustomSelectTrigger(root, getAppliedCustomSelectValues(root), { animateClear: false });
 			updateCustomSelectValueOverflow(root);
 		});
 	});

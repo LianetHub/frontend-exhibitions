@@ -16,6 +16,19 @@ body {
 	&.is-locked {
 		overflow: hidden;
 	}
+
+	// body.is-custom-select-open
+	&.is-custom-select-open {
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			z-index: $ui-index-6;
+			background: rgba(0, 0, 0, 0.59);
+		}
+	}
 }
 
 a {

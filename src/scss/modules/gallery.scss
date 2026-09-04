@@ -112,22 +112,31 @@
 			--select-reveal-opacity: 1;
 
 			min-height: rem(56);
-
-			&::after {
-				opacity: var(--select-reveal-opacity);
-				transform: translateY(var(--select-reveal-y));
-				transition: none;
-			}
-		}
-
-		&.is-open .custom-select__trigger::after {
-			transform: translateY(var(--select-reveal-y)) rotate(180deg);
-			transition: transform 0.2s ease;
 		}
 
 		.custom-select__head {
-			width: fit-content;
-			max-width: calc(100% - #{rem(58)});
+			width: 100%;
+			max-width: 100%;
+		}
+
+		@media (min-width: $md4) {
+			.custom-select__trigger {
+				&::after {
+					opacity: var(--select-reveal-opacity);
+					transform: translateY(var(--select-reveal-y));
+					transition: none;
+				}
+			}
+
+			&.is-open .custom-select__trigger::after {
+				transform: translateY(var(--select-reveal-y)) rotate(180deg);
+				transition: transform 0.2s ease;
+			}
+
+			.custom-select__head {
+				width: fit-content;
+				max-width: calc(100% - #{rem(58)});
+			}
 		}
 
 		@media (min-width: $md3) {

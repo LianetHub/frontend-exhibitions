@@ -396,20 +396,19 @@ textarea.form-control {
   display: flex;
   align-items: center;
   gap: 0;
+  width: 100%;
   overflow: visible;
 }
 .custom-select__clear {
-  position: absolute;
-  top: 0;
-  left: 100%;
+  position: relative;
   z-index: 1;
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 3.0625rem;
-  height: 3.0625rem;
-  margin-left: 0.5625rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-left: 0.625rem;
   padding: 0;
   border: 1.5px solid var(--color-dark);
   background: var(--color-dark);
@@ -419,6 +418,16 @@ textarea.form-control {
   cursor: pointer;
   overflow: hidden;
   transition: color 0.2s ease, background-color 0.2s ease;
+}
+@media (min-width: 767.98px) {
+  .custom-select__clear {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 3.0625rem;
+    height: 3.0625rem;
+    margin-left: 0.5625rem;
+  }
 }
 @media (any-hover: hover) {
   .custom-select__clear:hover {
@@ -436,9 +445,15 @@ textarea.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.0625rem;
-  height: 3.0625rem;
+  width: 3.5rem;
+  height: 3.5rem;
   line-height: 1;
+}
+@media (min-width: 767.98px) {
+  .custom-select__clear-icon {
+    width: 3.0625rem;
+    height: 3.0625rem;
+  }
 }
 .custom-select:not(.has-value) .custom-select__clear {
   width: 0;
@@ -478,11 +493,17 @@ textarea.form-control {
 }
 .custom-select__trigger::after {
   flex-shrink: 0;
+  display: none;
   content: "\e901";
   font-size: 0.75rem;
   line-height: 1;
   color: var(--color-white);
   transition: transform 0.2s ease;
+}
+@media (min-width: 767.98px) {
+  .custom-select__trigger::after {
+    display: inline-flex;
+  }
 }
 .custom-select__trigger:focus-visible {
   outline: none;
@@ -516,6 +537,68 @@ textarea.form-control {
 }
 .custom-select__panel[hidden] {
   display: none;
+}
+.custom-select__panel.is-modal {
+  position: fixed;
+  top: 50%;
+  left: 1.25rem;
+  right: 1.25rem;
+  z-index: 7;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  transform: translateY(-50%);
+}
+.custom-select__panel.is-modal .custom-select__list {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  width: auto;
+  border: none;
+  padding: 1.375rem 1.25rem 1.25rem;
+}
+.custom-select__panel.is-modal .custom-select__option {
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+}
+.custom-select__panel.is-modal .custom-select__option-check {
+  width: 1.3125rem;
+  height: 1.3125rem;
+}
+.custom-select__panel.is-modal .custom-select__foot {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(18, 28, 17, 0.15);
+}
+.custom-select__panel.is-modal .custom-select__count {
+  display: none;
+}
+.custom-select__panel.is-modal .custom-select__apply {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 3.5rem;
+  padding: 0.5625rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+@media (any-hover: hover) {
+  .custom-select__panel.is-modal .custom-select__apply:hover {
+    background: rgba(17, 27, 16, 0.75);
+  }
+}
+.custom-select__panel.is-modal .custom-select__apply:active {
+  background: rgba(17, 27, 16, 0.75);
 }
 .custom-select__list {
   --highlight-y: 0px;
@@ -742,6 +825,16 @@ body {
 }
 body.is-locked {
   overflow: hidden;
+}
+body.is-custom-select-open {
+  overflow: hidden;
+}
+body.is-custom-select-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  background: rgba(0, 0, 0, 0.59);
 }
 
 a {
@@ -2378,18 +2471,24 @@ img {
   --select-reveal-opacity: 1;
   min-height: 3.5rem;
 }
-.gallery-hero__select .custom-select__trigger::after {
-  opacity: var(--select-reveal-opacity);
-  transform: translateY(var(--select-reveal-y));
-  transition: none;
-}
-.gallery-hero__select.is-open .custom-select__trigger::after {
-  transform: translateY(var(--select-reveal-y)) rotate(180deg);
-  transition: transform 0.2s ease;
-}
 .gallery-hero__select .custom-select__head {
-  width: fit-content;
-  max-width: calc(100% - 3.625rem);
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 767.98px) {
+  .gallery-hero__select .custom-select__trigger::after {
+    opacity: var(--select-reveal-opacity);
+    transform: translateY(var(--select-reveal-y));
+    transition: none;
+  }
+  .gallery-hero__select.is-open .custom-select__trigger::after {
+    transform: translateY(var(--select-reveal-y)) rotate(180deg);
+    transition: transform 0.2s ease;
+  }
+  .gallery-hero__select .custom-select__head {
+    width: fit-content;
+    max-width: calc(100% - 3.625rem);
+  }
 }
 @media (min-width: 991.98px) {
   .gallery-hero__select {
