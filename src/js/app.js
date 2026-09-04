@@ -837,8 +837,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (isInterior) {
 			exhibitionsFilters?.querySelectorAll(".exhibitions-hero__chip").forEach((chip) => {
-				chip.classList.remove("is-active");
-				chip.setAttribute("aria-pressed", "false");
+				const isAll = !(chip.getAttribute("data-city") || "");
+				chip.classList.toggle("is-active", isAll);
+				chip.setAttribute("aria-pressed", isAll ? "true" : "false");
 			});
 			applyExhibitionsCityFilter("");
 			requestAnimationFrame(() => {
@@ -1380,18 +1381,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			setExhibitionsView("exhibitions");
 
+			if (isActive) return;
+
 			filters?.querySelectorAll(".exhibitions-hero__chip").forEach((chip) => {
-				chip.classList.remove("is-active");
-				chip.setAttribute("aria-pressed", "false");
+				const active = chip === exhibitionsChip;
+				chip.classList.toggle("is-active", active);
+				chip.setAttribute("aria-pressed", active ? "true" : "false");
 			});
 
-			if (!isActive && city) {
-				exhibitionsChip.classList.add("is-active");
-				exhibitionsChip.setAttribute("aria-pressed", "true");
-				applyExhibitionsCityFilter(city);
-			} else {
-				applyExhibitionsCityFilter("");
-			}
+			applyExhibitionsCityFilter(city);
 		}
 
 		const exhibitionsViewCta = target.closest('[data-exhibitions-view="interior"]');
