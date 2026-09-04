@@ -85,6 +85,7 @@
 		letter-spacing: -0.01em;
 		text-transform: uppercase;
 		cursor: pointer;
+		overflow: hidden;
 		transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
 		@media (min-width: $md4) {
@@ -118,6 +119,11 @@
 		flex: 1 1 auto;
 	}
 
+	// exhibitions-hero__chip-label
+	&__chip-label {
+		display: inline-block;
+	}
+
 	// exhibitions-hero__cta
 	&__cta {
 		display: inline-flex;
@@ -136,6 +142,7 @@
 		text-transform: uppercase;
 		text-align: center;
 		cursor: pointer;
+		overflow: hidden;
 		transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
 		@media (min-width: $md4) {
@@ -160,6 +167,11 @@
 			border-color: $color-dark;
 			color: $color-white;
 		}
+	}
+
+	// exhibitions-hero__cta-label
+	&__cta-label {
+		display: inline-block;
 	}
 }
 

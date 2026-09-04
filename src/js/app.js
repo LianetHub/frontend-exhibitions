@@ -732,6 +732,71 @@ document.addEventListener("DOMContentLoaded", () => {
 		requestAnimationFrame(runContactsInViewCheck);
 	}
 
+	// about reveal
+	const aboutEl = document.querySelector(".about");
+
+	if (aboutEl && !reducedMotion) {
+		const aboutTitle = aboutEl.querySelector(".about__title");
+		const aboutPhoto = aboutEl.querySelector(".about__photo");
+		const aboutItems = [...aboutEl.querySelectorAll(".about__item")];
+		const aboutPhotoVisible = Boolean(aboutPhoto && getComputedStyle(aboutPhoto.parentElement).display !== "none");
+
+		if (aboutTitle) gsap.set(aboutTitle, { xPercent: -100, opacity: 0 });
+		if (aboutPhotoVisible) gsap.set(aboutPhoto, { yPercent: 100, opacity: 0 });
+		if (aboutItems.length) gsap.set(aboutItems, { y: 28, opacity: 0 });
+
+		const finishAboutReveal = () => {
+			if (aboutTitle) gsap.set(aboutTitle, { clearProps: "transform,opacity" });
+			if (aboutPhotoVisible) gsap.set(aboutPhoto, { clearProps: "transform,opacity" });
+			if (aboutItems.length) gsap.set(aboutItems, { clearProps: "transform,opacity" });
+		};
+
+		const aboutTl = gsap.timeline({
+			defaults: { ease: "power2.out" },
+			onComplete: finishAboutReveal,
+		});
+
+		if (aboutTitle) {
+			aboutTl.to(
+				aboutTitle,
+				{
+					xPercent: 0,
+					opacity: 1,
+					duration: 0.9,
+					ease: "power3.out",
+				},
+				0,
+			);
+		}
+
+		if (aboutPhotoVisible) {
+			aboutTl.to(
+				aboutPhoto,
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 1.1,
+					ease: "power3.out",
+				},
+				0.1,
+			);
+		}
+
+		if (aboutItems.length) {
+			aboutTl.to(
+				aboutItems,
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.55,
+					stagger: 0.12,
+					ease: "power2.out",
+				},
+				0.35,
+			);
+		}
+	}
+
 	let exhibitionsSwiper = null;
 	let interiorSwiper = null;
 	const exhibitionsPanels = document.querySelector("[data-exhibitions-panels]");
@@ -1564,6 +1629,53 @@ document.addEventListener("DOMContentLoaded", () => {
 				anim.value ? "<" : contentAt,
 			);
 		});
+	}
+
+	// exhibitions-hero reveal
+	const exhibitionsHeroEl = document.querySelector(".exhibitions-hero");
+
+	if (exhibitionsHeroEl && !reducedMotion) {
+		const exhibitionsTitle = exhibitionsHeroEl.querySelector(".exhibitions-hero__title");
+		const exhibitionsAsideBlocks = [
+			...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"),
+			exhibitionsHeroEl.querySelector(".exhibitions-hero__cta"),
+		].filter(Boolean);
+
+		if (exhibitionsTitle) gsap.set(exhibitionsTitle, { xPercent: -100, opacity: 0 });
+		if (exhibitionsAsideBlocks.length) gsap.set(exhibitionsAsideBlocks, { y: 28, opacity: 0 });
+
+		const finishExhibitionsHeroReveal = () => {
+			if (exhibitionsTitle) gsap.set(exhibitionsTitle, { clearProps: "transform,opacity" });
+			if (exhibitionsAsideBlocks.length) gsap.set(exhibitionsAsideBlocks, { clearProps: "transform,opacity" });
+		};
+
+		const exhibitionsHeroTl = gsap.timeline({
+			defaults: { ease: "power2.out" },
+			onComplete: finishExhibitionsHeroReveal,
+		});
+
+		if (exhibitionsTitle) {
+			exhibitionsHeroTl.to(exhibitionsTitle, {
+				xPercent: 0,
+				opacity: 1,
+				duration: 0.9,
+				ease: "power3.out",
+			});
+		}
+
+		if (exhibitionsAsideBlocks.length) {
+			exhibitionsHeroTl.to(
+				exhibitionsAsideBlocks,
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.55,
+					stagger: 0.08,
+					ease: "power2.out",
+				},
+				exhibitionsTitle ? "-=0.35" : 0,
+			);
+		}
 	}
 
 	// gallery filters
