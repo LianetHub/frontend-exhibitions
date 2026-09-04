@@ -160,6 +160,83 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	function prepareHeightRevealControl(el, labelEl) {
+		if (!el) return null;
+		if (!(el.getBoundingClientRect().height > 0)) return null;
+
+		gsap.set(el, {
+			scaleY: 0,
+			transformOrigin: "50% 100%",
+			overflow: "hidden",
+			pointerEvents: "none",
+		});
+
+		if (labelEl) {
+			gsap.set(labelEl, { yPercent: 100, opacity: 0 });
+		}
+
+		return { el, label: labelEl || null };
+	}
+
+	function clearHeightRevealControl(item) {
+		if (!item?.el) return;
+
+		gsap.set(item.el, {
+			clearProps: "transform,transformOrigin,overflow,pointerEvents",
+		});
+
+		if (item.label) {
+			gsap.set(item.label, {
+				clearProps: "transform,opacity",
+			});
+		}
+	}
+
+	function addHeightRevealSequence(tl, items, position = "+=0", { onReveal } = {}) {
+		if (!items.length) return;
+
+		tl.add("btn-height-expand", position);
+
+		items.forEach((item) => {
+			tl.to(
+				item.el,
+				{
+					scaleY: 1,
+					duration: 0.45,
+					ease: "power2.out",
+				},
+				"btn-height-expand",
+			);
+		});
+
+		tl.add("btn-label-reveal", "btn-height-expand+=0.45");
+
+		items.forEach((item) => {
+			if (!item.label) {
+				tl.call(() => clearHeightRevealControl(item), null, "btn-label-reveal");
+				return;
+			}
+
+			tl.to(
+				item.label,
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.45,
+					ease: "power2.out",
+					onComplete() {
+						clearHeightRevealControl(item);
+					},
+				},
+				"btn-label-reveal",
+			);
+		});
+
+		if (typeof onReveal === "function") {
+			onReveal(tl, "btn-label-reveal");
+		}
+	}
+
 	function armWorksReveal() {
 		if (!worksRevealTl || !statsRevealDone || worksRevealArmed) return;
 		worksRevealArmed = true;
@@ -411,34 +488,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		const worksTextAside = worksEl.querySelector(".works__text--aside");
 		const worksBtn = worksEl.querySelector(".works__btn");
 		const worksBtnLabel = worksBtn?.querySelector(".works__btn-label");
+		const worksBtnReveal = prepareHeightRevealControl(worksBtn, worksBtnLabel);
 		const mainLines = worksTextMain ? splitTextLines(worksTextMain, "works__text-line", "works__text-line-inner") : [];
 		const asideLines = worksTextAside ? splitTextLines(worksTextAside, "works__text-line", "works__text-line-inner") : [];
 		const textLines = [...mainLines, ...asideLines];
-		const btnRect = worksBtn?.getBoundingClientRect();
-		const btnWidth = btnRect?.width || 0;
-		const btnHeight = btnRect?.height || 0;
-		const btnStyles = worksBtn ? getComputedStyle(worksBtn) : null;
-		const btnPaddingTop = btnStyles ? parseFloat(btnStyles.paddingTop) || 0 : 0;
-		const btnPaddingBottom = btnStyles ? parseFloat(btnStyles.paddingBottom) || 0 : 0;
 
 		if (worksTitle) gsap.set(worksTitle, { xPercent: -100, opacity: 0 });
 		if (worksSlides.length) gsap.set(worksSlides, { yPercent: 100, opacity: 0 });
 		if (worksNav) gsap.set(worksNav, { y: 24, opacity: 0 });
 		if (textLines.length) gsap.set(textLines, { yPercent: 100, opacity: 0 });
-		if (worksBtn) {
-			gsap.set(worksBtn, {
-				width: 20,
-				height: 0,
-				minWidth: 0,
-				minHeight: 0,
-				paddingTop: 0,
-				paddingBottom: 0,
-				overflow: "hidden",
-				justifySelf: "center",
-				alignSelf: "center",
-			});
-		}
-		if (worksBtnLabel) gsap.set(worksBtnLabel, { yPercent: 100, opacity: 0 });
 
 		worksRevealTl = gsap.timeline({ paused: true });
 
@@ -509,35 +567,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				0,
 			);
 		}
-		if (worksBtn && btnWidth > 0 && btnHeight > 0) {
-			worksCopyTl
-				.to(worksBtn, {
-					height: btnHeight,
-					paddingTop: btnPaddingTop,
-					paddingBottom: btnPaddingBottom,
-					duration: 0.45,
-					ease: "power2.out",
-				})
-				.to(worksBtn, {
-					width: btnWidth,
-					duration: 0.7,
-					ease: "back.out(1.4)",
-				});
-		}
-		if (worksBtnLabel) {
-			worksCopyTl.to(worksBtnLabel, {
-				yPercent: 0,
-				opacity: 1,
-				duration: 1,
-				ease: "power2.out",
-				onComplete() {
-					if (worksBtn) {
-						gsap.set(worksBtn, {
-							clearProps: "width,height,minWidth,minHeight,paddingTop,paddingBottom,overflow,justifySelf,alignSelf,marginLeft,marginRight",
-						});
-					}
-				},
-			});
+		if (worksBtnReveal) {
+			addHeightRevealSequence(worksCopyTl, [worksBtnReveal], textLines.length ? "-=0.1" : 0);
 		}
 
 		worksRevealTl.add(worksMediaTl, 0).add(worksCopyTl, 0);
@@ -1612,70 +1643,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const gallerySelectAnims = gallerySelects
 			.map((select) => {
-				const expandEl = select.querySelector(".custom-select__trigger-wrap") || select.querySelector(".custom-select__trigger");
 				const trigger = select.querySelector(".custom-select__trigger");
 				const value = select.querySelector(".custom-select__value");
-				if (!expandEl || !trigger) return null;
+				const reveal = prepareHeightRevealControl(trigger, value);
+				if (!reveal) return null;
 
-				gsap.set(expandEl, {
-					clearProps: "width,minWidth,overflow,pointerEvents",
-				});
 				gsap.set(trigger, {
-					clearProps: "overflow,--select-reveal-y,--select-reveal-opacity",
-				});
-				if (value) {
-					gsap.set(value, {
-						clearProps: "y,opacity,transform",
-					});
-				}
-
-				const width = expandEl.getBoundingClientRect().width;
-				if (!(width > 0)) return null;
-
-				gsap.set(expandEl, {
-					width: 0,
-					minWidth: 0,
-					overflow: "hidden",
-					pointerEvents: "none",
-				});
-				gsap.set(trigger, {
-					overflow: "hidden",
 					"--select-reveal-y": "100%",
 					"--select-reveal-opacity": 0,
 				});
-				if (value) {
-					gsap.set(value, {
-						y: "100%",
-						opacity: 0,
-					});
-				}
 
-				return { expandEl, trigger, value, width };
+				return reveal;
 			})
 			.filter(Boolean);
 
 		if (galleryTitle) gsap.set(galleryTitle, { xPercent: -100, opacity: 0 });
 		if (galleryLeadLines.length) gsap.set(galleryLeadLines, { yPercent: 100, opacity: 0 });
 
-		const clearGallerySelectAnimProps = () => {
-			gallerySelectAnims.forEach((item) => {
-				gsap.set(item.expandEl, {
-					clearProps: "width,minWidth,overflow,pointerEvents",
-				});
-				gsap.set(item.trigger, {
-					clearProps: "overflow,--select-reveal-y,--select-reveal-opacity",
-				});
-				if (item.value) {
-					gsap.set(item.value, {
-						clearProps: "y,opacity,transform",
-					});
-				}
-			});
-		};
-
 		const galleryHeroTl = gsap.timeline({
 			defaults: { ease: "power2.out" },
-			onComplete: clearGallerySelectAnimProps,
 		});
 
 		if (galleryTitle) {
@@ -1701,46 +1687,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		if (gallerySelectAnims.length) {
-			galleryHeroTl.add("gallery-selects-expand", galleryLeadLines.length || galleryTitle ? "-=0.15" : "+=0");
-
-			gallerySelectAnims.forEach((anim) => {
-				galleryHeroTl.to(
-					anim.expandEl,
-					{
-						width: anim.width,
-						duration: 0.5,
-						ease: "power2.out",
-					},
-					"gallery-selects-expand",
-				);
-			});
-
-			galleryHeroTl.add("gallery-selects-reveal", "gallery-selects-expand+=0.5");
-
-			gallerySelectAnims.forEach((anim) => {
-				if (anim.value) {
-					galleryHeroTl.to(
-						anim.value,
-						{
-							y: 0,
-							opacity: 1,
-							duration: 0.45,
-							ease: "power2.out",
-						},
-						"gallery-selects-reveal",
-					);
-				}
-
-				galleryHeroTl.to(
-					anim.trigger,
-					{
-						"--select-reveal-y": "0%",
-						"--select-reveal-opacity": 1,
-						duration: 0.45,
-						ease: "power2.out",
-					},
-					"gallery-selects-reveal",
-				);
+			addHeightRevealSequence(galleryHeroTl, gallerySelectAnims, galleryLeadLines.length || galleryTitle ? "-=0.15" : "+=0", {
+				onReveal(tl, revealAt) {
+					gallerySelectAnims.forEach((anim) => {
+						tl.to(
+							anim.el,
+							{
+								"--select-reveal-y": "0%",
+								"--select-reveal-opacity": 1,
+								duration: 0.45,
+								ease: "power2.out",
+								onComplete() {
+									gsap.set(anim.el, {
+										clearProps: "--select-reveal-y,--select-reveal-opacity",
+									});
+								},
+							},
+							revealAt,
+						);
+					});
+				},
 			});
 		}
 	}
@@ -1750,21 +1716,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (exhibitionsHeroEl && !reducedMotion) {
 		const exhibitionsTitle = exhibitionsHeroEl.querySelector(".exhibitions-hero__title");
-		const exhibitionsAsideBlocks = [...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"), exhibitionsHeroEl.querySelector(".exhibitions-hero__cta")].filter(
-			Boolean,
-		);
+		const exhibitionsAsideBlocks = [
+			...exhibitionsHeroEl.querySelectorAll(".exhibitions-hero__chip"),
+			exhibitionsHeroEl.querySelector(".exhibitions-hero__cta"),
+		].filter(Boolean);
+		const exhibitionsAsideAnims = exhibitionsAsideBlocks
+			.map((block) => {
+				const label = block.querySelector(".exhibitions-hero__chip-label, .exhibitions-hero__cta-label");
+				return prepareHeightRevealControl(block, label);
+			})
+			.filter(Boolean);
 
 		if (exhibitionsTitle) gsap.set(exhibitionsTitle, { xPercent: -100, opacity: 0 });
-		if (exhibitionsAsideBlocks.length) gsap.set(exhibitionsAsideBlocks, { y: 28, opacity: 0 });
-
-		const finishExhibitionsHeroReveal = () => {
-			if (exhibitionsTitle) gsap.set(exhibitionsTitle, { clearProps: "transform,opacity" });
-			if (exhibitionsAsideBlocks.length) gsap.set(exhibitionsAsideBlocks, { clearProps: "transform,opacity" });
-		};
 
 		const exhibitionsHeroTl = gsap.timeline({
 			defaults: { ease: "power2.out" },
-			onComplete: finishExhibitionsHeroReveal,
+			onComplete() {
+				if (exhibitionsTitle) gsap.set(exhibitionsTitle, { clearProps: "transform,opacity" });
+			},
 		});
 
 		if (exhibitionsTitle) {
@@ -1776,18 +1745,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 
-		if (exhibitionsAsideBlocks.length) {
-			exhibitionsHeroTl.to(
-				exhibitionsAsideBlocks,
-				{
-					y: 0,
-					opacity: 1,
-					duration: 0.55,
-					stagger: 0.08,
-					ease: "power2.out",
-				},
-				exhibitionsTitle ? "-=0.35" : 0,
-			);
+		if (exhibitionsAsideAnims.length) {
+			addHeightRevealSequence(exhibitionsHeroTl, exhibitionsAsideAnims, exhibitionsTitle ? "-=0.35" : 0);
 		}
 	}
 
