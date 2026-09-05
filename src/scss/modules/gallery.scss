@@ -314,11 +314,6 @@
 			}
 		}
 
-		&:has(:focus-visible) .gallery-item__caption {
-			opacity: 1;
-			pointer-events: auto;
-			transform: translateY(0);
-		}
 	}
 
 	// gallery-item__link
@@ -382,6 +377,33 @@
 	&--quad {
 		.gallery-item__img {
 			aspect-ratio: 408 / 787;
+		}
+	}
+
+	// gallery-item--high-sm
+	&--high-sm {
+		.gallery-item__img {
+			aspect-ratio: 60 / 80;
+		}
+	}
+
+	// gallery-item--portrait-large
+	&--portrait-large {
+		.gallery-item__img {
+			aspect-ratio: 70 / 100;
+		}
+	}
+
+	&--quad-sm {
+		.gallery-item__img {
+			aspect-ratio: 80 / 60;
+		}
+	}
+
+
+	&--high {
+		.gallery-item__img {
+			aspect-ratio: 60 / 90;
 		}
 	}
 
