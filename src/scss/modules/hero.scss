@@ -6,13 +6,17 @@
 	isolation: isolate;
 	min-height: rem(876);
 	overflow: hidden;
-	background: url("@img/home/hero-bg.webp") 0 0 / cover no-repeat,
-		$color-dark;
+
 	color: $color-white;
 	display: flex;
 	flex-direction: column;
 
+	background: url("@img/home/hero-mobile-bg.webp") center 0 / cover no-repeat,
+		$color-dark;
+
 	@media (min-width:$md5) {
+		background: url("@img/home/hero-bg.webp") center 0 / cover no-repeat,
+			$color-dark;
 		min-height: rem(900);
 	}
 

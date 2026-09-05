@@ -64,13 +64,26 @@ img {
 	display: flex;
 	flex-direction: column;
 	background-color: $color-green;
-	background-image: repeating-linear-gradient(to right,
+	background-image: linear-gradient(to right,
 		transparent 0,
-		transparent #{rem($page-stripe-sm-gap)},
-		#{$color-green-2} #{rem($page-stripe-sm-gap)},
-		#{$color-green-2} #{rem($page-stripe-sm-dark-end)},
-		transparent #{rem($page-stripe-sm-dark-end)},
-		transparent #{rem($page-stripe-sm-period)});
+		transparent $s1-start,
+		#{$color-green-2} $s1-start,
+		#{$color-green-2} $s1-end,
+		transparent $s1-end,
+		transparent $g1-end,
+		#{$color-green-2} $g1-end,
+		#{$color-green-2} $s2-end,
+		transparent $s2-end,
+		transparent $g2-end,
+		#{$color-green-2} $g2-end,
+		#{$color-green-2} $s3-end,
+		transparent $s3-end,
+		transparent $g3-end,
+		#{$color-green-2} $g3-end,
+		#{$color-green-2} $s4-end,
+		transparent $s4-end,
+		transparent 100%);
+	background-size: 100% 100%;
 
 	@media (min-width: $md4) {
 		background-image: repeating-linear-gradient(to right,
@@ -80,10 +93,8 @@ img {
 			#{$color-green-2} #{rem($page-stripe-dark-end)},
 			transparent #{rem($page-stripe-dark-end)},
 			transparent #{rem($page-stripe-period)});
+		background-size: auto;
 	}
-
-
-
 
 }
 

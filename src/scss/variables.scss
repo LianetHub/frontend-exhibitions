@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $fontfamily: "Heraclito", sans-serif;
 
 $md0: 1499.98px;
@@ -13,16 +15,26 @@ $maxWidthContainer: rem(1820);
 $containerPadding: 24;
 
 
-$page-stripe-sm-gap: 20;
-$page-stripe-sm-dark-end: 86;
-$page-stripe-sm-period: 86;
+$p-total: 360;
+$p-offset: math.div(20, $p-total) * 100%;
+$p-width: math.div(66, $p-total) * 100%;
+$p-gap: math.div(19, $p-total) * 100%;
+
+$s1-start: $p-offset;
+$s1-end: $s1-start + $p-width;
+$g1-end: $s1-end + $p-gap;
+$s2-end: $g1-end + $p-width;
+$g2-end: $s2-end + $p-gap;
+$s3-end: $g2-end + $p-width;
+$g3-end: $s3-end + $p-gap;
+$s4-end: $g3-end + $p-width;
 
 $page-stripe-gap: 51;
 $page-stripe-dark-end: 154;
 $page-stripe-period: 221;
 
+
 :root {
-	// Palette — Figma Style kit
 	--color-dark: #111b10;
 	--color-green: #495148;
 	--color-green-2: #555d54;
@@ -32,7 +44,6 @@ $page-stripe-period: 221;
 	--color-beige: #d9cab4;
 	--color-brown: #423529;
 
-	// Semantic
 	--color-primary: var(--color-dark);
 	--color-text: var(--color-dark);
 	--color-muted: var(--color-green-2);
@@ -46,10 +57,10 @@ $page-stripe-period: 221;
 	--ease-layout: ease;
 	--header-height: #{rem(39)};
 
-	// Page stripe pattern (.page) — for JS snap of section fills
-	--page-stripe-sm-gap: #{rem($page-stripe-sm-gap)};
-	--page-stripe-sm-dark-end: #{rem($page-stripe-sm-dark-end)};
-	--page-stripe-sm-period: #{rem($page-stripe-sm-period)};
+	--page-stripe-sm-offset: #{$p-offset};
+	--page-stripe-sm-width: #{$p-width};
+	--page-stripe-sm-gap: #{$p-gap};
+	--page-stripe-sm-period: 100%;
 
 	@media (min-width:$md4) {
 		--header-height: #{rem(54)};

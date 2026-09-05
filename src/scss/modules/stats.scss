@@ -1,8 +1,7 @@
 .stats {
 	background: $color-surface;
 
-	// Slot for stats__band overlap — on child so height:0 on .stats stays truly empty
-	> .container {
+	>.container {
 		padding-bottom: rem(23);
 
 		@media (min-width: $md4) {
@@ -18,7 +17,7 @@
 		column-gap: rem(70);
 		list-style: none;
 		padding-block: rem(20);
-		margin-inline: calc(-1 * #{rem(10)});
+		margin-inline: calc(-1 * #{rem(20)});
 
 		@media (min-width: $md5) {
 			margin-inline: calc(-1 * #{rem(16)});
@@ -99,4 +98,3 @@
 		}
 	}
 }
-

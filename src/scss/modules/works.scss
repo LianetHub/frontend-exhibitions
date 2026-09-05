@@ -3,20 +3,17 @@
 	padding: rem(70) 0 rem(40);
 
 	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
 
-		left: calc(round(nearest,
-				40% - #{rem($page-stripe-sm-dark-end)},
-				#{rem($page-stripe-sm-period)}) + #{rem($page-stripe-sm-dark-end)});
-		width: auto;
-		height: 32%;
-		background: $color-green;
-		z-index: -1;
 
 		@media (min-width: $md4) {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: auto;
+			height: 32%;
+			background: $color-green;
+			z-index: -1;
 			left: calc(round(nearest,
 					40% - #{rem($page-stripe-dark-end)},
 					#{rem($page-stripe-period)}) + #{rem($page-stripe-dark-end)});
@@ -105,7 +102,7 @@
 		width: 100%;
 		max-width: rem(320);
 		height: auto;
-		margin-bottom: rem(36);
+		margin-bottom: rem(20);
 
 		@media (min-width: $md4) {
 			max-width: rem(759);
@@ -119,21 +116,30 @@
 		color: $color-white;
 		max-width: none;
 		font-size: rem(12);
-		margin-bottom: rem(16);
+
+
+		@media (max-width:$md5) {
+			background-color: $color-green;
+			padding: rem(20) rem(20) rem(8);
+			margin-inline: rem(-20);
+		}
 
 		@media (min-width: $md4) {
 			order: 0;
 			max-width: rem(350);
 			font-size: rem(16);
-			margin-bottom: 0;
+
 		}
 
 		// works__text--aside
 		&--aside {
 			order: 3;
+			padding-top: 0;
+			padding-bottom: rem(20);
 
 			@media (min-width: $md4) {
 				order: 0;
+				padding-bottom: 0;
 			}
 
 			@media (min-width: $md3) {
