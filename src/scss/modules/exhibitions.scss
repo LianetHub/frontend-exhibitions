@@ -9,11 +9,11 @@
 	&__layout {
 		display: flex;
 		flex-direction: column;
-		gap: rem(28);
-		padding-top: 2rem;
+		gap: rem(30);
+		padding-block: 2.5rem;
 
 		@media (min-width: $md3) {
-			padding-top: 0;
+			padding-block: 0;
 			flex-direction: row;
 			align-items: center;
 			gap: rem(40);
@@ -26,7 +26,7 @@
 		min-width: 0;
 
 		@media (max-width:$md5) {
-			max-width: rem(255);
+			max-width: rem(224);
 		}
 
 		@media (min-width:$md3) {
@@ -56,9 +56,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(20);
-		padding-block: rem(40);
+		padding-block: rem(20);
+		padding-inline: rem(20);
+		margin: 0 rem(-20);
 
 		@media (min-width: $md3) {
+			margin: 0;
+			padding-inline: 0;
 			gap: rem(30);
 			padding-block: rem(70);
 		}
@@ -66,9 +70,15 @@
 
 	// exhibitions-hero__chips
 	&__chips {
-		display: flex;
-		flex-wrap: wrap;
 		gap: rem(10) rem(15);
+		display: grid;
+		grid-template-columns: 1fr 1.25fr;
+
+		@media (min-width:$md4) {
+			display: flex;
+			flex-wrap: wrap;
+
+		}
 	}
 
 	// exhibitions-hero__chip
@@ -144,12 +154,13 @@
 		line-height: 1.3;
 		letter-spacing: -0.01em;
 		text-transform: uppercase;
-		text-align: center;
 		cursor: pointer;
 		overflow: hidden;
 		transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+		text-align: left;
 
 		@media (min-width: $md4) {
+			text-align: center;
 			font-size: rem(24);
 		}
 

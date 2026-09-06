@@ -392,11 +392,6 @@
 		}
 	}
 
-	&:focus-visible .gallery-card__caption,
-	&:focus-within .gallery-card__caption {
-		opacity: 1;
-		transform: translateY(0);
-	}
 
 	// gallery-card__name
 	&__name {

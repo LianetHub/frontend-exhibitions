@@ -8,21 +8,14 @@
 @font-face {
   font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Heraclito";
-  font-display: swap;
   src: url("../fonts/Heraclito-Light.woff2") format("woff2"), url("../fonts/Heraclito-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "icons";
+  font-family: "Heraclito";
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  src: url("../fonts/Heraclito-Regular.woff2") format("woff2"), url("../fonts/Heraclito-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -31,6 +24,13 @@
   font-display: swap;
   src: url("../fonts/Heraclito-SemiBold.woff2") format("woff2"), url("../fonts/Heraclito-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 :root {
@@ -2090,10 +2090,6 @@ img {
     transform: translateY(0);
   }
 }
-.gallery-card:focus-visible .gallery-card__caption, .gallery-card:focus-within .gallery-card__caption {
-  opacity: 1;
-  transform: translateY(0);
-}
 .gallery-card__name {
   margin-bottom: 0.125rem;
   font-size: 1.25rem;
@@ -3131,12 +3127,12 @@ img {
 .exhibitions-hero__layout {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  padding-top: 2rem;
+  gap: 1.875rem;
+  padding-block: 2.5rem;
 }
 @media (min-width: 991.98px) {
   .exhibitions-hero__layout {
-    padding-top: 0;
+    padding-block: 0;
     flex-direction: row;
     align-items: center;
     gap: 2.5rem;
@@ -3148,7 +3144,7 @@ img {
 }
 @media (max-width: 575.98px) {
   .exhibitions-hero__title {
-    max-width: 15.9375rem;
+    max-width: 14rem;
   }
 }
 @media (min-width: 991.98px) {
@@ -3175,18 +3171,28 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding-block: 2.5rem;
+  padding-block: 1.25rem;
+  padding-inline: 1.25rem;
+  margin: 0 -1.25rem;
 }
 @media (min-width: 991.98px) {
   .exhibitions-hero__aside {
+    margin: 0;
+    padding-inline: 0;
     gap: 1.875rem;
     padding-block: 4.375rem;
   }
 }
 .exhibitions-hero__chips {
-  display: flex;
-  flex-wrap: wrap;
   gap: 0.625rem 0.9375rem;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+}
+@media (min-width: 767.98px) {
+  .exhibitions-hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 .exhibitions-hero__chip {
   display: inline-flex;
@@ -3252,13 +3258,14 @@ img {
   line-height: 1.3;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  text-align: center;
   cursor: pointer;
   overflow: hidden;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-align: left;
 }
 @media (min-width: 767.98px) {
   .exhibitions-hero__cta {
+    text-align: center;
     font-size: 1.5rem;
   }
 }
