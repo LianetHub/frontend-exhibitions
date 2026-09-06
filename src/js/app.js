@@ -115,9 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const heroEl = document.querySelector(".hero");
 	const statsEl = document.querySelector(".stats");
 	const worksEl = document.querySelector(".works");
-	let statsRevealDone = !statsEl || reducedMotion;
 	let worksRevealTl = null;
-	let worksRevealArmed = false;
 
 	function splitTextLines(el, lineClass, innerClass) {
 		const text = el.textContent.replace(/\s+/g, " ").trim();
@@ -240,8 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function armWorksReveal() {
-		if (!worksRevealTl || !statsRevealDone || worksRevealArmed) return;
-		worksRevealArmed = true;
+		if (!worksRevealTl) return;
 
 		ScrollTrigger.create({
 			trigger: worksEl,
@@ -400,16 +397,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		gsap.set(statsLabels, { opacity: 0, y: 10 });
 
 		gsap.timeline({
-			delay: 0.15,
 			scrollTrigger: {
-				trigger: heroEl || statsEl,
-				start: "bottom bottom-=48",
+				trigger: statsEl,
+				start: "top bottom",
 				once: true,
 			},
 			onComplete() {
-				statsRevealDone = true;
 				ScrollTrigger.refresh();
-				armWorksReveal();
 			},
 		})
 			.to(statsEl, {
@@ -1773,7 +1767,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			const cellTechniqueParts = (cell.getAttribute("data-technique") || "").split(",").map((part) => part.trim());
 			const matchGenre = !genres.length || genres.includes(cellGenre);
 			const matchTechnique = !techniques.length || techniques.some((technique) => cellTechniqueParts.includes(technique));
-			cell.classList.toggle("is-hidden", !(matchGenre && matchTechnique));
+			const isVisible = matchGenre && matchTechnique;
+			cell.classList.toggle("is-hidden", !isVisible);
+
+			const link = cell.querySelector(".gallery-item__link");
+			if (link) {
+				if (isVisible) link.setAttribute("data-fancybox", "gallery");
+				else link.removeAttribute("data-fancybox");
+			}
 		});
 
 		const hasVisible = cells.some((cell) => !cell.classList.contains("is-hidden"));
