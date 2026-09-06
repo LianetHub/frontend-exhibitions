@@ -115,7 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	const heroEl = document.querySelector(".hero");
 	const statsEl = document.querySelector(".stats");
 	const worksEl = document.querySelector(".works");
+	let statsRevealDone = !statsEl || reducedMotion;
 	let worksRevealTl = null;
+	let worksRevealArmed = false;
 
 	function splitTextLines(el, lineClass, innerClass) {
 		const text = el.textContent.replace(/\s+/g, " ").trim();
@@ -238,7 +240,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function armWorksReveal() {
-		if (!worksRevealTl) return;
+		if (!worksRevealTl || !statsRevealDone || worksRevealArmed) return;
+		worksRevealArmed = true;
 
 		ScrollTrigger.create({
 			trigger: worksEl,
@@ -403,7 +406,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				once: true,
 			},
 			onComplete() {
+				statsRevealDone = true;
 				ScrollTrigger.refresh();
+				armWorksReveal();
 			},
 		})
 			.to(statsEl, {
@@ -1749,9 +1754,59 @@ document.addEventListener("DOMContentLoaded", () => {
 	// gallery filters
 	const galleryRoot = document.querySelector("[data-gallery]");
 	const galleryFilters = document.querySelector("[data-gallery-filters]");
+	const galleryGrid = galleryRoot?.querySelector(".gallery__grid");
+	const galleryCellsOrder = galleryGrid ? [...galleryGrid.querySelectorAll("[data-gallery-cell]")] : [];
+	const galleryCellOriginalRow = new Map(
+		galleryCellsOrder.map((cell) => [cell, cell.style.getPropertyValue("--gallery-row") || "1"]),
+	);
 
 	function getCustomSelectValues(root) {
 		return getAppliedCustomSelectValues(root);
+	}
+
+	function getGalleryCellCol(cell) {
+		return parseInt(cell.style.getPropertyValue("--gallery-col"), 10) || 0;
+	}
+
+	// col-6 → col-4 → col-3, чтобы grid-auto-flow: dense заполнял ряды без пустых мест;
+	// row всегда 1 — в обычной верстке (без фильтра) row: 2 остаётся как в разметке
+	function sortGalleryCells(hasFilters) {
+		if (!galleryGrid || !galleryCellsOrder.length) return;
+
+		galleryCellsOrder.forEach((cell) => {
+			cell.style.setProperty("--gallery-row", hasFilters ? "1" : galleryCellOriginalRow.get(cell));
+		});
+
+		if (!hasFilters) {
+			galleryCellsOrder.forEach((cell) => galleryGrid.appendChild(cell));
+			return;
+		}
+
+		const hidden = [];
+		const byCol = { 6: [], 4: [], 3: [] };
+		const other = [];
+
+		galleryCellsOrder.forEach((cell) => {
+			if (cell.classList.contains("is-hidden")) {
+				hidden.push(cell);
+				return;
+			}
+
+			const col = getGalleryCellCol(cell);
+			(byCol[col] || other).push(cell);
+		});
+
+		// ряды, где сумма ширин колонок = 12 (6+6, 4+4+4, 3+3+3+3) — без пустых мест
+		const fullPairs6 = byCol[6].length - (byCol[6].length % 2);
+		const fullTriples4 = byCol[4].length - (byCol[4].length % 3);
+		const fullQuads3 = byCol[3].length - (byCol[3].length % 4);
+
+		const complete = [...other, ...byCol[6].slice(0, fullPairs6), ...byCol[4].slice(0, fullTriples4), ...byCol[3].slice(0, fullQuads3)];
+
+		// остаток, который не набирает полный ряд из 12 колонок, — переносим в самый конец
+		const leftover = [...byCol[6].slice(fullPairs6), ...byCol[4].slice(fullTriples4), ...byCol[3].slice(fullQuads3)];
+
+		[...complete, ...leftover, ...hidden].forEach((cell) => galleryGrid.appendChild(cell));
 	}
 
 	function applyGalleryFilters({ animateReveal = false } = {}) {
@@ -1776,6 +1831,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				else link.removeAttribute("data-fancybox");
 			}
 		});
+
+		sortGalleryCells(Boolean(genres.length || techniques.length));
 
 		const hasVisible = cells.some((cell) => !cell.classList.contains("is-hidden"));
 		const empty = galleryRoot.querySelector(".gallery__empty");
